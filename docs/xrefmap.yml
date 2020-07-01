@@ -1,0 +1,15 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  href: api/Yort.Zip.InStore.html
+  commentId: N:Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+- uid: Yort.Zip.InStore.IZipClient
+  name: IZipClient
+  href: api/Yort.Zip.InStore.IZipClient.html
+  commentId: T:Yort.Zip.InStore.IZipClient
+  fullName: Yort.Zip.InStore.IZipClient
+  nameWithType: IZipClient

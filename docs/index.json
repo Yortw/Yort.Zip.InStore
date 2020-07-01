@@ -1,0 +1,17 @@
+{
+  "articles/intro.html": {
+    "href": "articles/intro.html",
+    "title": "Add your introductions here! | Yort.Zip.InStore",
+    "keywords": "Add your introductions here!"
+  },
+  "api/Yort.Zip.InStore.IZipClient.html": {
+    "href": "api/Yort.Zip.InStore.IZipClient.html",
+    "title": "Interface IZipClient | Yort.Zip.InStore",
+    "keywords": "Interface IZipClient An interface for the primary object used to access the Zip payments API. Namespace : Yort.Zip.InStore Assembly : Yort.Zip.InStore.dll Syntax public interface IZipClient Remarks This interface exists primarily to support mocking/stubbing out of the api client for testing purposes. Ideally client code should use this interface as the type for all reference to the implementation instance to support runtime replacement of the implementation."
+  },
+  "api/Yort.Zip.InStore.html": {
+    "href": "api/Yort.Zip.InStore.html",
+    "title": "Namespace Yort.Zip.InStore | Yort.Zip.InStore",
+    "keywords": "Namespace Yort.Zip.InStore Interfaces IZipClient An interface for the primary object used to access the Zip payments API."
+  }
+}

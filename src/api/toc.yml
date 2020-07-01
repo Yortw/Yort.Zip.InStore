@@ -1,0 +1,6 @@
+### YamlMime:TableOfContent
+- uid: Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  items:
+  - uid: Yort.Zip.InStore.IZipClient
+    name: IZipClient

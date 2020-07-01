@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\OssLibrary.csproj" />
+    <ProjectReference Include="..\src\Yort.Zip.InStore.csproj" />
   </ItemGroup>
 
 </Project>

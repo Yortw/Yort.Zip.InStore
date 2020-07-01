@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  id: Yort.Zip.InStore
+  children:
+  - Yort.Zip.InStore.IZipClient
+  langs:
+  - csharp
+  - vb
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+  type: Namespace
+  assemblies:
+  - Yort.Zip.InStore
+references:
+- uid: Yort.Zip.InStore.IZipClient
+  commentId: T:Yort.Zip.InStore.IZipClient
+  name: IZipClient
+  nameWithType: IZipClient
+  fullName: Yort.Zip.InStore.IZipClient

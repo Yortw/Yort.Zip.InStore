@@ -6,7 +6,7 @@
           "files": [
             "**.csproj"
           ],
-          "src": "C:\\Projects\\GitHub\\LibraryName\\src"
+          "src": "C:\\Projects\\GitHub\\Yort.Zip.InStore\\src"
         }
       ],
       "dest": "api",
@@ -56,7 +56,7 @@
       "default"
     ],
     "globalMetadata": {
-      "_appTitle": "LibraryName",
+      "_appTitle": "Yort.Zip.InStore",
       "_enableSearch": true,
       "_appFaviconPath": "images/projecticon.ico",
       "_appLogoPath": "images/projecticon.png",

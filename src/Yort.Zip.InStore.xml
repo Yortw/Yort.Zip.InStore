@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yort.Zip.InStore</name>
+    </assembly>
+    <members>
+        <member name="T:Yort.Zip.InStore.ErrorMessage">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ErrorMessage.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ErrorMessage.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:OssLibrary.IZipClient">
+            <summary>
+            An interface for the primary object used to access the Zip payments API.
+            </summary>
+            <remarks>
+            <para>This interface exists primarily to support mocking/stubbing out of the api client for testing purposes. Ideally client code should use this interface as the type for all reference to the implementation instance to support runtime replacement of the implementation.</para>
+            </remarks>
+        </member>
+    </members>
+</doc>

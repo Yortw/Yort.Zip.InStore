@@ -1,4 +1,4 @@
-name: LibraryName.Build
+name: Yort.Zip.InStore.Build
 
 on: 
   push:
@@ -20,10 +20,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.0.101
-    - name: Build with dotnet (src\LibraryName.sln)
-      run: dotnet build src\LibraryName.sln --configuration Release --nologo
+    - name: Build with dotnet (src\Yort.Zip.InStore.sln)
+      run: dotnet build src\Yort.Zip.InStore.sln --configuration Release --nologo
     - name: Run Tests
-      run: dotnet test src\LibraryName.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:CoverletOutput="Tests/TestResults/"
+      run: dotnet test src\Yort.Zip.InStore.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:CoverletOutput="Tests/TestResults/"
     - name: Install Report Generator
       run: dotnet tool install -g dotnet-reportgenerator-globaltool
     - name: Generate Code Coverage Report
@@ -46,10 +46,10 @@ jobs:
       run: echo "::set-env name=VERSION::$(git describe --tags --dirty)"
     - name: Echo Version
       run: echo "$Env:VERSION"      
-    - name: Build with dotnet (src\LibraryName.sln)
-      run: dotnet build src\LibraryName.sln --configuration Release --nologo
+    - name: Build with dotnet (src\Yort.Zip.InStore.sln)
+      run: dotnet build src\Yort.Zip.InStore.sln --configuration Release --nologo
     - name: Pack
-      run: dotnet pack src\LibraryName.sln --output ./artifacts --configuration Release -p:PackageVersion=$Env:VERSION --include-source --nologo
+      run: dotnet pack src\Yort.Zip.InStore.sln --output ./artifacts --configuration Release -p:PackageVersion=$Env:VERSION --include-source --nologo
     - uses: actions/upload-artifact@v1
       with:
         name: artifacts

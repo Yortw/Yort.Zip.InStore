@@ -1,0 +1,43 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore.IZipClient
+  commentId: T:Yort.Zip.InStore.IZipClient
+  id: IZipClient
+  parent: Yort.Zip.InStore
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IZipClient
+  nameWithType: IZipClient
+  fullName: Yort.Zip.InStore.IZipClient
+  type: Interface
+  source:
+    remote:
+      path: src/IZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: IZipClient
+    path: IZipClient.cs
+    startLine: 10
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nAn interface for the primary object used to access the Zip payments API.\n"
+  remarks: "\n<p>This interface exists primarily to support mocking/stubbing out of the api client for testing purposes. Ideally client code should use this interface as the type for all reference to the implementation instance to support runtime replacement of the implementation.</p>\n"
+  example: []
+  syntax:
+    content: public interface IZipClient
+    content.vb: Public Interface IZipClient
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+references:
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
