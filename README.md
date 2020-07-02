@@ -8,7 +8,7 @@
 # Supported Platforms
 
 * .Net Standard 2.0
-* .Net 4.5+
+* .Net 4.72+
 
 # Documentation
 

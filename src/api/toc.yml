@@ -2,5 +2,29 @@
 - uid: Yort.Zip.InStore
   name: Yort.Zip.InStore
   items:
+  - uid: Yort.Zip.InStore.CreateOrderRequest
+    name: CreateOrderRequest
+  - uid: Yort.Zip.InStore.CreateOrderResponse
+    name: CreateOrderResponse
   - uid: Yort.Zip.InStore.IZipClient
     name: IZipClient
+  - uid: Yort.Zip.InStore.NewZipOrder
+    name: NewZipOrder
+  - uid: Yort.Zip.InStore.OrderStatusRequest
+    name: OrderStatusRequest
+  - uid: Yort.Zip.InStore.OrderStatusResponse
+    name: OrderStatusResponse
+  - uid: Yort.Zip.InStore.ZipClient
+    name: ZipClient
+  - uid: Yort.Zip.InStore.ZipEnvironment
+    name: ZipEnvironment
+  - uid: Yort.Zip.InStore.ZipEnvironment.NewZealand
+    name: ZipEnvironment.NewZealand
+  - uid: Yort.Zip.InStore.ZipOrderItem
+    name: ZipOrderItem
+  - uid: Yort.Zip.InStore.ZipOrderStatus
+    name: ZipOrderStatus
+  - uid: Yort.Zip.InStore.ZipPaymentFlow
+    name: ZipPaymentFlow
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase
+    name: ZipRequestOptionsBase

@@ -1,0 +1,491 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore.OrderStatusRequest
+  commentId: T:Yort.Zip.InStore.OrderStatusRequest
+  id: OrderStatusRequest
+  parent: Yort.Zip.InStore
+  children:
+  - Yort.Zip.InStore.OrderStatusRequest.OrderId
+  - Yort.Zip.InStore.OrderStatusRequest.Validate
+  langs:
+  - csharp
+  - vb
+  name: OrderStatusRequest
+  nameWithType: OrderStatusRequest
+  fullName: Yort.Zip.InStore.OrderStatusRequest
+  type: Class
+  source:
+    remote:
+      path: src/OrderStatusRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: OrderStatusRequest
+    path: OrderStatusRequest.cs
+    startLine: 10
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nRepresents details of a request to retrieve the current status of an order in the Zip system.\n"
+  example: []
+  syntax:
+    content: 'public class OrderStatusRequest : ZipRequestOptionsBase'
+    content.vb: >-
+      Public Class OrderStatusRequest
+          Inherits ZipRequestOptionsBase
+  inheritance:
+  - System.Object
+  - Yort.Zip.InStore.ZipRequestOptionsBase
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.Zip.InStore.OrderStatusRequest.OrderId
+  commentId: P:Yort.Zip.InStore.OrderStatusRequest.OrderId
+  id: OrderId
+  parent: Yort.Zip.InStore.OrderStatusRequest
+  langs:
+  - csharp
+  - vb
+  name: OrderId
+  nameWithType: OrderStatusRequest.OrderId
+  fullName: Yort.Zip.InStore.OrderStatusRequest.OrderId
+  type: Property
+  source:
+    remote:
+      path: src/OrderStatusRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: OrderId
+    path: OrderStatusRequest.cs
+    startLine: 15
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nThe unique id of the order within the Zip system, as returned in <xref href=\"Yort.Zip.InStore.CreateOrderResponse.OrderId\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public string OrderId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OrderId As String
+  overload: Yort.Zip.InStore.OrderStatusRequest.OrderId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.OrderStatusRequest.Validate
+  commentId: M:Yort.Zip.InStore.OrderStatusRequest.Validate
+  id: Validate
+  parent: Yort.Zip.InStore.OrderStatusRequest
+  langs:
+  - csharp
+  - vb
+  name: Validate()
+  nameWithType: OrderStatusRequest.Validate()
+  fullName: Yort.Zip.InStore.OrderStatusRequest.Validate()
+  type: Method
+  source:
+    remote:
+      path: src/OrderStatusRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Validate
+    path: OrderStatusRequest.cs
+    startLine: 22
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nValidates this request as much as possible prior to sending it to the Zip API.\n"
+  example: []
+  syntax:
+    content: public override void Validate()
+    content.vb: Public Overrides Sub Validate
+  overridden: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  overload: Yort.Zip.InStore.OrderStatusRequest.Validate*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <xref href="Yort.Zip.InStore.OrderStatusRequest.OrderId" data-throw-if-not-resolved="false"></xref> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <xref href="Yort.Zip.InStore.OrderStatusRequest.OrderId" data-throw-if-not-resolved="false"></xref> is blank or contains only whitespace.
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase
+  commentId: T:Yort.Zip.InStore.ZipRequestOptionsBase
+  parent: Yort.Zip.InStore
+  name: ZipRequestOptionsBase
+  nameWithType: ZipRequestOptionsBase
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Zip.InStore.CreateOrderResponse.OrderId
+  commentId: P:Yort.Zip.InStore.CreateOrderResponse.OrderId
+  isExternal: true
+- uid: Yort.Zip.InStore.OrderStatusRequest.OrderId*
+  commentId: Overload:Yort.Zip.InStore.OrderStatusRequest.OrderId
+  name: OrderId
+  nameWithType: OrderStatusRequest.OrderId
+  fullName: Yort.Zip.InStore.OrderStatusRequest.OrderId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Zip.InStore.OrderStatusRequest.OrderId
+  commentId: P:Yort.Zip.InStore.OrderStatusRequest.OrderId
+  isExternal: true
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  parent: Yort.Zip.InStore.ZipRequestOptionsBase
+  name: Validate()
+  nameWithType: ZipRequestOptionsBase.Validate()
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate()
+  spec.csharp:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+    name: Validate
+    nameWithType: ZipRequestOptionsBase.Validate
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+    name: Validate
+    nameWithType: ZipRequestOptionsBase.Validate
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.OrderStatusRequest.Validate*
+  commentId: Overload:Yort.Zip.InStore.OrderStatusRequest.Validate
+  name: Validate
+  nameWithType: OrderStatusRequest.Validate
+  fullName: Yort.Zip.InStore.OrderStatusRequest.Validate

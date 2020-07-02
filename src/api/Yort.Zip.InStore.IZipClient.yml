@@ -4,7 +4,9 @@ items:
   commentId: T:Yort.Zip.InStore.IZipClient
   id: IZipClient
   parent: Yort.Zip.InStore
-  children: []
+  children:
+  - Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  - Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
   langs:
   - csharp
   - vb
@@ -19,7 +21,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: IZipClient
     path: IZipClient.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -27,17 +29,316 @@ items:
   remarks: "\n<p>This interface exists primarily to support mocking/stubbing out of the api client for testing purposes. Ideally client code should use this interface as the type for all reference to the implementation instance to support runtime replacement of the implementation.</p>\n"
   example: []
   syntax:
-    content: public interface IZipClient
-    content.vb: Public Interface IZipClient
+    content: 'public interface IZipClient : IDisposable'
+    content.vb: >-
+      Public Interface IZipClient
+          Inherits IDisposable
+  seealso:
+  - linkId: Yort.Zip.InStore.ZipClient
+    commentId: T:Yort.Zip.InStore.ZipClient
+  inheritedMembers:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   - interface
   modifiers.vb:
   - Public
   - Interface
+- uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  id: CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  langs:
+  - csharp
+  - vb
+  name: CreateOrderAsync(CreateOrderRequest)
+  nameWithType: IZipClient.CreateOrderAsync(CreateOrderRequest)
+  fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  type: Method
+  source:
+    remote:
+      path: src/IZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: CreateOrderAsync
+    path: IZipClient.cs
+    startLine: 20
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nCreates a new order (payment) with Zip.\n"
+  example: []
+  syntax:
+    content: Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request)
+    parameters:
+    - id: request
+      type: Yort.Zip.InStore.CreateOrderRequest
+      description: Details of the order to be created.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Zip.InStore.CreateOrderResponse}
+      description: Details of the created order if succesful, otherwise throws an exception.
+    content.vb: Function CreateOrderAsync(request As CreateOrderRequest) As Task(Of CreateOrderResponse)
+  overload: Yort.Zip.InStore.IZipClient.CreateOrderAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+- uid: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+  id: GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  langs:
+  - csharp
+  - vb
+  name: GetOrderStatusAsync(OrderStatusRequest)
+  nameWithType: IZipClient.GetOrderStatusAsync(OrderStatusRequest)
+  fullName: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+  type: Method
+  source:
+    remote:
+      path: src/IZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: GetOrderStatusAsync
+    path: IZipClient.cs
+    startLine: 29
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nRequests the current status of the specified order from the Zip API.\n"
+  example: []
+  syntax:
+    content: Task<OrderStatusResponse> GetOrderStatusAsync(OrderStatusRequest request)
+    parameters:
+    - id: request
+      type: Yort.Zip.InStore.OrderStatusRequest
+      description: A <xref href="Yort.Zip.InStore.OrderStatusRequest" data-throw-if-not-resolved="false"></xref> providing details of the order to return the status of.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Zip.InStore.OrderStatusResponse}
+      description: If successful a <xref href="Yort.Zip.InStore.OrderStatusResponse" data-throw-if-not-resolved="false"></xref> containing details of the specified order&apos;s status. Otherwise throws an exception.
+    content.vb: Function GetOrderStatusAsync(request As OrderStatusRequest) As Task(Of OrderStatusResponse)
+  overload: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
 references:
+- uid: Yort.Zip.InStore.ZipClient
+  commentId: T:Yort.Zip.InStore.ZipClient
+  name: ZipClient
+  nameWithType: ZipClient
+  fullName: Yort.Zip.InStore.ZipClient
 - uid: Yort.Zip.InStore
   commentId: N:Yort.Zip.InStore
   name: Yort.Zip.InStore
   nameWithType: Yort.Zip.InStore
   fullName: Yort.Zip.InStore
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync*
+  commentId: Overload:Yort.Zip.InStore.IZipClient.CreateOrderAsync
+  name: CreateOrderAsync
+  nameWithType: IZipClient.CreateOrderAsync
+  fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync
+- uid: Yort.Zip.InStore.CreateOrderRequest
+  commentId: T:Yort.Zip.InStore.CreateOrderRequest
+  parent: Yort.Zip.InStore
+  name: CreateOrderRequest
+  nameWithType: CreateOrderRequest
+  fullName: Yort.Zip.InStore.CreateOrderRequest
+- uid: System.Threading.Tasks.Task{Yort.Zip.InStore.CreateOrderResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Zip.InStore.CreateOrderResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<CreateOrderResponse>
+  nameWithType: Task<CreateOrderResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Zip.InStore.CreateOrderResponse>
+  nameWithType.vb: Task(Of CreateOrderResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Zip.InStore.CreateOrderResponse)
+  name.vb: Task(Of CreateOrderResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Zip.InStore.CreateOrderResponse
+    name: CreateOrderResponse
+    nameWithType: CreateOrderResponse
+    fullName: Yort.Zip.InStore.CreateOrderResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Zip.InStore.CreateOrderResponse
+    name: CreateOrderResponse
+    nameWithType: CreateOrderResponse
+    fullName: Yort.Zip.InStore.CreateOrderResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Yort.Zip.InStore.OrderStatusRequest
+  commentId: T:Yort.Zip.InStore.OrderStatusRequest
+  parent: Yort.Zip.InStore
+  name: OrderStatusRequest
+  nameWithType: OrderStatusRequest
+  fullName: Yort.Zip.InStore.OrderStatusRequest
+- uid: Yort.Zip.InStore.OrderStatusResponse
+  commentId: T:Yort.Zip.InStore.OrderStatusResponse
+  name: OrderStatusResponse
+  nameWithType: OrderStatusResponse
+  fullName: Yort.Zip.InStore.OrderStatusResponse
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync*
+  commentId: Overload:Yort.Zip.InStore.IZipClient.GetOrderStatusAsync
+  name: GetOrderStatusAsync
+  nameWithType: IZipClient.GetOrderStatusAsync
+  fullName: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync
+- uid: System.Threading.Tasks.Task{Yort.Zip.InStore.OrderStatusResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Zip.InStore.OrderStatusResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<OrderStatusResponse>
+  nameWithType: Task<OrderStatusResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Zip.InStore.OrderStatusResponse>
+  nameWithType.vb: Task(Of OrderStatusResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Zip.InStore.OrderStatusResponse)
+  name.vb: Task(Of OrderStatusResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Zip.InStore.OrderStatusResponse
+    name: OrderStatusResponse
+    nameWithType: OrderStatusResponse
+    fullName: Yort.Zip.InStore.OrderStatusResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Zip.InStore.OrderStatusResponse
+    name: OrderStatusResponse
+    nameWithType: OrderStatusResponse
+    fullName: Yort.Zip.InStore.OrderStatusResponse
+  - name: )
+    nameWithType: )
+    fullName: )

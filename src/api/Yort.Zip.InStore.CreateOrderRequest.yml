@@ -1,0 +1,594 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore.CreateOrderRequest
+  commentId: T:Yort.Zip.InStore.CreateOrderRequest
+  id: CreateOrderRequest
+  parent: Yort.Zip.InStore
+  children:
+  - Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  - Yort.Zip.InStore.CreateOrderRequest.Order
+  - Yort.Zip.InStore.CreateOrderRequest.Validate
+  langs:
+  - csharp
+  - vb
+  name: CreateOrderRequest
+  nameWithType: CreateOrderRequest
+  fullName: Yort.Zip.InStore.CreateOrderRequest
+  type: Class
+  source:
+    remote:
+      path: src/CreateOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: CreateOrderRequest
+    path: CreateOrderRequest.cs
+    startLine: 13
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nContains details of an order (request for payment) to be created within the Zip system.\n"
+  example: []
+  syntax:
+    content: 'public class CreateOrderRequest : ZipRequestOptionsBase'
+    content.vb: >-
+      Public Class CreateOrderRequest
+          Inherits ZipRequestOptionsBase
+  seealso:
+  - linkId: Yort.Zip.InStore.CreateOrderRequest
+    commentId: T:Yort.Zip.InStore.CreateOrderRequest
+  - linkId: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+    commentId: M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  inheritance:
+  - System.Object
+  - Yort.Zip.InStore.ZipRequestOptionsBase
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  commentId: P:Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  id: EnableUniqueMerchantReferenceCheck
+  parent: Yort.Zip.InStore.CreateOrderRequest
+  langs:
+  - csharp
+  - vb
+  name: EnableUniqueMerchantReferenceCheck
+  nameWithType: CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  fullName: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  type: Property
+  source:
+    remote:
+      path: src/CreateOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: EnableUniqueMerchantReferenceCheck
+    path: CreateOrderRequest.cs
+    startLine: 22
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nDetermines if Zip is instructed to check if the <xref href=\"Yort.Zip.InStore.NewZipOrder.MerchantReference\" data-throw-if-not-resolved=\"false\"></xref> has already been used and if so behave in an idempotent fashion (return the original response instead of creating a duplicate order).\n"
+  remarks: "\n<p>The default value is true, which enables the duplicate checking and idempotent responses. Set to false only if you want to allow duplicate orders with the same merchant reference to be created.</p>\n<p>If this is set to false and a merchant reference is reused, a new order with a new Zip order id will be created.</p>\n"
+  example: []
+  syntax:
+    content: public bool EnableUniqueMerchantReferenceCheck { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableUniqueMerchantReferenceCheck As Boolean
+  overload: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.CreateOrderRequest.Order
+  commentId: P:Yort.Zip.InStore.CreateOrderRequest.Order
+  id: Order
+  parent: Yort.Zip.InStore.CreateOrderRequest
+  langs:
+  - csharp
+  - vb
+  name: Order
+  nameWithType: CreateOrderRequest.Order
+  fullName: Yort.Zip.InStore.CreateOrderRequest.Order
+  type: Property
+  source:
+    remote:
+      path: src/CreateOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Order
+    path: CreateOrderRequest.cs
+    startLine: 27
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nSpecifies the details of the new Zip order to be created.\n"
+  example: []
+  syntax:
+    content: public NewZipOrder Order { get; set; }
+    parameters: []
+    return:
+      type: Yort.Zip.InStore.NewZipOrder
+    content.vb: Public Property Order As NewZipOrder
+  overload: Yort.Zip.InStore.CreateOrderRequest.Order*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.CreateOrderRequest.Validate
+  commentId: M:Yort.Zip.InStore.CreateOrderRequest.Validate
+  id: Validate
+  parent: Yort.Zip.InStore.CreateOrderRequest
+  langs:
+  - csharp
+  - vb
+  name: Validate()
+  nameWithType: CreateOrderRequest.Validate()
+  fullName: Yort.Zip.InStore.CreateOrderRequest.Validate()
+  type: Method
+  source:
+    remote:
+      path: src/CreateOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Validate
+    path: CreateOrderRequest.cs
+    startLine: 34
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nValidates this request as much as possible prior to sending it to the Zip API.\n"
+  example: []
+  syntax:
+    content: public override void Validate()
+    content.vb: Public Overrides Sub Validate
+  overridden: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  overload: Yort.Zip.InStore.CreateOrderRequest.Validate*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <xref href="Yort.Zip.InStore.CreateOrderRequest.Order" data-throw-if-not-resolved="false"></xref> or any of it&apos;s required sub-properties are null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any of the sub-properties of <xref href="Yort.Zip.InStore.CreateOrderRequest.Order" data-throw-if-not-resolved="false"></xref> are determined to be invalid.
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Yort.Zip.InStore.CreateOrderRequest
+  commentId: T:Yort.Zip.InStore.CreateOrderRequest
+  parent: Yort.Zip.InStore
+  name: CreateOrderRequest
+  nameWithType: CreateOrderRequest
+  fullName: Yort.Zip.InStore.CreateOrderRequest
+- uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  name: CreateOrderAsync(CreateOrderRequest)
+  nameWithType: IZipClient.CreateOrderAsync(CreateOrderRequest)
+  fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  spec.csharp:
+  - uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+    name: CreateOrderAsync
+    nameWithType: IZipClient.CreateOrderAsync
+    fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.CreateOrderRequest
+    name: CreateOrderRequest
+    nameWithType: CreateOrderRequest
+    fullName: Yort.Zip.InStore.CreateOrderRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+    name: CreateOrderAsync
+    nameWithType: IZipClient.CreateOrderAsync
+    fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.CreateOrderRequest
+    name: CreateOrderRequest
+    nameWithType: CreateOrderRequest
+    fullName: Yort.Zip.InStore.CreateOrderRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase
+  commentId: T:Yort.Zip.InStore.ZipRequestOptionsBase
+  parent: Yort.Zip.InStore
+  name: ZipRequestOptionsBase
+  nameWithType: ZipRequestOptionsBase
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.IZipClient
+  commentId: T:Yort.Zip.InStore.IZipClient
+  parent: Yort.Zip.InStore
+  name: IZipClient
+  nameWithType: IZipClient
+  fullName: Yort.Zip.InStore.IZipClient
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Zip.InStore.NewZipOrder.MerchantReference
+  commentId: P:Yort.Zip.InStore.NewZipOrder.MerchantReference
+  isExternal: true
+- uid: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck*
+  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  name: EnableUniqueMerchantReferenceCheck
+  nameWithType: CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  fullName: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Yort.Zip.InStore.CreateOrderRequest.Order*
+  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.Order
+  name: Order
+  nameWithType: CreateOrderRequest.Order
+  fullName: Yort.Zip.InStore.CreateOrderRequest.Order
+- uid: Yort.Zip.InStore.NewZipOrder
+  commentId: T:Yort.Zip.InStore.NewZipOrder
+  parent: Yort.Zip.InStore
+  name: NewZipOrder
+  nameWithType: NewZipOrder
+  fullName: Yort.Zip.InStore.NewZipOrder
+- uid: Yort.Zip.InStore.CreateOrderRequest.Order
+  commentId: P:Yort.Zip.InStore.CreateOrderRequest.Order
+  isExternal: true
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  parent: Yort.Zip.InStore.ZipRequestOptionsBase
+  name: Validate()
+  nameWithType: ZipRequestOptionsBase.Validate()
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate()
+  spec.csharp:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+    name: Validate
+    nameWithType: ZipRequestOptionsBase.Validate
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+    name: Validate
+    nameWithType: ZipRequestOptionsBase.Validate
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.CreateOrderRequest.Validate*
+  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.Validate
+  name: Validate
+  nameWithType: CreateOrderRequest.Validate
+  fullName: Yort.Zip.InStore.CreateOrderRequest.Validate

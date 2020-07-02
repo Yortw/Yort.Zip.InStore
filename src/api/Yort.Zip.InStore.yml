@@ -4,7 +4,19 @@ items:
   commentId: N:Yort.Zip.InStore
   id: Yort.Zip.InStore
   children:
+  - Yort.Zip.InStore.CreateOrderRequest
+  - Yort.Zip.InStore.CreateOrderResponse
   - Yort.Zip.InStore.IZipClient
+  - Yort.Zip.InStore.NewZipOrder
+  - Yort.Zip.InStore.OrderStatusRequest
+  - Yort.Zip.InStore.OrderStatusResponse
+  - Yort.Zip.InStore.ZipClient
+  - Yort.Zip.InStore.ZipEnvironment
+  - Yort.Zip.InStore.ZipEnvironment.NewZealand
+  - Yort.Zip.InStore.ZipOrderItem
+  - Yort.Zip.InStore.ZipOrderStatus
+  - Yort.Zip.InStore.ZipPaymentFlow
+  - Yort.Zip.InStore.ZipRequestOptionsBase
   langs:
   - csharp
   - vb
@@ -15,8 +27,79 @@ items:
   assemblies:
   - Yort.Zip.InStore
 references:
+- uid: Yort.Zip.InStore.CreateOrderRequest
+  commentId: T:Yort.Zip.InStore.CreateOrderRequest
+  parent: Yort.Zip.InStore
+  name: CreateOrderRequest
+  nameWithType: CreateOrderRequest
+  fullName: Yort.Zip.InStore.CreateOrderRequest
+- uid: Yort.Zip.InStore.CreateOrderResponse
+  commentId: T:Yort.Zip.InStore.CreateOrderResponse
+  name: CreateOrderResponse
+  nameWithType: CreateOrderResponse
+  fullName: Yort.Zip.InStore.CreateOrderResponse
 - uid: Yort.Zip.InStore.IZipClient
   commentId: T:Yort.Zip.InStore.IZipClient
+  parent: Yort.Zip.InStore
   name: IZipClient
   nameWithType: IZipClient
   fullName: Yort.Zip.InStore.IZipClient
+- uid: Yort.Zip.InStore.NewZipOrder
+  commentId: T:Yort.Zip.InStore.NewZipOrder
+  parent: Yort.Zip.InStore
+  name: NewZipOrder
+  nameWithType: NewZipOrder
+  fullName: Yort.Zip.InStore.NewZipOrder
+- uid: Yort.Zip.InStore.OrderStatusRequest
+  commentId: T:Yort.Zip.InStore.OrderStatusRequest
+  parent: Yort.Zip.InStore
+  name: OrderStatusRequest
+  nameWithType: OrderStatusRequest
+  fullName: Yort.Zip.InStore.OrderStatusRequest
+- uid: Yort.Zip.InStore.OrderStatusResponse
+  commentId: T:Yort.Zip.InStore.OrderStatusResponse
+  name: OrderStatusResponse
+  nameWithType: OrderStatusResponse
+  fullName: Yort.Zip.InStore.OrderStatusResponse
+- uid: Yort.Zip.InStore.ZipClient
+  commentId: T:Yort.Zip.InStore.ZipClient
+  name: ZipClient
+  nameWithType: ZipClient
+  fullName: Yort.Zip.InStore.ZipClient
+- uid: Yort.Zip.InStore.ZipEnvironment
+  commentId: T:Yort.Zip.InStore.ZipEnvironment
+  parent: Yort.Zip.InStore
+  name: ZipEnvironment
+  nameWithType: ZipEnvironment
+  fullName: Yort.Zip.InStore.ZipEnvironment
+- uid: Yort.Zip.InStore.ZipEnvironment.NewZealand
+  commentId: T:Yort.Zip.InStore.ZipEnvironment.NewZealand
+  name: ZipEnvironment.NewZealand
+  nameWithType: ZipEnvironment.NewZealand
+  fullName: Yort.Zip.InStore.ZipEnvironment.NewZealand
+- uid: Yort.Zip.InStore.ZipOrderItem
+  commentId: T:Yort.Zip.InStore.ZipOrderItem
+  name: ZipOrderItem
+  nameWithType: ZipOrderItem
+  fullName: Yort.Zip.InStore.ZipOrderItem
+- uid: Yort.Zip.InStore.ZipPaymentFlow
+  commentId: T:Yort.Zip.InStore.ZipPaymentFlow
+  name: ZipPaymentFlow
+  nameWithType: ZipPaymentFlow
+  fullName: Yort.Zip.InStore.ZipPaymentFlow
+- uid: Yort.Zip.InStore.ZipOrderStatus
+  commentId: T:Yort.Zip.InStore.ZipOrderStatus
+  name: ZipOrderStatus
+  nameWithType: ZipOrderStatus
+  fullName: Yort.Zip.InStore.ZipOrderStatus
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase
+  commentId: T:Yort.Zip.InStore.ZipRequestOptionsBase
+  parent: Yort.Zip.InStore
+  name: ZipRequestOptionsBase
+  nameWithType: ZipRequestOptionsBase
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore

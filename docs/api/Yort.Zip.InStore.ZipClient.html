@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IZipClient
+    <title>Class ZipClient
    | Yort.Zip.InStore </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IZipClient
+    <meta name="title" content="Class ZipClient
    | Yort.Zip.InStore ">
     <meta name="generator" content="docfx 2.48.1.0">
     
@@ -94,8 +94,8 @@
                           <li class="">
                             <a href="Yort.Zip.InStore.CreateOrderResponse.html" title="CreateOrderResponse" class="">CreateOrderResponse</a>
                           </li>
-                          <li class="active">
-                            <a href="Yort.Zip.InStore.IZipClient.html" title="IZipClient" class="active">IZipClient</a>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.IZipClient.html" title="IZipClient" class="">IZipClient</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.NewZipOrder.html" title="NewZipOrder" class="">NewZipOrder</a>
@@ -106,8 +106,8 @@
                           <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusResponse.html" title="OrderStatusResponse" class="">OrderStatusResponse</a>
                           </li>
-                          <li class="">
-                            <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="">ZipClient</a>
+                          <li class="active">
+                            <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="active">ZipClient</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.html" title="ZipEnvironment" class="">ZipEnvironment</a>
@@ -135,46 +135,107 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Yort.Zip.InStore.IZipClient">
+            <article class="content wrap" id="_content" data-uid="Yort.Zip.InStore.ZipClient">
   
   
-  <h1 id="Yort_Zip_InStore_IZipClient" data-uid="Yort.Zip.InStore.IZipClient" class="text-break">Interface IZipClient
+  <h1 id="Yort_Zip_InStore_ZipClient" data-uid="Yort.Zip.InStore.ZipClient" class="text-break">Class ZipClient
   </h1>
-  <div class="markdown level0 summary"><p>An interface for the primary object used to access the Zip payments API.</p>
+  <div class="markdown level0 summary"><p>The main class used to interact with the Zip payments API.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ZipClient</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Yort.Zip.InStore.IZipClient.html">IZipClient</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">IDisposable.Dispose()</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Yort.Zip.InStore.html">Yort.Zip.InStore</a></h6>
   <h6><strong>Assembly</strong>: Yort.Zip.InStore.dll</h6>
-  <h5 id="Yort_Zip_InStore_IZipClient_syntax">Syntax</h5>
+  <h5 id="Yort_Zip_InStore_ZipClient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IZipClient : IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class ZipClient : IZipClient, IDisposable</code></pre>
   </div>
-  <h5 id="Yort_Zip_InStore_IZipClient_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>This interface exists primarily to support mocking/stubbing out of the api client for testing purposes. Ideally client code should use this interface as the type for all reference to the implementation instance to support runtime replacement of the implementation.</p>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient__ctor_Yort_Zip_InStore_ZipEnvironment_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.%23ctor(Yort.Zip.InStore.ZipEnvironment)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L35">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient__ctor_" data-uid="Yort.Zip.InStore.ZipClient.#ctor*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient__ctor_Yort_Zip_InStore_ZipEnvironment_" data-uid="Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)">ZipClient(ZipEnvironment)</h4>
+  <div class="markdown level1 summary"><p>Full constructor.</p>
 </div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipClient(ZipEnvironment environment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipEnvironment.html">ZipEnvironment</a></td>
+        <td><span class="parametername">environment</span></td>
+        <td><p>The <a class="xref" href="Yort.Zip.InStore.ZipEnvironment.html">ZipEnvironment</a> for the API to call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L21">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L50">View Source</a>
   </span>
-  <a id="Yort_Zip_InStore_IZipClient_CreateOrderAsync_" data-uid="Yort.Zip.InStore.IZipClient.CreateOrderAsync*"></a>
-  <h4 id="Yort_Zip_InStore_IZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_" data-uid="Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)">CreateOrderAsync(CreateOrderRequest)</h4>
+  <a id="Yort_Zip_InStore_ZipClient_CreateOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.CreateOrderAsync*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)">CreateOrderAsync(CreateOrderRequest)</h4>
   <div class="markdown level1 summary"><p>Creates a new order (payment) with Zip.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;CreateOrderResponse&gt; CreateOrderAsync(CreateOrderRequest request)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;CreateOrderResponse&gt; CreateOrderAsync(CreateOrderRequest request)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -228,19 +289,77 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_Dispose.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L30">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L85">View Source</a>
   </span>
-  <a id="Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_" data-uid="Yort.Zip.InStore.IZipClient.GetOrderStatusAsync*"></a>
-  <h4 id="Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_" data-uid="Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)">GetOrderStatusAsync(OrderStatusRequest)</h4>
+  <a id="Yort_Zip_InStore_ZipClient_Dispose_" data-uid="Yort.Zip.InStore.ZipClient.Dispose*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_Dispose" data-uid="Yort.Zip.InStore.ZipClient.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes this instance and all internal resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <h5 id="Yort_Zip_InStore_ZipClient_Dispose_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_Dispose_System_Boolean_">Dispose(Boolean)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L104">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient_Dispose_" data-uid="Yort.Zip.InStore.ZipClient.Dispose*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_Dispose_System_Boolean_" data-uid="Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Disposes resources used by this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">disposing</span></td>
+        <td><p>True if dispose is being called explicitly by client code, or false if it is being called from a finalizer (indicating only unmanaged resources should be cleaned up).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Zip_InStore_ZipClient_Dispose_System_Boolean__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_Dispose">Dispose()</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L69">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_" data-uid="Yort.Zip.InStore.ZipClient.GetOrderStatusAsync*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_" data-uid="Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)">GetOrderStatusAsync(OrderStatusRequest)</h4>
   <div class="markdown level1 summary"><p>Requests the current status of the specified order from the Zip API.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;OrderStatusResponse&gt; GetOrderStatusAsync(OrderStatusRequest request)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;OrderStatusResponse&gt; GetOrderStatusAsync(OrderStatusRequest request)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -297,9 +416,16 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Yort.Zip.InStore.IZipClient.html">IZipClient</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
   <h3 id="seealso">See Also</h3>
   <div class="seealso">
-      <div><a class="xref" href="Yort.Zip.InStore.ZipClient.html">ZipClient</a></div>
+      <div><a class="xref" href="Yort.Zip.InStore.IZipClient.html">IZipClient</a></div>
   </div>
 </article>
           </div>
@@ -309,10 +435,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

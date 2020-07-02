@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Troy Willmot</Authors>
     <Copyright>Copyright (c), 2020. All rights reserved.</Copyright>
@@ -59,8 +59,17 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'=='Net45'">
+	<ItemGroup Condition="'$(TargetFramework)'=='Net472'">
 		<Reference Include="System.Net.Http" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json">
+			<Version>4.7.2</Version>
+		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup>

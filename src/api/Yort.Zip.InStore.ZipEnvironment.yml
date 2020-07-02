@@ -1,0 +1,547 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore.ZipEnvironment
+  commentId: T:Yort.Zip.InStore.ZipEnvironment
+  id: ZipEnvironment
+  parent: Yort.Zip.InStore
+  children:
+  - Yort.Zip.InStore.ZipEnvironment.#ctor(System.String,System.Uri,System.Uri)
+  - Yort.Zip.InStore.ZipEnvironment.Audience
+  - Yort.Zip.InStore.ZipEnvironment.BaseUrl
+  - Yort.Zip.InStore.ZipEnvironment.TokenEndpoint
+  langs:
+  - csharp
+  - vb
+  name: ZipEnvironment
+  nameWithType: ZipEnvironment
+  fullName: Yort.Zip.InStore.ZipEnvironment
+  type: Class
+  source:
+    remote:
+      path: src/ZipEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ZipEnvironment
+    path: ZipEnvironment.cs
+    startLine: 16
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nRepresents a particular environment for the Zip API (i.e test for NZ merchants, production for AU merchants etc).\n"
+  remarks: "\n<p>You can construct instances of this class in order to support future environments that may come online before the library is updated with support, but for convenience use the pre-built instances provided \nby the static properties on this class, i.e <xref href=\"Yort.Zip.InStore.ZipEnvironment.NewZealand.Test\" data-throw-if-not-resolved=\"false\"></xref> provides the test environment for the NZ region.</p>\n"
+  example: []
+  syntax:
+    content: public class ZipEnvironment
+    content.vb: Public Class ZipEnvironment
+  seealso:
+  - linkId: Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+    commentId: P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+  - linkId: Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+    commentId: P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.Zip.InStore.ZipEnvironment.#ctor(System.String,System.Uri,System.Uri)
+  commentId: M:Yort.Zip.InStore.ZipEnvironment.#ctor(System.String,System.Uri,System.Uri)
+  id: '#ctor(System.String,System.Uri,System.Uri)'
+  parent: Yort.Zip.InStore.ZipEnvironment
+  langs:
+  - csharp
+  - vb
+  name: ZipEnvironment(String, Uri, Uri)
+  nameWithType: ZipEnvironment.ZipEnvironment(String, Uri, Uri)
+  fullName: Yort.Zip.InStore.ZipEnvironment.ZipEnvironment(System.String, System.Uri, System.Uri)
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipEnvironment.cs
+    startLine: 28
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nFull contructor.\n"
+  example: []
+  syntax:
+    content: public ZipEnvironment(string audience, Uri tokenEndpoint, Uri baseUrl)
+    parameters:
+    - id: audience
+      type: System.String
+      description: The &apos;audience&apos; or &apos;API Identifier&apos; required when requesting an auth token for this environment.
+    - id: tokenEndpoint
+      type: System.Uri
+      description: The full URL used to request an auth token to access the API for this endpoint.
+    - id: baseUrl
+      type: System.Uri
+      description: The root url (including common sub-path) to the API for this environment.
+    content.vb: Public Sub New(audience As String, tokenEndpoint As Uri, baseUrl As Uri)
+  overload: Yort.Zip.InStore.ZipEnvironment.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipEnvironment.Audience
+  commentId: P:Yort.Zip.InStore.ZipEnvironment.Audience
+  id: Audience
+  parent: Yort.Zip.InStore.ZipEnvironment
+  langs:
+  - csharp
+  - vb
+  name: Audience
+  nameWithType: ZipEnvironment.Audience
+  fullName: Yort.Zip.InStore.ZipEnvironment.Audience
+  type: Property
+  source:
+    remote:
+      path: src/ZipEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Audience
+    path: ZipEnvironment.cs
+    startLine: 38
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nReturns the &apos;audience&apos;/&apos;API Identifier&apos; associated with this environment.\n"
+  example: []
+  syntax:
+    content: public string Audience { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Audience As String
+  overload: Yort.Zip.InStore.ZipEnvironment.Audience*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Yort.Zip.InStore.ZipEnvironment.TokenEndpoint
+  commentId: P:Yort.Zip.InStore.ZipEnvironment.TokenEndpoint
+  id: TokenEndpoint
+  parent: Yort.Zip.InStore.ZipEnvironment
+  langs:
+  - csharp
+  - vb
+  name: TokenEndpoint
+  nameWithType: ZipEnvironment.TokenEndpoint
+  fullName: Yort.Zip.InStore.ZipEnvironment.TokenEndpoint
+  type: Property
+  source:
+    remote:
+      path: src/ZipEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: TokenEndpoint
+    path: ZipEnvironment.cs
+    startLine: 43
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nReturns the full url used to retrieve an auth token for this environment.\n"
+  example: []
+  syntax:
+    content: public Uri TokenEndpoint { get; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public ReadOnly Property TokenEndpoint As Uri
+  overload: Yort.Zip.InStore.ZipEnvironment.TokenEndpoint*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Yort.Zip.InStore.ZipEnvironment.BaseUrl
+  commentId: P:Yort.Zip.InStore.ZipEnvironment.BaseUrl
+  id: BaseUrl
+  parent: Yort.Zip.InStore.ZipEnvironment
+  langs:
+  - csharp
+  - vb
+  name: BaseUrl
+  nameWithType: ZipEnvironment.BaseUrl
+  fullName: Yort.Zip.InStore.ZipEnvironment.BaseUrl
+  type: Property
+  source:
+    remote:
+      path: src/ZipEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: BaseUrl
+    path: ZipEnvironment.cs
+    startLine: 48
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nReturns base url (including common root path) for this environment.\n"
+  example: []
+  syntax:
+    content: public Uri BaseUrl { get; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public ReadOnly Property BaseUrl As Uri
+  overload: Yort.Zip.InStore.ZipEnvironment.BaseUrl*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+  commentId: P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+  isExternal: true
+- uid: Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+  commentId: P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+  isExternal: true
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Zip.InStore.ZipEnvironment.#ctor*
+  commentId: Overload:Yort.Zip.InStore.ZipEnvironment.#ctor
+  name: ZipEnvironment
+  nameWithType: ZipEnvironment.ZipEnvironment
+  fullName: Yort.Zip.InStore.ZipEnvironment.ZipEnvironment
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: Yort.Zip.InStore.ZipEnvironment.Audience*
+  commentId: Overload:Yort.Zip.InStore.ZipEnvironment.Audience
+  name: Audience
+  nameWithType: ZipEnvironment.Audience
+  fullName: Yort.Zip.InStore.ZipEnvironment.Audience
+- uid: Yort.Zip.InStore.ZipEnvironment.TokenEndpoint*
+  commentId: Overload:Yort.Zip.InStore.ZipEnvironment.TokenEndpoint
+  name: TokenEndpoint
+  nameWithType: ZipEnvironment.TokenEndpoint
+  fullName: Yort.Zip.InStore.ZipEnvironment.TokenEndpoint
+- uid: Yort.Zip.InStore.ZipEnvironment.BaseUrl*
+  commentId: Overload:Yort.Zip.InStore.ZipEnvironment.BaseUrl
+  name: BaseUrl
+  nameWithType: ZipEnvironment.BaseUrl
+  fullName: Yort.Zip.InStore.ZipEnvironment.BaseUrl

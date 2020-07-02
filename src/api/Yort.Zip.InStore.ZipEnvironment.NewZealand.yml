@@ -1,0 +1,441 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore.ZipEnvironment.NewZealand
+  commentId: T:Yort.Zip.InStore.ZipEnvironment.NewZealand
+  id: ZipEnvironment.NewZealand
+  parent: Yort.Zip.InStore
+  children:
+  - Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+  - Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+  langs:
+  - csharp
+  - vb
+  name: ZipEnvironment.NewZealand
+  nameWithType: ZipEnvironment.NewZealand
+  fullName: Yort.Zip.InStore.ZipEnvironment.NewZealand
+  type: Class
+  source:
+    remote:
+      path: src/ZipEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: NewZealand
+    path: ZipEnvironment.cs
+    startLine: 67
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nProvides pre-build environment instances for the New Zealand region.\n"
+  example: []
+  syntax:
+    content: public static class NewZealand
+    content.vb: Public Module NewZealand
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+  commentId: P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+  id: Test
+  parent: Yort.Zip.InStore.ZipEnvironment.NewZealand
+  langs:
+  - csharp
+  - vb
+  name: Test
+  nameWithType: ZipEnvironment.NewZealand.Test
+  fullName: Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+  type: Property
+  source:
+    remote:
+      path: src/ZipEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Test
+    path: ZipEnvironment.cs
+    startLine: 72
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nProvides a pre-configured <xref href=\"Yort.Zip.InStore.ZipEnvironment\" data-throw-if-not-resolved=\"false\"></xref> instance with correct values for the test environment for NZ merchants.\n"
+  example: []
+  syntax:
+    content: public static ZipEnvironment Test { get; }
+    parameters: []
+    return:
+      type: Yort.Zip.InStore.ZipEnvironment
+    content.vb: Public Shared ReadOnly Property Test As ZipEnvironment
+  overload: Yort.Zip.InStore.ZipEnvironment.NewZealand.Test*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+  commentId: P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+  id: Production
+  parent: Yort.Zip.InStore.ZipEnvironment.NewZealand
+  langs:
+  - csharp
+  - vb
+  name: Production
+  nameWithType: ZipEnvironment.NewZealand.Production
+  fullName: Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+  type: Property
+  source:
+    remote:
+      path: src/ZipEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Production
+    path: ZipEnvironment.cs
+    startLine: 77
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nProvides a pre-configured <xref href=\"Yort.Zip.InStore.ZipEnvironment\" data-throw-if-not-resolved=\"false\"></xref> instance with correct values for the production environment for NZ merchants.\n"
+  example: []
+  syntax:
+    content: public static ZipEnvironment Production { get; }
+    parameters: []
+    return:
+      type: Yort.Zip.InStore.ZipEnvironment
+    content.vb: Public Shared ReadOnly Property Production As ZipEnvironment
+  overload: Yort.Zip.InStore.ZipEnvironment.NewZealand.Production*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Zip.InStore.ZipEnvironment
+  commentId: T:Yort.Zip.InStore.ZipEnvironment
+  parent: Yort.Zip.InStore
+  name: ZipEnvironment
+  nameWithType: ZipEnvironment
+  fullName: Yort.Zip.InStore.ZipEnvironment
+- uid: Yort.Zip.InStore.ZipEnvironment.NewZealand.Test*
+  commentId: Overload:Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+  name: Test
+  nameWithType: ZipEnvironment.NewZealand.Test
+  fullName: Yort.Zip.InStore.ZipEnvironment.NewZealand.Test
+- uid: Yort.Zip.InStore.ZipEnvironment.NewZealand.Production*
+  commentId: Overload:Yort.Zip.InStore.ZipEnvironment.NewZealand.Production
+  name: Production
+  nameWithType: ZipEnvironment.NewZealand.Production
+  fullName: Yort.Zip.InStore.ZipEnvironment.NewZealand.Production

@@ -4,6 +4,51 @@
         <name>Yort.Zip.InStore</name>
     </assembly>
     <members>
+        <member name="T:Yort.Zip.InStore.CreateOrderRequest">
+            <summary>
+            Contains details of an order (request for payment) to be created within the Zip system.
+            </summary>
+            <seealso cref="T:Yort.Zip.InStore.CreateOrderRequest"/>
+            <seealso cref="M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)"/>
+        </member>
+        <member name="P:Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck">
+            <summary>
+            Determines if Zip is instructed to check if the <see cref="P:Yort.Zip.InStore.NewZipOrder.MerchantReference"/> has already been used and if so behave in an idempotent fashion (return the original response instead of creating a duplicate order).
+            </summary>
+            <remarks>
+            <para>The default value is true, which enables the duplicate checking and idempotent responses. Set to false only if you want to allow duplicate orders with the same merchant reference to be created.</para>
+            <para>If this is set to false and a merchant reference is reused, a new order with a new Zip order id will be created.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Zip.InStore.CreateOrderRequest.Order">
+            <summary>
+            Specifies the details of the new Zip order to be created.
+            </summary>
+        </member>
+        <member name="M:Yort.Zip.InStore.CreateOrderRequest.Validate">
+            <summary>
+            Validates this request as much as possible prior to sending it to the Zip API.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <see cref="P:Yort.Zip.InStore.CreateOrderRequest.Order"/> or any of it's required sub-properties are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if any of the sub-properties of <see cref="P:Yort.Zip.InStore.CreateOrderRequest.Order"/> are determined to be invalid.</exception>
+        </member>
+        <member name="T:Yort.Zip.InStore.CreateOrderResponse">
+            <summary>
+            Contains the initial details of an order created in the Zip system.
+            </summary>
+            <seealso cref="T:Yort.Zip.InStore.NewZipOrder"/>
+            <seealso cref="M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)"/>
+        </member>
+        <member name="P:Yort.Zip.InStore.CreateOrderResponse.OrderId">
+            <summary>
+            Gets or sets the unique id of the newly created order (or existing order using the same merchant reference, see <see cref="P:Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck"/>) within the Zip system.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.CreateOrderResponse.OrderExpiry">
+            <summary>
+            Gets or sets the expiry time of the order as returned by the Zip API.
+            </summary>
+        </member>
         <member name="T:Yort.Zip.InStore.ErrorMessage">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -20,12 +65,297 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="T:OssLibrary.IZipClient">
+        <member name="T:Yort.Zip.InStore.IZipClient">
             <summary>
             An interface for the primary object used to access the Zip payments API.
             </summary>
             <remarks>
             <para>This interface exists primarily to support mocking/stubbing out of the api client for testing purposes. Ideally client code should use this interface as the type for all reference to the implementation instance to support runtime replacement of the implementation.</para>
+            </remarks>
+            <seealso cref="T:Yort.Zip.InStore.ZipClient"/>
+        </member>
+        <member name="M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)">
+            <summary>
+            Creates a new order (payment) with Zip.
+            </summary>
+            <param name="request">Details of the order to be created.</param>
+            <returns>Details of the created order if succesful, otherwise throws an exception.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+        </member>
+        <member name="M:Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)">
+            <summary>
+            Requests the current status of the specified order from the Zip API.
+            </summary>
+            <param name="request">A <see cref="T:Yort.Zip.InStore.OrderStatusRequest"/> providing details of the order to return the status of.</param>
+            <returns>If successful a <see cref="T:Yort.Zip.InStore.OrderStatusResponse"/> containing details of the specified order's status. Otherwise throws an exception.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+        </member>
+        <member name="T:Yort.Zip.InStore.NewZipOrder">
+            <summary>
+            Contains details of an order (request for payment) to be created within the Zip system.
+            </summary>
+            <seealso cref="T:Yort.Zip.InStore.CreateOrderResponse"/>
+            <seealso cref="M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)"/>
+        </member>
+        <member name="P:Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode">
+            <summary>
+            The pre-approval code generated by the csutomer using their Zip app or web login. Required.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.NewZipOrder.Operator">
+            <summary>
+            A reference (name or id) of the staff person serving the customer at the POS. Required.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.NewZipOrder.Amount">
+            <summary>
+            The amount to be charged to the consumer by Zip. Required. Must be a positive, non-zero value.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.NewZipOrder.MerchantReference">
+            <summary>
+            The unique reference for this order as generated by the merchant. Required.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.NewZipOrder.PaymentFlow">
+            <summary>
+            Determines whether this order results in a payment or an authorisation which must be subsequently confirmed. Required.
+            </summary>
+            <remarks>
+            <para>The default is <see cref="F:Yort.Zip.InStore.ZipPaymentFlow.Payment"/>.</para>
+            </remarks>
+            <seealso cref="T:Yort.Zip.InStore.ZipPaymentFlow"/>
+        </member>
+        <member name="P:Yort.Zip.InStore.NewZipOrder.Items">
+            <summary>
+            A summary of the items purchased on this order which will be displayed to the end consumer as part of their purchase history. Optional.
+            </summary>
+            <remarks>
+            <para>This collection defaults to null, to add items first set it to either an empty collection or a pre-loaded collection of <see cref="T:Yort.Zip.InStore.ZipOrderItem"/> instances.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Zip.InStore.OrderStatusRequest">
+            <summary>
+            Represents details of a request to retrieve the current status of an order in the Zip system.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.OrderStatusRequest.OrderId">
+            <summary>
+            The unique id of the order within the Zip system, as returned in <see cref="P:Yort.Zip.InStore.CreateOrderResponse.OrderId"/>.
+            </summary>
+        </member>
+        <member name="M:Yort.Zip.InStore.OrderStatusRequest.Validate">
+            <summary>
+            Validates this request as much as possible prior to sending it to the Zip API.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <see cref="P:Yort.Zip.InStore.OrderStatusRequest.OrderId"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <see cref="P:Yort.Zip.InStore.OrderStatusRequest.OrderId"/> is blank or contains only whitespace.</exception>
+        </member>
+        <member name="T:Yort.Zip.InStore.OrderStatusResponse">
+            <summary>
+            Represents the response of a successful <see cref="M:Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)"/> call.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.OrderStatusResponse.OrderNumber">
+            <summary>
+            The human readable form of a Zip order id.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.OrderStatusResponse.Status">
+            <summary>
+            The status of the order.
+            </summary>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipClient">
+            <summary>
+            The main class used to interact with the Zip payments API.
+            </summary>
+            <seealso cref="T:Yort.Zip.InStore.IZipClient"/>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)">
+            <summary>
+            Full constructor.
+            </summary>
+            <param name="environment">The <see cref="T:Yort.Zip.InStore.ZipEnvironment"/> for the API to call.</param>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)">
+            <summary>
+            Creates a new order (payment) with Zip.
+            </summary>
+            <param name="request">Details of the order to be created.</param>
+            <returns>Details of the created order if succesful, otherwise throws an exception.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)">
+            <summary>
+            Requests the current status of the specified order from the Zip API.
+            </summary>
+            <param name="request">A <see cref="T:Yort.Zip.InStore.OrderStatusRequest"/> providing details of the order to return the status of.</param>
+            <returns>If successful a <see cref="T:Yort.Zip.InStore.OrderStatusResponse"/> containing details of the specified order's status. Otherwise throws an exception.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipClient.Dispose">
+            <summary>
+            Disposes this instance and all internal resources.
+            </summary>
+            <seealso cref="M:Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)"/>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by this instance.
+            </summary>
+            <param name="disposing">True if dispose is being called explicitly by client code, or false if it is being called from a finalizer (indicating only unmanaged resources should be cleaned up).</param>
+            <seealso cref="M:Yort.Zip.InStore.ZipClient.Dispose"/>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipEnvironment">
+            <summary>
+            Represents a particular environment for the Zip API (i.e test for NZ merchants, production for AU merchants etc).
+            </summary>
+            <remarks>
+            <para>You can construct instances of this class in order to support future environments that may come online before the library is updated with support, but for convenience use the pre-built instances provided 
+            by the static properties on this class, i.e <see cref="P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Test"/> provides the test environment for the NZ region.</para>
+            </remarks>
+            <seealso cref="P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Production"/>
+            <seealso cref="P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Test"/>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipEnvironment.#ctor(System.String,System.Uri,System.Uri)">
+            <summary>
+            Full contructor.
+            </summary>
+            <param name="audience">The 'audience' or 'API Identifier' required when requesting an auth token for this environment.</param>
+            <param name="tokenEndpoint">The full URL used to request an auth token to access the API for this endpoint.</param>
+            <param name="baseUrl">The root url (including common sub-path) to the API for this environment.</param>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipEnvironment.Audience">
+            <summary>
+            Returns the 'audience'/'API Identifier' associated with this environment.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipEnvironment.TokenEndpoint">
+            <summary>
+            Returns the full url used to retrieve an auth token for this environment.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipEnvironment.BaseUrl">
+            <summary>
+            Returns base url (including common root path) for this environment.
+            </summary>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipEnvironment.NewZealand">
+            <summary>
+            Provides pre-build environment instances for the New Zealand region.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Test">
+            <summary>
+            Provides a pre-configured <see cref="T:Yort.Zip.InStore.ZipEnvironment"/> instance with correct values for the test environment for NZ merchants.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipEnvironment.NewZealand.Production">
+            <summary>
+            Provides a pre-configured <see cref="T:Yort.Zip.InStore.ZipEnvironment"/> instance with correct values for the production environment for NZ merchants.
+            </summary>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipOrderItem">
+            <summary>
+            Represents information about an item purchased on a Zip order, used to show the end-consumer details of their purchase in the Zip consumer portal.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipOrderItem.Description">
+            <summary>
+            A description of the item.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipOrderItem.Name">
+            <summary>
+            A short name of the item.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipOrderItem.Sku">
+            <summary>
+            The unique sku code of the item.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipOrderItem.Quantity">
+            <summary>
+            The quantity of this item purchased.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipOrderItem.Price">
+            <summary>
+            The price the item was purchased at.
+            </summary>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipPaymentFlow">
+            <summary>
+            A class that exposes constants for the known allowed values of the <see cref="P:Yort.Zip.InStore.NewZipOrder.PaymentFlow"/> property.
+            </summary>
+        </member>
+        <member name="F:Yort.Zip.InStore.ZipPaymentFlow.Payment">
+            <summary>
+            Indicates that payment should be fully completed without the requirement to 'capture' the outcome.
+            </summary>
+        </member>
+        <member name="F:Yort.Zip.InStore.ZipPaymentFlow.Auth">
+            <summary>
+            Indicates that an auth should be taken by the initial order creation, and a subsequent call to commit or rollback the payment should be made.
+            </summary>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipOrderStatus">
+            <summary>
+            Provides a list of known statuses for Zip orders.
+            </summary>
+        </member>
+        <member name="F:Yort.Zip.InStore.ZipOrderStatus.Pending">
+            <summary>
+            Indicates the order is still pending approval or cancellation by the system/consumer. The client should continue polling.
+            </summary>
+        </member>
+        <member name="F:Yort.Zip.InStore.ZipOrderStatus.Approved">
+            <summary>
+            The order has been approved and paid for by the customer. This status is relevant to an order that has been created with the <see cref="F:Yort.Zip.InStore.ZipPaymentFlow.Auth"/> flow.
+            </summary>
+        </member>
+        <member name="F:Yort.Zip.InStore.ZipOrderStatus.Complete">
+            <summary>
+            The order has been paid and the order is complete. This means either the <see cref="F:Yort.Zip.InStore.ZipPaymentFlow.Payment"/> flow as used and payment successful, or the the <see cref="F:Yort.Zip.InStore.ZipPaymentFlow.Auth"/> was used and the payment was committed.
+            </summary>
+        </member>
+        <member name="F:Yort.Zip.InStore.ZipOrderStatus.Declined">
+            <summary>
+            The order was declined by the user.
+            </summary>
+        </member>
+        <member name="F:Yort.Zip.InStore.ZipOrderStatus.Expired">
+            <summary>
+            The order has timed out.
+            </summary>
+        </member>
+        <member name="F:Yort.Zip.InStore.ZipOrderStatus.Cancelled">
+            <summary>
+            The order has been cancelled either prior to the customer approving/declining, or the order has been rolled back by the merchant after a succesful <see cref="F:Yort.Zip.InStore.ZipPaymentFlow.Auth"/>.
+            </summary>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipOrderStatus.IsTerminalStatus(System.String)">
+            <summary>
+            Returns true if the status provider is a known, final status - that is a status that should not change again.
+            </summary>
+            <param name="status">The status to check.</param>
+            <returns>True if the status is final, otherwise false.</returns>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipRequestOptionsBase">
+            <summary>
+            Base class for request options classes, providing a common and extensible interface for all requests.
+            </summary>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipRequestOptionsBase.Validate">
+            <summary>
+            Validates the properties of this request match the known design time requirements, i.e are all required properties provided.
+            </summary>
+            <remarks>
+            <para>Throws exceptions (typically <see cref="T:System.ArgumentException"/>, <see cref="T:System.ArgumentNullException"/> or <see cref="T:System.ArgumentOutOfRangeException"/>) if any property is in a known invalid state.</para>
             </remarks>
         </member>
     </members>

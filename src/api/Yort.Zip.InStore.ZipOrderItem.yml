@@ -1,0 +1,566 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore.ZipOrderItem
+  commentId: T:Yort.Zip.InStore.ZipOrderItem
+  id: ZipOrderItem
+  parent: Yort.Zip.InStore
+  children:
+  - Yort.Zip.InStore.ZipOrderItem.Description
+  - Yort.Zip.InStore.ZipOrderItem.Name
+  - Yort.Zip.InStore.ZipOrderItem.Price
+  - Yort.Zip.InStore.ZipOrderItem.Quantity
+  - Yort.Zip.InStore.ZipOrderItem.Sku
+  langs:
+  - csharp
+  - vb
+  name: ZipOrderItem
+  nameWithType: ZipOrderItem
+  fullName: Yort.Zip.InStore.ZipOrderItem
+  type: Class
+  source:
+    remote:
+      path: src/ZipOrderItem.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ZipOrderItem
+    path: ZipOrderItem.cs
+    startLine: 9
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nRepresents information about an item purchased on a Zip order, used to show the end-consumer details of their purchase in the Zip consumer portal.\n"
+  example: []
+  syntax:
+    content: public class ZipOrderItem
+    content.vb: Public Class ZipOrderItem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.Zip.InStore.ZipOrderItem.Description
+  commentId: P:Yort.Zip.InStore.ZipOrderItem.Description
+  id: Description
+  parent: Yort.Zip.InStore.ZipOrderItem
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ZipOrderItem.Description
+  fullName: Yort.Zip.InStore.ZipOrderItem.Description
+  type: Property
+  source:
+    remote:
+      path: src/ZipOrderItem.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Description
+    path: ZipOrderItem.cs
+    startLine: 14
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nA description of the item.\n"
+  example: []
+  syntax:
+    content: public string Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: Yort.Zip.InStore.ZipOrderItem.Description*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipOrderItem.Name
+  commentId: P:Yort.Zip.InStore.ZipOrderItem.Name
+  id: Name
+  parent: Yort.Zip.InStore.ZipOrderItem
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ZipOrderItem.Name
+  fullName: Yort.Zip.InStore.ZipOrderItem.Name
+  type: Property
+  source:
+    remote:
+      path: src/ZipOrderItem.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Name
+    path: ZipOrderItem.cs
+    startLine: 19
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nA short name of the item.\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Yort.Zip.InStore.ZipOrderItem.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipOrderItem.Sku
+  commentId: P:Yort.Zip.InStore.ZipOrderItem.Sku
+  id: Sku
+  parent: Yort.Zip.InStore.ZipOrderItem
+  langs:
+  - csharp
+  - vb
+  name: Sku
+  nameWithType: ZipOrderItem.Sku
+  fullName: Yort.Zip.InStore.ZipOrderItem.Sku
+  type: Property
+  source:
+    remote:
+      path: src/ZipOrderItem.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Sku
+    path: ZipOrderItem.cs
+    startLine: 23
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nThe unique sku code of the item.\n"
+  example: []
+  syntax:
+    content: public string Sku { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Sku As String
+  overload: Yort.Zip.InStore.ZipOrderItem.Sku*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipOrderItem.Quantity
+  commentId: P:Yort.Zip.InStore.ZipOrderItem.Quantity
+  id: Quantity
+  parent: Yort.Zip.InStore.ZipOrderItem
+  langs:
+  - csharp
+  - vb
+  name: Quantity
+  nameWithType: ZipOrderItem.Quantity
+  fullName: Yort.Zip.InStore.ZipOrderItem.Quantity
+  type: Property
+  source:
+    remote:
+      path: src/ZipOrderItem.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Quantity
+    path: ZipOrderItem.cs
+    startLine: 27
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nThe quantity of this item purchased.\n"
+  example: []
+  syntax:
+    content: public string Quantity { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Quantity As String
+  overload: Yort.Zip.InStore.ZipOrderItem.Quantity*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipOrderItem.Price
+  commentId: P:Yort.Zip.InStore.ZipOrderItem.Price
+  id: Price
+  parent: Yort.Zip.InStore.ZipOrderItem
+  langs:
+  - csharp
+  - vb
+  name: Price
+  nameWithType: ZipOrderItem.Price
+  fullName: Yort.Zip.InStore.ZipOrderItem.Price
+  type: Property
+  source:
+    remote:
+      path: src/ZipOrderItem.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Price
+    path: ZipOrderItem.cs
+    startLine: 31
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nThe price the item was purchased at.\n"
+  example: []
+  syntax:
+    content: public string Price { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Price As String
+  overload: Yort.Zip.InStore.ZipOrderItem.Price*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Zip.InStore.ZipOrderItem.Description*
+  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Description
+  name: Description
+  nameWithType: ZipOrderItem.Description
+  fullName: Yort.Zip.InStore.ZipOrderItem.Description
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Zip.InStore.ZipOrderItem.Name*
+  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Name
+  name: Name
+  nameWithType: ZipOrderItem.Name
+  fullName: Yort.Zip.InStore.ZipOrderItem.Name
+- uid: Yort.Zip.InStore.ZipOrderItem.Sku*
+  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Sku
+  name: Sku
+  nameWithType: ZipOrderItem.Sku
+  fullName: Yort.Zip.InStore.ZipOrderItem.Sku
+- uid: Yort.Zip.InStore.ZipOrderItem.Quantity*
+  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Quantity
+  name: Quantity
+  nameWithType: ZipOrderItem.Quantity
+  fullName: Yort.Zip.InStore.ZipOrderItem.Quantity
+- uid: Yort.Zip.InStore.ZipOrderItem.Price*
+  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Price
+  name: Price
+  nameWithType: ZipOrderItem.Price
+  fullName: Yort.Zip.InStore.ZipOrderItem.Price
