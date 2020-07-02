@@ -31,8 +31,8 @@ items:
     content: public class CreateOrderResponse
     content.vb: Public Class CreateOrderResponse
   seealso:
-  - linkId: Yort.Zip.InStore.NewZipOrder
-    commentId: T:Yort.Zip.InStore.NewZipOrder
+  - linkId: Yort.Zip.InStore.ZipOrder
+    commentId: T:Yort.Zip.InStore.ZipOrder
   - linkId: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
     commentId: M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
   inheritance:
@@ -126,12 +126,12 @@ items:
   modifiers.vb:
   - Public
 references:
-- uid: Yort.Zip.InStore.NewZipOrder
-  commentId: T:Yort.Zip.InStore.NewZipOrder
+- uid: Yort.Zip.InStore.ZipOrder
+  commentId: T:Yort.Zip.InStore.ZipOrder
   parent: Yort.Zip.InStore
-  name: NewZipOrder
-  nameWithType: NewZipOrder
-  fullName: Yort.Zip.InStore.NewZipOrder
+  name: ZipOrder
+  nameWithType: ZipOrder
+  fullName: Yort.Zip.InStore.ZipOrder
 - uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
   commentId: M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
   parent: Yort.Zip.InStore.IZipClient

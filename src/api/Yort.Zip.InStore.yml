@@ -4,15 +4,21 @@ items:
   commentId: N:Yort.Zip.InStore
   id: Yort.Zip.InStore
   children:
+  - Yort.Zip.InStore.CancelOrderRequest
+  - Yort.Zip.InStore.CancelOrderResponse
+  - Yort.Zip.InStore.CommitOrderRequest
   - Yort.Zip.InStore.CreateOrderRequest
   - Yort.Zip.InStore.CreateOrderResponse
   - Yort.Zip.InStore.IZipClient
-  - Yort.Zip.InStore.NewZipOrder
   - Yort.Zip.InStore.OrderStatusRequest
   - Yort.Zip.InStore.OrderStatusResponse
+  - Yort.Zip.InStore.RefundOrderRequest
+  - Yort.Zip.InStore.RefundOrderResponse
+  - Yort.Zip.InStore.RollbackOrderRequest
   - Yort.Zip.InStore.ZipClient
   - Yort.Zip.InStore.ZipEnvironment
   - Yort.Zip.InStore.ZipEnvironment.NewZealand
+  - Yort.Zip.InStore.ZipOrder
   - Yort.Zip.InStore.ZipOrderItem
   - Yort.Zip.InStore.ZipOrderStatus
   - Yort.Zip.InStore.ZipPaymentFlow
@@ -27,6 +33,23 @@ items:
   assemblies:
   - Yort.Zip.InStore
 references:
+- uid: Yort.Zip.InStore.CancelOrderRequest
+  commentId: T:Yort.Zip.InStore.CancelOrderRequest
+  parent: Yort.Zip.InStore
+  name: CancelOrderRequest
+  nameWithType: CancelOrderRequest
+  fullName: Yort.Zip.InStore.CancelOrderRequest
+- uid: Yort.Zip.InStore.CancelOrderResponse
+  commentId: T:Yort.Zip.InStore.CancelOrderResponse
+  name: CancelOrderResponse
+  nameWithType: CancelOrderResponse
+  fullName: Yort.Zip.InStore.CancelOrderResponse
+- uid: Yort.Zip.InStore.CommitOrderRequest
+  commentId: T:Yort.Zip.InStore.CommitOrderRequest
+  parent: Yort.Zip.InStore
+  name: CommitOrderRequest
+  nameWithType: CommitOrderRequest
+  fullName: Yort.Zip.InStore.CommitOrderRequest
 - uid: Yort.Zip.InStore.CreateOrderRequest
   commentId: T:Yort.Zip.InStore.CreateOrderRequest
   parent: Yort.Zip.InStore
@@ -44,12 +67,6 @@ references:
   name: IZipClient
   nameWithType: IZipClient
   fullName: Yort.Zip.InStore.IZipClient
-- uid: Yort.Zip.InStore.NewZipOrder
-  commentId: T:Yort.Zip.InStore.NewZipOrder
-  parent: Yort.Zip.InStore
-  name: NewZipOrder
-  nameWithType: NewZipOrder
-  fullName: Yort.Zip.InStore.NewZipOrder
 - uid: Yort.Zip.InStore.OrderStatusRequest
   commentId: T:Yort.Zip.InStore.OrderStatusRequest
   parent: Yort.Zip.InStore
@@ -61,6 +78,23 @@ references:
   name: OrderStatusResponse
   nameWithType: OrderStatusResponse
   fullName: Yort.Zip.InStore.OrderStatusResponse
+- uid: Yort.Zip.InStore.RefundOrderRequest
+  commentId: T:Yort.Zip.InStore.RefundOrderRequest
+  parent: Yort.Zip.InStore
+  name: RefundOrderRequest
+  nameWithType: RefundOrderRequest
+  fullName: Yort.Zip.InStore.RefundOrderRequest
+- uid: Yort.Zip.InStore.RefundOrderResponse
+  commentId: T:Yort.Zip.InStore.RefundOrderResponse
+  name: RefundOrderResponse
+  nameWithType: RefundOrderResponse
+  fullName: Yort.Zip.InStore.RefundOrderResponse
+- uid: Yort.Zip.InStore.RollbackOrderRequest
+  commentId: T:Yort.Zip.InStore.RollbackOrderRequest
+  parent: Yort.Zip.InStore
+  name: RollbackOrderRequest
+  nameWithType: RollbackOrderRequest
+  fullName: Yort.Zip.InStore.RollbackOrderRequest
 - uid: Yort.Zip.InStore.ZipClient
   commentId: T:Yort.Zip.InStore.ZipClient
   name: ZipClient
@@ -77,21 +111,27 @@ references:
   name: ZipEnvironment.NewZealand
   nameWithType: ZipEnvironment.NewZealand
   fullName: Yort.Zip.InStore.ZipEnvironment.NewZealand
+- uid: Yort.Zip.InStore.ZipOrder
+  commentId: T:Yort.Zip.InStore.ZipOrder
+  parent: Yort.Zip.InStore
+  name: ZipOrder
+  nameWithType: ZipOrder
+  fullName: Yort.Zip.InStore.ZipOrder
 - uid: Yort.Zip.InStore.ZipOrderItem
   commentId: T:Yort.Zip.InStore.ZipOrderItem
   name: ZipOrderItem
   nameWithType: ZipOrderItem
   fullName: Yort.Zip.InStore.ZipOrderItem
-- uid: Yort.Zip.InStore.ZipPaymentFlow
-  commentId: T:Yort.Zip.InStore.ZipPaymentFlow
-  name: ZipPaymentFlow
-  nameWithType: ZipPaymentFlow
-  fullName: Yort.Zip.InStore.ZipPaymentFlow
 - uid: Yort.Zip.InStore.ZipOrderStatus
   commentId: T:Yort.Zip.InStore.ZipOrderStatus
   name: ZipOrderStatus
   nameWithType: ZipOrderStatus
   fullName: Yort.Zip.InStore.ZipOrderStatus
+- uid: Yort.Zip.InStore.ZipPaymentFlow
+  commentId: T:Yort.Zip.InStore.ZipPaymentFlow
+  name: ZipPaymentFlow
+  nameWithType: ZipPaymentFlow
+  fullName: Yort.Zip.InStore.ZipPaymentFlow
 - uid: Yort.Zip.InStore.ZipRequestOptionsBase
   commentId: T:Yort.Zip.InStore.ZipRequestOptionsBase
   parent: Yort.Zip.InStore

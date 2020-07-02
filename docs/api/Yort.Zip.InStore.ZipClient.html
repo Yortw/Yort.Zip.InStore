@@ -89,6 +89,15 @@
                         
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Yort.Zip.InStore.CancelOrderRequest.html" title="CancelOrderRequest" class="">CancelOrderRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CancelOrderResponse.html" title="CancelOrderResponse" class="">CancelOrderResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CommitOrderRequest.html" title="CommitOrderRequest" class="">CommitOrderRequest</a>
+                          </li>
+                          <li class="">
                             <a href="Yort.Zip.InStore.CreateOrderRequest.html" title="CreateOrderRequest" class="">CreateOrderRequest</a>
                           </li>
                           <li class="">
@@ -98,13 +107,19 @@
                             <a href="Yort.Zip.InStore.IZipClient.html" title="IZipClient" class="">IZipClient</a>
                           </li>
                           <li class="">
-                            <a href="Yort.Zip.InStore.NewZipOrder.html" title="NewZipOrder" class="">NewZipOrder</a>
-                          </li>
-                          <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusRequest.html" title="OrderStatusRequest" class="">OrderStatusRequest</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusResponse.html" title="OrderStatusResponse" class="">OrderStatusResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RefundOrderRequest.html" title="RefundOrderRequest" class="">RefundOrderRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RefundOrderResponse.html" title="RefundOrderResponse" class="">RefundOrderResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RollbackOrderRequest.html" title="RollbackOrderRequest" class="">RollbackOrderRequest</a>
                           </li>
                           <li class="active">
                             <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="active">ZipClient</a>
@@ -114,6 +129,9 @@
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.NewZealand.html" title="ZipEnvironment.NewZealand" class="">ZipEnvironment.NewZealand</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.ZipOrder.html" title="ZipOrder" class="">ZipOrder</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipOrderItem.html" title="ZipOrderItem" class="">ZipOrderItem</a>
@@ -223,6 +241,106 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_CancelOrderAsync_Yort_Zip_InStore_CancelOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L67">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient_CancelOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.CancelOrderAsync*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_CancelOrderAsync_Yort_Zip_InStore_CancelOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)">CancelOrderAsync(CancelOrderRequest)</h4>
+  <div class="markdown level1 summary"><p>Requests a previously created order be cancelled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CancelOrderResponse&gt; CancelOrderAsync(CancelOrderRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.CancelOrderRequest.html">CancelOrderRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.CancelOrderRequest.html">CancelOrderRequest</a> providing details of the order to be cancelled and operation/terminal that is requesting cancellation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Zip.InStore.CancelOrderResponse.html">CancelOrderResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.CancelOrderResponse.html">CancelOrderResponse</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_CommitOrderAsync_Yort_Zip_InStore_CommitOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L144">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient_CommitOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.CommitOrderAsync*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_CommitOrderAsync_Yort_Zip_InStore_CommitOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)">CommitOrderAsync(CommitOrderRequest)</h4>
+  <div class="markdown level1 summary"><p>Commits (completes) an order previously created via <a class="xref" href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_">CreateOrderAsync(CreateOrderRequest)</a> using the <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Auth">Auth</a> flow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task CommitOrderAsync(CommitOrderRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.CommitOrderRequest.html">CommitOrderRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.CommitOrderRequest.html">CommitOrderRequest</a> containing details of the order to commit.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth completed succesfully. Use the <a class="xref" href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_">GetOrderStatusAsync(OrderStatusRequest)</a> to confirm.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -292,7 +410,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_Dispose.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L85">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L101">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_Dispose_" data-uid="Yort.Zip.InStore.ZipClient.Dispose*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_Dispose" data-uid="Yort.Zip.InStore.ZipClient.Dispose">Dispose()</h4>
@@ -312,7 +430,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L104">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L178">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_Dispose_" data-uid="Yort.Zip.InStore.ZipClient.Dispose*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_Dispose_System_Boolean_" data-uid="Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)">Dispose(Boolean)</h4>
@@ -350,7 +468,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L69">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L85">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_" data-uid="Yort.Zip.InStore.ZipClient.GetOrderStatusAsync*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_" data-uid="Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)">GetOrderStatusAsync(OrderStatusRequest)</h4>
@@ -412,6 +530,106 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
         <td><p>Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_RefundOrderAsync_Yort_Zip_InStore_RefundOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L120">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient_RefundOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.RefundOrderAsync*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_RefundOrderAsync_Yort_Zip_InStore_RefundOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)">RefundOrderAsync(RefundOrderRequest)</h4>
+  <div class="markdown level1 summary"><p>Refunds some or all of the money taken as part of a previously completed order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;RefundOrderResponse&gt; RefundOrderAsync(RefundOrderRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.RefundOrderRequest.html">RefundOrderRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.RefundOrderRequest.html">RefundOrderRequest</a> specifying details of the refund to create and the order to create it against.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Zip.InStore.RefundOrderResponse.html">RefundOrderResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.RefundOrderResponse.html">RefundOrderResponse</a> with details of a succesful outcome.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_RollbackOrderAsync_Yort_Zip_InStore_RollbackOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L161">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient_RollbackOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.RollbackOrderAsync*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_RollbackOrderAsync_Yort_Zip_InStore_RollbackOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)">RollbackOrderAsync(RollbackOrderRequest)</h4>
+  <div class="markdown level1 summary"><p>Rolls back (cancels/undoes) an order previously created via <a class="xref" href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_">CreateOrderAsync(CreateOrderRequest)</a> using the <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Auth">Auth</a> flow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task RollbackOrderAsync(RollbackOrderRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.RollbackOrderRequest.html">RollbackOrderRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.RollbackOrderRequest.html">RollbackOrderRequest</a> containing details of the order to rollback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <a class="xref" href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_">GetOrderStatusAsync(OrderStatusRequest)</a> to confirm.</p>
 </td>
       </tr>
     </tbody>

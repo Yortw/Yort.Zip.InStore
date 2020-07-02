@@ -1,46 +1,43 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Yort.Zip.InStore.CreateOrderRequest
-  commentId: T:Yort.Zip.InStore.CreateOrderRequest
-  id: CreateOrderRequest
+- uid: Yort.Zip.InStore.RefundOrderRequest
+  commentId: T:Yort.Zip.InStore.RefundOrderRequest
+  id: RefundOrderRequest
   parent: Yort.Zip.InStore
   children:
-  - Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
-  - Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders
-  - Yort.Zip.InStore.CreateOrderRequest.Order
-  - Yort.Zip.InStore.CreateOrderRequest.StoreId
-  - Yort.Zip.InStore.CreateOrderRequest.TerminalId
-  - Yort.Zip.InStore.CreateOrderRequest.Validate
+  - Yort.Zip.InStore.RefundOrderRequest.Amount
+  - Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders
+  - Yort.Zip.InStore.RefundOrderRequest.MerchantRefundReference
+  - Yort.Zip.InStore.RefundOrderRequest.Operator
+  - Yort.Zip.InStore.RefundOrderRequest.OrderId
+  - Yort.Zip.InStore.RefundOrderRequest.StoreId
+  - Yort.Zip.InStore.RefundOrderRequest.TerminalId
+  - Yort.Zip.InStore.RefundOrderRequest.Validate
   langs:
   - csharp
   - vb
-  name: CreateOrderRequest
-  nameWithType: CreateOrderRequest
-  fullName: Yort.Zip.InStore.CreateOrderRequest
+  name: RefundOrderRequest
+  nameWithType: RefundOrderRequest
+  fullName: Yort.Zip.InStore.RefundOrderRequest
   type: Class
   source:
     remote:
-      path: src/CreateOrderRequest.cs
+      path: src/RefundOrderRequest.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: CreateOrderRequest
-    path: CreateOrderRequest.cs
-    startLine: 13
+    id: RefundOrderRequest
+    path: RefundOrderRequest.cs
+    startLine: 9
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nContains details of an order (request for payment) to be created within the Zip system.\n"
+  summary: "\nRepresents a request to refund all or part of a previously completed order.\n"
   example: []
   syntax:
-    content: 'public class CreateOrderRequest : ZipRequestOptionsBase'
+    content: 'public class RefundOrderRequest : ZipRequestOptionsBase'
     content.vb: >-
-      Public Class CreateOrderRequest
+      Public Class RefundOrderRequest
           Inherits ZipRequestOptionsBase
-  seealso:
-  - linkId: Yort.Zip.InStore.CreateOrderRequest
-    commentId: T:Yort.Zip.InStore.CreateOrderRequest
-  - linkId: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
-    commentId: M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
   inheritance:
   - System.Object
   - Yort.Zip.InStore.ZipRequestOptionsBase
@@ -58,63 +55,210 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
-  commentId: P:Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
-  id: EnableUniqueMerchantReferenceCheck
-  parent: Yort.Zip.InStore.CreateOrderRequest
+- uid: Yort.Zip.InStore.RefundOrderRequest.MerchantRefundReference
+  commentId: P:Yort.Zip.InStore.RefundOrderRequest.MerchantRefundReference
+  id: MerchantRefundReference
+  parent: Yort.Zip.InStore.RefundOrderRequest
   langs:
   - csharp
   - vb
-  name: EnableUniqueMerchantReferenceCheck
-  nameWithType: CreateOrderRequest.EnableUniqueMerchantReferenceCheck
-  fullName: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  name: MerchantRefundReference
+  nameWithType: RefundOrderRequest.MerchantRefundReference
+  fullName: Yort.Zip.InStore.RefundOrderRequest.MerchantRefundReference
   type: Property
   source:
     remote:
-      path: src/CreateOrderRequest.cs
+      path: src/RefundOrderRequest.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: EnableUniqueMerchantReferenceCheck
-    path: CreateOrderRequest.cs
-    startLine: 22
+    id: MerchantRefundReference
+    path: RefundOrderRequest.cs
+    startLine: 14
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nDetermines if Zip is instructed to check if the <xref href=\"Yort.Zip.InStore.ZipOrder.MerchantReference\" data-throw-if-not-resolved=\"false\"></xref> has already been used and if so behave in an idempotent fashion (return the original response instead of creating a duplicate order).\n"
-  remarks: "\n<p>The default value is true, which enables the duplicate checking and idempotent responses. Set to false only if you want to allow duplicate orders with the same merchant reference to be created.</p>\n<p>If this is set to false and a merchant reference is reused, a new order with a new Zip order id will be created.</p>\n"
+  summary: "\nA unique reference for this refund. Required.\n"
   example: []
   syntax:
-    content: public bool EnableUniqueMerchantReferenceCheck { get; set; }
+    content: public string MerchantRefundReference { get; set; }
     parameters: []
     return:
-      type: System.Boolean
-    content.vb: Public Property EnableUniqueMerchantReferenceCheck As Boolean
-  overload: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck*
+      type: System.String
+    content.vb: Public Property MerchantRefundReference As String
+  overload: Yort.Zip.InStore.RefundOrderRequest.MerchantRefundReference*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.CreateOrderRequest.StoreId
-  commentId: P:Yort.Zip.InStore.CreateOrderRequest.StoreId
+- uid: Yort.Zip.InStore.RefundOrderRequest.OrderId
+  commentId: P:Yort.Zip.InStore.RefundOrderRequest.OrderId
+  id: OrderId
+  parent: Yort.Zip.InStore.RefundOrderRequest
+  langs:
+  - csharp
+  - vb
+  name: OrderId
+  nameWithType: RefundOrderRequest.OrderId
+  fullName: Yort.Zip.InStore.RefundOrderRequest.OrderId
+  type: Property
+  source:
+    remote:
+      path: src/RefundOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: OrderId
+    path: RefundOrderRequest.cs
+    startLine: 18
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nThe unique reference of the order within the Zip system to be refunded against. Required.\n"
+  example: []
+  syntax:
+    content: public string OrderId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OrderId As String
+  overload: Yort.Zip.InStore.RefundOrderRequest.OrderId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.RefundOrderRequest.Amount
+  commentId: P:Yort.Zip.InStore.RefundOrderRequest.Amount
+  id: Amount
+  parent: Yort.Zip.InStore.RefundOrderRequest
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: RefundOrderRequest.Amount
+  fullName: Yort.Zip.InStore.RefundOrderRequest.Amount
+  type: Property
+  source:
+    remote:
+      path: src/RefundOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Amount
+    path: RefundOrderRequest.cs
+    startLine: 22
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nThe amount of this refund. Required, must be a positive and non-zero value.\n"
+  example: []
+  syntax:
+    content: public decimal Amount { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: Public Property Amount As Decimal
+  overload: Yort.Zip.InStore.RefundOrderRequest.Amount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.RefundOrderRequest.Operator
+  commentId: P:Yort.Zip.InStore.RefundOrderRequest.Operator
+  id: Operator
+  parent: Yort.Zip.InStore.RefundOrderRequest
+  langs:
+  - csharp
+  - vb
+  name: Operator
+  nameWithType: RefundOrderRequest.Operator
+  fullName: Yort.Zip.InStore.RefundOrderRequest.Operator
+  type: Property
+  source:
+    remote:
+      path: src/RefundOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Operator
+    path: RefundOrderRequest.cs
+    startLine: 26
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nA reference (name or id) of the staff person serving the customer at the POS. Required.\n"
+  example: []
+  syntax:
+    content: public string Operator { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Operator As String
+  overload: Yort.Zip.InStore.RefundOrderRequest.Operator*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.RefundOrderRequest.TerminalId
+  commentId: P:Yort.Zip.InStore.RefundOrderRequest.TerminalId
+  id: TerminalId
+  parent: Yort.Zip.InStore.RefundOrderRequest
+  langs:
+  - csharp
+  - vb
+  name: TerminalId
+  nameWithType: RefundOrderRequest.TerminalId
+  fullName: Yort.Zip.InStore.RefundOrderRequest.TerminalId
+  type: Property
+  source:
+    remote:
+      path: src/RefundOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: TerminalId
+    path: RefundOrderRequest.cs
+    startLine: 31
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nRequired. A value that uniquley identifies the point of sale terminal being used as part of this request. \n"
+  example: []
+  syntax:
+    content: public string TerminalId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TerminalId As String
+  overload: Yort.Zip.InStore.RefundOrderRequest.TerminalId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.RefundOrderRequest.StoreId
+  commentId: P:Yort.Zip.InStore.RefundOrderRequest.StoreId
   id: StoreId
-  parent: Yort.Zip.InStore.CreateOrderRequest
+  parent: Yort.Zip.InStore.RefundOrderRequest
   langs:
   - csharp
   - vb
   name: StoreId
-  nameWithType: CreateOrderRequest.StoreId
-  fullName: Yort.Zip.InStore.CreateOrderRequest.StoreId
+  nameWithType: RefundOrderRequest.StoreId
+  fullName: Yort.Zip.InStore.RefundOrderRequest.StoreId
   type: Property
   source:
     remote:
-      path: src/CreateOrderRequest.cs
+      path: src/RefundOrderRequest.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: StoreId
-    path: CreateOrderRequest.cs
-    startLine: 27
+    path: RefundOrderRequest.cs
+    startLine: 36
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -126,106 +270,32 @@ items:
     return:
       type: System.String
     content.vb: Public Property StoreId As String
-  overload: Yort.Zip.InStore.CreateOrderRequest.StoreId*
+  overload: Yort.Zip.InStore.RefundOrderRequest.StoreId*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.CreateOrderRequest.TerminalId
-  commentId: P:Yort.Zip.InStore.CreateOrderRequest.TerminalId
-  id: TerminalId
-  parent: Yort.Zip.InStore.CreateOrderRequest
-  langs:
-  - csharp
-  - vb
-  name: TerminalId
-  nameWithType: CreateOrderRequest.TerminalId
-  fullName: Yort.Zip.InStore.CreateOrderRequest.TerminalId
-  type: Property
-  source:
-    remote:
-      path: src/CreateOrderRequest.cs
-      branch: master
-      repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: TerminalId
-    path: CreateOrderRequest.cs
-    startLine: 32
-  assemblies:
-  - Yort.Zip.InStore
-  namespace: Yort.Zip.InStore
-  summary: "\nRequired. A value that uniquley identifies the point of sale terminal being used as part of this request.\n"
-  example: []
-  syntax:
-    content: public string TerminalId { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property TerminalId As String
-  overload: Yort.Zip.InStore.CreateOrderRequest.TerminalId*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: Yort.Zip.InStore.CreateOrderRequest.Order
-  commentId: P:Yort.Zip.InStore.CreateOrderRequest.Order
-  id: Order
-  parent: Yort.Zip.InStore.CreateOrderRequest
-  langs:
-  - csharp
-  - vb
-  name: Order
-  nameWithType: CreateOrderRequest.Order
-  fullName: Yort.Zip.InStore.CreateOrderRequest.Order
-  type: Property
-  source:
-    remote:
-      path: src/CreateOrderRequest.cs
-      branch: master
-      repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Order
-    path: CreateOrderRequest.cs
-    startLine: 37
-  assemblies:
-  - Yort.Zip.InStore
-  namespace: Yort.Zip.InStore
-  summary: "\nSpecifies the details of the new Zip order to be created.\n"
-  example: []
-  syntax:
-    content: public ZipOrder Order { get; set; }
-    parameters: []
-    return:
-      type: Yort.Zip.InStore.ZipOrder
-    content.vb: Public Property Order As ZipOrder
-  overload: Yort.Zip.InStore.CreateOrderRequest.Order*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: Yort.Zip.InStore.CreateOrderRequest.Validate
-  commentId: M:Yort.Zip.InStore.CreateOrderRequest.Validate
+- uid: Yort.Zip.InStore.RefundOrderRequest.Validate
+  commentId: M:Yort.Zip.InStore.RefundOrderRequest.Validate
   id: Validate
-  parent: Yort.Zip.InStore.CreateOrderRequest
+  parent: Yort.Zip.InStore.RefundOrderRequest
   langs:
   - csharp
   - vb
   name: Validate()
-  nameWithType: CreateOrderRequest.Validate()
-  fullName: Yort.Zip.InStore.CreateOrderRequest.Validate()
+  nameWithType: RefundOrderRequest.Validate()
+  fullName: Yort.Zip.InStore.RefundOrderRequest.Validate()
   type: Method
   source:
     remote:
-      path: src/CreateOrderRequest.cs
+      path: src/RefundOrderRequest.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Validate
-    path: CreateOrderRequest.cs
-    startLine: 44
+    path: RefundOrderRequest.cs
+    startLine: 43
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -235,43 +305,43 @@ items:
     content: public override void Validate()
     content.vb: Public Overrides Sub Validate
   overridden: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  overload: Yort.Zip.InStore.CreateOrderRequest.Validate*
+  overload: Yort.Zip.InStore.RefundOrderRequest.Validate*
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
-    description: Thrown if <xref href="Yort.Zip.InStore.CreateOrderRequest.Order" data-throw-if-not-resolved="false"></xref> or any of it&apos;s required sub-properties are null.
+    description: Thrown if any required properties are null.
   - type: System.ArgumentException
     commentId: T:System.ArgumentException
-    description: Thrown if any of the sub-properties of <xref href="Yort.Zip.InStore.CreateOrderRequest.Order" data-throw-if-not-resolved="false"></xref> are determined to be invalid.
+    description: Thrown if any of request properties are invalid.
   modifiers.csharp:
   - public
   - override
   modifiers.vb:
   - Public
   - Overrides
-- uid: Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders
-  commentId: M:Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders
+- uid: Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders
+  commentId: M:Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders
   id: GetCustomHttpHeaders
-  parent: Yort.Zip.InStore.CreateOrderRequest
+  parent: Yort.Zip.InStore.RefundOrderRequest
   langs:
   - csharp
   - vb
   name: GetCustomHttpHeaders()
-  nameWithType: CreateOrderRequest.GetCustomHttpHeaders()
-  fullName: Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders()
+  nameWithType: RefundOrderRequest.GetCustomHttpHeaders()
+  fullName: Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders()
   type: Method
   source:
     remote:
-      path: src/CreateOrderRequest.cs
+      path: src/RefundOrderRequest.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: GetCustomHttpHeaders
-    path: CreateOrderRequest.cs
-    startLine: 59
+    path: RefundOrderRequest.cs
+    startLine: 56
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nReturns custom header values for <xref href=\"Yort.Zip.InStore.CreateOrderRequest.StoreId\" data-throw-if-not-resolved=\"false\"></xref> (if not null or empty) and <xref href=\"Yort.Zip.InStore.CreateOrderRequest.TerminalId\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nReturns custom header values for <xref href=\"Yort.Zip.InStore.RefundOrderRequest.StoreId\" data-throw-if-not-resolved=\"false\"></xref> (if not null or empty) and <xref href=\"Yort.Zip.InStore.RefundOrderRequest.TerminalId\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public override Dictionary<string, string> GetCustomHttpHeaders()
@@ -280,7 +350,7 @@ items:
       description: ''
     content.vb: Public Overrides Function GetCustomHttpHeaders As Dictionary(Of String, String)
   overridden: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  overload: Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders*
+  overload: Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders*
   modifiers.csharp:
   - public
   - override
@@ -288,48 +358,6 @@ items:
   - Public
   - Overrides
 references:
-- uid: Yort.Zip.InStore.CreateOrderRequest
-  commentId: T:Yort.Zip.InStore.CreateOrderRequest
-  parent: Yort.Zip.InStore
-  name: CreateOrderRequest
-  nameWithType: CreateOrderRequest
-  fullName: Yort.Zip.InStore.CreateOrderRequest
-- uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
-  commentId: M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
-  parent: Yort.Zip.InStore.IZipClient
-  name: CreateOrderAsync(CreateOrderRequest)
-  nameWithType: IZipClient.CreateOrderAsync(CreateOrderRequest)
-  fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
-  spec.csharp:
-  - uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
-    name: CreateOrderAsync
-    nameWithType: IZipClient.CreateOrderAsync
-    fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Yort.Zip.InStore.CreateOrderRequest
-    name: CreateOrderRequest
-    nameWithType: CreateOrderRequest
-    fullName: Yort.Zip.InStore.CreateOrderRequest
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
-    name: CreateOrderAsync
-    nameWithType: IZipClient.CreateOrderAsync
-    fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Yort.Zip.InStore.CreateOrderRequest
-    name: CreateOrderRequest
-    nameWithType: CreateOrderRequest
-    fullName: Yort.Zip.InStore.CreateOrderRequest
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Yort.Zip.InStore
   commentId: N:Yort.Zip.InStore
   name: Yort.Zip.InStore
@@ -627,38 +655,17 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Yort.Zip.InStore.IZipClient
-  commentId: T:Yort.Zip.InStore.IZipClient
-  parent: Yort.Zip.InStore
-  name: IZipClient
-  nameWithType: IZipClient
-  fullName: Yort.Zip.InStore.IZipClient
 - uid: System
   commentId: N:System
   isExternal: true
   name: System
   nameWithType: System
   fullName: System
-- uid: Yort.Zip.InStore.ZipOrder.MerchantReference
-  commentId: P:Yort.Zip.InStore.ZipOrder.MerchantReference
-  isExternal: true
-- uid: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck*
-  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
-  name: EnableUniqueMerchantReferenceCheck
-  nameWithType: CreateOrderRequest.EnableUniqueMerchantReferenceCheck
-  fullName: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean
-- uid: Yort.Zip.InStore.CreateOrderRequest.StoreId*
-  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.StoreId
-  name: StoreId
-  nameWithType: CreateOrderRequest.StoreId
-  fullName: Yort.Zip.InStore.CreateOrderRequest.StoreId
+- uid: Yort.Zip.InStore.RefundOrderRequest.MerchantRefundReference*
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.MerchantRefundReference
+  name: MerchantRefundReference
+  nameWithType: RefundOrderRequest.MerchantRefundReference
+  fullName: Yort.Zip.InStore.RefundOrderRequest.MerchantRefundReference
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -666,25 +673,38 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Yort.Zip.InStore.CreateOrderRequest.TerminalId*
-  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.TerminalId
-  name: TerminalId
-  nameWithType: CreateOrderRequest.TerminalId
-  fullName: Yort.Zip.InStore.CreateOrderRequest.TerminalId
-- uid: Yort.Zip.InStore.CreateOrderRequest.Order*
-  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.Order
-  name: Order
-  nameWithType: CreateOrderRequest.Order
-  fullName: Yort.Zip.InStore.CreateOrderRequest.Order
-- uid: Yort.Zip.InStore.ZipOrder
-  commentId: T:Yort.Zip.InStore.ZipOrder
-  parent: Yort.Zip.InStore
-  name: ZipOrder
-  nameWithType: ZipOrder
-  fullName: Yort.Zip.InStore.ZipOrder
-- uid: Yort.Zip.InStore.CreateOrderRequest.Order
-  commentId: P:Yort.Zip.InStore.CreateOrderRequest.Order
+- uid: Yort.Zip.InStore.RefundOrderRequest.OrderId*
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.OrderId
+  name: OrderId
+  nameWithType: RefundOrderRequest.OrderId
+  fullName: Yort.Zip.InStore.RefundOrderRequest.OrderId
+- uid: Yort.Zip.InStore.RefundOrderRequest.Amount*
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.Amount
+  name: Amount
+  nameWithType: RefundOrderRequest.Amount
+  fullName: Yort.Zip.InStore.RefundOrderRequest.Amount
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
   isExternal: true
+  name: Decimal
+  nameWithType: Decimal
+  fullName: System.Decimal
+- uid: Yort.Zip.InStore.RefundOrderRequest.Operator*
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.Operator
+  name: Operator
+  nameWithType: RefundOrderRequest.Operator
+  fullName: Yort.Zip.InStore.RefundOrderRequest.Operator
+- uid: Yort.Zip.InStore.RefundOrderRequest.TerminalId*
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.TerminalId
+  name: TerminalId
+  nameWithType: RefundOrderRequest.TerminalId
+  fullName: Yort.Zip.InStore.RefundOrderRequest.TerminalId
+- uid: Yort.Zip.InStore.RefundOrderRequest.StoreId*
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.StoreId
+  name: StoreId
+  nameWithType: RefundOrderRequest.StoreId
+  fullName: Yort.Zip.InStore.RefundOrderRequest.StoreId
 - uid: System.ArgumentNullException
   commentId: T:System.ArgumentNullException
   isExternal: true
@@ -719,16 +739,16 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Yort.Zip.InStore.CreateOrderRequest.Validate*
-  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.Validate
+- uid: Yort.Zip.InStore.RefundOrderRequest.Validate*
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.Validate
   name: Validate
-  nameWithType: CreateOrderRequest.Validate
-  fullName: Yort.Zip.InStore.CreateOrderRequest.Validate
-- uid: Yort.Zip.InStore.CreateOrderRequest.StoreId
-  commentId: P:Yort.Zip.InStore.CreateOrderRequest.StoreId
+  nameWithType: RefundOrderRequest.Validate
+  fullName: Yort.Zip.InStore.RefundOrderRequest.Validate
+- uid: Yort.Zip.InStore.RefundOrderRequest.StoreId
+  commentId: P:Yort.Zip.InStore.RefundOrderRequest.StoreId
   isExternal: true
-- uid: Yort.Zip.InStore.CreateOrderRequest.TerminalId
-  commentId: P:Yort.Zip.InStore.CreateOrderRequest.TerminalId
+- uid: Yort.Zip.InStore.RefundOrderRequest.TerminalId
+  commentId: P:Yort.Zip.InStore.RefundOrderRequest.TerminalId
   isExternal: true
 - uid: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
   commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
@@ -758,11 +778,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders*
-  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders
+- uid: Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders*
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders
   name: GetCustomHttpHeaders
-  nameWithType: CreateOrderRequest.GetCustomHttpHeaders
-  fullName: Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders
+  nameWithType: RefundOrderRequest.GetCustomHttpHeaders
+  fullName: Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders
 - uid: System.Collections.Generic.Dictionary{System.String,System.String}
   commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
   parent: System.Collections.Generic

@@ -88,6 +88,15 @@
                       <a href="Yort.Zip.InStore.html" title="Yort.Zip.InStore" class="">Yort.Zip.InStore</a>
                         
                         <ul class="nav level2">
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CancelOrderRequest.html" title="CancelOrderRequest" class="">CancelOrderRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CancelOrderResponse.html" title="CancelOrderResponse" class="">CancelOrderResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CommitOrderRequest.html" title="CommitOrderRequest" class="">CommitOrderRequest</a>
+                          </li>
                           <li class="active">
                             <a href="Yort.Zip.InStore.CreateOrderRequest.html" title="CreateOrderRequest" class="active">CreateOrderRequest</a>
                           </li>
@@ -98,13 +107,19 @@
                             <a href="Yort.Zip.InStore.IZipClient.html" title="IZipClient" class="">IZipClient</a>
                           </li>
                           <li class="">
-                            <a href="Yort.Zip.InStore.NewZipOrder.html" title="NewZipOrder" class="">NewZipOrder</a>
-                          </li>
-                          <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusRequest.html" title="OrderStatusRequest" class="">OrderStatusRequest</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusResponse.html" title="OrderStatusResponse" class="">OrderStatusResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RefundOrderRequest.html" title="RefundOrderRequest" class="">RefundOrderRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RefundOrderResponse.html" title="RefundOrderResponse" class="">RefundOrderResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RollbackOrderRequest.html" title="RollbackOrderRequest" class="">RollbackOrderRequest</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="">ZipClient</a>
@@ -114,6 +129,9 @@
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.NewZealand.html" title="ZipEnvironment.NewZealand" class="">ZipEnvironment.NewZealand</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.ZipOrder.html" title="ZipOrder" class="">ZipOrder</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipOrderItem.html" title="ZipOrderItem" class="">ZipOrderItem</a>
@@ -190,7 +208,7 @@
   </span>
   <a id="Yort_Zip_InStore_CreateOrderRequest_EnableUniqueMerchantReferenceCheck_" data-uid="Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck*"></a>
   <h4 id="Yort_Zip_InStore_CreateOrderRequest_EnableUniqueMerchantReferenceCheck" data-uid="Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck">EnableUniqueMerchantReferenceCheck</h4>
-  <div class="markdown level1 summary"><p>Determines if Zip is instructed to check if the <a class="xref" href="Yort.Zip.InStore.NewZipOrder.html#Yort_Zip_InStore_NewZipOrder_MerchantReference">MerchantReference</a> has already been used and if so behave in an idempotent fashion (return the original response instead of creating a duplicate order).</p>
+  <div class="markdown level1 summary"><p>Determines if Zip is instructed to check if the <a class="xref" href="Yort.Zip.InStore.ZipOrder.html#Yort_Zip_InStore_ZipOrder_MerchantReference">MerchantReference</a> has already been used and if so behave in an idempotent fashion (return the original response instead of creating a duplicate order).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -221,7 +239,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_CreateOrderRequest_Order.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.CreateOrderRequest.Order%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/CreateOrderRequest.cs/#L28">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/CreateOrderRequest.cs/#L38">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_CreateOrderRequest_Order_" data-uid="Yort.Zip.InStore.CreateOrderRequest.Order*"></a>
   <h4 id="Yort_Zip_InStore_CreateOrderRequest_Order" data-uid="Yort.Zip.InStore.CreateOrderRequest.Order">Order</h4>
@@ -230,7 +248,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NewZipOrder Order { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ZipOrder Order { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -242,7 +260,69 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Yort.Zip.InStore.NewZipOrder.html">NewZipOrder</a></td>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipOrder.html">ZipOrder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_CreateOrderRequest_StoreId.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.CreateOrderRequest.StoreId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/CreateOrderRequest.cs/#L28">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_CreateOrderRequest_StoreId_" data-uid="Yort.Zip.InStore.CreateOrderRequest.StoreId*"></a>
+  <h4 id="Yort_Zip_InStore_CreateOrderRequest_StoreId" data-uid="Yort.Zip.InStore.CreateOrderRequest.StoreId">StoreId</h4>
+  <div class="markdown level1 summary"><p>Optional. When using a merchant level authentication scope this is supposed to give traceability from which store the order originated in.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StoreId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_CreateOrderRequest_TerminalId.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.CreateOrderRequest.TerminalId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/CreateOrderRequest.cs/#L33">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_CreateOrderRequest_TerminalId_" data-uid="Yort.Zip.InStore.CreateOrderRequest.TerminalId*"></a>
+  <h4 id="Yort_Zip_InStore_CreateOrderRequest_TerminalId" data-uid="Yort.Zip.InStore.CreateOrderRequest.TerminalId">TerminalId</h4>
+  <div class="markdown level1 summary"><p>Required. A value that uniquley identifies the point of sale terminal being used as part of this request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TerminalId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -251,10 +331,43 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_CreateOrderRequest_GetCustomHttpHeaders.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/CreateOrderRequest.cs/#L60">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_CreateOrderRequest_GetCustomHttpHeaders_" data-uid="Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders*"></a>
+  <h4 id="Yort_Zip_InStore_CreateOrderRequest_GetCustomHttpHeaders" data-uid="Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders">GetCustomHttpHeaders()</h4>
+  <div class="markdown level1 summary"><p>Returns custom header values for <a class="xref" href="Yort.Zip.InStore.CreateOrderRequest.html#Yort_Zip_InStore_CreateOrderRequest_StoreId">StoreId</a> (if not null or empty) and <a class="xref" href="Yort.Zip.InStore.CreateOrderRequest.html#Yort_Zip_InStore_CreateOrderRequest_TerminalId">TerminalId</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Dictionary&lt;string, string&gt; GetCustomHttpHeaders()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Yort.Zip.InStore.ZipRequestOptionsBase.html#Yort_Zip_InStore_ZipRequestOptionsBase_GetCustomHttpHeaders">ZipRequestOptionsBase.GetCustomHttpHeaders()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_CreateOrderRequest_Validate.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.CreateOrderRequest.Validate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/CreateOrderRequest.cs/#L35">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/CreateOrderRequest.cs/#L45">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_CreateOrderRequest_Validate_" data-uid="Yort.Zip.InStore.CreateOrderRequest.Validate*"></a>
   <h4 id="Yort_Zip_InStore_CreateOrderRequest_Validate" data-uid="Yort.Zip.InStore.CreateOrderRequest.Validate">Validate()</h4>

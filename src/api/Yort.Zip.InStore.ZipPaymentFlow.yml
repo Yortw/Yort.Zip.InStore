@@ -25,7 +25,7 @@ items:
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nA class that exposes constants for the known allowed values of the <xref href=\"Yort.Zip.InStore.NewZipOrder.PaymentFlow\" data-throw-if-not-resolved=\"false\"></xref> property.\n"
+  summary: "\nA class that exposes constants for the known allowed values of the <xref href=\"Yort.Zip.InStore.ZipOrder.PaymentFlow\" data-throw-if-not-resolved=\"false\"></xref> property.\n"
   example: []
   syntax:
     content: public static class ZipPaymentFlow
@@ -118,8 +118,8 @@ items:
   - Public
   - Const
 references:
-- uid: Yort.Zip.InStore.NewZipOrder.PaymentFlow
-  commentId: P:Yort.Zip.InStore.NewZipOrder.PaymentFlow
+- uid: Yort.Zip.InStore.ZipOrder.PaymentFlow
+  commentId: P:Yort.Zip.InStore.ZipOrder.PaymentFlow
   isExternal: true
 - uid: Yort.Zip.InStore
   commentId: N:Yort.Zip.InStore

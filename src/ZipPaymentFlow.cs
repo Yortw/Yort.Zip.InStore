@@ -5,7 +5,7 @@ using System.Text;
 namespace Yort.Zip.InStore
 {
 	/// <summary>
-	/// A class that exposes constants for the known allowed values of the <see cref="NewZipOrder.PaymentFlow"/> property.
+	/// A class that exposes constants for the known allowed values of the <see cref="ZipOrder.PaymentFlow"/> property.
 	/// </summary>
 	public static class ZipPaymentFlow
 	{

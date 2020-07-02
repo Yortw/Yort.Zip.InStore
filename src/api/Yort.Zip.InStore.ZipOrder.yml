@@ -1,30 +1,30 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Yort.Zip.InStore.NewZipOrder
-  commentId: T:Yort.Zip.InStore.NewZipOrder
-  id: NewZipOrder
+- uid: Yort.Zip.InStore.ZipOrder
+  commentId: T:Yort.Zip.InStore.ZipOrder
+  id: ZipOrder
   parent: Yort.Zip.InStore
   children:
-  - Yort.Zip.InStore.NewZipOrder.Amount
-  - Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode
-  - Yort.Zip.InStore.NewZipOrder.Items
-  - Yort.Zip.InStore.NewZipOrder.MerchantReference
-  - Yort.Zip.InStore.NewZipOrder.Operator
-  - Yort.Zip.InStore.NewZipOrder.PaymentFlow
+  - Yort.Zip.InStore.ZipOrder.Amount
+  - Yort.Zip.InStore.ZipOrder.CustomerApprovalCode
+  - Yort.Zip.InStore.ZipOrder.Items
+  - Yort.Zip.InStore.ZipOrder.MerchantReference
+  - Yort.Zip.InStore.ZipOrder.Operator
+  - Yort.Zip.InStore.ZipOrder.PaymentFlow
   langs:
   - csharp
   - vb
-  name: NewZipOrder
-  nameWithType: NewZipOrder
-  fullName: Yort.Zip.InStore.NewZipOrder
+  name: ZipOrder
+  nameWithType: ZipOrder
+  fullName: Yort.Zip.InStore.ZipOrder
   type: Class
   source:
     remote:
-      path: src/NewZipOrder.cs
+      path: src/ZipOrder.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: NewZipOrder
-    path: NewZipOrder.cs
+    id: ZipOrder
+    path: ZipOrder.cs
     startLine: 12
   assemblies:
   - Yort.Zip.InStore
@@ -32,8 +32,8 @@ items:
   summary: "\nContains details of an order (request for payment) to be created within the Zip system.\n"
   example: []
   syntax:
-    content: public class NewZipOrder
-    content.vb: Public Class NewZipOrder
+    content: public class ZipOrder
+    content.vb: Public Class ZipOrder
   seealso:
   - linkId: Yort.Zip.InStore.CreateOrderResponse
     commentId: T:Yort.Zip.InStore.CreateOrderResponse
@@ -55,24 +55,24 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode
-  commentId: P:Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode
+- uid: Yort.Zip.InStore.ZipOrder.CustomerApprovalCode
+  commentId: P:Yort.Zip.InStore.ZipOrder.CustomerApprovalCode
   id: CustomerApprovalCode
-  parent: Yort.Zip.InStore.NewZipOrder
+  parent: Yort.Zip.InStore.ZipOrder
   langs:
   - csharp
   - vb
   name: CustomerApprovalCode
-  nameWithType: NewZipOrder.CustomerApprovalCode
-  fullName: Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode
+  nameWithType: ZipOrder.CustomerApprovalCode
+  fullName: Yort.Zip.InStore.ZipOrder.CustomerApprovalCode
   type: Property
   source:
     remote:
-      path: src/NewZipOrder.cs
+      path: src/ZipOrder.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CustomerApprovalCode
-    path: NewZipOrder.cs
+    path: ZipOrder.cs
     startLine: 17
   assemblies:
   - Yort.Zip.InStore
@@ -85,31 +85,31 @@ items:
     return:
       type: System.String
     content.vb: Public Property CustomerApprovalCode As String
-  overload: Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode*
+  overload: Yort.Zip.InStore.ZipOrder.CustomerApprovalCode*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.NewZipOrder.Operator
-  commentId: P:Yort.Zip.InStore.NewZipOrder.Operator
+- uid: Yort.Zip.InStore.ZipOrder.Operator
+  commentId: P:Yort.Zip.InStore.ZipOrder.Operator
   id: Operator
-  parent: Yort.Zip.InStore.NewZipOrder
+  parent: Yort.Zip.InStore.ZipOrder
   langs:
   - csharp
   - vb
   name: Operator
-  nameWithType: NewZipOrder.Operator
-  fullName: Yort.Zip.InStore.NewZipOrder.Operator
+  nameWithType: ZipOrder.Operator
+  fullName: Yort.Zip.InStore.ZipOrder.Operator
   type: Property
   source:
     remote:
-      path: src/NewZipOrder.cs
+      path: src/ZipOrder.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Operator
-    path: NewZipOrder.cs
+    path: ZipOrder.cs
     startLine: 21
   assemblies:
   - Yort.Zip.InStore
@@ -122,31 +122,31 @@ items:
     return:
       type: System.String
     content.vb: Public Property Operator As String
-  overload: Yort.Zip.InStore.NewZipOrder.Operator*
+  overload: Yort.Zip.InStore.ZipOrder.Operator*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.NewZipOrder.Amount
-  commentId: P:Yort.Zip.InStore.NewZipOrder.Amount
+- uid: Yort.Zip.InStore.ZipOrder.Amount
+  commentId: P:Yort.Zip.InStore.ZipOrder.Amount
   id: Amount
-  parent: Yort.Zip.InStore.NewZipOrder
+  parent: Yort.Zip.InStore.ZipOrder
   langs:
   - csharp
   - vb
   name: Amount
-  nameWithType: NewZipOrder.Amount
-  fullName: Yort.Zip.InStore.NewZipOrder.Amount
+  nameWithType: ZipOrder.Amount
+  fullName: Yort.Zip.InStore.ZipOrder.Amount
   type: Property
   source:
     remote:
-      path: src/NewZipOrder.cs
+      path: src/ZipOrder.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Amount
-    path: NewZipOrder.cs
+    path: ZipOrder.cs
     startLine: 25
   assemblies:
   - Yort.Zip.InStore
@@ -159,31 +159,31 @@ items:
     return:
       type: System.Decimal
     content.vb: Public Property Amount As Decimal
-  overload: Yort.Zip.InStore.NewZipOrder.Amount*
+  overload: Yort.Zip.InStore.ZipOrder.Amount*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.NewZipOrder.MerchantReference
-  commentId: P:Yort.Zip.InStore.NewZipOrder.MerchantReference
+- uid: Yort.Zip.InStore.ZipOrder.MerchantReference
+  commentId: P:Yort.Zip.InStore.ZipOrder.MerchantReference
   id: MerchantReference
-  parent: Yort.Zip.InStore.NewZipOrder
+  parent: Yort.Zip.InStore.ZipOrder
   langs:
   - csharp
   - vb
   name: MerchantReference
-  nameWithType: NewZipOrder.MerchantReference
-  fullName: Yort.Zip.InStore.NewZipOrder.MerchantReference
+  nameWithType: ZipOrder.MerchantReference
+  fullName: Yort.Zip.InStore.ZipOrder.MerchantReference
   type: Property
   source:
     remote:
-      path: src/NewZipOrder.cs
+      path: src/ZipOrder.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: MerchantReference
-    path: NewZipOrder.cs
+    path: ZipOrder.cs
     startLine: 29
   assemblies:
   - Yort.Zip.InStore
@@ -196,31 +196,31 @@ items:
     return:
       type: System.String
     content.vb: Public Property MerchantReference As String
-  overload: Yort.Zip.InStore.NewZipOrder.MerchantReference*
+  overload: Yort.Zip.InStore.ZipOrder.MerchantReference*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.NewZipOrder.PaymentFlow
-  commentId: P:Yort.Zip.InStore.NewZipOrder.PaymentFlow
+- uid: Yort.Zip.InStore.ZipOrder.PaymentFlow
+  commentId: P:Yort.Zip.InStore.ZipOrder.PaymentFlow
   id: PaymentFlow
-  parent: Yort.Zip.InStore.NewZipOrder
+  parent: Yort.Zip.InStore.ZipOrder
   langs:
   - csharp
   - vb
   name: PaymentFlow
-  nameWithType: NewZipOrder.PaymentFlow
-  fullName: Yort.Zip.InStore.NewZipOrder.PaymentFlow
+  nameWithType: ZipOrder.PaymentFlow
+  fullName: Yort.Zip.InStore.ZipOrder.PaymentFlow
   type: Property
   source:
     remote:
-      path: src/NewZipOrder.cs
+      path: src/ZipOrder.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: PaymentFlow
-    path: NewZipOrder.cs
+    path: ZipOrder.cs
     startLine: 38
   assemblies:
   - Yort.Zip.InStore
@@ -234,7 +234,7 @@ items:
     return:
       type: System.String
     content.vb: Public Property PaymentFlow As String
-  overload: Yort.Zip.InStore.NewZipOrder.PaymentFlow*
+  overload: Yort.Zip.InStore.ZipOrder.PaymentFlow*
   seealso:
   - linkId: Yort.Zip.InStore.ZipPaymentFlow
     commentId: T:Yort.Zip.InStore.ZipPaymentFlow
@@ -244,24 +244,24 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.NewZipOrder.Items
-  commentId: P:Yort.Zip.InStore.NewZipOrder.Items
+- uid: Yort.Zip.InStore.ZipOrder.Items
+  commentId: P:Yort.Zip.InStore.ZipOrder.Items
   id: Items
-  parent: Yort.Zip.InStore.NewZipOrder
+  parent: Yort.Zip.InStore.ZipOrder
   langs:
   - csharp
   - vb
   name: Items
-  nameWithType: NewZipOrder.Items
-  fullName: Yort.Zip.InStore.NewZipOrder.Items
+  nameWithType: ZipOrder.Items
+  fullName: Yort.Zip.InStore.ZipOrder.Items
   type: Property
   source:
     remote:
-      path: src/NewZipOrder.cs
+      path: src/ZipOrder.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Items
-    path: NewZipOrder.cs
+    path: ZipOrder.cs
     startLine: 46
   assemblies:
   - Yort.Zip.InStore
@@ -275,7 +275,7 @@ items:
     return:
       type: System.Collections.Generic.List{Yort.Zip.InStore.ZipOrderItem}
     content.vb: Public Property Items As List(Of ZipOrderItem)
-  overload: Yort.Zip.InStore.NewZipOrder.Items*
+  overload: Yort.Zip.InStore.ZipOrder.Items*
   modifiers.csharp:
   - public
   - get
@@ -627,11 +627,11 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode*
-  commentId: Overload:Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode
+- uid: Yort.Zip.InStore.ZipOrder.CustomerApprovalCode*
+  commentId: Overload:Yort.Zip.InStore.ZipOrder.CustomerApprovalCode
   name: CustomerApprovalCode
-  nameWithType: NewZipOrder.CustomerApprovalCode
-  fullName: Yort.Zip.InStore.NewZipOrder.CustomerApprovalCode
+  nameWithType: ZipOrder.CustomerApprovalCode
+  fullName: Yort.Zip.InStore.ZipOrder.CustomerApprovalCode
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -639,16 +639,16 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Yort.Zip.InStore.NewZipOrder.Operator*
-  commentId: Overload:Yort.Zip.InStore.NewZipOrder.Operator
+- uid: Yort.Zip.InStore.ZipOrder.Operator*
+  commentId: Overload:Yort.Zip.InStore.ZipOrder.Operator
   name: Operator
-  nameWithType: NewZipOrder.Operator
-  fullName: Yort.Zip.InStore.NewZipOrder.Operator
-- uid: Yort.Zip.InStore.NewZipOrder.Amount*
-  commentId: Overload:Yort.Zip.InStore.NewZipOrder.Amount
+  nameWithType: ZipOrder.Operator
+  fullName: Yort.Zip.InStore.ZipOrder.Operator
+- uid: Yort.Zip.InStore.ZipOrder.Amount*
+  commentId: Overload:Yort.Zip.InStore.ZipOrder.Amount
   name: Amount
-  nameWithType: NewZipOrder.Amount
-  fullName: Yort.Zip.InStore.NewZipOrder.Amount
+  nameWithType: ZipOrder.Amount
+  fullName: Yort.Zip.InStore.ZipOrder.Amount
 - uid: System.Decimal
   commentId: T:System.Decimal
   parent: System
@@ -656,11 +656,11 @@ references:
   name: Decimal
   nameWithType: Decimal
   fullName: System.Decimal
-- uid: Yort.Zip.InStore.NewZipOrder.MerchantReference*
-  commentId: Overload:Yort.Zip.InStore.NewZipOrder.MerchantReference
+- uid: Yort.Zip.InStore.ZipOrder.MerchantReference*
+  commentId: Overload:Yort.Zip.InStore.ZipOrder.MerchantReference
   name: MerchantReference
-  nameWithType: NewZipOrder.MerchantReference
-  fullName: Yort.Zip.InStore.NewZipOrder.MerchantReference
+  nameWithType: ZipOrder.MerchantReference
+  fullName: Yort.Zip.InStore.ZipOrder.MerchantReference
 - uid: Yort.Zip.InStore.ZipPaymentFlow.Payment
   commentId: F:Yort.Zip.InStore.ZipPaymentFlow.Payment
   isExternal: true
@@ -669,21 +669,21 @@ references:
   name: ZipPaymentFlow
   nameWithType: ZipPaymentFlow
   fullName: Yort.Zip.InStore.ZipPaymentFlow
-- uid: Yort.Zip.InStore.NewZipOrder.PaymentFlow*
-  commentId: Overload:Yort.Zip.InStore.NewZipOrder.PaymentFlow
+- uid: Yort.Zip.InStore.ZipOrder.PaymentFlow*
+  commentId: Overload:Yort.Zip.InStore.ZipOrder.PaymentFlow
   name: PaymentFlow
-  nameWithType: NewZipOrder.PaymentFlow
-  fullName: Yort.Zip.InStore.NewZipOrder.PaymentFlow
+  nameWithType: ZipOrder.PaymentFlow
+  fullName: Yort.Zip.InStore.ZipOrder.PaymentFlow
 - uid: Yort.Zip.InStore.ZipOrderItem
   commentId: T:Yort.Zip.InStore.ZipOrderItem
   name: ZipOrderItem
   nameWithType: ZipOrderItem
   fullName: Yort.Zip.InStore.ZipOrderItem
-- uid: Yort.Zip.InStore.NewZipOrder.Items*
-  commentId: Overload:Yort.Zip.InStore.NewZipOrder.Items
+- uid: Yort.Zip.InStore.ZipOrder.Items*
+  commentId: Overload:Yort.Zip.InStore.ZipOrder.Items
   name: Items
-  nameWithType: NewZipOrder.Items
-  fullName: Yort.Zip.InStore.NewZipOrder.Items
+  nameWithType: ZipOrder.Items
+  fullName: Yort.Zip.InStore.ZipOrder.Items
 - uid: System.Collections.Generic.List{Yort.Zip.InStore.ZipOrderItem}
   commentId: T:System.Collections.Generic.List{Yort.Zip.InStore.ZipOrderItem}
   parent: System.Collections.Generic

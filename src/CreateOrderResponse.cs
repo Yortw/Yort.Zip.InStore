@@ -7,7 +7,7 @@ namespace Yort.Zip.InStore
 	/// <summary>
 	/// Contains the initial details of an order created in the Zip system.
 	/// </summary>
-	/// <seealso cref="NewZipOrder"/>
+	/// <seealso cref="ZipOrder"/>
 	/// <seealso cref="IZipClient.CreateOrderAsync(CreateOrderRequest)"/>
 	public class CreateOrderResponse
 	{

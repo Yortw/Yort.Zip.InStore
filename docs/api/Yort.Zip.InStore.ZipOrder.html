@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ZipOrderItem
+    <title>Class ZipOrder
    | Yort.Zip.InStore </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ZipOrderItem
+    <meta name="title" content="Class ZipOrder
    | Yort.Zip.InStore ">
     <meta name="generator" content="docfx 2.48.1.0">
     
@@ -130,11 +130,11 @@
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.NewZealand.html" title="ZipEnvironment.NewZealand" class="">ZipEnvironment.NewZealand</a>
                           </li>
-                          <li class="">
-                            <a href="Yort.Zip.InStore.ZipOrder.html" title="ZipOrder" class="">ZipOrder</a>
-                          </li>
                           <li class="active">
-                            <a href="Yort.Zip.InStore.ZipOrderItem.html" title="ZipOrderItem" class="active">ZipOrderItem</a>
+                            <a href="Yort.Zip.InStore.ZipOrder.html" title="ZipOrder" class="active">ZipOrder</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.ZipOrderItem.html" title="ZipOrderItem" class="">ZipOrderItem</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipOrderStatus.html" title="ZipOrderStatus" class="">ZipOrderStatus</a>
@@ -153,18 +153,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Yort.Zip.InStore.ZipOrderItem">
+            <article class="content wrap" id="_content" data-uid="Yort.Zip.InStore.ZipOrder">
   
   
-  <h1 id="Yort_Zip_InStore_ZipOrderItem" data-uid="Yort.Zip.InStore.ZipOrderItem" class="text-break">Class ZipOrderItem
+  <h1 id="Yort_Zip_InStore_ZipOrder" data-uid="Yort.Zip.InStore.ZipOrder" class="text-break">Class ZipOrder
   </h1>
-  <div class="markdown level0 summary"><p>Represents information about an item purchased on a Zip order, used to show the end-consumer details of their purchase in the Zip consumer portal.</p>
+  <div class="markdown level0 summary"><p>Contains details of an order (request for payment) to be created within the Zip system.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">ZipOrderItem</span></div>
+    <div class="level1"><span class="xref">ZipOrder</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -192,27 +192,58 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Yort.Zip.InStore.html">Yort.Zip.InStore</a></h6>
   <h6><strong>Assembly</strong>: Yort.Zip.InStore.dll</h6>
-  <h5 id="Yort_Zip_InStore_ZipOrderItem_syntax">Syntax</h5>
+  <h5 id="Yort_Zip_InStore_ZipOrder_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ZipOrderItem</code></pre>
+    <pre><code class="lang-csharp hljs">public class ZipOrder</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderItem_Description.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderItem.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrder_Amount.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrder.Amount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderItem.cs/#L15">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrder.cs/#L26">View Source</a>
   </span>
-  <a id="Yort_Zip_InStore_ZipOrderItem_Description_" data-uid="Yort.Zip.InStore.ZipOrderItem.Description*"></a>
-  <h4 id="Yort_Zip_InStore_ZipOrderItem_Description" data-uid="Yort.Zip.InStore.ZipOrderItem.Description">Description</h4>
-  <div class="markdown level1 summary"><p>A description of the item.</p>
+  <a id="Yort_Zip_InStore_ZipOrder_Amount_" data-uid="Yort.Zip.InStore.ZipOrder.Amount*"></a>
+  <h4 id="Yort_Zip_InStore_ZipOrder_Amount" data-uid="Yort.Zip.InStore.ZipOrder.Amount">Amount</h4>
+  <div class="markdown level1 summary"><p>The amount to be charged to the consumer by Zip. Required. Must be a positive, non-zero value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Description { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public decimal Amount { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrder_CustomerApprovalCode.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrder.CustomerApprovalCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrder.cs/#L18">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipOrder_CustomerApprovalCode_" data-uid="Yort.Zip.InStore.ZipOrder.CustomerApprovalCode*"></a>
+  <h4 id="Yort_Zip_InStore_ZipOrder_CustomerApprovalCode" data-uid="Yort.Zip.InStore.ZipOrder.CustomerApprovalCode">CustomerApprovalCode</h4>
+  <div class="markdown level1 summary"><p>The pre-approval code generated by the csutomer using their Zip app or web login. Required.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CustomerApprovalCode { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -231,19 +262,53 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderItem_Name.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderItem.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrder_Items.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrder.Items%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderItem.cs/#L20">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrder.cs/#L47">View Source</a>
   </span>
-  <a id="Yort_Zip_InStore_ZipOrderItem_Name_" data-uid="Yort.Zip.InStore.ZipOrderItem.Name*"></a>
-  <h4 id="Yort_Zip_InStore_ZipOrderItem_Name" data-uid="Yort.Zip.InStore.ZipOrderItem.Name">Name</h4>
-  <div class="markdown level1 summary"><p>A short name of the item.</p>
+  <a id="Yort_Zip_InStore_ZipOrder_Items_" data-uid="Yort.Zip.InStore.ZipOrder.Items*"></a>
+  <h4 id="Yort_Zip_InStore_ZipOrder_Items" data-uid="Yort.Zip.InStore.ZipOrder.Items">Items</h4>
+  <div class="markdown level1 summary"><p>A summary of the items purchased on this order which will be displayed to the end consumer as part of their purchase history. Optional.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;ZipOrderItem&gt; Items { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Yort.Zip.InStore.ZipOrderItem.html">ZipOrderItem</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Zip_InStore_ZipOrder_Items_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This collection defaults to null, to add items first set it to either an empty collection or a pre-loaded collection of <a class="xref" href="Yort.Zip.InStore.ZipOrderItem.html">ZipOrderItem</a> instances.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrder_MerchantReference.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrder.MerchantReference%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrder.cs/#L30">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipOrder_MerchantReference_" data-uid="Yort.Zip.InStore.ZipOrder.MerchantReference*"></a>
+  <h4 id="Yort_Zip_InStore_ZipOrder_MerchantReference" data-uid="Yort.Zip.InStore.ZipOrder.MerchantReference">MerchantReference</h4>
+  <div class="markdown level1 summary"><p>The unique reference for this order as generated by the merchant. Required.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MerchantReference { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -262,19 +327,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderItem_Price.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderItem.Price%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrder_Operator.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrder.Operator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderItem.cs/#L32">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrder.cs/#L22">View Source</a>
   </span>
-  <a id="Yort_Zip_InStore_ZipOrderItem_Price_" data-uid="Yort.Zip.InStore.ZipOrderItem.Price*"></a>
-  <h4 id="Yort_Zip_InStore_ZipOrderItem_Price" data-uid="Yort.Zip.InStore.ZipOrderItem.Price">Price</h4>
-  <div class="markdown level1 summary"><p>The price the item was purchased at.</p>
+  <a id="Yort_Zip_InStore_ZipOrder_Operator_" data-uid="Yort.Zip.InStore.ZipOrder.Operator*"></a>
+  <h4 id="Yort_Zip_InStore_ZipOrder_Operator" data-uid="Yort.Zip.InStore.ZipOrder.Operator">Operator</h4>
+  <div class="markdown level1 summary"><p>A reference (name or id) of the staff person serving the customer at the POS. Required.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Price { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Operator { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -293,19 +358,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderItem_Quantity.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderItem.Quantity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrder_PaymentFlow.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrder.PaymentFlow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderItem.cs/#L28">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrder.cs/#L39">View Source</a>
   </span>
-  <a id="Yort_Zip_InStore_ZipOrderItem_Quantity_" data-uid="Yort.Zip.InStore.ZipOrderItem.Quantity*"></a>
-  <h4 id="Yort_Zip_InStore_ZipOrderItem_Quantity" data-uid="Yort.Zip.InStore.ZipOrderItem.Quantity">Quantity</h4>
-  <div class="markdown level1 summary"><p>The quantity of this item purchased.</p>
+  <a id="Yort_Zip_InStore_ZipOrder_PaymentFlow_" data-uid="Yort.Zip.InStore.ZipOrder.PaymentFlow*"></a>
+  <h4 id="Yort_Zip_InStore_ZipOrder_PaymentFlow" data-uid="Yort.Zip.InStore.ZipOrder.PaymentFlow">PaymentFlow</h4>
+  <div class="markdown level1 summary"><p>Determines whether this order results in a payment or an authorisation which must be subsequently confirmed. Required.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Quantity { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string PaymentFlow { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -322,37 +387,18 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderItem_Sku.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderItem.Sku%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderItem.cs/#L24">View Source</a>
-  </span>
-  <a id="Yort_Zip_InStore_ZipOrderItem_Sku_" data-uid="Yort.Zip.InStore.ZipOrderItem.Sku*"></a>
-  <h4 id="Yort_Zip_InStore_ZipOrderItem_Sku" data-uid="Yort.Zip.InStore.ZipOrderItem.Sku">Sku</h4>
-  <div class="markdown level1 summary"><p>The unique sku code of the item.</p>
+  <h5 id="Yort_Zip_InStore_ZipOrder_PaymentFlow_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The default is <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Payment">Payment</a>.</p>
 </div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Sku { get; set; }</code></pre>
+  <h5 id="Yort_Zip_InStore_ZipOrder_PaymentFlow_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html">ZipPaymentFlow</a></div>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Zip.InStore.CreateOrderResponse.html">CreateOrderResponse</a></div>
+      <div><a class="xref" href="Yort.Zip.InStore.IZipClient.html#Yort_Zip_InStore_IZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_">CreateOrderAsync</a>(<a class="xref" href="Yort.Zip.InStore.CreateOrderRequest.html">CreateOrderRequest</a>)</div>
+  </div>
 </article>
           </div>
           
@@ -361,10 +407,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderItem.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderItem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrder.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderItem.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrder.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

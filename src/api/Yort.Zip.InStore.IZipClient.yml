@@ -5,8 +5,12 @@ items:
   id: IZipClient
   parent: Yort.Zip.InStore
   children:
+  - Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+  - Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
   - Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
   - Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+  - Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
+  - Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
   langs:
   - csharp
   - vb
@@ -125,6 +129,146 @@ items:
   - type: System.ArgumentException
     commentId: T:System.ArgumentException
     description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
+- uid: Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+  id: CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  langs:
+  - csharp
+  - vb
+  name: CancelOrderAsync(CancelOrderRequest)
+  nameWithType: IZipClient.CancelOrderAsync(CancelOrderRequest)
+  fullName: Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+  type: Method
+  source:
+    remote:
+      path: src/IZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: CancelOrderAsync
+    path: IZipClient.cs
+    startLine: 36
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nRequests a previously created order be cancelled.\n"
+  example: []
+  syntax:
+    content: Task<CancelOrderResponse> CancelOrderAsync(CancelOrderRequest request)
+    parameters:
+    - id: request
+      type: Yort.Zip.InStore.CancelOrderRequest
+      description: A <xref href="Yort.Zip.InStore.CancelOrderRequest" data-throw-if-not-resolved="false"></xref> providing details of the order to be cancelled and operation/terminal that is requesting cancellation.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Zip.InStore.CancelOrderResponse}
+      description: A <xref href="Yort.Zip.InStore.CancelOrderResponse" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Function CancelOrderAsync(request As CancelOrderRequest) As Task(Of CancelOrderResponse)
+  overload: Yort.Zip.InStore.IZipClient.CancelOrderAsync*
+- uid: Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
+  id: RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  langs:
+  - csharp
+  - vb
+  name: RefundOrderAsync(RefundOrderRequest)
+  nameWithType: IZipClient.RefundOrderAsync(RefundOrderRequest)
+  fullName: Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
+  type: Method
+  source:
+    remote:
+      path: src/IZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: RefundOrderAsync
+    path: IZipClient.cs
+    startLine: 43
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nRefunds some or all of the money taken as part of a previously completed order.\n"
+  example: []
+  syntax:
+    content: Task<RefundOrderResponse> RefundOrderAsync(RefundOrderRequest request)
+    parameters:
+    - id: request
+      type: Yort.Zip.InStore.RefundOrderRequest
+      description: A <xref href="Yort.Zip.InStore.RefundOrderRequest" data-throw-if-not-resolved="false"></xref> specifying details of the refund to create and the order to create it against.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Zip.InStore.RefundOrderResponse}
+      description: A <xref href="Yort.Zip.InStore.RefundOrderResponse" data-throw-if-not-resolved="false"></xref> with details of a succesful outcome.
+    content.vb: Function RefundOrderAsync(request As RefundOrderRequest) As Task(Of RefundOrderResponse)
+  overload: Yort.Zip.InStore.IZipClient.RefundOrderAsync*
+- uid: Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
+  id: CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  langs:
+  - csharp
+  - vb
+  name: CommitOrderAsync(CommitOrderRequest)
+  nameWithType: IZipClient.CommitOrderAsync(CommitOrderRequest)
+  fullName: Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
+  type: Method
+  source:
+    remote:
+      path: src/IZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: CommitOrderAsync
+    path: IZipClient.cs
+    startLine: 50
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nCommits (completes) an order previously created via <xref href=\"Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)\" data-throw-if-not-resolved=\"false\"></xref> using the <xref href=\"Yort.Zip.InStore.ZipPaymentFlow.Auth\" data-throw-if-not-resolved=\"false\"></xref> flow.\n"
+  example: []
+  syntax:
+    content: Task CommitOrderAsync(CommitOrderRequest request)
+    parameters:
+    - id: request
+      type: Yort.Zip.InStore.CommitOrderRequest
+      description: A <xref href="Yort.Zip.InStore.CommitOrderRequest" data-throw-if-not-resolved="false"></xref> containing details of the order to commit.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth completed succesfully. Use the <xref href="Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)" data-throw-if-not-resolved="false"></xref> to confirm.
+    content.vb: Function CommitOrderAsync(request As CommitOrderRequest) As Task
+  overload: Yort.Zip.InStore.IZipClient.CommitOrderAsync*
+- uid: Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
+  id: RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  langs:
+  - csharp
+  - vb
+  name: RollbackOrderAsync(RollbackOrderRequest)
+  nameWithType: IZipClient.RollbackOrderAsync(RollbackOrderRequest)
+  fullName: Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
+  type: Method
+  source:
+    remote:
+      path: src/IZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: RollbackOrderAsync
+    path: IZipClient.cs
+    startLine: 57
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nRolls back (cancels/undoes) an order previously created via <xref href=\"Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)\" data-throw-if-not-resolved=\"false\"></xref> using the <xref href=\"Yort.Zip.InStore.ZipPaymentFlow.Auth\" data-throw-if-not-resolved=\"false\"></xref> flow.\n"
+  example: []
+  syntax:
+    content: Task RollbackOrderAsync(RollbackOrderRequest request)
+    parameters:
+    - id: request
+      type: Yort.Zip.InStore.RollbackOrderRequest
+      description: A <xref href="Yort.Zip.InStore.RollbackOrderRequest" data-throw-if-not-resolved="false"></xref> containing details of the order to rollback.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <xref href="Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)" data-throw-if-not-resolved="false"></xref> to confirm.
+    content.vb: Function RollbackOrderAsync(request As RollbackOrderRequest) As Task
+  overload: Yort.Zip.InStore.IZipClient.RollbackOrderAsync*
 references:
 - uid: Yort.Zip.InStore.ZipClient
   commentId: T:Yort.Zip.InStore.ZipClient
@@ -342,3 +486,229 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Yort.Zip.InStore.CancelOrderRequest
+  commentId: T:Yort.Zip.InStore.CancelOrderRequest
+  parent: Yort.Zip.InStore
+  name: CancelOrderRequest
+  nameWithType: CancelOrderRequest
+  fullName: Yort.Zip.InStore.CancelOrderRequest
+- uid: Yort.Zip.InStore.CancelOrderResponse
+  commentId: T:Yort.Zip.InStore.CancelOrderResponse
+  name: CancelOrderResponse
+  nameWithType: CancelOrderResponse
+  fullName: Yort.Zip.InStore.CancelOrderResponse
+- uid: Yort.Zip.InStore.IZipClient.CancelOrderAsync*
+  commentId: Overload:Yort.Zip.InStore.IZipClient.CancelOrderAsync
+  name: CancelOrderAsync
+  nameWithType: IZipClient.CancelOrderAsync
+  fullName: Yort.Zip.InStore.IZipClient.CancelOrderAsync
+- uid: System.Threading.Tasks.Task{Yort.Zip.InStore.CancelOrderResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Zip.InStore.CancelOrderResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<CancelOrderResponse>
+  nameWithType: Task<CancelOrderResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Zip.InStore.CancelOrderResponse>
+  nameWithType.vb: Task(Of CancelOrderResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Zip.InStore.CancelOrderResponse)
+  name.vb: Task(Of CancelOrderResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Zip.InStore.CancelOrderResponse
+    name: CancelOrderResponse
+    nameWithType: CancelOrderResponse
+    fullName: Yort.Zip.InStore.CancelOrderResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Zip.InStore.CancelOrderResponse
+    name: CancelOrderResponse
+    nameWithType: CancelOrderResponse
+    fullName: Yort.Zip.InStore.CancelOrderResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.RefundOrderRequest
+  commentId: T:Yort.Zip.InStore.RefundOrderRequest
+  parent: Yort.Zip.InStore
+  name: RefundOrderRequest
+  nameWithType: RefundOrderRequest
+  fullName: Yort.Zip.InStore.RefundOrderRequest
+- uid: Yort.Zip.InStore.RefundOrderResponse
+  commentId: T:Yort.Zip.InStore.RefundOrderResponse
+  name: RefundOrderResponse
+  nameWithType: RefundOrderResponse
+  fullName: Yort.Zip.InStore.RefundOrderResponse
+- uid: Yort.Zip.InStore.IZipClient.RefundOrderAsync*
+  commentId: Overload:Yort.Zip.InStore.IZipClient.RefundOrderAsync
+  name: RefundOrderAsync
+  nameWithType: IZipClient.RefundOrderAsync
+  fullName: Yort.Zip.InStore.IZipClient.RefundOrderAsync
+- uid: System.Threading.Tasks.Task{Yort.Zip.InStore.RefundOrderResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Zip.InStore.RefundOrderResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<RefundOrderResponse>
+  nameWithType: Task<RefundOrderResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Zip.InStore.RefundOrderResponse>
+  nameWithType.vb: Task(Of RefundOrderResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Zip.InStore.RefundOrderResponse)
+  name.vb: Task(Of RefundOrderResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Zip.InStore.RefundOrderResponse
+    name: RefundOrderResponse
+    nameWithType: RefundOrderResponse
+    fullName: Yort.Zip.InStore.RefundOrderResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Zip.InStore.RefundOrderResponse
+    name: RefundOrderResponse
+    nameWithType: RefundOrderResponse
+    fullName: Yort.Zip.InStore.RefundOrderResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  name: CreateOrderAsync(CreateOrderRequest)
+  nameWithType: IZipClient.CreateOrderAsync(CreateOrderRequest)
+  fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  spec.csharp:
+  - uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+    name: CreateOrderAsync
+    nameWithType: IZipClient.CreateOrderAsync
+    fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.CreateOrderRequest
+    name: CreateOrderRequest
+    nameWithType: CreateOrderRequest
+    fullName: Yort.Zip.InStore.CreateOrderRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+    name: CreateOrderAsync
+    nameWithType: IZipClient.CreateOrderAsync
+    fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.CreateOrderRequest
+    name: CreateOrderRequest
+    nameWithType: CreateOrderRequest
+    fullName: Yort.Zip.InStore.CreateOrderRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.ZipPaymentFlow.Auth
+  commentId: F:Yort.Zip.InStore.ZipPaymentFlow.Auth
+  isExternal: true
+- uid: Yort.Zip.InStore.CommitOrderRequest
+  commentId: T:Yort.Zip.InStore.CommitOrderRequest
+  parent: Yort.Zip.InStore
+  name: CommitOrderRequest
+  nameWithType: CommitOrderRequest
+  fullName: Yort.Zip.InStore.CommitOrderRequest
+- uid: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  name: GetOrderStatusAsync(OrderStatusRequest)
+  nameWithType: IZipClient.GetOrderStatusAsync(OrderStatusRequest)
+  fullName: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+  spec.csharp:
+  - uid: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+    name: GetOrderStatusAsync
+    nameWithType: IZipClient.GetOrderStatusAsync
+    fullName: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.OrderStatusRequest
+    name: OrderStatusRequest
+    nameWithType: OrderStatusRequest
+    fullName: Yort.Zip.InStore.OrderStatusRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
+    name: GetOrderStatusAsync
+    nameWithType: IZipClient.GetOrderStatusAsync
+    fullName: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.OrderStatusRequest
+    name: OrderStatusRequest
+    nameWithType: OrderStatusRequest
+    fullName: Yort.Zip.InStore.OrderStatusRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.IZipClient.CommitOrderAsync*
+  commentId: Overload:Yort.Zip.InStore.IZipClient.CommitOrderAsync
+  name: CommitOrderAsync
+  nameWithType: IZipClient.CommitOrderAsync
+  fullName: Yort.Zip.InStore.IZipClient.CommitOrderAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Yort.Zip.InStore.IZipClient
+  commentId: T:Yort.Zip.InStore.IZipClient
+  parent: Yort.Zip.InStore
+  name: IZipClient
+  nameWithType: IZipClient
+  fullName: Yort.Zip.InStore.IZipClient
+- uid: Yort.Zip.InStore.RollbackOrderRequest
+  commentId: T:Yort.Zip.InStore.RollbackOrderRequest
+  parent: Yort.Zip.InStore
+  name: RollbackOrderRequest
+  nameWithType: RollbackOrderRequest
+  fullName: Yort.Zip.InStore.RollbackOrderRequest
+- uid: Yort.Zip.InStore.IZipClient.RollbackOrderAsync*
+  commentId: Overload:Yort.Zip.InStore.IZipClient.RollbackOrderAsync
+  name: RollbackOrderAsync
+  nameWithType: IZipClient.RollbackOrderAsync
+  fullName: Yort.Zip.InStore.IZipClient.RollbackOrderAsync

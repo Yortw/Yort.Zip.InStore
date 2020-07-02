@@ -1,42 +1,37 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Yort.Zip.InStore.OrderStatusRequest
-  commentId: T:Yort.Zip.InStore.OrderStatusRequest
-  id: OrderStatusRequest
+- uid: Yort.Zip.InStore.CancelOrderResponse
+  commentId: T:Yort.Zip.InStore.CancelOrderResponse
+  id: CancelOrderResponse
   parent: Yort.Zip.InStore
   children:
-  - Yort.Zip.InStore.OrderStatusRequest.OrderId
-  - Yort.Zip.InStore.OrderStatusRequest.Validate
+  - Yort.Zip.InStore.CancelOrderResponse.OrderId
   langs:
   - csharp
   - vb
-  name: OrderStatusRequest
-  nameWithType: OrderStatusRequest
-  fullName: Yort.Zip.InStore.OrderStatusRequest
+  name: CancelOrderResponse
+  nameWithType: CancelOrderResponse
+  fullName: Yort.Zip.InStore.CancelOrderResponse
   type: Class
   source:
     remote:
-      path: src/OrderStatusRequest.cs
+      path: src/CancelOrderResponse.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: OrderStatusRequest
-    path: OrderStatusRequest.cs
-    startLine: 10
+    id: CancelOrderResponse
+    path: CancelOrderResponse.cs
+    startLine: 9
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nRepresents details of a request to retrieve the current status of an order in the Zip system.\n"
+  summary: "\nContains details of a successful request to cancel an order via <xref href=\"Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
-    content: 'public class OrderStatusRequest : ZipRequestOptionsBase'
-    content.vb: >-
-      Public Class OrderStatusRequest
-          Inherits ZipRequestOptionsBase
+    content: public class CancelOrderResponse
+    content.vb: Public Class CancelOrderResponse
   inheritance:
   - System.Object
-  - Yort.Zip.InStore.ZipRequestOptionsBase
   inheritedMembers:
-  - Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -50,29 +45,29 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Yort.Zip.InStore.OrderStatusRequest.OrderId
-  commentId: P:Yort.Zip.InStore.OrderStatusRequest.OrderId
+- uid: Yort.Zip.InStore.CancelOrderResponse.OrderId
+  commentId: P:Yort.Zip.InStore.CancelOrderResponse.OrderId
   id: OrderId
-  parent: Yort.Zip.InStore.OrderStatusRequest
+  parent: Yort.Zip.InStore.CancelOrderResponse
   langs:
   - csharp
   - vb
   name: OrderId
-  nameWithType: OrderStatusRequest.OrderId
-  fullName: Yort.Zip.InStore.OrderStatusRequest.OrderId
+  nameWithType: CancelOrderResponse.OrderId
+  fullName: Yort.Zip.InStore.CancelOrderResponse.OrderId
   type: Property
   source:
     remote:
-      path: src/OrderStatusRequest.cs
+      path: src/CancelOrderResponse.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: OrderId
-    path: OrderStatusRequest.cs
-    startLine: 15
+    path: CancelOrderResponse.cs
+    startLine: 14
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nThe unique id of the order within the Zip system, as returned in <xref href=\"Yort.Zip.InStore.CreateOrderResponse.OrderId\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nContains the unique id of the order that was cancelled.\n"
   example: []
   syntax:
     content: public string OrderId { get; set; }
@@ -80,56 +75,50 @@ items:
     return:
       type: System.String
     content.vb: Public Property OrderId As String
-  overload: Yort.Zip.InStore.OrderStatusRequest.OrderId*
+  overload: Yort.Zip.InStore.CancelOrderResponse.OrderId*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.OrderStatusRequest.Validate
-  commentId: M:Yort.Zip.InStore.OrderStatusRequest.Validate
-  id: Validate
-  parent: Yort.Zip.InStore.OrderStatusRequest
-  langs:
-  - csharp
-  - vb
-  name: Validate()
-  nameWithType: OrderStatusRequest.Validate()
-  fullName: Yort.Zip.InStore.OrderStatusRequest.Validate()
-  type: Method
-  source:
-    remote:
-      path: src/OrderStatusRequest.cs
-      branch: master
-      repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Validate
-    path: OrderStatusRequest.cs
-    startLine: 22
-  assemblies:
-  - Yort.Zip.InStore
-  namespace: Yort.Zip.InStore
-  summary: "\nValidates this request as much as possible prior to sending it to the Zip API.\n"
-  example: []
-  syntax:
-    content: public override void Validate()
-    content.vb: Public Overrides Sub Validate
-  overridden: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  overload: Yort.Zip.InStore.OrderStatusRequest.Validate*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: Thrown if <xref href="Yort.Zip.InStore.OrderStatusRequest.OrderId" data-throw-if-not-resolved="false"></xref> is null.
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: Thrown if <xref href="Yort.Zip.InStore.OrderStatusRequest.OrderId" data-throw-if-not-resolved="false"></xref> is blank or contains only whitespace.
-  modifiers.csharp:
-  - public
-  - override
-  modifiers.vb:
-  - Public
-  - Overrides
 references:
+- uid: Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  name: CancelOrderAsync(CancelOrderRequest)
+  nameWithType: IZipClient.CancelOrderAsync(CancelOrderRequest)
+  fullName: Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+  spec.csharp:
+  - uid: Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+    name: CancelOrderAsync
+    nameWithType: IZipClient.CancelOrderAsync
+    fullName: Yort.Zip.InStore.IZipClient.CancelOrderAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.CancelOrderRequest
+    name: CancelOrderRequest
+    nameWithType: CancelOrderRequest
+    fullName: Yort.Zip.InStore.CancelOrderRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
+    name: CancelOrderAsync
+    nameWithType: IZipClient.CancelOrderAsync
+    fullName: Yort.Zip.InStore.IZipClient.CancelOrderAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.CancelOrderRequest
+    name: CancelOrderRequest
+    nameWithType: CancelOrderRequest
+    fullName: Yort.Zip.InStore.CancelOrderRequest
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Yort.Zip.InStore
   commentId: N:Yort.Zip.InStore
   name: Yort.Zip.InStore
@@ -142,40 +131,6 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Yort.Zip.InStore.ZipRequestOptionsBase
-  commentId: T:Yort.Zip.InStore.ZipRequestOptionsBase
-  parent: Yort.Zip.InStore
-  name: ZipRequestOptionsBase
-  nameWithType: ZipRequestOptionsBase
-  fullName: Yort.Zip.InStore.ZipRequestOptionsBase
-- uid: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  parent: Yort.Zip.InStore.ZipRequestOptionsBase
-  name: GetCustomHttpHeaders()
-  nameWithType: ZipRequestOptionsBase.GetCustomHttpHeaders()
-  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders()
-  spec.csharp:
-  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-    name: GetCustomHttpHeaders
-    nameWithType: ZipRequestOptionsBase.GetCustomHttpHeaders
-    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-    name: GetCustomHttpHeaders
-    nameWithType: ZipRequestOptionsBase.GetCustomHttpHeaders
-    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -455,20 +410,23 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Yort.Zip.InStore.IZipClient
+  commentId: T:Yort.Zip.InStore.IZipClient
+  parent: Yort.Zip.InStore
+  name: IZipClient
+  nameWithType: IZipClient
+  fullName: Yort.Zip.InStore.IZipClient
 - uid: System
   commentId: N:System
   isExternal: true
   name: System
   nameWithType: System
   fullName: System
-- uid: Yort.Zip.InStore.CreateOrderResponse.OrderId
-  commentId: P:Yort.Zip.InStore.CreateOrderResponse.OrderId
-  isExternal: true
-- uid: Yort.Zip.InStore.OrderStatusRequest.OrderId*
-  commentId: Overload:Yort.Zip.InStore.OrderStatusRequest.OrderId
+- uid: Yort.Zip.InStore.CancelOrderResponse.OrderId*
+  commentId: Overload:Yort.Zip.InStore.CancelOrderResponse.OrderId
   name: OrderId
-  nameWithType: OrderStatusRequest.OrderId
-  fullName: Yort.Zip.InStore.OrderStatusRequest.OrderId
+  nameWithType: CancelOrderResponse.OrderId
+  fullName: Yort.Zip.InStore.CancelOrderResponse.OrderId
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -476,45 +434,3 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Yort.Zip.InStore.OrderStatusRequest.OrderId
-  commentId: P:Yort.Zip.InStore.OrderStatusRequest.OrderId
-  isExternal: true
-- uid: System.ArgumentNullException
-  commentId: T:System.ArgumentNullException
-  isExternal: true
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
-- uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  parent: Yort.Zip.InStore.ZipRequestOptionsBase
-  name: Validate()
-  nameWithType: ZipRequestOptionsBase.Validate()
-  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate()
-  spec.csharp:
-  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-    name: Validate
-    nameWithType: ZipRequestOptionsBase.Validate
-    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-    name: Validate
-    nameWithType: ZipRequestOptionsBase.Validate
-    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Yort.Zip.InStore.OrderStatusRequest.Validate*
-  commentId: Overload:Yort.Zip.InStore.OrderStatusRequest.Validate
-  name: Validate
-  nameWithType: OrderStatusRequest.Validate
-  fullName: Yort.Zip.InStore.OrderStatusRequest.Validate

@@ -34,7 +34,9 @@
     <None Remove="articles\**" />
     <None Remove="images\**" />
     <None Remove="_site\**" />
+    <None Remove="Directory.Build.props" />
     <None Remove="log.txt" />
+    <None Remove="Yort.Zip.InStore.xml" />
     <None Include="images\projecticon128.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

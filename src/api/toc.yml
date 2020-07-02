@@ -2,24 +2,36 @@
 - uid: Yort.Zip.InStore
   name: Yort.Zip.InStore
   items:
+  - uid: Yort.Zip.InStore.CancelOrderRequest
+    name: CancelOrderRequest
+  - uid: Yort.Zip.InStore.CancelOrderResponse
+    name: CancelOrderResponse
+  - uid: Yort.Zip.InStore.CommitOrderRequest
+    name: CommitOrderRequest
   - uid: Yort.Zip.InStore.CreateOrderRequest
     name: CreateOrderRequest
   - uid: Yort.Zip.InStore.CreateOrderResponse
     name: CreateOrderResponse
   - uid: Yort.Zip.InStore.IZipClient
     name: IZipClient
-  - uid: Yort.Zip.InStore.NewZipOrder
-    name: NewZipOrder
   - uid: Yort.Zip.InStore.OrderStatusRequest
     name: OrderStatusRequest
   - uid: Yort.Zip.InStore.OrderStatusResponse
     name: OrderStatusResponse
+  - uid: Yort.Zip.InStore.RefundOrderRequest
+    name: RefundOrderRequest
+  - uid: Yort.Zip.InStore.RefundOrderResponse
+    name: RefundOrderResponse
+  - uid: Yort.Zip.InStore.RollbackOrderRequest
+    name: RollbackOrderRequest
   - uid: Yort.Zip.InStore.ZipClient
     name: ZipClient
   - uid: Yort.Zip.InStore.ZipEnvironment
     name: ZipEnvironment
   - uid: Yort.Zip.InStore.ZipEnvironment.NewZealand
     name: ZipEnvironment.NewZealand
+  - uid: Yort.Zip.InStore.ZipOrder
+    name: ZipOrder
   - uid: Yort.Zip.InStore.ZipOrderItem
     name: ZipOrderItem
   - uid: Yort.Zip.InStore.ZipOrderStatus

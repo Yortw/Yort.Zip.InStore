@@ -89,6 +89,15 @@
                         
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Yort.Zip.InStore.CancelOrderRequest.html" title="CancelOrderRequest" class="">CancelOrderRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CancelOrderResponse.html" title="CancelOrderResponse" class="">CancelOrderResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CommitOrderRequest.html" title="CommitOrderRequest" class="">CommitOrderRequest</a>
+                          </li>
+                          <li class="">
                             <a href="Yort.Zip.InStore.CreateOrderRequest.html" title="CreateOrderRequest" class="">CreateOrderRequest</a>
                           </li>
                           <li class="">
@@ -98,13 +107,19 @@
                             <a href="Yort.Zip.InStore.IZipClient.html" title="IZipClient" class="">IZipClient</a>
                           </li>
                           <li class="">
-                            <a href="Yort.Zip.InStore.NewZipOrder.html" title="NewZipOrder" class="">NewZipOrder</a>
-                          </li>
-                          <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusRequest.html" title="OrderStatusRequest" class="">OrderStatusRequest</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusResponse.html" title="OrderStatusResponse" class="">OrderStatusResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RefundOrderRequest.html" title="RefundOrderRequest" class="">RefundOrderRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RefundOrderResponse.html" title="RefundOrderResponse" class="">RefundOrderResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RollbackOrderRequest.html" title="RollbackOrderRequest" class="">RollbackOrderRequest</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="">ZipClient</a>
@@ -114,6 +129,9 @@
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.NewZealand.html" title="ZipEnvironment.NewZealand" class="">ZipEnvironment.NewZealand</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.ZipOrder.html" title="ZipOrder" class="">ZipOrder</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipOrderItem.html" title="ZipOrderItem" class="">ZipOrderItem</a>
@@ -185,7 +203,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderStatus_Approved.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderStatus.Approved%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipPaymentStatus.cs/#L21">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderStatus.cs/#L21">View Source</a>
   </span>
   <h4 id="Yort_Zip_InStore_ZipOrderStatus_Approved" data-uid="Yort.Zip.InStore.ZipOrderStatus.Approved">Approved</h4>
   <div class="markdown level1 summary"><p>The order has been approved and paid for by the customer. This status is relevant to an order that has been created with the <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Auth">Auth</a> flow.</p>
@@ -215,7 +233,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderStatus_Cancelled.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderStatus.Cancelled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipPaymentStatus.cs/#L41">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderStatus.cs/#L41">View Source</a>
   </span>
   <h4 id="Yort_Zip_InStore_ZipOrderStatus_Cancelled" data-uid="Yort.Zip.InStore.ZipOrderStatus.Cancelled">Cancelled</h4>
   <div class="markdown level1 summary"><p>The order has been cancelled either prior to the customer approving/declining, or the order has been rolled back by the merchant after a succesful <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Auth">Auth</a>.</p>
@@ -245,7 +263,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderStatus_Complete.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderStatus.Complete%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipPaymentStatus.cs/#L26">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderStatus.cs/#L26">View Source</a>
   </span>
   <h4 id="Yort_Zip_InStore_ZipOrderStatus_Complete" data-uid="Yort.Zip.InStore.ZipOrderStatus.Complete">Complete</h4>
   <div class="markdown level1 summary"><p>The order has been paid and the order is complete. This means either the <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Payment">Payment</a> flow as used and payment successful, or the the <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Auth">Auth</a> was used and the payment was committed.</p>
@@ -275,7 +293,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderStatus_Declined.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderStatus.Declined%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipPaymentStatus.cs/#L31">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderStatus.cs/#L31">View Source</a>
   </span>
   <h4 id="Yort_Zip_InStore_ZipOrderStatus_Declined" data-uid="Yort.Zip.InStore.ZipOrderStatus.Declined">Declined</h4>
   <div class="markdown level1 summary"><p>The order was declined by the user.</p>
@@ -305,7 +323,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderStatus_Expired.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderStatus.Expired%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipPaymentStatus.cs/#L36">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderStatus.cs/#L36">View Source</a>
   </span>
   <h4 id="Yort_Zip_InStore_ZipOrderStatus_Expired" data-uid="Yort.Zip.InStore.ZipOrderStatus.Expired">Expired</h4>
   <div class="markdown level1 summary"><p>The order has timed out.</p>
@@ -335,7 +353,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderStatus_Pending.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderStatus.Pending%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipPaymentStatus.cs/#L16">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderStatus.cs/#L16">View Source</a>
   </span>
   <h4 id="Yort_Zip_InStore_ZipOrderStatus_Pending" data-uid="Yort.Zip.InStore.ZipOrderStatus.Pending">Pending</h4>
   <div class="markdown level1 summary"><p>Indicates the order is still pending approval or cancellation by the system/consumer. The client should continue polling.</p>
@@ -367,7 +385,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderStatus_IsTerminalStatus_System_String_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderStatus.IsTerminalStatus(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipPaymentStatus.cs/#L48">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderStatus.cs/#L48">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipOrderStatus_IsTerminalStatus_" data-uid="Yort.Zip.InStore.ZipOrderStatus.IsTerminalStatus*"></a>
   <h4 id="Yort_Zip_InStore_ZipOrderStatus_IsTerminalStatus_System_String_" data-uid="Yort.Zip.InStore.ZipOrderStatus.IsTerminalStatus(System.String)">IsTerminalStatus(String)</h4>
@@ -423,7 +441,7 @@
                     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipOrderStatus.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipOrderStatus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipPaymentStatus.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipOrderStatus.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

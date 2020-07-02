@@ -89,6 +89,15 @@
                         
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Yort.Zip.InStore.CancelOrderRequest.html" title="CancelOrderRequest" class="">CancelOrderRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CancelOrderResponse.html" title="CancelOrderResponse" class="">CancelOrderResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.CommitOrderRequest.html" title="CommitOrderRequest" class="">CommitOrderRequest</a>
+                          </li>
+                          <li class="">
                             <a href="Yort.Zip.InStore.CreateOrderRequest.html" title="CreateOrderRequest" class="">CreateOrderRequest</a>
                           </li>
                           <li class="">
@@ -98,13 +107,19 @@
                             <a href="Yort.Zip.InStore.IZipClient.html" title="IZipClient" class="">IZipClient</a>
                           </li>
                           <li class="">
-                            <a href="Yort.Zip.InStore.NewZipOrder.html" title="NewZipOrder" class="">NewZipOrder</a>
-                          </li>
-                          <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusRequest.html" title="OrderStatusRequest" class="">OrderStatusRequest</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.OrderStatusResponse.html" title="OrderStatusResponse" class="">OrderStatusResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RefundOrderRequest.html" title="RefundOrderRequest" class="">RefundOrderRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RefundOrderResponse.html" title="RefundOrderResponse" class="">RefundOrderResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.RollbackOrderRequest.html" title="RollbackOrderRequest" class="">RollbackOrderRequest</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="">ZipClient</a>
@@ -114,6 +129,9 @@
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.NewZealand.html" title="ZipEnvironment.NewZealand" class="">ZipEnvironment.NewZealand</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.ZipOrder.html" title="ZipOrder" class="">ZipOrder</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipOrderItem.html" title="ZipOrderItem" class="">ZipOrderItem</a>
@@ -144,20 +162,35 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
+      <h4><a class="xref" href="Yort.Zip.InStore.CancelOrderRequest.html">CancelOrderRequest</a></h4>
+      <section><p>Represents a request to cancel an order that has not yet been approved by the consumer or reached a final status.</p>
+</section>
+      <h4><a class="xref" href="Yort.Zip.InStore.CancelOrderResponse.html">CancelOrderResponse</a></h4>
+      <section><p>Contains details of a successful request to cancel an order via <a class="xref" href="Yort.Zip.InStore.IZipClient.html#Yort_Zip_InStore_IZipClient_CancelOrderAsync_Yort_Zip_InStore_CancelOrderRequest_">CancelOrderAsync(CancelOrderRequest)</a>.</p>
+</section>
+      <h4><a class="xref" href="Yort.Zip.InStore.CommitOrderRequest.html">CommitOrderRequest</a></h4>
+      <section><p>Contains details of a request to commit an order that has been created using the <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Auth">Auth</a> flow.</p>
+</section>
       <h4><a class="xref" href="Yort.Zip.InStore.CreateOrderRequest.html">CreateOrderRequest</a></h4>
       <section><p>Contains details of an order (request for payment) to be created within the Zip system.</p>
 </section>
       <h4><a class="xref" href="Yort.Zip.InStore.CreateOrderResponse.html">CreateOrderResponse</a></h4>
       <section><p>Contains the initial details of an order created in the Zip system.</p>
 </section>
-      <h4><a class="xref" href="Yort.Zip.InStore.NewZipOrder.html">NewZipOrder</a></h4>
-      <section><p>Contains details of an order (request for payment) to be created within the Zip system.</p>
-</section>
       <h4><a class="xref" href="Yort.Zip.InStore.OrderStatusRequest.html">OrderStatusRequest</a></h4>
       <section><p>Represents details of a request to retrieve the current status of an order in the Zip system.</p>
 </section>
       <h4><a class="xref" href="Yort.Zip.InStore.OrderStatusResponse.html">OrderStatusResponse</a></h4>
       <section><p>Represents the response of a successful <a class="xref" href="Yort.Zip.InStore.IZipClient.html#Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_">GetOrderStatusAsync(OrderStatusRequest)</a> call.</p>
+</section>
+      <h4><a class="xref" href="Yort.Zip.InStore.RefundOrderRequest.html">RefundOrderRequest</a></h4>
+      <section><p>Represents a request to refund all or part of a previously completed order.</p>
+</section>
+      <h4><a class="xref" href="Yort.Zip.InStore.RefundOrderResponse.html">RefundOrderResponse</a></h4>
+      <section><p>Provides details of a successful refund created by <a class="xref" href="Yort.Zip.InStore.IZipClient.html#Yort_Zip_InStore_IZipClient_RefundOrderAsync_Yort_Zip_InStore_RefundOrderRequest_">RefundOrderAsync(RefundOrderRequest)</a>.</p>
+</section>
+      <h4><a class="xref" href="Yort.Zip.InStore.RollbackOrderRequest.html">RollbackOrderRequest</a></h4>
+      <section><p>Contains details of a request to rollback (undo/cancel) an order that has been created using the <a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html#Yort_Zip_InStore_ZipPaymentFlow_Auth">Auth</a> flow.</p>
 </section>
       <h4><a class="xref" href="Yort.Zip.InStore.ZipClient.html">ZipClient</a></h4>
       <section><p>The main class used to interact with the Zip payments API.</p>
@@ -168,6 +201,9 @@
       <h4><a class="xref" href="Yort.Zip.InStore.ZipEnvironment.NewZealand.html">ZipEnvironment.NewZealand</a></h4>
       <section><p>Provides pre-build environment instances for the New Zealand region.</p>
 </section>
+      <h4><a class="xref" href="Yort.Zip.InStore.ZipOrder.html">ZipOrder</a></h4>
+      <section><p>Contains details of an order (request for payment) to be created within the Zip system.</p>
+</section>
       <h4><a class="xref" href="Yort.Zip.InStore.ZipOrderItem.html">ZipOrderItem</a></h4>
       <section><p>Represents information about an item purchased on a Zip order, used to show the end-consumer details of their purchase in the Zip consumer portal.</p>
 </section>
@@ -175,7 +211,7 @@
       <section><p>Provides a list of known statuses for Zip orders.</p>
 </section>
       <h4><a class="xref" href="Yort.Zip.InStore.ZipPaymentFlow.html">ZipPaymentFlow</a></h4>
-      <section><p>A class that exposes constants for the known allowed values of the <a class="xref" href="Yort.Zip.InStore.NewZipOrder.html#Yort_Zip_InStore_NewZipOrder_PaymentFlow">PaymentFlow</a> property.</p>
+      <section><p>A class that exposes constants for the known allowed values of the <a class="xref" href="Yort.Zip.InStore.ZipOrder.html#Yort_Zip_InStore_ZipOrder_PaymentFlow">PaymentFlow</a> property.</p>
 </section>
       <h4><a class="xref" href="Yort.Zip.InStore.ZipRequestOptionsBase.html">ZipRequestOptionsBase</a></h4>
       <section><p>Base class for request options classes, providing a common and extensible interface for all requests.</p>

@@ -1,6 +1,7 @@
 using System;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Yort.Zip.InStore;
 
@@ -16,7 +17,9 @@ namespace Tests
 
 			var request = new CreateOrderRequest()
 			{
-				Order = new NewZipOrder()
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
 				{
 					Amount = 10.5M,
 					CustomerApprovalCode = "AA05",
@@ -40,10 +43,11 @@ namespace Tests
 
 			var request = new CreateOrderRequest()
 			{
-				Order = new NewZipOrder()
+				TerminalId = "2531",
+				Order = new ZipOrder()
 				{
 					Amount = 10.5M,
-					CustomerApprovalCode = "AA20",
+					CustomerApprovalCode = "AA10",
 					MerchantReference = System.Guid.NewGuid().ToString(),
 					Operator = "Test",
 					PaymentFlow = ZipPaymentFlow.Payment
@@ -67,7 +71,156 @@ namespace Tests
 			}
 
 			Assert.IsNotNull(statusResponse);
+			Assert.AreEqual(ZipOrderStatus.Complete, statusResponse.Status);
 		}
 
+		[TestMethod]
+		public async Task ZipClient_CanCancelOrder()
+		{
+			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+
+			#region Create an order to cancel
+			var request = new CreateOrderRequest()
+			{
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "CA30",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Payment
+				}
+			};
+
+			var createOrderResult = await client.CreateOrderAsync(request);
+			Assert.IsNotNull(createOrderResult);
+			Assert.IsFalse(String.IsNullOrWhiteSpace(createOrderResult.OrderId));
+
+			#endregion
+
+			var cancelResponse = await client.CancelOrderAsync(new CancelOrderRequest() { OrderId = createOrderResult.OrderId, Operator = "Test", TerminalId = "2531" });
+			Assert.IsNotNull(cancelResponse);
+			Assert.AreEqual(createOrderResult.OrderId, cancelResponse.OrderId);
+		}
+
+
+		[TestMethod]
+		public async Task ZipClient_CanRefundOrder()
+		{
+			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+
+			#region Create an order to refund 
+			var createOrderRequest = new CreateOrderRequest()
+			{
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "AA00",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Payment
+				}
+			};
+
+			var createOrderResult = await client.CreateOrderAsync(createOrderRequest);
+			Assert.IsNotNull(createOrderResult);
+			Assert.IsFalse(String.IsNullOrWhiteSpace(createOrderResult.OrderId));
+
+			var statusResponse = await client.GetOrderStatusAsync(new OrderStatusRequest() { OrderId = createOrderResult.OrderId });
+			Assert.IsNotNull(statusResponse);
+
+			while (!ZipOrderStatus.IsTerminalStatus(statusResponse.Status))
+			{
+				System.Diagnostics.Trace.WriteLine($"Order {statusResponse.OrderNumber} status is {statusResponse.Status}");
+				await Task.Delay(1000);
+				statusResponse = await client.GetOrderStatusAsync(new OrderStatusRequest() { OrderId = createOrderResult.OrderId });
+			}
+
+			Assert.IsNotNull(statusResponse);
+			Assert.AreEqual(ZipOrderStatus.Complete, statusResponse.Status);
+
+			#endregion
+
+			client = new ZipClient(ZipEnvironment.NewZealand.Test);
+
+			var createRefundRequest = new RefundOrderRequest() { MerchantRefundReference = System.Guid.NewGuid().ToString(), OrderId = createOrderResult.OrderId, Amount = createOrderRequest.Order.Amount, Operator = "Test", TerminalId = "2531" /*, StoreId = "Albany Westfield" */ };
+			var refundResponse = await client.RefundOrderAsync(createRefundRequest);
+			Assert.IsNotNull(refundResponse);
+			Assert.IsFalse(String.IsNullOrEmpty(refundResponse.Id));
+			Assert.IsNotNull(refundResponse.RefundedDateTime);
+			Assert.AreEqual(createRefundRequest.MerchantRefundReference, refundResponse.MerchantReference);
+		}
+
+		[TestMethod]
+		public async Task ZipClient_CanCommitAuthedOrder()
+		{
+			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+
+			#region Create Authed Order
+
+			var createOrderRequest = new CreateOrderRequest()
+			{
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "AA00",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Auth
+				}
+			};
+
+			var createOrderResponse = await client.CreateOrderAsync(createOrderRequest);
+			Assert.IsNotNull(createOrderResponse);
+			Assert.IsFalse(String.IsNullOrWhiteSpace(createOrderResponse.OrderId));
+
+			#endregion
+
+			await client.CommitOrderAsync(new CommitOrderRequest() { OrderId = createOrderResponse.OrderId });
+
+			var statusResponse = await client.GetOrderStatusAsync(new OrderStatusRequest() { OrderId = createOrderResponse.OrderId });
+			Assert.IsNotNull(statusResponse);
+			Assert.AreEqual(ZipOrderStatus.Complete, statusResponse.Status);
+		}
+
+		[TestMethod]
+		public async Task ZipClient_CanRollbackAuthedOrder()
+		{
+			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+
+			#region Create Authed Order
+
+			var createOrderRequest = new CreateOrderRequest()
+			{
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "AA00",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Auth
+				}
+			};
+
+			var createOrderResponse = await client.CreateOrderAsync(createOrderRequest);
+			Assert.IsNotNull(createOrderResponse);
+			Assert.IsFalse(String.IsNullOrWhiteSpace(createOrderResponse.OrderId));
+
+			#endregion
+
+			await client.RollbackOrderAsync(new RollbackOrderRequest() { OrderId = createOrderResponse.OrderId });
+
+			var statusResponse = await client.GetOrderStatusAsync(new OrderStatusRequest() { OrderId = createOrderResponse.OrderId });
+			Assert.IsNotNull(statusResponse);
+			Assert.AreEqual(ZipOrderStatus.Cancelled, statusResponse.Status);
+		}
 	}
 }
