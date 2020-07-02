@@ -37,6 +37,7 @@ namespace Yort.Zip.InStore
 		/// <remarks>
 		/// <para>Defaults should only be used for values that are not otherwise set (null).</para>
 		/// <para>The base version of this method is a no-op, it must be overridden by derived classes to implement the defaults specific to their request format.</para>
+		/// <para>This method is called (by <see cref="ZipClient"/>) before the <see cref="Validate"/> method, and should be robust to null/missing/out of range values.</para>
 		/// </remarks>
 		public virtual void ApplyDefaults(ZipClientConfiguration config) { }
 	}

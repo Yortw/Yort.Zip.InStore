@@ -58,7 +58,7 @@ namespace Tests
 				Order = new ZipOrder()
 				{
 					Amount = 10.5M,
-					CustomerApprovalCode = "AA10",
+					CustomerApprovalCode = "AA05",
 					MerchantReference = System.Guid.NewGuid().ToString(),
 					Operator = "Test",
 					PaymentFlow = ZipPaymentFlow.Payment
@@ -365,7 +365,88 @@ namespace Tests
 			);
 		}
 
+		[TestMethod]
+		public async Task ZipClient_CallsRequestApplyDefaults()
+		{
+			var client = CreateTestClient("2531", "Kermit The Frog", "Albany");
+			
+
+			var request = new CreateOrderRequest()
+			{
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "AA05",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					PaymentFlow = ZipPaymentFlow.Payment,
+					Items = new System.Collections.Generic.List<ZipOrderItem>()
+					{
+						new ZipOrderItem()
+						{
+							Name = "Test Item",
+							Description = "0110A Blue 12",
+							Price = "10.50",
+							Quantity = 1,
+							Sku = "123"
+						}
+					}
+				}
+			};
+
+			try
+			{
+				var result = await client.CreateOrderAsync(request);
+			}
+			catch { } //We don't care about actual errors
+
+			//Check the defaults were applied after we attempted the order creation
+			Assert.AreEqual("2531", request.TerminalId);
+			Assert.AreEqual("Kermit The Frog", request.Order.Operator);
+			Assert.AreEqual("Albany", request.StoreId);
+		}
+
+		[TestMethod]
+		public async Task ZipClient_CallsRequestValidate ()
+		{
+			var client = CreateTestClient();
+
+			//Create a request known to fail validation
+			//(several required properties including pre-approval code are null)
+			var request = new CreateOrderRequest()
+			{
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = null,
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					PaymentFlow = ZipPaymentFlow.Payment,
+					Items = new System.Collections.Generic.List<ZipOrderItem>()
+					{
+						new ZipOrderItem()
+						{
+							Name = "Test Item",
+							Description = "0110A Blue 12",
+							Price = "10.50",
+							Quantity = 1,
+							Sku = "123"
+						}
+					}
+				}
+			};
+
+			await Assert.ThrowsExceptionAsync<ArgumentNullException>
+			(
+				async () => { await client.CreateOrderAsync(request); }
+			);
+		}
+
+
 		private IZipClient CreateTestClient()
+		{
+			return CreateTestClient(null, null, null);
+		}
+
+		private IZipClient CreateTestClient(string terminalId, string operatorId, string storeId)
 		{
 			return new ZipClient
 			(
@@ -375,6 +456,11 @@ namespace Tests
 					Environment.GetEnvironmentVariable("ZipPayments_ClientSecret"),
 					ZipEnvironment.NewZealand.Test
 				)
+				{
+					DefaultTerminalId = terminalId,
+					DefaultOperator = operatorId,
+					DefaultStoreId = storeId
+				}
 			);
 		}
 

@@ -25,7 +25,8 @@ There's really only three steps:
 * Send the order request to Zip using the client created in step 1... handle the result or any exceptions thrown.
 
 ```c#
-    //In production you'd probably inject a ZipClient instance but here's what creating one looks like
+    // In production you'd probably inject a ZipClient instance or use a pre-configured, shared instance, 
+    // depending on your use case and architecture. For the sake of a sample, here's what creating one looks like.
     var client = new ZipClient
     (
         new ZipClientConfiguration

@@ -148,12 +148,12 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ApplyDefaults
     path: ZipRequestOptionsBase.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nApplies default values from the <xref href=\"Yort.Zip.InStore.ZipClientConfiguration\" data-throw-if-not-resolved=\"false\"></xref> specified to this request, where appropriate.\n"
-  remarks: "\n<p>Defaults should only be used for values that are not otherwise set (null).</p>\n<p>The base version of this method is a no-op, it must be overridden by derived classes to implement the defaults specific to their request format.</p>\n"
+  remarks: "\n<p>Defaults should only be used for values that are not otherwise set (null).</p>\n<p>The base version of this method is a no-op, it must be overridden by derived classes to implement the defaults specific to their request format.</p>\n<p>This method is called (by <xref href=\"Yort.Zip.InStore.ZipClient\" data-throw-if-not-resolved=\"false\"></xref>) before the <xref href=\"Yort.Zip.InStore.ZipRequestOptionsBase.Validate\" data-throw-if-not-resolved=\"false\"></xref> method, and should be robust to null/missing/out of range values.</p>\n"
   example: []
   syntax:
     content: public virtual void ApplyDefaults(ZipClientConfiguration config)
@@ -609,8 +609,47 @@ references:
   name: ZipClientConfiguration
   nameWithType: ZipClientConfiguration
   fullName: Yort.Zip.InStore.ZipClientConfiguration
+- uid: Yort.Zip.InStore.ZipClient
+  commentId: T:Yort.Zip.InStore.ZipClient
+  name: ZipClient
+  nameWithType: ZipClient
+  fullName: Yort.Zip.InStore.ZipClient
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  parent: Yort.Zip.InStore.ZipRequestOptionsBase
+  name: Validate()
+  nameWithType: ZipRequestOptionsBase.Validate()
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate()
+  spec.csharp:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+    name: Validate
+    nameWithType: ZipRequestOptionsBase.Validate
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+    name: Validate
+    nameWithType: ZipRequestOptionsBase.Validate
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults*
   commentId: Overload:Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
   name: ApplyDefaults
   nameWithType: ZipRequestOptionsBase.ApplyDefaults
   fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase
+  commentId: T:Yort.Zip.InStore.ZipRequestOptionsBase
+  parent: Yort.Zip.InStore
+  name: ZipRequestOptionsBase
+  nameWithType: ZipRequestOptionsBase
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase
