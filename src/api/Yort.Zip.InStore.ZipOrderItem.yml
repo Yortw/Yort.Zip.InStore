@@ -24,7 +24,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ZipOrderItem
     path: ZipOrderItem.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -67,7 +67,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Description
     path: ZipOrderItem.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -104,7 +104,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Name
     path: ZipOrderItem.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -141,7 +141,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Sku
     path: ZipOrderItem.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -178,18 +178,18 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Quantity
     path: ZipOrderItem.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nThe quantity of this item purchased.\n"
   example: []
   syntax:
-    content: public string Quantity { get; set; }
+    content: public int Quantity { get; set; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public Property Quantity As String
+      type: System.Int32
+    content.vb: Public Property Quantity As Integer
   overload: Yort.Zip.InStore.ZipOrderItem.Quantity*
   modifiers.csharp:
   - public
@@ -215,7 +215,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Price
     path: ZipOrderItem.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -559,6 +559,13 @@ references:
   name: Quantity
   nameWithType: ZipOrderItem.Quantity
   fullName: Yort.Zip.InStore.ZipOrderItem.Quantity
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
 - uid: Yort.Zip.InStore.ZipOrderItem.Price*
   commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Price
   name: Price

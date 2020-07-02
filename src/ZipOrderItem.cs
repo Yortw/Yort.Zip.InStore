@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace Yort.Zip.InStore
@@ -25,7 +26,7 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// The quantity of this item purchased.
 		/// </summary>
-		public string Quantity { get; set; } = null!;
+		public int Quantity { get; set; }
 		/// <summary>
 		/// The price the item was purchased at.
 		/// </summary>

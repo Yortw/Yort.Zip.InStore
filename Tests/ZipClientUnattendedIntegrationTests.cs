@@ -25,7 +25,18 @@ namespace Tests
 					CustomerApprovalCode = "AA05",
 					MerchantReference = System.Guid.NewGuid().ToString(),
 					Operator = "Test",
-					PaymentFlow = ZipPaymentFlow.Payment
+					PaymentFlow = ZipPaymentFlow.Payment,
+					Items = new System.Collections.Generic.List<ZipOrderItem>()
+					{
+						new ZipOrderItem()
+						{
+							Name = "Test Item",
+							Description = "0110A Blue 12",
+							Price = "10.50",
+							Quantity = 1,
+							Sku = "123"
+						}
+					}
 				}
 			};
 
