@@ -66,5 +66,20 @@ namespace Yort.Zip.InStore
 
 			return retVal;
 		}
+
+		/// <summary>
+		/// Applies the default store id, terminal id and operator if appropriate.
+		/// </summary>
+		/// <param name="config">A <see cref="ZipClientConfiguration"/> instance containing the default values to use.</param>
+		public override void ApplyDefaults(ZipClientConfiguration config)
+		{
+			if (config == null) return;
+
+			this.Operator ??= config.DefaultOperator;
+			this.StoreId ??= config.DefaultStoreId;
+			this.TerminalId ??= config.DefaultTerminalId;
+
+			base.ApplyDefaults(config);
+		}
 	}
 }

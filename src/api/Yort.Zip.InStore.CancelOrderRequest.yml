@@ -39,6 +39,7 @@ items:
   - Yort.Zip.InStore.ZipRequestOptionsBase
   inheritedMembers:
   - Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
+  - Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -249,6 +250,42 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  parent: Yort.Zip.InStore.ZipRequestOptionsBase
+  name: ApplyDefaults(ZipClientConfiguration)
+  nameWithType: ZipRequestOptionsBase.ApplyDefaults(ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  spec.csharp:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+    name: ApplyDefaults
+    nameWithType: ZipRequestOptionsBase.ApplyDefaults
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.ZipClientConfiguration
+    name: ZipClientConfiguration
+    nameWithType: ZipClientConfiguration
+    fullName: Yort.Zip.InStore.ZipClientConfiguration
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+    name: ApplyDefaults
+    nameWithType: ZipRequestOptionsBase.ApplyDefaults
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.ZipClientConfiguration
+    name: ZipClientConfiguration
+    nameWithType: ZipClientConfiguration
+    fullName: Yort.Zip.InStore.ZipClientConfiguration
   - name: )
     nameWithType: )
     fullName: )

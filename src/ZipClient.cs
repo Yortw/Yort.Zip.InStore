@@ -111,7 +111,6 @@ namespace Yort.Zip.InStore
 		{
 			using (var response = await GetJsonAsync($"v2.0/pos/order/{request.OrderId}/status", request).ConfigureAwait(false))
 			{
-				//Zip API docs says 'Created' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
 				if (response.StatusCode == System.Net.HttpStatusCode.OK)
 					return await JsonResponseToEntityAsync<OrderStatusResponse>(response).ConfigureAwait(false);
 
@@ -139,7 +138,6 @@ namespace Yort.Zip.InStore
 
 			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/refund", request, requestBodyEntity).ConfigureAwait(false))
 			{
-				//Zip API docs says 'Created' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
 				if (response.StatusCode == System.Net.HttpStatusCode.OK)
 					return await JsonResponseToEntityAsync<RefundOrderResponse>(response).ConfigureAwait(false);
 
@@ -288,6 +286,7 @@ namespace Yort.Zip.InStore
 			EnsureNotDisposed();
 
 			request.GuardNull(nameof(request));
+			request.ApplyDefaults(_Configuration);
 			request.Validate();
 
 			await EnsureAuthTokenValidAsync().ConfigureAwait(false);
@@ -328,6 +327,7 @@ namespace Yort.Zip.InStore
 			EnsureNotDisposed();
 
 			request.GuardNull(nameof(request));
+			request.ApplyDefaults(_Configuration);
 			request.Validate();
 
 			await EnsureAuthTokenValidAsync().ConfigureAwait(false);

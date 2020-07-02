@@ -41,5 +41,20 @@ namespace Yort.Zip.InStore
 		/// Returns the <see cref="ZipEnvironment"/> value provided via the constructor.
 		/// </summary>
 		public ZipEnvironment Environment => _Environment;
+
+		/// <summary>
+		/// Provides the default store id to be sent on requests (that require a store id) if the request value is not already set (null).
+		/// </summary>
+		public string DefaultStoreId { get; set; } = null!;
+
+		/// <summary>
+		/// Provides the default terminal id to be sent on requests (that require a terminal id) if the request value is not already set (null).
+		/// </summary>
+		public string DefaultTerminalId { get; set; } = null!;
+
+		/// <summary>
+		/// Provides the default (POS) operator value to be sent on requests (that require an operator value) if the request value is not already set (null).
+		/// </summary>
+		public string DefaultOperator { get; set; } = null!;
 	}
 }

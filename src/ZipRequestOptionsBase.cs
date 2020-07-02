@@ -29,5 +29,15 @@ namespace Yort.Zip.InStore
 		{
 			return null;
 		}
+
+		/// <summary>
+		/// Applies default values from the <see cref="ZipClientConfiguration"/> specified to this request, where appropriate.
+		/// </summary>
+		/// <param name="config">A <see cref="ZipClientConfiguration"/> to read default values from.</param>
+		/// <remarks>
+		/// <para>Defaults should only be used for values that are not otherwise set (null).</para>
+		/// <para>The base version of this method is a no-op, it must be overridden by derived classes to implement the defaults specific to their request format.</para>
+		/// </remarks>
+		public virtual void ApplyDefaults(ZipClientConfiguration config) { }
 	}
 }

@@ -5,6 +5,7 @@ items:
   id: CreateOrderRequest
   parent: Yort.Zip.InStore
   children:
+  - Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
   - Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
   - Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders
   - Yort.Zip.InStore.CreateOrderRequest.Order
@@ -281,6 +282,45 @@ items:
     content.vb: Public Overrides Function GetCustomHttpHeaders As Dictionary(Of String, String)
   overridden: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
   overload: Yort.Zip.InStore.CreateOrderRequest.GetCustomHttpHeaders*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  commentId: M:Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  id: ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  parent: Yort.Zip.InStore.CreateOrderRequest
+  langs:
+  - csharp
+  - vb
+  name: ApplyDefaults(ZipClientConfiguration)
+  nameWithType: CreateOrderRequest.ApplyDefaults(ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  type: Method
+  source:
+    remote:
+      path: src/CreateOrderRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ApplyDefaults
+    path: CreateOrderRequest.cs
+    startLine: 76
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nApplies the default store id, terminal id and operator if appropriate.\n"
+  example: []
+  syntax:
+    content: public override void ApplyDefaults(ZipClientConfiguration config)
+    parameters:
+    - id: config
+      type: Yort.Zip.InStore.ZipClientConfiguration
+      description: A <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref> instance containing the default values to use.
+    content.vb: Public Overrides Sub ApplyDefaults(config As ZipClientConfiguration)
+  overridden: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  overload: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults*
   modifiers.csharp:
   - public
   - override
@@ -880,3 +920,50 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
+- uid: Yort.Zip.InStore.ZipClientConfiguration
+  commentId: T:Yort.Zip.InStore.ZipClientConfiguration
+  parent: Yort.Zip.InStore
+  name: ZipClientConfiguration
+  nameWithType: ZipClientConfiguration
+  fullName: Yort.Zip.InStore.ZipClientConfiguration
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  parent: Yort.Zip.InStore.ZipRequestOptionsBase
+  name: ApplyDefaults(ZipClientConfiguration)
+  nameWithType: ZipRequestOptionsBase.ApplyDefaults(ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  spec.csharp:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+    name: ApplyDefaults
+    nameWithType: ZipRequestOptionsBase.ApplyDefaults
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.ZipClientConfiguration
+    name: ZipClientConfiguration
+    nameWithType: ZipClientConfiguration
+    fullName: Yort.Zip.InStore.ZipClientConfiguration
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+    name: ApplyDefaults
+    nameWithType: ZipRequestOptionsBase.ApplyDefaults
+    fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.ZipClientConfiguration
+    name: ZipClientConfiguration
+    nameWithType: ZipClientConfiguration
+    fullName: Yort.Zip.InStore.ZipClientConfiguration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults*
+  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults
+  name: ApplyDefaults
+  nameWithType: CreateOrderRequest.ApplyDefaults
+  fullName: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults

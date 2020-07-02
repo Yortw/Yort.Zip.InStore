@@ -319,7 +319,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RefundOrderAsync
     path: ZipClient.cs
-    startLine: 130
+    startLine: 129
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -373,7 +373,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CommitOrderAsync
     path: ZipClient.cs
-    startLine: 158
+    startLine: 156
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -427,7 +427,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RollbackOrderAsync
     path: ZipClient.cs
-    startLine: 179
+    startLine: 177
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -481,7 +481,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: EnrolAsync
     path: ZipClient.cs
-    startLine: 200
+    startLine: 198
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -535,7 +535,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Dispose
     path: ZipClient.cs
-    startLine: 215
+    startLine: 213
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -572,7 +572,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Dispose
     path: ZipClient.cs
-    startLine: 234
+    startLine: 232
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore

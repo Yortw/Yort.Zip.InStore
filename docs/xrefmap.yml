@@ -122,6 +122,19 @@ references:
   commentId: T:Yort.Zip.InStore.CreateOrderRequest
   fullName: Yort.Zip.InStore.CreateOrderRequest
   nameWithType: CreateOrderRequest
+- uid: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  name: ApplyDefaults(ZipClientConfiguration)
+  href: api/Yort.Zip.InStore.CreateOrderRequest.html#Yort_Zip_InStore_CreateOrderRequest_ApplyDefaults_Yort_Zip_InStore_ZipClientConfiguration_
+  commentId: M:Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  nameWithType: CreateOrderRequest.ApplyDefaults(ZipClientConfiguration)
+- uid: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults*
+  name: ApplyDefaults
+  href: api/Yort.Zip.InStore.CreateOrderRequest.html#Yort_Zip_InStore_CreateOrderRequest_ApplyDefaults_
+  commentId: Overload:Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults
+  nameWithType: CreateOrderRequest.ApplyDefaults
 - uid: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
   name: EnableUniqueMerchantReferenceCheck
   href: api/Yort.Zip.InStore.CreateOrderRequest.html#Yort_Zip_InStore_CreateOrderRequest_EnableUniqueMerchantReferenceCheck
@@ -251,6 +264,19 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.EnrolRequest.ActivationCode
   nameWithType: EnrolRequest.ActivationCode
+- uid: Yort.Zip.InStore.EnrolRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  name: ApplyDefaults(ZipClientConfiguration)
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_ApplyDefaults_Yort_Zip_InStore_ZipClientConfiguration_
+  commentId: M:Yort.Zip.InStore.EnrolRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.EnrolRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  nameWithType: EnrolRequest.ApplyDefaults(ZipClientConfiguration)
+- uid: Yort.Zip.InStore.EnrolRequest.ApplyDefaults*
+  name: ApplyDefaults
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_ApplyDefaults_
+  commentId: Overload:Yort.Zip.InStore.EnrolRequest.ApplyDefaults
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.EnrolRequest.ApplyDefaults
+  nameWithType: EnrolRequest.ApplyDefaults
 - uid: Yort.Zip.InStore.EnrolRequest.Secret
   name: Secret
   href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_Secret
@@ -502,6 +528,19 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.RefundOrderRequest.Amount
   nameWithType: RefundOrderRequest.Amount
+- uid: Yort.Zip.InStore.RefundOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  name: ApplyDefaults(ZipClientConfiguration)
+  href: api/Yort.Zip.InStore.RefundOrderRequest.html#Yort_Zip_InStore_RefundOrderRequest_ApplyDefaults_Yort_Zip_InStore_ZipClientConfiguration_
+  commentId: M:Yort.Zip.InStore.RefundOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.RefundOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  nameWithType: RefundOrderRequest.ApplyDefaults(ZipClientConfiguration)
+- uid: Yort.Zip.InStore.RefundOrderRequest.ApplyDefaults*
+  name: ApplyDefaults
+  href: api/Yort.Zip.InStore.RefundOrderRequest.html#Yort_Zip_InStore_RefundOrderRequest_ApplyDefaults_
+  commentId: Overload:Yort.Zip.InStore.RefundOrderRequest.ApplyDefaults
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.RefundOrderRequest.ApplyDefaults
+  nameWithType: RefundOrderRequest.ApplyDefaults
 - uid: Yort.Zip.InStore.RefundOrderRequest.GetCustomHttpHeaders
   name: GetCustomHttpHeaders()
   href: api/Yort.Zip.InStore.RefundOrderRequest.html#Yort_Zip_InStore_RefundOrderRequest_GetCustomHttpHeaders
@@ -925,6 +964,45 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
   nameWithType: ZipClientConfiguration.ClientSecret
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  name: DefaultOperator
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_DefaultOperator
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  nameWithType: ZipClientConfiguration.DefaultOperator
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator*
+  name: DefaultOperator
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_DefaultOperator_
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  nameWithType: ZipClientConfiguration.DefaultOperator
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  name: DefaultStoreId
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_DefaultStoreId
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  nameWithType: ZipClientConfiguration.DefaultStoreId
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId*
+  name: DefaultStoreId
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_DefaultStoreId_
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  nameWithType: ZipClientConfiguration.DefaultStoreId
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  name: DefaultTerminalId
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_DefaultTerminalId
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  nameWithType: ZipClientConfiguration.DefaultTerminalId
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId*
+  name: DefaultTerminalId
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_DefaultTerminalId_
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  nameWithType: ZipClientConfiguration.DefaultTerminalId
 - uid: Yort.Zip.InStore.ZipClientConfiguration.Environment
   name: Environment
   href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_Environment
@@ -1385,6 +1463,19 @@ references:
   commentId: T:Yort.Zip.InStore.ZipRequestOptionsBase
   fullName: Yort.Zip.InStore.ZipRequestOptionsBase
   nameWithType: ZipRequestOptionsBase
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  name: ApplyDefaults(ZipClientConfiguration)
+  href: api/Yort.Zip.InStore.ZipRequestOptionsBase.html#Yort_Zip_InStore_ZipRequestOptionsBase_ApplyDefaults_Yort_Zip_InStore_ZipClientConfiguration_
+  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  nameWithType: ZipRequestOptionsBase.ApplyDefaults(ZipClientConfiguration)
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults*
+  name: ApplyDefaults
+  href: api/Yort.Zip.InStore.ZipRequestOptionsBase.html#Yort_Zip_InStore_ZipRequestOptionsBase_ApplyDefaults_
+  commentId: Overload:Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
+  nameWithType: ZipRequestOptionsBase.ApplyDefaults
 - uid: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
   name: GetCustomHttpHeaders()
   href: api/Yort.Zip.InStore.ZipRequestOptionsBase.html#Yort_Zip_InStore_ZipRequestOptionsBase_GetCustomHttpHeaders

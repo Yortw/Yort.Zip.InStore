@@ -34,5 +34,18 @@ namespace Yort.Zip.InStore
 			this.Secret.GuardNullOrWhiteSpace(nameof(Secret));
 			this.Terminal.GuardNullOrWhiteSpace(nameof(Terminal));
 		}
+
+		/// <summary>
+		/// Applies the default store id, terminal id and operator if appropriate.
+		/// </summary>
+		/// <param name="config">A <see cref="ZipClientConfiguration"/> instance containing the default values to use.</param>
+		public override void ApplyDefaults(ZipClientConfiguration config)
+		{
+			if (config == null) return;
+
+			this.Terminal ??= config.DefaultTerminalId;
+
+			base.ApplyDefaults(config);
+		}
 	}
 }

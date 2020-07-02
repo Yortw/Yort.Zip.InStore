@@ -5,6 +5,7 @@ items:
   id: ZipRequestOptionsBase
   parent: Yort.Zip.InStore
   children:
+  - Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
   - Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
   - Yort.Zip.InStore.ZipRequestOptionsBase.Validate
   langs:
@@ -123,6 +124,45 @@ items:
       description: A dictionary containing key/value pairs to be applied as custom HTTP headers, or null if no custom headers apply.
     content.vb: Public Overridable Function GetCustomHttpHeaders As Dictionary(Of String, String)
   overload: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  id: ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  parent: Yort.Zip.InStore.ZipRequestOptionsBase
+  langs:
+  - csharp
+  - vb
+  name: ApplyDefaults(ZipClientConfiguration)
+  nameWithType: ZipRequestOptionsBase.ApplyDefaults(ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)
+  type: Method
+  source:
+    remote:
+      path: src/ZipRequestOptionsBase.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ApplyDefaults
+    path: ZipRequestOptionsBase.cs
+    startLine: 40
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nApplies default values from the <xref href=\"Yort.Zip.InStore.ZipClientConfiguration\" data-throw-if-not-resolved=\"false\"></xref> specified to this request, where appropriate.\n"
+  remarks: "\n<p>Defaults should only be used for values that are not otherwise set (null).</p>\n<p>The base version of this method is a no-op, it must be overridden by derived classes to implement the defaults specific to their request format.</p>\n"
+  example: []
+  syntax:
+    content: public virtual void ApplyDefaults(ZipClientConfiguration config)
+    parameters:
+    - id: config
+      type: Yort.Zip.InStore.ZipClientConfiguration
+      description: A <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref> to read default values from.
+    content.vb: Public Overridable Sub ApplyDefaults(config As ZipClientConfiguration)
+  overload: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults*
   modifiers.csharp:
   - public
   - virtual
@@ -563,3 +603,14 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
+- uid: Yort.Zip.InStore.ZipClientConfiguration
+  commentId: T:Yort.Zip.InStore.ZipClientConfiguration
+  parent: Yort.Zip.InStore
+  name: ZipClientConfiguration
+  nameWithType: ZipClientConfiguration
+  fullName: Yort.Zip.InStore.ZipClientConfiguration
+- uid: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults*
+  commentId: Overload:Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults
+  name: ApplyDefaults
+  nameWithType: ZipRequestOptionsBase.ApplyDefaults
+  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults

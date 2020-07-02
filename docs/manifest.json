@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CancelOrderRequest.html",
-          "hash": "QSt22pkwapzEYLDhQHmKoA=="
+          "hash": "A8vG487heHIwwkrdfwiE6w=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CommitOrderRequest.html",
-          "hash": "VUr4T3qDw1R9oqZizMKH2Q=="
+          "hash": "OVFz27s3vnXoNwahMNKg3w=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CreateOrderRequest.html",
-          "hash": "xAQlZs1jmxcGOGol9EKgNw=="
+          "hash": "sAYQl/nBcJfiBAMLoLLBbA=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.EnrolRequest.html",
-          "hash": "ztmmE2LEdLEfdx2ER0lftQ=="
+          "hash": "k2wnB/nxoyN1IymJyTp/KQ=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.OrderStatusRequest.html",
-          "hash": "J/A/Y6o3dd5B90oFOQ7/6g=="
+          "hash": "S29sD0wh7edo9GNhxD7ZAA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.RefundOrderRequest.html",
-          "hash": "5XWX2XMFs1n5axJ4/9rfkg=="
+          "hash": "Cj9UYJkswKoMhw0CyF2RIQ=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.RollbackOrderRequest.html",
-          "hash": "gIkTyRmh7IIebR+saFecgQ=="
+          "hash": "wB0oGXjh+slGWLYi+YyaXA=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipClient.html",
-          "hash": "hBxM5A/a1Xb8WRIs332oCw=="
+          "hash": "a8+W3ZjirVNsyPvyna++Sw=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipClientConfiguration.html",
-          "hash": "n6M2wPsMaw9zMvbqTUfVkg=="
+          "hash": "kSKLeH0QL5TREJruuiD3AA=="
         }
       },
       "is_incremental": false,
@@ -294,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipRequestOptionsBase.html",
-          "hash": "SPp3UiRpm/6revsxbOYvfw=="
+          "hash": "v3xrcoQ9kXZP+ppjzpcd/A=="
         }
       },
       "is_incremental": false,
@@ -352,11 +352,12 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 25,
-          "skipped_file_count": 24
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
@@ -364,12 +365,11 @@
           "total_file_count": 1,
           "skipped_file_count": 1
         },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 25,
+          "skipped_file_count": 15
         }
       }
     },

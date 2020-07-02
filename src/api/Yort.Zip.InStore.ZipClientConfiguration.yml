@@ -8,6 +8,9 @@ items:
   - Yort.Zip.InStore.ZipClientConfiguration.#ctor(System.String,System.String,Yort.Zip.InStore.ZipEnvironment)
   - Yort.Zip.InStore.ZipClientConfiguration.ClientId
   - Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  - Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  - Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  - Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
   - Yort.Zip.InStore.ZipClientConfiguration.Environment
   langs:
   - csharp
@@ -201,6 +204,117 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  id: DefaultStoreId
+  parent: Yort.Zip.InStore.ZipClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DefaultStoreId
+  nameWithType: ZipClientConfiguration.DefaultStoreId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  type: Property
+  source:
+    remote:
+      path: src/ZipClientConfig.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: DefaultStoreId
+    path: ZipClientConfig.cs
+    startLine: 47
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nProvides the default store id to be sent on requests (that require a store id) if the request value is not already set (null).\n"
+  example: []
+  syntax:
+    content: public string DefaultStoreId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DefaultStoreId As String
+  overload: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  id: DefaultTerminalId
+  parent: Yort.Zip.InStore.ZipClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DefaultTerminalId
+  nameWithType: ZipClientConfiguration.DefaultTerminalId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  type: Property
+  source:
+    remote:
+      path: src/ZipClientConfig.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: DefaultTerminalId
+    path: ZipClientConfig.cs
+    startLine: 52
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nProvides the default terminal id to be sent on requests (that require a terminal id) if the request value is not already set (null).\n"
+  example: []
+  syntax:
+    content: public string DefaultTerminalId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DefaultTerminalId As String
+  overload: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  id: DefaultOperator
+  parent: Yort.Zip.InStore.ZipClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DefaultOperator
+  nameWithType: ZipClientConfiguration.DefaultOperator
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  type: Property
+  source:
+    remote:
+      path: src/ZipClientConfig.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: DefaultOperator
+    path: ZipClientConfig.cs
+    startLine: 57
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nProvides the default (POS) operator value to be sent on requests (that require an operator value) if the request value is not already set (null).\n"
+  example: []
+  syntax:
+    content: public string DefaultOperator { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DefaultOperator As String
+  overload: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 references:
 - uid: Yort.Zip.InStore.ZipClient
   commentId: T:Yort.Zip.InStore.ZipClient
@@ -579,3 +693,18 @@ references:
   name: Environment
   nameWithType: ZipClientConfiguration.Environment
   fullName: Yort.Zip.InStore.ZipClientConfiguration.Environment
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId*
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+  name: DefaultStoreId
+  nameWithType: ZipClientConfiguration.DefaultStoreId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId*
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+  name: DefaultTerminalId
+  nameWithType: ZipClientConfiguration.DefaultTerminalId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId
+- uid: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator*
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator
+  name: DefaultOperator
+  nameWithType: ZipClientConfiguration.DefaultOperator
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator

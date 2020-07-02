@@ -102,6 +102,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Yort.Zip.InStore.CreateOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)">
+            <summary>
+            Applies the default store id, terminal id and operator if appropriate.
+            </summary>
+            <param name="config">A <see cref="T:Yort.Zip.InStore.ZipClientConfiguration"/> instance containing the default values to use.</param>
+        </member>
         <member name="T:Yort.Zip.InStore.CreateOrderResponse">
             <summary>
             Contains the initial details of an order created in the Zip system.
@@ -145,6 +151,12 @@
             </summary>
             <exception cref="T:System.ArgumentNullException">Thrown if any required properties are null.</exception>
             <exception cref="T:System.ArgumentException">Thrown if any of request properties are invalid.</exception>
+        </member>
+        <member name="M:Yort.Zip.InStore.EnrolRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)">
+            <summary>
+            Applies the default store id, terminal id and operator if appropriate.
+            </summary>
+            <param name="config">A <see cref="T:Yort.Zip.InStore.ZipClientConfiguration"/> instance containing the default values to use.</param>
         </member>
         <member name="T:Yort.Zip.InStore.EnrolResponse">
             <summary>
@@ -378,6 +390,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Yort.Zip.InStore.RefundOrderRequest.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)">
+            <summary>
+            Applies the default store id, terminal id and operator if appropriate.
+            </summary>
+            <param name="config">A <see cref="T:Yort.Zip.InStore.ZipClientConfiguration"/> instance containing the default values to use.</param>
+        </member>
         <member name="T:Yort.Zip.InStore.RefundOrderResponse">
             <summary>
             Provides details of a successful refund created by <see cref="M:Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)"/>.
@@ -609,6 +627,21 @@
         <member name="P:Yort.Zip.InStore.ZipClientConfiguration.Environment">
             <summary>
             Returns the <see cref="T:Yort.Zip.InStore.ZipEnvironment"/> value provided via the constructor.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipClientConfiguration.DefaultStoreId">
+            <summary>
+            Provides the default store id to be sent on requests (that require a store id) if the request value is not already set (null).
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipClientConfiguration.DefaultTerminalId">
+            <summary>
+            Provides the default terminal id to be sent on requests (that require a terminal id) if the request value is not already set (null).
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipClientConfiguration.DefaultOperator">
+            <summary>
+            Provides the default (POS) operator value to be sent on requests (that require an operator value) if the request value is not already set (null).
             </summary>
         </member>
         <member name="T:Yort.Zip.InStore.ZipEnvironment">
@@ -862,6 +895,16 @@
             <para>By default returns null indicating there are no custom headers. Can be overridden by derived types to specify otherwise.</para>
             </remarks>
             <returns>A dictionary containing key/value pairs to be applied as custom HTTP headers, or null if no custom headers apply.</returns>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipRequestOptionsBase.ApplyDefaults(Yort.Zip.InStore.ZipClientConfiguration)">
+            <summary>
+            Applies default values from the <see cref="T:Yort.Zip.InStore.ZipClientConfiguration"/> specified to this request, where appropriate.
+            </summary>
+            <param name="config">A <see cref="T:Yort.Zip.InStore.ZipClientConfiguration"/> to read default values from.</param>
+            <remarks>
+            <para>Defaults should only be used for values that are not otherwise set (null).</para>
+            <para>The base version of this method is a no-op, it must be overridden by derived classes to implement the defaults specific to their request format.</para>
+            </remarks>
         </member>
     </members>
 </doc>
