@@ -27,14 +27,11 @@
   <ItemGroup>
     <Compile Remove="api\**" />
     <Compile Remove="articles\**" />
-    <Compile Remove="images\**" />
     <Compile Remove="TestResults\**" />
     <Compile Remove="_site\**" />
-    <EmbeddedResource Remove="images\**" />
     <EmbeddedResource Remove="TestResults\**" />
     <None Remove="api\**" />
     <None Remove="articles\**" />
-    <None Remove="images\**" />
     <None Remove="TestResults\**" />
     <None Remove="_site\**" />
     <None Remove="Directory.Build.props" />

@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CancelOrderRequest.html",
-          "hash": "rRrmVTTplycbiKRz6K0CAg=="
+          "hash": "QSt22pkwapzEYLDhQHmKoA=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CancelOrderResponse.html",
-          "hash": "wZCnmodjyKzbln3P32kXQQ=="
+          "hash": "q1bBqyFPyedVniVbACUeug=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CommitOrderRequest.html",
-          "hash": "zaAwIdvxOWwRsM547UV1cQ=="
+          "hash": "VUr4T3qDw1R9oqZizMKH2Q=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CreateOrderRequest.html",
-          "hash": "kupZjzqUYF9opFGtj4lhWw=="
+          "hash": "xAQlZs1jmxcGOGol9EKgNw=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CreateOrderResponse.html",
-          "hash": "x05w4/RWiFGuEGlN66vA9g=="
+          "hash": "98Cu331ZSNsOl52m06HqTw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.EnrolRequest.html",
-          "hash": "KGObe21ufvsHsABuoB2ghQ=="
+          "hash": "ztmmE2LEdLEfdx2ER0lftQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.EnrolResponse.html",
-          "hash": "cFG+ojGdrIRo8I5lhddrDQ=="
+          "hash": "HKsk5ZfIPUpk8r5k7y7jhQ=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.IZipClient.html",
-          "hash": "aSxE3Y5nCxds+cLUjrPzdg=="
+          "hash": "iVegzn797x6eBgnjZ40Djw=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.OrderStatusRequest.html",
-          "hash": "tm9HXbrkNqwOQp7FkvOo8g=="
+          "hash": "J/A/Y6o3dd5B90oFOQ7/6g=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.OrderStatusResponse.html",
-          "hash": "zZ9Uk2XFUE7wwG++yZiD3Q=="
+          "hash": "yN/bBz1SfZiT9CMVCWhfWw=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.RefundOrderRequest.html",
-          "hash": "30J+gMLHCs/cyiB93xrU9Q=="
+          "hash": "5XWX2XMFs1n5axJ4/9rfkg=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.RefundOrderResponse.html",
-          "hash": "Fgwi8BG9jIki516ZlPXxww=="
+          "hash": "IXhR7W0LHycdHNdRVo3A4w=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.RollbackOrderRequest.html",
-          "hash": "Y3JMhN7qh3P6APD+XwQkYA=="
+          "hash": "gIkTyRmh7IIebR+saFecgQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Zip.InStore.ZipApiException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Zip.InStore.ZipApiException.html",
+          "hash": "rccDcnlna/+wB/VPOZkg2g=="
         }
       },
       "is_incremental": false,
@@ -174,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipClient.html",
-          "hash": "/UcMnfu3CGDycJ+UEIOryw=="
+          "hash": "hBxM5A/a1Xb8WRIs332oCw=="
         }
       },
       "is_incremental": false,
@@ -186,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipClientConfiguration.html",
-          "hash": "uIwbo+9S5bQr0iObTqK17g=="
+          "hash": "n6M2wPsMaw9zMvbqTUfVkg=="
         }
       },
       "is_incremental": false,
@@ -198,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipEnvironment.NewZealand.html",
-          "hash": "FDrgHONDLxfbrkmvzrFVhQ=="
+          "hash": "hy0MSjA3dcAS2Xo7nmtifA=="
         }
       },
       "is_incremental": false,
@@ -210,7 +222,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipEnvironment.html",
-          "hash": "6MsQ8caFbNayc4Jkhur+0A=="
+          "hash": "Bf6HuAIr84ShPFAqWV6GkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Zip.InStore.ZipError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Zip.InStore.ZipError.html",
+          "hash": "ntsn/RzYquhsmurYMZ3DsA=="
         }
       },
       "is_incremental": false,
@@ -222,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipOrder.html",
-          "hash": "eIZ1ccuqtbjyfLMij7nF6Q=="
+          "hash": "MEOxMi/FgttcFS4D2/3hkQ=="
         }
       },
       "is_incremental": false,
@@ -234,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipOrderItem.html",
-          "hash": "jxJYQi8ouCzjPT0kEa/ERQ=="
+          "hash": "FKqa7xpz8BLFRc1C5Hc5Wg=="
         }
       },
       "is_incremental": false,
@@ -246,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipOrderStatus.html",
-          "hash": "yJhFogvY9XW65FJodZE7jA=="
+          "hash": "6y6uzGQ9GqQ/4s50xrFNGA=="
         }
       },
       "is_incremental": false,
@@ -258,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipPaymentFlow.html",
-          "hash": "P+ifQK6fSj52dR1MJoL4Xw=="
+          "hash": "8lSTbYvo1mVKRxacEOihBw=="
         }
       },
       "is_incremental": false,
@@ -270,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipRequestOptionsBase.html",
-          "hash": "lOPyFH3XpiyQWXENJolzRA=="
+          "hash": "SPp3UiRpm/6revsxbOYvfw=="
         }
       },
       "is_incremental": false,
@@ -282,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.html",
-          "hash": "xCqgQ6uhD+VORCAuLDPUFg=="
+          "hash": "NWYnLkLDqj4qQPIwwmsSSA=="
         }
       },
       "is_incremental": false,
@@ -321,6 +345,13 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -328,24 +359,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 25,
+          "skipped_file_count": 25
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 1,
           "skipped_file_count": 1
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 23,
-          "skipped_file_count": 22
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
         }
       }
     },

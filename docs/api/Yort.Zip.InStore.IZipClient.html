@@ -128,6 +128,9 @@
                             <a href="Yort.Zip.InStore.RollbackOrderRequest.html" title="RollbackOrderRequest" class="">RollbackOrderRequest</a>
                           </li>
                           <li class="">
+                            <a href="Yort.Zip.InStore.ZipApiException.html" title="ZipApiException" class="">ZipApiException</a>
+                          </li>
+                          <li class="">
                             <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="">ZipClient</a>
                           </li>
                           <li class="">
@@ -138,6 +141,9 @@
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.NewZealand.html" title="ZipEnvironment.NewZealand" class="">ZipEnvironment.NewZealand</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.ZipError.html" title="ZipError" class="">ZipError</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipOrder.html" title="ZipOrder" class="">ZipOrder</a>
@@ -192,7 +198,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_CancelOrderAsync_Yort_Zip_InStore_CancelOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L37">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L46">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_IZipClient_CancelOrderAsync_" data-uid="Yort.Zip.InStore.IZipClient.CancelOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_IZipClient_CancelOrderAsync_Yort_Zip_InStore_CancelOrderRequest_" data-uid="Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)">CancelOrderAsync(CancelOrderRequest)</h4>
@@ -237,12 +243,43 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipApiException.html">ZipApiException</a></td>
+        <td><p>Thrown if the Zip API returns an error response.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_CommitOrderAsync_Yort_Zip_InStore_CommitOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L51">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L68">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_IZipClient_CommitOrderAsync_" data-uid="Yort.Zip.InStore.IZipClient.CommitOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_IZipClient_CommitOrderAsync_Yort_Zip_InStore_CommitOrderRequest_" data-uid="Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)">CommitOrderAsync(CommitOrderRequest)</h4>
@@ -287,12 +324,43 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipApiException.html">ZipApiException</a></td>
+        <td><p>Thrown if the Zip API returns an error response.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L21">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L24">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_IZipClient_CreateOrderAsync_" data-uid="Yort.Zip.InStore.IZipClient.CreateOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_IZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_" data-uid="Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)">CreateOrderAsync(CreateOrderRequest)</h4>
@@ -348,7 +416,22 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipApiException.html">ZipApiException</a></td>
+        <td><p>Thrown if the Zip API returns an error response.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -358,7 +441,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_EnrolAsync_Yort_Zip_InStore_EnrolRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L65">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L90">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_IZipClient_EnrolAsync_" data-uid="Yort.Zip.InStore.IZipClient.EnrolAsync*"></a>
   <h4 id="Yort_Zip_InStore_IZipClient_EnrolAsync_Yort_Zip_InStore_EnrolRequest_" data-uid="Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)">EnrolAsync(EnrolRequest)</h4>
@@ -403,12 +486,43 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipApiException.html">ZipApiException</a></td>
+        <td><p>Thrown if the Zip API returns an error response.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L30">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L35">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_" data-uid="Yort.Zip.InStore.IZipClient.GetOrderStatusAsync*"></a>
   <h4 id="Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_" data-uid="Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)">GetOrderStatusAsync(OrderStatusRequest)</h4>
@@ -472,6 +586,16 @@
         <td><p>Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipApiException.html">ZipApiException</a></td>
+        <td><p>Thrown if the Zip API returns an error response.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a>.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -479,7 +603,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_RefundOrderAsync_Yort_Zip_InStore_RefundOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L44">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L57">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_IZipClient_RefundOrderAsync_" data-uid="Yort.Zip.InStore.IZipClient.RefundOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_IZipClient_RefundOrderAsync_Yort_Zip_InStore_RefundOrderRequest_" data-uid="Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)">RefundOrderAsync(RefundOrderRequest)</h4>
@@ -524,12 +648,43 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipApiException.html">ZipApiException</a></td>
+        <td><p>Thrown if the Zip API returns an error response.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_RollbackOrderAsync_Yort_Zip_InStore_RollbackOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L58">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L79">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_IZipClient_RollbackOrderAsync_" data-uid="Yort.Zip.InStore.IZipClient.RollbackOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_IZipClient_RollbackOrderAsync_Yort_Zip_InStore_RollbackOrderRequest_" data-uid="Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)">RollbackOrderAsync(RollbackOrderRequest)</h4>
@@ -570,6 +725,37 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
         <td><p>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <a class="xref" href="Yort.Zip.InStore.IZipClient.html#Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_">GetOrderStatusAsync(OrderStatusRequest)</a> to confirm.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipApiException.html">ZipApiException</a></td>
+        <td><p>Thrown if the Zip API returns an error response.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a>.</p>
 </td>
       </tr>
     </tbody>

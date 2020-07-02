@@ -28,6 +28,8 @@
     name: RefundOrderResponse
   - uid: Yort.Zip.InStore.RollbackOrderRequest
     name: RollbackOrderRequest
+  - uid: Yort.Zip.InStore.ZipApiException
+    name: ZipApiException
   - uid: Yort.Zip.InStore.ZipClient
     name: ZipClient
   - uid: Yort.Zip.InStore.ZipClientConfiguration
@@ -36,6 +38,8 @@
     name: ZipEnvironment
   - uid: Yort.Zip.InStore.ZipEnvironment.NewZealand
     name: ZipEnvironment.NewZealand
+  - uid: Yort.Zip.InStore.ZipError
+    name: ZipError
   - uid: Yort.Zip.InStore.ZipOrder
     name: ZipOrder
   - uid: Yort.Zip.InStore.ZipOrderItem

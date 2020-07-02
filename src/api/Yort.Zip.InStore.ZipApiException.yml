@@ -1,0 +1,848 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore.ZipApiException
+  commentId: T:Yort.Zip.InStore.ZipApiException
+  id: ZipApiException
+  parent: Yort.Zip.InStore
+  children:
+  - Yort.Zip.InStore.ZipApiException.#ctor
+  - Yort.Zip.InStore.ZipApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - Yort.Zip.InStore.ZipApiException.#ctor(System.String)
+  - Yort.Zip.InStore.ZipApiException.#ctor(System.String,System.Exception)
+  - Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)
+  - Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)
+  - Yort.Zip.InStore.ZipApiException.Errors
+  langs:
+  - csharp
+  - vb
+  name: ZipApiException
+  nameWithType: ZipApiException
+  fullName: Yort.Zip.InStore.ZipApiException
+  type: Class
+  source:
+    remote:
+      path: src/ZipApiException.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ZipApiException
+    path: ZipApiException.cs
+    startLine: 8
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nAn exception thrown by <xref href=\"Yort.Zip.InStore.ZipClient\" data-throw-if-not-resolved=\"false\"></xref> when an error response is received from the Zip API.\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class ZipApiException : Exception, ISerializable
+    content.vb: >-
+      <Serializable>
+
+      Public Class ZipApiException
+          Inherits Exception
+          Implements ISerializable
+  inheritance:
+  - System.Object
+  - System.Exception
+  implements:
+  - System.Runtime.Serialization.ISerializable
+  inheritedMembers:
+  - System.Exception.GetBaseException
+  - System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - System.Exception.GetType
+  - System.Exception.ToString
+  - System.Exception.Data
+  - System.Exception.HelpLink
+  - System.Exception.HResult
+  - System.Exception.InnerException
+  - System.Exception.Message
+  - System.Exception.Source
+  - System.Exception.StackTrace
+  - System.Exception.TargetSite
+  - System.Exception.SerializeObjectState
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.Zip.InStore.ZipApiException.#ctor
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor
+  id: '#ctor'
+  parent: Yort.Zip.InStore.ZipApiException
+  langs:
+  - csharp
+  - vb
+  name: ZipApiException()
+  nameWithType: ZipApiException.ZipApiException()
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException()
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipApiException.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipApiException.cs
+    startLine: 14
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nDefault constructor. Not recommended for use.\n"
+  example: []
+  syntax:
+    content: public ZipApiException()
+    content.vb: Public Sub New
+  overload: Yort.Zip.InStore.ZipApiException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(System.String)
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Yort.Zip.InStore.ZipApiException
+  langs:
+  - csharp
+  - vb
+  name: ZipApiException(String)
+  nameWithType: ZipApiException.ZipApiException(String)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipApiException.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipApiException.cs
+    startLine: 19
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nPartial constructor. Not recommended for use.\n"
+  example: []
+  syntax:
+    content: public ZipApiException(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: The error message of the exception.
+    content.vb: Public Sub New(message As String)
+  overload: Yort.Zip.InStore.ZipApiException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(System.String,System.Exception)
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(System.String,System.Exception)
+  id: '#ctor(System.String,System.Exception)'
+  parent: Yort.Zip.InStore.ZipApiException
+  langs:
+  - csharp
+  - vb
+  name: ZipApiException(String, Exception)
+  nameWithType: ZipApiException.ZipApiException(String, Exception)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(System.String, System.Exception)
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipApiException.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipApiException.cs
+    startLine: 25
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nPartial constructor. Not recommended for use.\n"
+  example: []
+  syntax:
+    content: public ZipApiException(string message, Exception inner)
+    parameters:
+    - id: message
+      type: System.String
+      description: The error message for this exception.
+    - id: inner
+      type: System.Exception
+      description: Another exception being wrapped by this one.
+    content.vb: Public Sub New(message As String, inner As Exception)
+  overload: Yort.Zip.InStore.ZipApiException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)
+  id: '#ctor(Yort.Zip.InStore.ZipError)'
+  parent: Yort.Zip.InStore.ZipApiException
+  langs:
+  - csharp
+  - vb
+  name: ZipApiException(ZipError)
+  nameWithType: ZipApiException.ZipApiException(ZipError)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipError)
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipApiException.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipApiException.cs
+    startLine: 30
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nPartial constructor, recommended.\n"
+  example: []
+  syntax:
+    content: public ZipApiException(ZipError error)
+    parameters:
+    - id: error
+      type: Yort.Zip.InStore.ZipError
+      description: A <xref href="Yort.Zip.InStore.ZipError" data-throw-if-not-resolved="false"></xref> containing full errors received from the Zip API.
+    content.vb: Public Sub New(error As ZipError)
+  overload: Yort.Zip.InStore.ZipApiException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)
+  id: '#ctor(Yort.Zip.InStore.ZipError,System.Exception)'
+  parent: Yort.Zip.InStore.ZipApiException
+  langs:
+  - csharp
+  - vb
+  name: ZipApiException(ZipError, Exception)
+  nameWithType: ZipApiException.ZipApiException(ZipError, Exception)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipError, System.Exception)
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipApiException.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipApiException.cs
+    startLine: 36
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nFull constructor, recommended.\n"
+  example: []
+  syntax:
+    content: public ZipApiException(ZipError error, Exception inner)
+    parameters:
+    - id: error
+      type: Yort.Zip.InStore.ZipError
+      description: A <xref href="Yort.Zip.InStore.ZipError" data-throw-if-not-resolved="false"></xref> containing full errors received from the Zip API.
+    - id: inner
+      type: System.Exception
+      description: Another exception being wrapped by this one.
+    content.vb: Public Sub New(error As ZipError, inner As Exception)
+  overload: Yort.Zip.InStore.ZipApiException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipApiException.Errors
+  commentId: P:Yort.Zip.InStore.ZipApiException.Errors
+  id: Errors
+  parent: Yort.Zip.InStore.ZipApiException
+  langs:
+  - csharp
+  - vb
+  name: Errors
+  nameWithType: ZipApiException.Errors
+  fullName: Yort.Zip.InStore.ZipApiException.Errors
+  type: Property
+  source:
+    remote:
+      path: src/ZipApiException.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Errors
+    path: ZipApiException.cs
+    startLine: 41
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nReturns a <xref href=\"Yort.Zip.InStore.ZipError\" data-throw-if-not-resolved=\"false\"></xref> instance containing details of the full set of errors, or null if no response content was provided by the Zip API.\n"
+  example: []
+  syntax:
+    content: public ZipError Errors { get; }
+    parameters: []
+    return:
+      type: Yort.Zip.InStore.ZipError
+    content.vb: Public ReadOnly Property Errors As ZipError
+  overload: Yort.Zip.InStore.ZipApiException.Errors*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  id: '#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)'
+  parent: Yort.Zip.InStore.ZipApiException
+  langs:
+  - csharp
+  - vb
+  name: ZipApiException(SerializationInfo, StreamingContext)
+  nameWithType: ZipApiException.ZipApiException(SerializationInfo, StreamingContext)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipApiException.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipApiException.cs
+    startLine: 61
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nDeserialisation constructor.\n"
+  example: []
+  syntax:
+    content: protected ZipApiException(SerializationInfo info, StreamingContext context)
+    parameters:
+    - id: info
+      type: System.Runtime.Serialization.SerializationInfo
+      description: The serialisation information to deserialise from.
+    - id: context
+      type: System.Runtime.Serialization.StreamingContext
+      description: The streaming context to deserialise from.
+    content.vb: Protected Sub New(info As SerializationInfo, context As StreamingContext)
+  overload: Yort.Zip.InStore.ZipApiException.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: Yort.Zip.InStore.ZipClient
+  commentId: T:Yort.Zip.InStore.ZipClient
+  name: ZipClient
+  nameWithType: ZipClient
+  fullName: Yort.Zip.InStore.ZipClient
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System.Runtime.Serialization.ISerializable
+  commentId: T:System.Runtime.Serialization.ISerializable
+  parent: System.Runtime.Serialization
+  isExternal: true
+  name: ISerializable
+  nameWithType: ISerializable
+  fullName: System.Runtime.Serialization.ISerializable
+- uid: System.Exception.GetBaseException
+  commentId: M:System.Exception.GetBaseException
+  parent: System.Exception
+  isExternal: true
+  name: GetBaseException()
+  nameWithType: Exception.GetBaseException()
+  fullName: System.Exception.GetBaseException()
+  spec.csharp:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    nameWithType: Exception.GetBaseException
+    fullName: System.Exception.GetBaseException
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    nameWithType: Exception.GetBaseException
+    fullName: System.Exception.GetBaseException
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  parent: System.Exception
+  isExternal: true
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  nameWithType: Exception.GetObjectData(SerializationInfo, StreamingContext)
+  fullName: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  spec.csharp:
+  - uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    nameWithType: Exception.GetObjectData
+    fullName: System.Exception.GetObjectData
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    nameWithType: SerializationInfo
+    fullName: System.Runtime.Serialization.SerializationInfo
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    nameWithType: StreamingContext
+    fullName: System.Runtime.Serialization.StreamingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    nameWithType: Exception.GetObjectData
+    fullName: System.Exception.GetObjectData
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    nameWithType: SerializationInfo
+    fullName: System.Runtime.Serialization.SerializationInfo
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    nameWithType: StreamingContext
+    fullName: System.Runtime.Serialization.StreamingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception.GetType
+  commentId: M:System.Exception.GetType
+  parent: System.Exception
+  isExternal: true
+  name: GetType()
+  nameWithType: Exception.GetType()
+  fullName: System.Exception.GetType()
+  spec.csharp:
+  - uid: System.Exception.GetType
+    name: GetType
+    nameWithType: Exception.GetType
+    fullName: System.Exception.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Exception.GetType
+    name: GetType
+    nameWithType: Exception.GetType
+    fullName: System.Exception.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception.ToString
+  commentId: M:System.Exception.ToString
+  parent: System.Exception
+  isExternal: true
+  name: ToString()
+  nameWithType: Exception.ToString()
+  fullName: System.Exception.ToString()
+  spec.csharp:
+  - uid: System.Exception.ToString
+    name: ToString
+    nameWithType: Exception.ToString
+    fullName: System.Exception.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Exception.ToString
+    name: ToString
+    nameWithType: Exception.ToString
+    fullName: System.Exception.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception.Data
+  commentId: P:System.Exception.Data
+  parent: System.Exception
+  isExternal: true
+  name: Data
+  nameWithType: Exception.Data
+  fullName: System.Exception.Data
+- uid: System.Exception.HelpLink
+  commentId: P:System.Exception.HelpLink
+  parent: System.Exception
+  isExternal: true
+  name: HelpLink
+  nameWithType: Exception.HelpLink
+  fullName: System.Exception.HelpLink
+- uid: System.Exception.HResult
+  commentId: P:System.Exception.HResult
+  parent: System.Exception
+  isExternal: true
+  name: HResult
+  nameWithType: Exception.HResult
+  fullName: System.Exception.HResult
+- uid: System.Exception.InnerException
+  commentId: P:System.Exception.InnerException
+  parent: System.Exception
+  isExternal: true
+  name: InnerException
+  nameWithType: Exception.InnerException
+  fullName: System.Exception.InnerException
+- uid: System.Exception.Message
+  commentId: P:System.Exception.Message
+  parent: System.Exception
+  isExternal: true
+  name: Message
+  nameWithType: Exception.Message
+  fullName: System.Exception.Message
+- uid: System.Exception.Source
+  commentId: P:System.Exception.Source
+  parent: System.Exception
+  isExternal: true
+  name: Source
+  nameWithType: Exception.Source
+  fullName: System.Exception.Source
+- uid: System.Exception.StackTrace
+  commentId: P:System.Exception.StackTrace
+  parent: System.Exception
+  isExternal: true
+  name: StackTrace
+  nameWithType: Exception.StackTrace
+  fullName: System.Exception.StackTrace
+- uid: System.Exception.TargetSite
+  commentId: P:System.Exception.TargetSite
+  parent: System.Exception
+  isExternal: true
+  name: TargetSite
+  nameWithType: Exception.TargetSite
+  fullName: System.Exception.TargetSite
+- uid: System.Exception.SerializeObjectState
+  commentId: E:System.Exception.SerializeObjectState
+  parent: System.Exception
+  isExternal: true
+  name: SerializeObjectState
+  nameWithType: Exception.SerializeObjectState
+  fullName: System.Exception.SerializeObjectState
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Runtime.Serialization
+  commentId: N:System.Runtime.Serialization
+  isExternal: true
+  name: System.Runtime.Serialization
+  nameWithType: System.Runtime.Serialization
+  fullName: System.Runtime.Serialization
+- uid: Yort.Zip.InStore.ZipApiException.#ctor*
+  commentId: Overload:Yort.Zip.InStore.ZipApiException.#ctor
+  name: ZipApiException
+  nameWithType: ZipApiException.ZipApiException
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Zip.InStore.ZipError
+  commentId: T:Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore
+  name: ZipError
+  nameWithType: ZipError
+  fullName: Yort.Zip.InStore.ZipError
+- uid: Yort.Zip.InStore.ZipApiException.Errors*
+  commentId: Overload:Yort.Zip.InStore.ZipApiException.Errors
+  name: Errors
+  nameWithType: ZipApiException.Errors
+  fullName: Yort.Zip.InStore.ZipApiException.Errors
+- uid: System.Runtime.Serialization.SerializationInfo
+  commentId: T:System.Runtime.Serialization.SerializationInfo
+  parent: System.Runtime.Serialization
+  isExternal: true
+  name: SerializationInfo
+  nameWithType: SerializationInfo
+  fullName: System.Runtime.Serialization.SerializationInfo
+- uid: System.Runtime.Serialization.StreamingContext
+  commentId: T:System.Runtime.Serialization.StreamingContext
+  parent: System.Runtime.Serialization
+  isExternal: true
+  name: StreamingContext
+  nameWithType: StreamingContext
+  fullName: System.Runtime.Serialization.StreamingContext

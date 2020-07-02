@@ -30,7 +30,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ZipClient
     path: ZipClient.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -81,7 +81,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: .ctor
     path: ZipClient.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -117,7 +117,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: .ctor
     path: ZipClient.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -156,11 +156,12 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CreateOrderAsync
     path: ZipClient.cs
-    startLine: 58
+    startLine: 68
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nCreates a new order (payment) with Zip.\n"
+  remarks: "\n<p>If the <xref href=\"Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck\" data-throw-if-not-resolved=\"false\"></xref> is true and the specified <xref href=\"Yort.Zip.InStore.ZipOrder.MerchantReference\" data-throw-if-not-resolved=\"false\"></xref> has \nbeen used before this method will behave in an idempotent way, returning a successful response but without creating a duplicate order. If \n<xref href=\"Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck\" data-throw-if-not-resolved=\"false\"></xref> is false and duplicate merchant reference is used, a dupliate order will be created in Zip.\n</p>\n"
   example: []
   syntax:
     content: public Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request)
@@ -177,6 +178,15 @@ items:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
     description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
+  - type: Yort.Zip.InStore.ZipApiException
+    commentId: T:Yort.Zip.InStore.ZipApiException
+    description: Thrown if the Zip API returns an error response.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
   implements:
   - Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
   modifiers.csharp:
@@ -201,7 +211,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CancelOrderAsync
     path: ZipClient.cs
-    startLine: 75
+    startLine: 89
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -218,6 +228,19 @@ items:
       description: A <xref href="Yort.Zip.InStore.CancelOrderResponse" data-throw-if-not-resolved="false"></xref> instance.
     content.vb: Public Function CancelOrderAsync(request As CancelOrderRequest) As Task(Of CancelOrderResponse)
   overload: Yort.Zip.InStore.ZipClient.CancelOrderAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
+  - type: Yort.Zip.InStore.ZipApiException
+    commentId: T:Yort.Zip.InStore.ZipApiException
+    description: Thrown if the Zip API returns an error response.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
   implements:
   - Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
   modifiers.csharp:
@@ -242,7 +265,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: GetOrderStatusAsync
     path: ZipClient.cs
-    startLine: 93
+    startLine: 109
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -266,45 +289,14 @@ items:
   - type: System.ArgumentException
     commentId: T:System.ArgumentException
     description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
+  - type: Yort.Zip.InStore.ZipApiException
+    commentId: T:Yort.Zip.InStore.ZipApiException
+    description: Thrown if the Zip API returns an error response.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
   implements:
   - Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Yort.Zip.InStore.ZipClient.Dispose
-  commentId: M:Yort.Zip.InStore.ZipClient.Dispose
-  id: Dispose
-  parent: Yort.Zip.InStore.ZipClient
-  langs:
-  - csharp
-  - vb
-  name: Dispose()
-  nameWithType: ZipClient.Dispose()
-  fullName: Yort.Zip.InStore.ZipClient.Dispose()
-  type: Method
-  source:
-    remote:
-      path: src/ZipClient.cs
-      branch: master
-      repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Dispose
-    path: ZipClient.cs
-    startLine: 109
-  assemblies:
-  - Yort.Zip.InStore
-  namespace: Yort.Zip.InStore
-  summary: "\nDisposes this instance and all internal resources.\n"
-  example: []
-  syntax:
-    content: public void Dispose()
-    content.vb: Public Sub Dispose
-  overload: Yort.Zip.InStore.ZipClient.Dispose*
-  seealso:
-  - linkId: Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
-    commentId: M:Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
-  implements:
-  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -327,7 +319,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RefundOrderAsync
     path: ZipClient.cs
-    startLine: 128
+    startLine: 130
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -344,6 +336,19 @@ items:
       description: A <xref href="Yort.Zip.InStore.RefundOrderResponse" data-throw-if-not-resolved="false"></xref> with details of a succesful outcome.
     content.vb: Public Function RefundOrderAsync(request As RefundOrderRequest) As Task(Of RefundOrderResponse)
   overload: Yort.Zip.InStore.ZipClient.RefundOrderAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
+  - type: Yort.Zip.InStore.ZipApiException
+    commentId: T:Yort.Zip.InStore.ZipApiException
+    description: Thrown if the Zip API returns an error response.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
   implements:
   - Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
   modifiers.csharp:
@@ -368,7 +373,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CommitOrderAsync
     path: ZipClient.cs
-    startLine: 152
+    startLine: 158
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -385,6 +390,19 @@ items:
       description: A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth completed succesfully. Use the <xref href="Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)" data-throw-if-not-resolved="false"></xref> to confirm.
     content.vb: Public Function CommitOrderAsync(request As CommitOrderRequest) As Task
   overload: Yort.Zip.InStore.ZipClient.CommitOrderAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
+  - type: Yort.Zip.InStore.ZipApiException
+    commentId: T:Yort.Zip.InStore.ZipApiException
+    description: Thrown if the Zip API returns an error response.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
   implements:
   - Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
   modifiers.csharp:
@@ -409,7 +427,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RollbackOrderAsync
     path: ZipClient.cs
-    startLine: 169
+    startLine: 179
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -426,6 +444,19 @@ items:
       description: A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <xref href="Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)" data-throw-if-not-resolved="false"></xref> to confirm.
     content.vb: Public Function RollbackOrderAsync(request As RollbackOrderRequest) As Task
   overload: Yort.Zip.InStore.ZipClient.RollbackOrderAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
+  - type: Yort.Zip.InStore.ZipApiException
+    commentId: T:Yort.Zip.InStore.ZipApiException
+    description: Thrown if the Zip API returns an error response.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
   implements:
   - Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
   modifiers.csharp:
@@ -450,7 +481,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: EnrolAsync
     path: ZipClient.cs
-    startLine: 186
+    startLine: 200
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -467,8 +498,58 @@ items:
       description: A <xref href="Yort.Zip.InStore.EnrolResponse" data-throw-if-not-resolved="false"></xref> instance containing details of the token returned.
     content.vb: Public Function EnrolAsync(request As EnrolRequest) As Task(Of EnrolResponse)
   overload: Yort.Zip.InStore.ZipClient.EnrolAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any required sub-property is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-property of <code data-dev-comment-type="paramref" class="paramref">request</code> is determined to be invalid.
+  - type: Yort.Zip.InStore.ZipApiException
+    commentId: T:Yort.Zip.InStore.ZipApiException
+    description: Thrown if the Zip API returns an error response.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
   implements:
   - Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipClient.Dispose
+  commentId: M:Yort.Zip.InStore.ZipClient.Dispose
+  id: Dispose
+  parent: Yort.Zip.InStore.ZipClient
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ZipClient.Dispose()
+  fullName: Yort.Zip.InStore.ZipClient.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/ZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Dispose
+    path: ZipClient.cs
+    startLine: 215
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nDisposes this instance and all internal resources.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Yort.Zip.InStore.ZipClient.Dispose*
+  seealso:
+  - linkId: Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
+    commentId: M:Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -491,7 +572,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Dispose
     path: ZipClient.cs
-    startLine: 202
+    startLine: 234
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -849,8 +930,25 @@ references:
   name: System.Net.Http
   nameWithType: System.Net.Http
   fullName: System.Net.Http
+- uid: Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  commentId: P:Yort.Zip.InStore.CreateOrderRequest.EnableUniqueMerchantReferenceCheck
+  isExternal: true
+- uid: Yort.Zip.InStore.ZipOrder.MerchantReference
+  commentId: P:Yort.Zip.InStore.ZipOrder.MerchantReference
+  isExternal: true
 - uid: System.ArgumentNullException
   commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: Yort.Zip.InStore.ZipApiException
+  commentId: T:Yort.Zip.InStore.ZipApiException
+  name: ZipApiException
+  nameWithType: ZipApiException
+  fullName: Yort.Zip.InStore.ZipApiException
+- uid: System.UnauthorizedAccessException
+  commentId: T:System.UnauthorizedAccessException
   isExternal: true
 - uid: Yort.Zip.InStore.ZipClient.CreateOrderAsync*
   commentId: Overload:Yort.Zip.InStore.ZipClient.CreateOrderAsync
@@ -1091,9 +1189,6 @@ references:
   name: OrderStatusResponse
   nameWithType: OrderStatusResponse
   fullName: Yort.Zip.InStore.OrderStatusResponse
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
 - uid: Yort.Zip.InStore.ZipClient.GetOrderStatusAsync*
   commentId: Overload:Yort.Zip.InStore.ZipClient.GetOrderStatusAsync
   name: GetOrderStatusAsync
@@ -1174,45 +1269,6 @@ references:
     name: OrderStatusResponse
     nameWithType: OrderStatusResponse
     fullName: Yort.Zip.InStore.OrderStatusResponse
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
-  commentId: M:Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
-  isExternal: true
-- uid: Yort.Zip.InStore.ZipClient.Dispose*
-  commentId: Overload:Yort.Zip.InStore.ZipClient.Dispose
-  name: Dispose
-  nameWithType: ZipClient.Dispose
-  fullName: Yort.Zip.InStore.ZipClient.Dispose
-- uid: System.IDisposable.Dispose
-  commentId: M:System.IDisposable.Dispose
-  parent: System.IDisposable
-  isExternal: true
-  name: Dispose()
-  nameWithType: IDisposable.Dispose()
-  fullName: System.IDisposable.Dispose()
-  spec.csharp:
-  - uid: System.IDisposable.Dispose
-    name: Dispose
-    nameWithType: IDisposable.Dispose
-    fullName: System.IDisposable.Dispose
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.IDisposable.Dispose
-    name: Dispose
-    nameWithType: IDisposable.Dispose
-    fullName: System.IDisposable.Dispose
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1511,6 +1567,45 @@ references:
     name: EnrolResponse
     nameWithType: EnrolResponse
     fullName: Yort.Zip.InStore.EnrolResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
+  commentId: M:Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
+  isExternal: true
+- uid: Yort.Zip.InStore.ZipClient.Dispose*
+  commentId: Overload:Yort.Zip.InStore.ZipClient.Dispose
+  name: Dispose
+  nameWithType: ZipClient.Dispose
+  fullName: Yort.Zip.InStore.ZipClient.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )

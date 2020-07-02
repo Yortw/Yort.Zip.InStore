@@ -220,6 +220,7 @@ namespace Tests
 			Assert.AreEqual(ZipOrderStatus.Cancelled, statusResponse.Status);
 		}
 
+		[Ignore("Requires you to manually specify the authorisation code and secret.")]
 		[TestMethod]
 		public async Task ZipClient_EnrolTest()
 		{
@@ -235,6 +236,122 @@ namespace Tests
 			var enrolResponse = await client.EnrolAsync(enrolRequest);
 
 			Assert.IsNotNull(enrolResponse);
+		}
+
+		[TestMethod]
+		public async Task ZipClient_ThrowsUnauthorisedAccessException_WhenUnableToRetrieveToken()
+		{
+			var client = new ZipClient
+			(
+				new ZipClientConfiguration
+				(
+					"Invalid",
+					"Invalid",
+					ZipEnvironment.NewZealand.Test
+				)
+			);
+
+			var request = new CreateOrderRequest()
+			{
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "AA05",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Payment
+				}
+			};
+
+			await Assert.ThrowsExceptionAsync<UnauthorizedAccessException>
+			(
+				async () => { await client.CreateOrderAsync(request); }
+			);
+		}
+
+		[TestMethod]
+		public async Task ZipClient_ThrowsUnauthorisedAccessException_WhenNoClientAuthDetails()
+		{
+			var client = new ZipClient
+			(
+				new ZipClientConfiguration
+				(
+					null,
+					null,
+					ZipEnvironment.NewZealand.Test
+				)
+			);
+
+			var request = new CreateOrderRequest()
+			{
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "AA05",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Payment
+				}
+			};
+
+			await Assert.ThrowsExceptionAsync<UnauthorizedAccessException>
+			(
+				async () => { await client.CreateOrderAsync(request); }
+			);
+		}
+
+		[TestMethod]
+		public async Task ZipClient_ThrowsZipApiException_ForBadRequest()
+		{
+			var client = CreateTestClient();
+
+			var request = new CreateOrderRequest()
+			{
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "AM00",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Payment
+				}
+			};
+
+			await Assert.ThrowsExceptionAsync<ZipApiException>
+			(
+				async () => { await client.CreateOrderAsync(request); }
+			);
+		}
+
+		[TestMethod]
+		public async Task ZipClient_ThrowsZipApiException_ForNotFoundResponse()
+		{
+			var client = CreateTestClient();
+
+			var request = new CreateOrderRequest()
+			{
+				//StoreId = "Albany Westfield",
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "Z001",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Payment
+				}
+			};
+
+			await Assert.ThrowsExceptionAsync<ZipApiException>
+			(
+				async () => { await client.CreateOrderAsync(request); }
+			);
 		}
 
 		private IZipClient CreateTestClient()

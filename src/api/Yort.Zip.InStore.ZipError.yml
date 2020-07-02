@@ -1,0 +1,890 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Zip.InStore.ZipError
+  commentId: T:Yort.Zip.InStore.ZipError
+  id: ZipError
+  parent: Yort.Zip.InStore
+  children:
+  - Yort.Zip.InStore.ZipError.#ctor
+  - Yort.Zip.InStore.ZipError.ErrorCode
+  - Yort.Zip.InStore.ZipError.Errors
+  - Yort.Zip.InStore.ZipError.IsValid
+  - Yort.Zip.InStore.ZipError.Message
+  - Yort.Zip.InStore.ZipError.ResponseCode
+  - Yort.Zip.InStore.ZipError.Title
+  - Yort.Zip.InStore.ZipError.TraceId
+  - Yort.Zip.InStore.ZipError.Type
+  langs:
+  - csharp
+  - vb
+  name: ZipError
+  nameWithType: ZipError
+  fullName: Yort.Zip.InStore.ZipError
+  type: Class
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ZipError
+    path: ZipError.cs
+    startLine: 9
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nUsed to hold error messages and validation errors returned by the Zip API.\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class ZipError
+    content.vb: >-
+      <Serializable>
+
+      Public Class ZipError
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.Zip.InStore.ZipError.#ctor
+  commentId: M:Yort.Zip.InStore.ZipError.#ctor
+  id: '#ctor'
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: ZipError()
+  nameWithType: ZipError.ZipError()
+  fullName: Yort.Zip.InStore.ZipError.ZipError()
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipError.cs
+    startLine: 15
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nDefault constructor.\n"
+  example: []
+  syntax:
+    content: public ZipError()
+    content.vb: Public Sub New
+  overload: Yort.Zip.InStore.ZipError.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipError.ResponseCode
+  commentId: P:Yort.Zip.InStore.ZipError.ResponseCode
+  id: ResponseCode
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: ResponseCode
+  nameWithType: ZipError.ResponseCode
+  fullName: Yort.Zip.InStore.ZipError.ResponseCode
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ResponseCode
+    path: ZipError.cs
+    startLine: 19
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nThe HTTP status code returned with the response that contained these errors.\n"
+  example: []
+  syntax:
+    content: public int ResponseCode { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ResponseCode As Integer
+  overload: Yort.Zip.InStore.ZipError.ResponseCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Yort.Zip.InStore.ZipError.Message
+  commentId: P:Yort.Zip.InStore.ZipError.Message
+  id: Message
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: ZipError.Message
+  fullName: Yort.Zip.InStore.ZipError.Message
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Message
+    path: ZipError.cs
+    startLine: 23
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nSets or returns the top level error message associated with the response.\n"
+  example: []
+  syntax:
+    content: public string Message { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Message As String
+  overload: Yort.Zip.InStore.ZipError.Message*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipError.Title
+  commentId: P:Yort.Zip.InStore.ZipError.Title
+  id: Title
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: ZipError.Title
+  fullName: Yort.Zip.InStore.ZipError.Title
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Title
+    path: ZipError.cs
+    startLine: 28
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nSets or returns a generic description of the error message.\n"
+  example: []
+  syntax:
+    content: public string Title { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Title As String
+  overload: Yort.Zip.InStore.ZipError.Title*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipError.TraceId
+  commentId: P:Yort.Zip.InStore.ZipError.TraceId
+  id: TraceId
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: TraceId
+  nameWithType: ZipError.TraceId
+  fullName: Yort.Zip.InStore.ZipError.TraceId
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: TraceId
+    path: ZipError.cs
+    startLine: 33
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nSets or returns a unique value that can be reported to Zip to assist with locating log entries relating to this request.\n"
+  example: []
+  syntax:
+    content: public string TraceId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TraceId As String
+  overload: Yort.Zip.InStore.ZipError.TraceId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipError.ErrorCode
+  commentId: P:Yort.Zip.InStore.ZipError.ErrorCode
+  id: ErrorCode
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: ErrorCode
+  nameWithType: ZipError.ErrorCode
+  fullName: Yort.Zip.InStore.ZipError.ErrorCode
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ErrorCode
+    path: ZipError.cs
+    startLine: 38
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nSets or returns a string containing an &apos;error code&apos; that can be used to programmatically take action on a specific error.\n"
+  example: []
+  syntax:
+    content: public string ErrorCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ErrorCode As String
+  overload: Yort.Zip.InStore.ZipError.ErrorCode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipError.Errors
+  commentId: P:Yort.Zip.InStore.ZipError.Errors
+  id: Errors
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: Errors
+  nameWithType: ZipError.Errors
+  fullName: Yort.Zip.InStore.ZipError.Errors
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Errors
+    path: ZipError.cs
+    startLine: 43
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nAn array of errors, keyed by the name of the property that as an error and with the value being an array of related error messages.\n"
+  example: []
+  syntax:
+    content: public IEnumerable<KeyValuePair<string, string[]>> Errors { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String[]}}
+    content.vb: Public Property Errors As IEnumerable(Of KeyValuePair(Of String, String()))
+  overload: Yort.Zip.InStore.ZipError.Errors*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipError.IsValid
+  commentId: P:Yort.Zip.InStore.ZipError.IsValid
+  id: IsValid
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: IsValid
+  nameWithType: ZipError.IsValid
+  fullName: Yort.Zip.InStore.ZipError.IsValid
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: IsValid
+    path: ZipError.cs
+    startLine: 48
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nReturns a boolean indicatin whether or not the request was valid.\n"
+  example: []
+  syntax:
+    content: public bool IsValid { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsValid As Boolean
+  overload: Yort.Zip.InStore.ZipError.IsValid*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipError.Type
+  commentId: P:Yort.Zip.InStore.ZipError.Type
+  id: Type
+  parent: Yort.Zip.InStore.ZipError
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: ZipError.Type
+  fullName: Yort.Zip.InStore.ZipError.Type
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Type
+    path: ZipError.cs
+    startLine: 53
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nA string containing a uri that defines the specific type of error that occurred.\n"
+  example: []
+  syntax:
+    content: public string Type { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Type As String
+  overload: Yort.Zip.InStore.ZipError.Type*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.Zip.InStore
+  commentId: N:Yort.Zip.InStore
+  name: Yort.Zip.InStore
+  nameWithType: Yort.Zip.InStore
+  fullName: Yort.Zip.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Zip.InStore.ZipError.#ctor*
+  commentId: Overload:Yort.Zip.InStore.ZipError.#ctor
+  name: ZipError
+  nameWithType: ZipError.ZipError
+  fullName: Yort.Zip.InStore.ZipError.ZipError
+- uid: Yort.Zip.InStore.ZipError.ResponseCode*
+  commentId: Overload:Yort.Zip.InStore.ZipError.ResponseCode
+  name: ResponseCode
+  nameWithType: ZipError.ResponseCode
+  fullName: Yort.Zip.InStore.ZipError.ResponseCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Yort.Zip.InStore.ZipError.Message*
+  commentId: Overload:Yort.Zip.InStore.ZipError.Message
+  name: Message
+  nameWithType: ZipError.Message
+  fullName: Yort.Zip.InStore.ZipError.Message
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Zip.InStore.ZipError.Title*
+  commentId: Overload:Yort.Zip.InStore.ZipError.Title
+  name: Title
+  nameWithType: ZipError.Title
+  fullName: Yort.Zip.InStore.ZipError.Title
+- uid: Yort.Zip.InStore.ZipError.TraceId*
+  commentId: Overload:Yort.Zip.InStore.ZipError.TraceId
+  name: TraceId
+  nameWithType: ZipError.TraceId
+  fullName: Yort.Zip.InStore.ZipError.TraceId
+- uid: Yort.Zip.InStore.ZipError.ErrorCode*
+  commentId: Overload:Yort.Zip.InStore.ZipError.ErrorCode
+  name: ErrorCode
+  nameWithType: ZipError.ErrorCode
+  fullName: Yort.Zip.InStore.ZipError.ErrorCode
+- uid: Yort.Zip.InStore.ZipError.Errors*
+  commentId: Overload:Yort.Zip.InStore.ZipError.Errors
+  name: Errors
+  nameWithType: ZipError.Errors
+  fullName: Yort.Zip.InStore.ZipError.Errors
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String[]}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String[]}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<KeyValuePair<String, String[]>>
+  nameWithType: IEnumerable<KeyValuePair<String, String[]>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.String[]>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, String()))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String()))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, String()))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Yort.Zip.InStore.ZipError.IsValid*
+  commentId: Overload:Yort.Zip.InStore.ZipError.IsValid
+  name: IsValid
+  nameWithType: ZipError.IsValid
+  fullName: Yort.Zip.InStore.ZipError.IsValid
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Yort.Zip.InStore.ZipError.Type*
+  commentId: Overload:Yort.Zip.InStore.ZipError.Type
+  name: Type
+  nameWithType: ZipError.Type
+  fullName: Yort.Zip.InStore.ZipError.Type

@@ -17,7 +17,10 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		/// <param name="request">Details of the order to be created.</param>
 		/// <returns>Details of the created order if succesful, otherwise throws an exception.</returns>
-		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request);
 
 		/// <summary>
@@ -27,6 +30,8 @@ namespace Yort.Zip.InStore
 		/// <returns>If successful a <see cref="OrderStatusResponse"/> containing details of the specified order's status. Otherwise throws an exception.</returns>
 		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		Task<OrderStatusResponse> GetOrderStatusAsync(OrderStatusRequest request);
 
 		/// <summary>
@@ -34,6 +39,10 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		/// <param name="request">A <see cref="CancelOrderRequest"/> providing details of the order to be cancelled and operation/terminal that is requesting cancellation.</param>
 		/// <returns>A <see cref="CancelOrderResponse"/> instance.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		Task<CancelOrderResponse> CancelOrderAsync(CancelOrderRequest request);
 
 		/// <summary>
@@ -41,6 +50,10 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		/// <param name="request">A <see cref="RefundOrderRequest"/> specifying details of the refund to create and the order to create it against.</param>
 		/// <returns>A <see cref="RefundOrderResponse"/> with details of a succesful outcome.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		Task<RefundOrderResponse> RefundOrderAsync(RefundOrderRequest request);
 
 		/// <summary>
@@ -48,6 +61,10 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		/// <param name="request">A <see cref="CommitOrderRequest"/> containing details of the order to commit.</param>
 		/// <returns>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth completed succesfully. Use the <see cref="GetOrderStatusAsync(OrderStatusRequest)"/> to confirm.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		Task CommitOrderAsync(CommitOrderRequest request);
 
 		/// <summary>
@@ -55,6 +72,10 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		/// <param name="request">A <see cref="RollbackOrderRequest"/> containing details of the order to rollback.</param>
 		/// <returns>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <see cref="GetOrderStatusAsync(OrderStatusRequest)"/> to confirm.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		Task RollbackOrderAsync(RollbackOrderRequest request);
 
 		/// <summary>
@@ -62,6 +83,10 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		/// <param name="request">A <see cref="EnrolRequest"/> instance providing details of the device to enrol.</param>
 		/// <returns>A <see cref="EnrolResponse"/> instance containing details of the token returned.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		Task<EnrolResponse> EnrolAsync(EnrolRequest request);
 	}
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Ladon;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 
 namespace Yort.Zip.InStore
 {
@@ -54,8 +55,17 @@ namespace Yort.Zip.InStore
 		/// Creates a new order (payment) with Zip.
 		/// </summary>
 		/// <param name="request">Details of the order to be created.</param>
+		/// <remarks>
+		/// <para>If the <see cref="CreateOrderRequest.EnableUniqueMerchantReferenceCheck"/> is true and the specified <see cref="ZipOrder.MerchantReference"/> has 
+		/// been used before this method will behave in an idempotent way, returning a successful response but without creating a duplicate order. If 
+		/// <see cref="CreateOrderRequest.EnableUniqueMerchantReferenceCheck"/> is false and duplicate merchant reference is used, a dupliate order will be created in Zip.
+		/// </para>
+		/// </remarks>
 		/// <returns>Details of the created order if succesful, otherwise throws an exception.</returns>
 		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		public async Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request)
 		{	
 			using (var response = await PostJsonAsync("pos/order", request, request.Order).ConfigureAwait(false))
@@ -64,7 +74,7 @@ namespace Yort.Zip.InStore
 				if (response.StatusCode == System.Net.HttpStatusCode.Accepted || response.StatusCode == System.Net.HttpStatusCode.Created || response.StatusCode == System.Net.HttpStatusCode.Found)
 					return await JsonResponseToEntityAsync<CreateOrderResponse>(response).ConfigureAwait(false);
 
-				throw ZipApiExceptionFromResponse(response);
+				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
 			}
 		}
 
@@ -73,6 +83,10 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		/// <param name="request">A <see cref="CancelOrderRequest"/> providing details of the order to be cancelled and operation/terminal that is requesting cancellation.</param>
 		/// <returns>A <see cref="CancelOrderResponse"/> instance.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		public async Task<CancelOrderResponse> CancelOrderAsync(CancelOrderRequest request)
 		{
 			using (var response = await PostJsonAsync("pos/order/cancel", request, new { cancelOrderId = request.OrderId, @operator = request.Operator }).ConfigureAwait(false))
@@ -80,7 +94,7 @@ namespace Yort.Zip.InStore
 				if (response.StatusCode == System.Net.HttpStatusCode.OK)
 					return await JsonResponseToEntityAsync<CancelOrderResponse>(response).ConfigureAwait(false);
 
-				throw ZipApiExceptionFromResponse(response);
+				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
 			}
 		}
 
@@ -91,6 +105,8 @@ namespace Yort.Zip.InStore
 		/// <returns>If successful a <see cref="OrderStatusResponse"/> containing details of the specified order's status. Otherwise throws an exception.</returns>
 		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
 		public async Task<OrderStatusResponse> GetOrderStatusAsync(OrderStatusRequest request)
 		{
 			using (var response = await GetJsonAsync($"v2.0/pos/order/{request.OrderId}/status", request).ConfigureAwait(false))
@@ -99,7 +115,97 @@ namespace Yort.Zip.InStore
 				if (response.StatusCode == System.Net.HttpStatusCode.OK)
 					return await JsonResponseToEntityAsync<OrderStatusResponse>(response).ConfigureAwait(false);
 
-				throw ZipApiExceptionFromResponse(response);
+				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
+			}
+		}
+
+		/// <summary>
+		/// Refunds some or all of the money taken as part of a previously completed order.
+		/// </summary>
+		/// <param name="request">A <see cref="RefundOrderRequest"/> specifying details of the refund to create and the order to create it against.</param>
+		/// <returns>A <see cref="RefundOrderResponse"/> with details of a succesful outcome.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		public async Task<RefundOrderResponse> RefundOrderAsync(RefundOrderRequest request)
+		{
+			var requestBodyEntity = new
+			{
+				@operator = request.Operator,
+				amount = request.Amount,
+				merchantRefundReference = request.MerchantRefundReference
+			};
+
+			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/refund", request, requestBodyEntity).ConfigureAwait(false))
+			{
+				//Zip API docs says 'Created' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
+				if (response.StatusCode == System.Net.HttpStatusCode.OK)
+					return await JsonResponseToEntityAsync<RefundOrderResponse>(response).ConfigureAwait(false);
+
+				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
+			}
+		}
+
+		/// <summary>
+		/// Commits (completes) an order previously created via <see cref="CreateOrderAsync(CreateOrderRequest)"/> using the <see cref="ZipPaymentFlow.Auth"/> flow.
+		/// </summary>
+		/// <param name="request">A <see cref="CommitOrderRequest"/> containing details of the order to commit.</param>
+		/// <returns>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth completed succesfully. Use the <see cref="GetOrderStatusAsync(OrderStatusRequest)"/> to confirm.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		public async Task CommitOrderAsync(CommitOrderRequest request)
+		{
+			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/commit", request, (object)null!).ConfigureAwait(false))
+			{
+				//Zip API docs says 'Ok' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
+				if (response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Accepted)
+					return;
+
+				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
+			}
+		}
+
+		/// <summary>
+		/// Rolls back (cancels/undoes) an order previously created via <see cref="CreateOrderAsync(CreateOrderRequest)"/> using the <see cref="ZipPaymentFlow.Auth"/> flow.
+		/// </summary>
+		/// <param name="request">A <see cref="RollbackOrderRequest"/> containing details of the order to rollback.</param>
+		/// <returns>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <see cref="GetOrderStatusAsync(OrderStatusRequest)"/> to confirm.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		public async Task RollbackOrderAsync(RollbackOrderRequest request)
+		{
+			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/rollback", request, (object)null!).ConfigureAwait(false))
+			{
+				//Zip API docs says 'Ok' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
+				if (response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Accepted)
+					return;
+
+				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
+			}
+		}
+
+		/// <summary>
+		/// Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.
+		/// </summary>
+		/// <param name="request">A <see cref="EnrolRequest"/> instance providing details of the device to enrol.</param>
+		/// <returns>A <see cref="EnrolResponse"/> instance containing details of the token returned.</returns>
+		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
+		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
+		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
+		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		public async Task<EnrolResponse> EnrolAsync(EnrolRequest request)
+		{
+			using (var response = await PostJsonAsync("pos/terminal/enrol", request, request).ConfigureAwait(false))
+			{
+				if (response.StatusCode == System.Net.HttpStatusCode.OK)
+					return await JsonResponseToEntityAsync<EnrolResponse>(response).ConfigureAwait(false);
+
+				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
 			}
 		}
 
@@ -122,80 +228,6 @@ namespace Yort.Zip.InStore
 		}
 
 		/// <summary>
-		/// Refunds some or all of the money taken as part of a previously completed order.
-		/// </summary>
-		/// <param name="request">A <see cref="RefundOrderRequest"/> specifying details of the refund to create and the order to create it against.</param>
-		/// <returns>A <see cref="RefundOrderResponse"/> with details of a succesful outcome.</returns>
-		public async Task<RefundOrderResponse> RefundOrderAsync(RefundOrderRequest request)
-		{
-			var requestBodyEntity = new
-			{
-				@operator = request.Operator,
-				amount = request.Amount,
-				merchantRefundReference = request.MerchantRefundReference
-			};
-
-			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/refund", request, requestBodyEntity).ConfigureAwait(false))
-			{
-				//Zip API docs says 'Created' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
-				if (response.StatusCode == System.Net.HttpStatusCode.OK)
-					return await JsonResponseToEntityAsync<RefundOrderResponse>(response).ConfigureAwait(false);
-
-				throw ZipApiExceptionFromResponse(response);
-			}
-		}
-
-		/// <summary>
-		/// Commits (completes) an order previously created via <see cref="CreateOrderAsync(CreateOrderRequest)"/> using the <see cref="ZipPaymentFlow.Auth"/> flow.
-		/// </summary>
-		/// <param name="request">A <see cref="CommitOrderRequest"/> containing details of the order to commit.</param>
-		/// <returns>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth completed succesfully. Use the <see cref="GetOrderStatusAsync(OrderStatusRequest)"/> to confirm.</returns>
-		public async Task CommitOrderAsync(CommitOrderRequest request)
-		{
-			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/commit", request, (object)null!).ConfigureAwait(false))
-			{
-				//Zip API docs says 'Ok' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
-				if (response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Accepted)
-					return;
-
-				throw ZipApiExceptionFromResponse(response);
-			}
-		}
-
-		/// <summary>
-		/// Rolls back (cancels/undoes) an order previously created via <see cref="CreateOrderAsync(CreateOrderRequest)"/> using the <see cref="ZipPaymentFlow.Auth"/> flow.
-		/// </summary>
-		/// <param name="request">A <see cref="RollbackOrderRequest"/> containing details of the order to rollback.</param>
-		/// <returns>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <see cref="GetOrderStatusAsync(OrderStatusRequest)"/> to confirm.</returns>
-		public async Task RollbackOrderAsync(RollbackOrderRequest request)
-		{
-			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/rollback", request, (object)null!).ConfigureAwait(false))
-			{
-				//Zip API docs says 'Ok' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
-				if (response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Accepted)
-					return;
-
-				throw ZipApiExceptionFromResponse(response);
-			}
-		}
-
-		/// <summary>
-		/// Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.
-		/// </summary>
-		/// <param name="request">A <see cref="EnrolRequest"/> instance providing details of the device to enrol.</param>
-		/// <returns>A <see cref="EnrolResponse"/> instance containing details of the token returned.</returns>
-		public async Task<EnrolResponse> EnrolAsync(EnrolRequest request)
-		{
-			using (var response = await PostJsonAsync("pos/terminal/enrol", request, request).ConfigureAwait(false))
-			{
-				if (response.StatusCode == System.Net.HttpStatusCode.OK)
-					return await JsonResponseToEntityAsync<EnrolResponse>(response).ConfigureAwait(false);
-
-				throw ZipApiExceptionFromResponse(response);
-			}
-		}
-
-		/// <summary>
 		/// Disposes resources used by this instance.
 		/// </summary>
 		/// <param name="disposing">True if dispose is being called explicitly by client code, or false if it is being called from a finalizer (indicating only unmanaged resources should be cleaned up).</param>
@@ -211,9 +243,12 @@ namespace Yort.Zip.InStore
 			if (_IsDisposed) throw new ObjectDisposedException(nameof(ZipClient));
 		}
 
-		private async Task EnsureAuthTokenAsync()
+		private async Task EnsureAuthTokenValidAsync()
 		{
 			if (!(_AuthToken?.IsExpired() ?? true)) return;
+
+			if (String.IsNullOrEmpty(_Configuration.ClientId) || String.IsNullOrEmpty(_Configuration.ClientSecret))
+				throw new UnauthorizedAccessException(ErrorMessage.ClientAuthDetailsRequired);
 
 			using (var client = new HttpClient())
 			{
@@ -228,6 +263,8 @@ namespace Yort.Zip.InStore
 				using (var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(request), System.Text.UTF8Encoding.UTF8, "application/json"))
 				{
 					var response = await client.PostAsync(_Configuration.Environment.TokenEndpoint, content).ConfigureAwait(false);
+					if (response.StatusCode != System.Net.HttpStatusCode.OK)
+						throw new UnauthorizedAccessException($"({Convert.ToInt32(response.StatusCode, System.Globalization.CultureInfo.InvariantCulture)}) " + ErrorMessage.UnableToRetrieveAuthToken);
 					response.EnsureSuccessStatusCode();
 
 					var newToken = System.Text.Json.JsonSerializer.Deserialize<AuthToken>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
@@ -253,7 +290,7 @@ namespace Yort.Zip.InStore
 			request.GuardNull(nameof(request));
 			request.Validate();
 
-			await EnsureAuthTokenAsync().ConfigureAwait(false);
+			await EnsureAuthTokenValidAsync().ConfigureAwait(false);
 
 			using (var content = CreateJsonContent(requestEntity))
 			{
@@ -266,7 +303,7 @@ namespace Yort.Zip.InStore
 					var retVal = await _HttpClient.SendAsync(requestMessage).ConfigureAwait(false);
 
 					if (Convert.ToInt32(retVal.StatusCode, System.Globalization.CultureInfo.InvariantCulture) >= 400)
-						throw ZipApiExceptionFromResponse(retVal);
+						throw await ZipApiExceptionFromResponseAsync(retVal).ConfigureAwait(false);
 
 					return retVal;
 				}
@@ -293,7 +330,7 @@ namespace Yort.Zip.InStore
 			request.GuardNull(nameof(request));
 			request.Validate();
 
-			await EnsureAuthTokenAsync().ConfigureAwait(false);
+			await EnsureAuthTokenValidAsync().ConfigureAwait(false);
 
 			return await _HttpClient.GetAsync(new Uri(relativePath, UriKind.Relative)).ConfigureAwait(false);
 		}
@@ -307,10 +344,47 @@ namespace Yort.Zip.InStore
 			);
 		}
 
-		private Exception ZipApiExceptionFromResponse(HttpResponseMessage response)
+		private async Task<Exception> ZipApiExceptionFromResponseAsync(HttpResponseMessage response)
 		{
-			//TODO: This
-			throw new NotImplementedException();
+			ZipError errors = null!;
+			var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+			if (String.IsNullOrEmpty(content))
+			{
+				if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+				{
+					errors = new ZipError()
+					{
+						Message = ErrorMessage.NotFound
+					};
+				}
+				else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+				{
+					errors = new ZipError()
+					{
+						Message = ErrorMessage.Unauthorised
+					};
+				}
+				else if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+				{
+					errors = new ZipError()
+					{
+						Message = ErrorMessage.Forbidden
+					};
+				}
+				else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+				{
+					errors = new ZipError()
+					{
+						Message = ErrorMessage.BadRequest
+					};
+				}
+			}
+			else
+				errors = System.Text.Json.JsonSerializer.Deserialize<ZipError>(content, _SerializerOptions);
+
+			errors.ResponseCode = Convert.ToInt32(response.StatusCode, System.Globalization.CultureInfo.InvariantCulture);
+
+			throw new ZipApiException(errors);
 		}
 
 		private HttpClient CreateNewHttpClient()

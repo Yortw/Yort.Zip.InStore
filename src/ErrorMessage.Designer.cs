@@ -59,5 +59,68 @@ namespace Yort.Zip.InStore {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bad request.
+        /// </summary>
+        internal static string BadRequest {
+            get {
+                return ResourceManager.GetString("BadRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The client id, secret or both are not set. Ensure these are configured or use the erol request to obtain them..
+        /// </summary>
+        internal static string ClientAuthDetailsRequired {
+            get {
+                return ResourceManager.GetString("ClientAuthDetailsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forbidden.
+        /// </summary>
+        internal static string Forbidden {
+            get {
+                return ResourceManager.GetString("Forbidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not found.
+        /// </summary>
+        internal static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve an authentication token from Zip..
+        /// </summary>
+        internal static string UnableToRetrieveAuthToken {
+            get {
+                return ResourceManager.GetString("UnableToRetrieveAuthToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The request was unauthorised. Ensure the correct client id, secret and environment are provided..
+        /// </summary>
+        internal static string Unauthorised {
+            get {
+                return ResourceManager.GetString("Unauthorised", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The API returned an error response but did not specify an error message..
+        /// </summary>
+        internal static string UnknownApiError {
+            get {
+                return ResourceManager.GetString("UnknownApiError", resourceCulture);
+            }
+        }
     }
 }
