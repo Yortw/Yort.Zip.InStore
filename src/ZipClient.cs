@@ -347,7 +347,16 @@ namespace Yort.Zip.InStore
 		private async Task<Exception> ZipApiExceptionFromResponseAsync(HttpResponseMessage response)
 		{
 			ZipError errors = null!;
-			var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+			//If we fail to parse the error body that's unfortunate, but don't hide the original error.
+			//TODO: should perhaps log or otherwise expose the deserialisation failure without hiding the 
+			//original exception. For now, just do our best to report the exception that really matters (original).
+			string? content = null;
+			try
+			{
+				content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+			}
+			catch { }
+
 			if (String.IsNullOrEmpty(content))
 			{
 				if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
