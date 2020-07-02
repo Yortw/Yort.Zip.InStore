@@ -104,6 +104,12 @@
                             <a href="Yort.Zip.InStore.CreateOrderResponse.html" title="CreateOrderResponse" class="">CreateOrderResponse</a>
                           </li>
                           <li class="">
+                            <a href="Yort.Zip.InStore.EnrolRequest.html" title="EnrolRequest" class="">EnrolRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.EnrolResponse.html" title="EnrolResponse" class="">EnrolResponse</a>
+                          </li>
+                          <li class="">
                             <a href="Yort.Zip.InStore.IZipClient.html" title="IZipClient" class="">IZipClient</a>
                           </li>
                           <li class="">
@@ -123,6 +129,9 @@
                           </li>
                           <li class="active">
                             <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="active">ZipClient</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.ZipClientConfiguration.html" title="ZipClientConfiguration" class="">ZipClientConfiguration</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.html" title="ZipEnvironment" class="">ZipEnvironment</a>
@@ -205,19 +214,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient__ctor_Yort_Zip_InStore_ZipEnvironment_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.%23ctor(Yort.Zip.InStore.ZipEnvironment)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient__ctor_System_Net_Http_HttpClient_Yort_Zip_InStore_ZipClientConfiguration_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.%23ctor(System.Net.Http.HttpClient%2CYort.Zip.InStore.ZipClientConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L35">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L46">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient__ctor_" data-uid="Yort.Zip.InStore.ZipClient.#ctor*"></a>
-  <h4 id="Yort_Zip_InStore_ZipClient__ctor_Yort_Zip_InStore_ZipEnvironment_" data-uid="Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)">ZipClient(ZipEnvironment)</h4>
+  <h4 id="Yort_Zip_InStore_ZipClient__ctor_System_Net_Http_HttpClient_Yort_Zip_InStore_ZipClientConfiguration_" data-uid="Yort.Zip.InStore.ZipClient.#ctor(System.Net.Http.HttpClient,Yort.Zip.InStore.ZipClientConfiguration)">ZipClient(HttpClient, ZipClientConfiguration)</h4>
   <div class="markdown level1 summary"><p>Full constructor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ZipClient(ZipEnvironment environment)</code></pre>
+    <pre><code class="lang-csharp hljs">public ZipClient(HttpClient httpClient, ZipClientConfiguration configuration)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -230,9 +239,49 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Yort.Zip.InStore.ZipEnvironment.html">ZipEnvironment</a></td>
-        <td><span class="parametername">environment</span></td>
-        <td><p>The <a class="xref" href="Yort.Zip.InStore.ZipEnvironment.html">ZipEnvironment</a> for the API to call.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a></td>
+        <td><span class="parametername">httpClient</span></td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a> instance to use to access the Zip API, or null to have the ZipClient create it's own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a> instance providing client credentials, the API environment to access and other required details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient__ctor_Yort_Zip_InStore_ZipClientConfiguration_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.%23ctor(Yort.Zip.InStore.ZipClientConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L37">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient__ctor_" data-uid="Yort.Zip.InStore.ZipClient.#ctor*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient__ctor_Yort_Zip_InStore_ZipClientConfiguration_" data-uid="Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipClientConfiguration)">ZipClient(ZipClientConfiguration)</h4>
+  <div class="markdown level1 summary"><p>Partial constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipClient(ZipClientConfiguration configuration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a> instance providing client credentials, the API environment to access and other required details.</p>
 </td>
       </tr>
     </tbody>
@@ -244,7 +293,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_CancelOrderAsync_Yort_Zip_InStore_CancelOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L67">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L76">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_CancelOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.CancelOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_CancelOrderAsync_Yort_Zip_InStore_CancelOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)">CancelOrderAsync(CancelOrderRequest)</h4>
@@ -294,7 +343,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_CommitOrderAsync_Yort_Zip_InStore_CommitOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L144">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L153">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_CommitOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.CommitOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_CommitOrderAsync_Yort_Zip_InStore_CommitOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)">CommitOrderAsync(CommitOrderRequest)</h4>
@@ -344,7 +393,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L50">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L59">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_CreateOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.CreateOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)">CreateOrderAsync(CreateOrderRequest)</h4>
@@ -410,7 +459,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_Dispose.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L101">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L110">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_Dispose_" data-uid="Yort.Zip.InStore.ZipClient.Dispose*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_Dispose" data-uid="Yort.Zip.InStore.ZipClient.Dispose">Dispose()</h4>
@@ -430,7 +479,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L178">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L203">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_Dispose_" data-uid="Yort.Zip.InStore.ZipClient.Dispose*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_Dispose_System_Boolean_" data-uid="Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)">Dispose(Boolean)</h4>
@@ -465,10 +514,60 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_EnrolAsync_Yort_Zip_InStore_EnrolRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L187">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_ZipClient_EnrolAsync_" data-uid="Yort.Zip.InStore.ZipClient.EnrolAsync*"></a>
+  <h4 id="Yort_Zip_InStore_ZipClient_EnrolAsync_Yort_Zip_InStore_EnrolRequest_" data-uid="Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)">EnrolAsync(EnrolRequest)</h4>
+  <div class="markdown level1 summary"><p>Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;EnrolResponse&gt; EnrolAsync(EnrolRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.EnrolRequest.html">EnrolRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.EnrolRequest.html">EnrolRequest</a> instance providing details of the device to enrol.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Zip.InStore.EnrolResponse.html">EnrolResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.EnrolResponse.html">EnrolResponse</a> instance containing details of the token returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L85">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L94">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_" data-uid="Yort.Zip.InStore.ZipClient.GetOrderStatusAsync*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_" data-uid="Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)">GetOrderStatusAsync(OrderStatusRequest)</h4>
@@ -539,7 +638,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_RefundOrderAsync_Yort_Zip_InStore_RefundOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L120">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L129">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_RefundOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.RefundOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_RefundOrderAsync_Yort_Zip_InStore_RefundOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)">RefundOrderAsync(RefundOrderRequest)</h4>
@@ -589,7 +688,7 @@
     <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_ZipClient_RollbackOrderAsync_Yort_Zip_InStore_RollbackOrderRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.ZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L161">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/ZipClient.cs/#L170">View Source</a>
   </span>
   <a id="Yort_Zip_InStore_ZipClient_RollbackOrderAsync_" data-uid="Yort.Zip.InStore.ZipClient.RollbackOrderAsync*"></a>
   <h4 id="Yort_Zip_InStore_ZipClient_RollbackOrderAsync_Yort_Zip_InStore_RollbackOrderRequest_" data-uid="Yort.Zip.InStore.ZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)">RollbackOrderAsync(RollbackOrderRequest)</h4>

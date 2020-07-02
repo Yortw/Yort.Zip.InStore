@@ -9,6 +9,8 @@ items:
   - Yort.Zip.InStore.CommitOrderRequest
   - Yort.Zip.InStore.CreateOrderRequest
   - Yort.Zip.InStore.CreateOrderResponse
+  - Yort.Zip.InStore.EnrolRequest
+  - Yort.Zip.InStore.EnrolResponse
   - Yort.Zip.InStore.IZipClient
   - Yort.Zip.InStore.OrderStatusRequest
   - Yort.Zip.InStore.OrderStatusResponse
@@ -16,6 +18,7 @@ items:
   - Yort.Zip.InStore.RefundOrderResponse
   - Yort.Zip.InStore.RollbackOrderRequest
   - Yort.Zip.InStore.ZipClient
+  - Yort.Zip.InStore.ZipClientConfiguration
   - Yort.Zip.InStore.ZipEnvironment
   - Yort.Zip.InStore.ZipEnvironment.NewZealand
   - Yort.Zip.InStore.ZipOrder
@@ -61,6 +64,17 @@ references:
   name: CreateOrderResponse
   nameWithType: CreateOrderResponse
   fullName: Yort.Zip.InStore.CreateOrderResponse
+- uid: Yort.Zip.InStore.EnrolRequest
+  commentId: T:Yort.Zip.InStore.EnrolRequest
+  parent: Yort.Zip.InStore
+  name: EnrolRequest
+  nameWithType: EnrolRequest
+  fullName: Yort.Zip.InStore.EnrolRequest
+- uid: Yort.Zip.InStore.EnrolResponse
+  commentId: T:Yort.Zip.InStore.EnrolResponse
+  name: EnrolResponse
+  nameWithType: EnrolResponse
+  fullName: Yort.Zip.InStore.EnrolResponse
 - uid: Yort.Zip.InStore.IZipClient
   commentId: T:Yort.Zip.InStore.IZipClient
   parent: Yort.Zip.InStore
@@ -100,6 +114,12 @@ references:
   name: ZipClient
   nameWithType: ZipClient
   fullName: Yort.Zip.InStore.ZipClient
+- uid: Yort.Zip.InStore.ZipClientConfiguration
+  commentId: T:Yort.Zip.InStore.ZipClientConfiguration
+  parent: Yort.Zip.InStore
+  name: ZipClientConfiguration
+  nameWithType: ZipClientConfiguration
+  fullName: Yort.Zip.InStore.ZipClientConfiguration
 - uid: Yort.Zip.InStore.ZipEnvironment
   commentId: T:Yort.Zip.InStore.ZipEnvironment
   parent: Yort.Zip.InStore

@@ -232,6 +232,96 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.CreateOrderResponse.OrderId
   nameWithType: CreateOrderResponse.OrderId
+- uid: Yort.Zip.InStore.EnrolRequest
+  name: EnrolRequest
+  href: api/Yort.Zip.InStore.EnrolRequest.html
+  commentId: T:Yort.Zip.InStore.EnrolRequest
+  fullName: Yort.Zip.InStore.EnrolRequest
+  nameWithType: EnrolRequest
+- uid: Yort.Zip.InStore.EnrolRequest.ActivationCode
+  name: ActivationCode
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_ActivationCode
+  commentId: P:Yort.Zip.InStore.EnrolRequest.ActivationCode
+  fullName: Yort.Zip.InStore.EnrolRequest.ActivationCode
+  nameWithType: EnrolRequest.ActivationCode
+- uid: Yort.Zip.InStore.EnrolRequest.ActivationCode*
+  name: ActivationCode
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_ActivationCode_
+  commentId: Overload:Yort.Zip.InStore.EnrolRequest.ActivationCode
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.EnrolRequest.ActivationCode
+  nameWithType: EnrolRequest.ActivationCode
+- uid: Yort.Zip.InStore.EnrolRequest.Secret
+  name: Secret
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_Secret
+  commentId: P:Yort.Zip.InStore.EnrolRequest.Secret
+  fullName: Yort.Zip.InStore.EnrolRequest.Secret
+  nameWithType: EnrolRequest.Secret
+- uid: Yort.Zip.InStore.EnrolRequest.Secret*
+  name: Secret
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_Secret_
+  commentId: Overload:Yort.Zip.InStore.EnrolRequest.Secret
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.EnrolRequest.Secret
+  nameWithType: EnrolRequest.Secret
+- uid: Yort.Zip.InStore.EnrolRequest.Terminal
+  name: Terminal
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_Terminal
+  commentId: P:Yort.Zip.InStore.EnrolRequest.Terminal
+  fullName: Yort.Zip.InStore.EnrolRequest.Terminal
+  nameWithType: EnrolRequest.Terminal
+- uid: Yort.Zip.InStore.EnrolRequest.Terminal*
+  name: Terminal
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_Terminal_
+  commentId: Overload:Yort.Zip.InStore.EnrolRequest.Terminal
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.EnrolRequest.Terminal
+  nameWithType: EnrolRequest.Terminal
+- uid: Yort.Zip.InStore.EnrolRequest.Validate
+  name: Validate()
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_Validate
+  commentId: M:Yort.Zip.InStore.EnrolRequest.Validate
+  fullName: Yort.Zip.InStore.EnrolRequest.Validate()
+  nameWithType: EnrolRequest.Validate()
+- uid: Yort.Zip.InStore.EnrolRequest.Validate*
+  name: Validate
+  href: api/Yort.Zip.InStore.EnrolRequest.html#Yort_Zip_InStore_EnrolRequest_Validate_
+  commentId: Overload:Yort.Zip.InStore.EnrolRequest.Validate
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.EnrolRequest.Validate
+  nameWithType: EnrolRequest.Validate
+- uid: Yort.Zip.InStore.EnrolResponse
+  name: EnrolResponse
+  href: api/Yort.Zip.InStore.EnrolResponse.html
+  commentId: T:Yort.Zip.InStore.EnrolResponse
+  fullName: Yort.Zip.InStore.EnrolResponse
+  nameWithType: EnrolResponse
+- uid: Yort.Zip.InStore.EnrolResponse.ClientId
+  name: ClientId
+  href: api/Yort.Zip.InStore.EnrolResponse.html#Yort_Zip_InStore_EnrolResponse_ClientId
+  commentId: P:Yort.Zip.InStore.EnrolResponse.ClientId
+  fullName: Yort.Zip.InStore.EnrolResponse.ClientId
+  nameWithType: EnrolResponse.ClientId
+- uid: Yort.Zip.InStore.EnrolResponse.ClientId*
+  name: ClientId
+  href: api/Yort.Zip.InStore.EnrolResponse.html#Yort_Zip_InStore_EnrolResponse_ClientId_
+  commentId: Overload:Yort.Zip.InStore.EnrolResponse.ClientId
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.EnrolResponse.ClientId
+  nameWithType: EnrolResponse.ClientId
+- uid: Yort.Zip.InStore.EnrolResponse.ClientSecret
+  name: ClientSecret
+  href: api/Yort.Zip.InStore.EnrolResponse.html#Yort_Zip_InStore_EnrolResponse_ClientSecret
+  commentId: P:Yort.Zip.InStore.EnrolResponse.ClientSecret
+  fullName: Yort.Zip.InStore.EnrolResponse.ClientSecret
+  nameWithType: EnrolResponse.ClientSecret
+- uid: Yort.Zip.InStore.EnrolResponse.ClientSecret*
+  name: ClientSecret
+  href: api/Yort.Zip.InStore.EnrolResponse.html#Yort_Zip_InStore_EnrolResponse_ClientSecret_
+  commentId: Overload:Yort.Zip.InStore.EnrolResponse.ClientSecret
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.EnrolResponse.ClientSecret
+  nameWithType: EnrolResponse.ClientSecret
 - uid: Yort.Zip.InStore.IZipClient
   name: IZipClient
   href: api/Yort.Zip.InStore.IZipClient.html
@@ -277,6 +367,19 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.IZipClient.CreateOrderAsync
   nameWithType: IZipClient.CreateOrderAsync
+- uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  name: EnrolAsync(EnrolRequest)
+  href: api/Yort.Zip.InStore.IZipClient.html#Yort_Zip_InStore_IZipClient_EnrolAsync_Yort_Zip_InStore_EnrolRequest_
+  commentId: M:Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  fullName: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  nameWithType: IZipClient.EnrolAsync(EnrolRequest)
+- uid: Yort.Zip.InStore.IZipClient.EnrolAsync*
+  name: EnrolAsync
+  href: api/Yort.Zip.InStore.IZipClient.html#Yort_Zip_InStore_IZipClient_EnrolAsync_
+  commentId: Overload:Yort.Zip.InStore.IZipClient.EnrolAsync
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.IZipClient.EnrolAsync
+  nameWithType: IZipClient.EnrolAsync
 - uid: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
   name: GetOrderStatusAsync(OrderStatusRequest)
   href: api/Yort.Zip.InStore.IZipClient.html#Yort_Zip_InStore_IZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_
@@ -586,12 +689,18 @@ references:
   commentId: T:Yort.Zip.InStore.ZipClient
   fullName: Yort.Zip.InStore.ZipClient
   nameWithType: ZipClient
-- uid: Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)
-  name: ZipClient(ZipEnvironment)
-  href: api/Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient__ctor_Yort_Zip_InStore_ZipEnvironment_
-  commentId: M:Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)
-  fullName: Yort.Zip.InStore.ZipClient.ZipClient(Yort.Zip.InStore.ZipEnvironment)
-  nameWithType: ZipClient.ZipClient(ZipEnvironment)
+- uid: Yort.Zip.InStore.ZipClient.#ctor(System.Net.Http.HttpClient,Yort.Zip.InStore.ZipClientConfiguration)
+  name: ZipClient(HttpClient, ZipClientConfiguration)
+  href: api/Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient__ctor_System_Net_Http_HttpClient_Yort_Zip_InStore_ZipClientConfiguration_
+  commentId: M:Yort.Zip.InStore.ZipClient.#ctor(System.Net.Http.HttpClient,Yort.Zip.InStore.ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.ZipClient.ZipClient(System.Net.Http.HttpClient, Yort.Zip.InStore.ZipClientConfiguration)
+  nameWithType: ZipClient.ZipClient(HttpClient, ZipClientConfiguration)
+- uid: Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipClientConfiguration)
+  name: ZipClient(ZipClientConfiguration)
+  href: api/Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient__ctor_Yort_Zip_InStore_ZipClientConfiguration_
+  commentId: M:Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.ZipClient.ZipClient(Yort.Zip.InStore.ZipClientConfiguration)
+  nameWithType: ZipClient.ZipClient(ZipClientConfiguration)
 - uid: Yort.Zip.InStore.ZipClient.#ctor*
   name: ZipClient
   href: api/Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient__ctor_
@@ -657,6 +766,19 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.ZipClient.Dispose
   nameWithType: ZipClient.Dispose
+- uid: Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  name: EnrolAsync(EnrolRequest)
+  href: api/Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_EnrolAsync_Yort_Zip_InStore_EnrolRequest_
+  commentId: M:Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  fullName: Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  nameWithType: ZipClient.EnrolAsync(EnrolRequest)
+- uid: Yort.Zip.InStore.ZipClient.EnrolAsync*
+  name: EnrolAsync
+  href: api/Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_EnrolAsync_
+  commentId: Overload:Yort.Zip.InStore.ZipClient.EnrolAsync
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipClient.EnrolAsync
+  nameWithType: ZipClient.EnrolAsync
 - uid: Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
   name: GetOrderStatusAsync(OrderStatusRequest)
   href: api/Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_GetOrderStatusAsync_Yort_Zip_InStore_OrderStatusRequest_
@@ -696,6 +818,64 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.ZipClient.RollbackOrderAsync
   nameWithType: ZipClient.RollbackOrderAsync
+- uid: Yort.Zip.InStore.ZipClientConfiguration
+  name: ZipClientConfiguration
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html
+  commentId: T:Yort.Zip.InStore.ZipClientConfiguration
+  fullName: Yort.Zip.InStore.ZipClientConfiguration
+  nameWithType: ZipClientConfiguration
+- uid: Yort.Zip.InStore.ZipClientConfiguration.#ctor(System.String,System.String,Yort.Zip.InStore.ZipEnvironment)
+  name: ZipClientConfiguration(String, String, ZipEnvironment)
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration__ctor_System_String_System_String_Yort_Zip_InStore_ZipEnvironment_
+  commentId: M:Yort.Zip.InStore.ZipClientConfiguration.#ctor(System.String,System.String,Yort.Zip.InStore.ZipEnvironment)
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ZipClientConfiguration(System.String, System.String, Yort.Zip.InStore.ZipEnvironment)
+  nameWithType: ZipClientConfiguration.ZipClientConfiguration(String, String, ZipEnvironment)
+- uid: Yort.Zip.InStore.ZipClientConfiguration.#ctor*
+  name: ZipClientConfiguration
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration__ctor_
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.#ctor
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ZipClientConfiguration
+  nameWithType: ZipClientConfiguration.ZipClientConfiguration
+- uid: Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  name: ClientId
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_ClientId
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  nameWithType: ZipClientConfiguration.ClientId
+- uid: Yort.Zip.InStore.ZipClientConfiguration.ClientId*
+  name: ClientId
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_ClientId_
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  nameWithType: ZipClientConfiguration.ClientId
+- uid: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  name: ClientSecret
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_ClientSecret
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  nameWithType: ZipClientConfiguration.ClientSecret
+- uid: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret*
+  name: ClientSecret
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_ClientSecret_
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  nameWithType: ZipClientConfiguration.ClientSecret
+- uid: Yort.Zip.InStore.ZipClientConfiguration.Environment
+  name: Environment
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_Environment
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.Environment
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.Environment
+  nameWithType: ZipClientConfiguration.Environment
+- uid: Yort.Zip.InStore.ZipClientConfiguration.Environment*
+  name: Environment
+  href: api/Yort.Zip.InStore.ZipClientConfiguration.html#Yort_Zip_InStore_ZipClientConfiguration_Environment_
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.Environment
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.Environment
+  nameWithType: ZipClientConfiguration.Environment
 - uid: Yort.Zip.InStore.ZipEnvironment
   name: ZipEnvironment
   href: api/Yort.Zip.InStore.ZipEnvironment.html

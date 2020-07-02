@@ -1,45 +1,39 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Yort.Zip.InStore.ZipRequestOptionsBase
-  commentId: T:Yort.Zip.InStore.ZipRequestOptionsBase
-  id: ZipRequestOptionsBase
+- uid: Yort.Zip.InStore.ZipClientConfiguration
+  commentId: T:Yort.Zip.InStore.ZipClientConfiguration
+  id: ZipClientConfiguration
   parent: Yort.Zip.InStore
   children:
-  - Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  - Yort.Zip.InStore.ZipRequestOptionsBase.Validate
+  - Yort.Zip.InStore.ZipClientConfiguration.#ctor(System.String,System.String,Yort.Zip.InStore.ZipEnvironment)
+  - Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  - Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  - Yort.Zip.InStore.ZipClientConfiguration.Environment
   langs:
   - csharp
   - vb
-  name: ZipRequestOptionsBase
-  nameWithType: ZipRequestOptionsBase
-  fullName: Yort.Zip.InStore.ZipRequestOptionsBase
+  name: ZipClientConfiguration
+  nameWithType: ZipClientConfiguration
+  fullName: Yort.Zip.InStore.ZipClientConfiguration
   type: Class
   source:
     remote:
-      path: src/ZipRequestOptionsBase.cs
+      path: src/ZipClientConfig.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: ZipRequestOptionsBase
-    path: ZipRequestOptionsBase.cs
-    startLine: 9
+    id: ZipClientConfiguration
+    path: ZipClientConfig.cs
+    startLine: 10
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nBase class for request options classes, providing a common and extensible interface for all requests.\n"
+  summary: "\nProvides details to a <xref href=\"Yort.Zip.InStore.ZipClient\" data-throw-if-not-resolved=\"false\"></xref> instance about how to access the Zip API.\n"
   example: []
   syntax:
-    content: public abstract class ZipRequestOptionsBase
-    content.vb: Public MustInherit Class ZipRequestOptionsBase
+    content: public class ZipClientConfiguration
+    content.vb: Public Class ZipClientConfiguration
   inheritance:
   - System.Object
-  derivedClasses:
-  - Yort.Zip.InStore.CancelOrderRequest
-  - Yort.Zip.InStore.CommitOrderRequest
-  - Yort.Zip.InStore.CreateOrderRequest
-  - Yort.Zip.InStore.EnrolRequest
-  - Yort.Zip.InStore.OrderStatusRequest
-  - Yort.Zip.InStore.RefundOrderRequest
-  - Yort.Zip.InStore.RollbackOrderRequest
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -50,86 +44,169 @@ items:
   - System.Object.ToString
   modifiers.csharp:
   - public
-  - abstract
   - class
   modifiers.vb:
   - Public
-  - MustInherit
   - Class
-- uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  id: Validate
-  parent: Yort.Zip.InStore.ZipRequestOptionsBase
+- uid: Yort.Zip.InStore.ZipClientConfiguration.#ctor(System.String,System.String,Yort.Zip.InStore.ZipEnvironment)
+  commentId: M:Yort.Zip.InStore.ZipClientConfiguration.#ctor(System.String,System.String,Yort.Zip.InStore.ZipEnvironment)
+  id: '#ctor(System.String,System.String,Yort.Zip.InStore.ZipEnvironment)'
+  parent: Yort.Zip.InStore.ZipClientConfiguration
   langs:
   - csharp
   - vb
-  name: Validate()
-  nameWithType: ZipRequestOptionsBase.Validate()
-  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate()
-  type: Method
+  name: ZipClientConfiguration(String, String, ZipEnvironment)
+  nameWithType: ZipClientConfiguration.ZipClientConfiguration(String, String, ZipEnvironment)
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ZipClientConfiguration(System.String, System.String, Yort.Zip.InStore.ZipEnvironment)
+  type: Constructor
   source:
     remote:
-      path: src/ZipRequestOptionsBase.cs
+      path: src/ZipClientConfig.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Validate
-    path: ZipRequestOptionsBase.cs
-    startLine: 18
+    id: .ctor
+    path: ZipClientConfig.cs
+    startLine: 22
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nValidates the properties of this request match the known design time requirements, i.e are all required properties provided.\n"
-  remarks: "\n<p>Throws exceptions (typically <xref href=\"System.ArgumentException\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"System.ArgumentNullException\" data-throw-if-not-resolved=\"false\"></xref> or <xref href=\"System.ArgumentOutOfRangeException\" data-throw-if-not-resolved=\"false\"></xref>) if any property is in a known invalid state.</p>\n"
+  summary: "\nFull constructor.\n"
   example: []
   syntax:
-    content: public abstract void Validate()
-    content.vb: Public MustOverride Sub Validate
-  overload: Yort.Zip.InStore.ZipRequestOptionsBase.Validate*
+    content: public ZipClientConfiguration(string clientId, string clientSecret, ZipEnvironment environment)
+    parameters:
+    - id: clientId
+      type: System.String
+      description: The client id used to request new authentication tokens. Can be null if you plan to retrieve it using the <xref href="Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)" data-throw-if-not-resolved="false"></xref> mechanism.
+    - id: clientSecret
+      type: System.String
+      description: The client secret used to request new authentication tokens. Can be null if you plan to retrieve it using the <xref href="Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)" data-throw-if-not-resolved="false"></xref> mechanism.
+    - id: environment
+      type: Yort.Zip.InStore.ZipEnvironment
+      description: The environment indicating the API instance to access. Required.
+    content.vb: Public Sub New(clientId As String, clientSecret As String, environment As ZipEnvironment)
+  overload: Yort.Zip.InStore.ZipClientConfiguration.#ctor*
   modifiers.csharp:
   - public
-  - abstract
   modifiers.vb:
   - Public
-  - MustOverride
-- uid: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  commentId: M:Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  id: GetCustomHttpHeaders
-  parent: Yort.Zip.InStore.ZipRequestOptionsBase
+- uid: Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  id: ClientId
+  parent: Yort.Zip.InStore.ZipClientConfiguration
   langs:
   - csharp
   - vb
-  name: GetCustomHttpHeaders()
-  nameWithType: ZipRequestOptionsBase.GetCustomHttpHeaders()
-  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders()
-  type: Method
+  name: ClientId
+  nameWithType: ZipClientConfiguration.ClientId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  type: Property
   source:
     remote:
-      path: src/ZipRequestOptionsBase.cs
+      path: src/ZipClientConfig.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: GetCustomHttpHeaders
-    path: ZipRequestOptionsBase.cs
-    startLine: 27
+    id: ClientId
+    path: ZipClientConfig.cs
+    startLine: 32
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nReturns a list of key value pairs to be applied as HTTP headers to HTTP request for this request type.\n"
-  remarks: "\n<p>By default returns null indicating there are no custom headers. Can be overridden by derived types to specify otherwise.</p>\n"
+  summary: "\nReturns the client id value provided via the constructor.\n"
   example: []
   syntax:
-    content: public virtual Dictionary<string, string> GetCustomHttpHeaders()
+    content: public string ClientId { get; }
+    parameters: []
     return:
-      type: System.Collections.Generic.Dictionary{System.String,System.String}
-      description: A dictionary containing key/value pairs to be applied as custom HTTP headers, or null if no custom headers apply.
-    content.vb: Public Overridable Function GetCustomHttpHeaders As Dictionary(Of String, String)
-  overload: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders*
+      type: System.String
+    content.vb: Public ReadOnly Property ClientId As String
+  overload: Yort.Zip.InStore.ZipClientConfiguration.ClientId*
   modifiers.csharp:
   - public
-  - virtual
+  - get
   modifiers.vb:
   - Public
-  - Overridable
+  - ReadOnly
+- uid: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  id: ClientSecret
+  parent: Yort.Zip.InStore.ZipClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ClientSecret
+  nameWithType: ZipClientConfiguration.ClientSecret
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  type: Property
+  source:
+    remote:
+      path: src/ZipClientConfig.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: ClientSecret
+    path: ZipClientConfig.cs
+    startLine: 37
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nReturns the client secret value provided via the constructor.\n"
+  example: []
+  syntax:
+    content: public string ClientSecret { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ClientSecret As String
+  overload: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Yort.Zip.InStore.ZipClientConfiguration.Environment
+  commentId: P:Yort.Zip.InStore.ZipClientConfiguration.Environment
+  id: Environment
+  parent: Yort.Zip.InStore.ZipClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Environment
+  nameWithType: ZipClientConfiguration.Environment
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.Environment
+  type: Property
+  source:
+    remote:
+      path: src/ZipClientConfig.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Environment
+    path: ZipClientConfig.cs
+    startLine: 42
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nReturns the <xref href=\"Yort.Zip.InStore.ZipEnvironment\" data-throw-if-not-resolved=\"false\"></xref> value provided via the constructor.\n"
+  example: []
+  syntax:
+    content: public ZipEnvironment Environment { get; }
+    parameters: []
+    return:
+      type: Yort.Zip.InStore.ZipEnvironment
+    content.vb: Public ReadOnly Property Environment As ZipEnvironment
+  overload: Yort.Zip.InStore.ZipClientConfiguration.Environment*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 references:
+- uid: Yort.Zip.InStore.ZipClient
+  commentId: T:Yort.Zip.InStore.ZipClient
+  name: ZipClient
+  nameWithType: ZipClient
+  fullName: Yort.Zip.InStore.ZipClient
 - uid: Yort.Zip.InStore
   commentId: N:Yort.Zip.InStore
   name: Yort.Zip.InStore
@@ -427,139 +504,78 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
-- uid: System.ArgumentNullException
-  commentId: T:System.ArgumentNullException
-  isExternal: true
-- uid: System.ArgumentOutOfRangeException
-  commentId: T:System.ArgumentOutOfRangeException
-  isExternal: true
-- uid: Yort.Zip.InStore.ZipRequestOptionsBase.Validate*
-  commentId: Overload:Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-  name: Validate
-  nameWithType: ZipRequestOptionsBase.Validate
-  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
-- uid: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders*
-  commentId: Overload:Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-  name: GetCustomHttpHeaders
-  nameWithType: ZipRequestOptionsBase.GetCustomHttpHeaders
-  fullName: Yort.Zip.InStore.ZipRequestOptionsBase.GetCustomHttpHeaders
-- uid: System.Collections.Generic.Dictionary{System.String,System.String}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  name: Dictionary<String, String>
-  nameWithType: Dictionary<String, String>
-  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
-  nameWithType.vb: Dictionary(Of String, String)
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
-  name.vb: Dictionary(Of String, String)
+- uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  name: EnrolAsync(EnrolRequest)
+  nameWithType: IZipClient.EnrolAsync(EnrolRequest)
+  fullName: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
   spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
+  - uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+    name: EnrolAsync
+    nameWithType: IZipClient.EnrolAsync
+    fullName: Yort.Zip.InStore.IZipClient.EnrolAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.EnrolRequest
+    name: EnrolRequest
+    nameWithType: EnrolRequest
+    fullName: Yort.Zip.InStore.EnrolRequest
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
-  isExternal: true
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: TKey
-    nameWithType: TKey
-    fullName: TKey
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TValue
-    nameWithType: TValue
-    fullName: TValue
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: TKey
-    nameWithType: TKey
-    fullName: TKey
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TValue
-    nameWithType: TValue
-    fullName: TValue
+  - uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+    name: EnrolAsync
+    nameWithType: IZipClient.EnrolAsync
+    fullName: Yort.Zip.InStore.IZipClient.EnrolAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.EnrolRequest
+    name: EnrolRequest
+    nameWithType: EnrolRequest
+    fullName: Yort.Zip.InStore.EnrolRequest
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+- uid: Yort.Zip.InStore.ZipClientConfiguration.#ctor*
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.#ctor
+  name: ZipClientConfiguration
+  nameWithType: ZipClientConfiguration.ZipClientConfiguration
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ZipClientConfiguration
+- uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Zip.InStore.ZipEnvironment
+  commentId: T:Yort.Zip.InStore.ZipEnvironment
+  parent: Yort.Zip.InStore
+  name: ZipEnvironment
+  nameWithType: ZipEnvironment
+  fullName: Yort.Zip.InStore.ZipEnvironment
+- uid: Yort.Zip.InStore.IZipClient
+  commentId: T:Yort.Zip.InStore.IZipClient
+  parent: Yort.Zip.InStore
+  name: IZipClient
+  nameWithType: IZipClient
+  fullName: Yort.Zip.InStore.IZipClient
+- uid: Yort.Zip.InStore.ZipClientConfiguration.ClientId*
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.ClientId
+  name: ClientId
+  nameWithType: ZipClientConfiguration.ClientId
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientId
+- uid: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret*
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+  name: ClientSecret
+  nameWithType: ZipClientConfiguration.ClientSecret
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.ClientSecret
+- uid: Yort.Zip.InStore.ZipClientConfiguration.Environment*
+  commentId: Overload:Yort.Zip.InStore.ZipClientConfiguration.Environment
+  name: Environment
+  nameWithType: ZipClientConfiguration.Environment
+  fullName: Yort.Zip.InStore.ZipClientConfiguration.Environment

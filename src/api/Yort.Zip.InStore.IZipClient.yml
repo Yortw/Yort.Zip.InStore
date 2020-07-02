@@ -8,6 +8,7 @@ items:
   - Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
   - Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
   - Yort.Zip.InStore.IZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
+  - Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
   - Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
   - Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
   - Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
@@ -269,6 +270,41 @@ items:
       description: A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <xref href="Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)" data-throw-if-not-resolved="false"></xref> to confirm.
     content.vb: Function RollbackOrderAsync(request As RollbackOrderRequest) As Task
   overload: Yort.Zip.InStore.IZipClient.RollbackOrderAsync*
+- uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  id: EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  langs:
+  - csharp
+  - vb
+  name: EnrolAsync(EnrolRequest)
+  nameWithType: IZipClient.EnrolAsync(EnrolRequest)
+  fullName: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  type: Method
+  source:
+    remote:
+      path: src/IZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: EnrolAsync
+    path: IZipClient.cs
+    startLine: 64
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nAllows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.\n"
+  example: []
+  syntax:
+    content: Task<EnrolResponse> EnrolAsync(EnrolRequest request)
+    parameters:
+    - id: request
+      type: Yort.Zip.InStore.EnrolRequest
+      description: A <xref href="Yort.Zip.InStore.EnrolRequest" data-throw-if-not-resolved="false"></xref> instance providing details of the device to enrol.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Zip.InStore.EnrolResponse}
+      description: A <xref href="Yort.Zip.InStore.EnrolResponse" data-throw-if-not-resolved="false"></xref> instance containing details of the token returned.
+    content.vb: Function EnrolAsync(request As EnrolRequest) As Task(Of EnrolResponse)
+  overload: Yort.Zip.InStore.IZipClient.EnrolAsync*
 references:
 - uid: Yort.Zip.InStore.ZipClient
   commentId: T:Yort.Zip.InStore.ZipClient
@@ -712,3 +748,61 @@ references:
   name: RollbackOrderAsync
   nameWithType: IZipClient.RollbackOrderAsync
   fullName: Yort.Zip.InStore.IZipClient.RollbackOrderAsync
+- uid: Yort.Zip.InStore.EnrolRequest
+  commentId: T:Yort.Zip.InStore.EnrolRequest
+  parent: Yort.Zip.InStore
+  name: EnrolRequest
+  nameWithType: EnrolRequest
+  fullName: Yort.Zip.InStore.EnrolRequest
+- uid: Yort.Zip.InStore.EnrolResponse
+  commentId: T:Yort.Zip.InStore.EnrolResponse
+  name: EnrolResponse
+  nameWithType: EnrolResponse
+  fullName: Yort.Zip.InStore.EnrolResponse
+- uid: Yort.Zip.InStore.IZipClient.EnrolAsync*
+  commentId: Overload:Yort.Zip.InStore.IZipClient.EnrolAsync
+  name: EnrolAsync
+  nameWithType: IZipClient.EnrolAsync
+  fullName: Yort.Zip.InStore.IZipClient.EnrolAsync
+- uid: System.Threading.Tasks.Task{Yort.Zip.InStore.EnrolResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Zip.InStore.EnrolResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<EnrolResponse>
+  nameWithType: Task<EnrolResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Zip.InStore.EnrolResponse>
+  nameWithType.vb: Task(Of EnrolResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Zip.InStore.EnrolResponse)
+  name.vb: Task(Of EnrolResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Zip.InStore.EnrolResponse
+    name: EnrolResponse
+    nameWithType: EnrolResponse
+    fullName: Yort.Zip.InStore.EnrolResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Zip.InStore.EnrolResponse
+    name: EnrolResponse
+    nameWithType: EnrolResponse
+    fullName: Yort.Zip.InStore.EnrolResponse
+  - name: )
+    nameWithType: )
+    fullName: )

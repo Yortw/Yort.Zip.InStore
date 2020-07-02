@@ -16,9 +16,11 @@ namespace Yort.Zip.InStore
 	public class ZipClient : IZipClient
 	{
 
-		private readonly ZipEnvironment _Environment;
 		private readonly HttpClient _HttpClient;
+		private readonly ZipClientConfiguration _Configuration;
+
 		private bool _IsDisposed;
+		private AuthToken? _AuthToken;
 
 		private readonly System.Text.Json.JsonSerializerOptions _SerializerOptions = new System.Text.Json.JsonSerializerOptions()
 		{
@@ -29,16 +31,23 @@ namespace Yort.Zip.InStore
 		};
 
 		/// <summary>
+		/// Partial constructor.
+		/// </summary>
+		/// <param name="configuration">A <see cref="ZipClientConfiguration"/> instance providing client credentials, the API environment to access and other required details.</param>
+		public ZipClient(ZipClientConfiguration configuration) : this(null, configuration)
+		{
+		}
+
+		/// <summary>
 		/// Full constructor.
 		/// </summary>
-		/// <param name="environment">The <see cref="ZipEnvironment"/> for the API to call.</param>
-		public ZipClient(ZipEnvironment environment)
+		/// <param name="httpClient">An <see cref="HttpClient"/> instance to use to access the Zip API, or null to have the ZipClient create it's own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.</param>
+		/// <param name="configuration">A <see cref="ZipClientConfiguration"/> instance providing client credentials, the API environment to access and other required details.</param>
+		public ZipClient(HttpClient? httpClient, ZipClientConfiguration configuration)
 		{
-			_Environment = environment.GuardNull(nameof(environment));
-			_HttpClient = new HttpClient()
-			{
-				BaseAddress = _Environment.BaseUrl
-			};
+			_Configuration = configuration.GuardNull(nameof(configuration));
+			_HttpClient = httpClient ?? CreateNewHttpClient();
+			_HttpClient.BaseAddress = _Configuration.Environment.BaseUrl;
 		}
 
 		/// <summary>
@@ -171,6 +180,22 @@ namespace Yort.Zip.InStore
 		}
 
 		/// <summary>
+		/// Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.
+		/// </summary>
+		/// <param name="request">A <see cref="EnrolRequest"/> instance providing details of the device to enrol.</param>
+		/// <returns>A <see cref="EnrolResponse"/> instance containing details of the token returned.</returns>
+		public async Task<EnrolResponse> EnrolAsync(EnrolRequest request)
+		{
+			using (var response = await PostJsonAsync("pos/terminal/enrol", request, request).ConfigureAwait(false))
+			{
+				if (response.StatusCode == System.Net.HttpStatusCode.OK)
+					return await JsonResponseToEntityAsync<EnrolResponse>(response).ConfigureAwait(false);
+
+				throw ZipApiExceptionFromResponse(response);
+			}
+		}
+
+		/// <summary>
 		/// Disposes resources used by this instance.
 		/// </summary>
 		/// <param name="disposing">True if dispose is being called explicitly by client code, or false if it is being called from a finalizer (indicating only unmanaged resources should be cleaned up).</param>
@@ -188,24 +213,28 @@ namespace Yort.Zip.InStore
 
 		private async Task EnsureAuthTokenAsync()
 		{
+			if (!(_AuthToken?.IsExpired() ?? true)) return;
+
 			using (var client = new HttpClient())
 			{
-				var request = new ClientCredentialsRequest()
+				var request = new AuthTokenRequest()
 				{
-					client_id = "q5cga0ptk97tp3mTNzEIO9GlyWFvbnlA",
-					client_secret = "cOhW9puYS-IasBRkkAtJ42k7exK0_OV7jae8JlpyISlnbUo6aWvzmgVPuBhmNI6k",
-					audience = _Environment.Audience,
+					client_id = _Configuration.ClientId,
+					client_secret = _Configuration.ClientSecret,
+					audience = _Configuration.Environment.Audience,
 					grant_type = "client_credentials"
 				};
 
 				using (var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(request), System.Text.UTF8Encoding.UTF8, "application/json"))
 				{
-					var response = await client.PostAsync(_Environment.TokenEndpoint, content).ConfigureAwait(false);
+					var response = await client.PostAsync(_Configuration.Environment.TokenEndpoint, content).ConfigureAwait(false);
 					response.EnsureSuccessStatusCode();
 
-					var tokenDetails = System.Text.Json.JsonSerializer.Deserialize<ClientCredentialsResponse>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
+					var newToken = System.Text.Json.JsonSerializer.Deserialize<AuthToken>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
 
-					_HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(tokenDetails.token_type, tokenDetails.access_token);
+					_HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(newToken.token_type, newToken.access_token);
+
+					_AuthToken = newToken;
 				}
 			}
 		}
@@ -284,21 +313,22 @@ namespace Yort.Zip.InStore
 			throw new NotImplementedException();
 		}
 
-
-		private class ClientCredentialsRequest
+		private HttpClient CreateNewHttpClient()
 		{
-			public string? client_id { get; set; }
-			public string? client_secret { get; set; }
-			public string? audience { get; set; }
-			public string? grant_type { get; set; }
+			var handler = new HttpClientHandler();
+			try
+			{
+				if (handler.SupportsAutomaticDecompression)
+					handler.AutomaticDecompression = System.Net.DecompressionMethods.GZip | System.Net.DecompressionMethods.Deflate;
+
+				return new HttpClient(handler);
+			}
+			catch
+			{
+				handler.Dispose();
+				throw;
+			}
 		}
 
-		private class ClientCredentialsResponse
-		{
-			public string? access_token { get; set; }
-			public long expires_in { get; set; }
-			public string? scope { get; set; }
-			public string? token_type { get; set; }
-		}
 	}
 }

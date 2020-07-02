@@ -12,6 +12,10 @@
     name: CreateOrderRequest
   - uid: Yort.Zip.InStore.CreateOrderResponse
     name: CreateOrderResponse
+  - uid: Yort.Zip.InStore.EnrolRequest
+    name: EnrolRequest
+  - uid: Yort.Zip.InStore.EnrolResponse
+    name: EnrolResponse
   - uid: Yort.Zip.InStore.IZipClient
     name: IZipClient
   - uid: Yort.Zip.InStore.OrderStatusRequest
@@ -26,6 +30,8 @@
     name: RollbackOrderRequest
   - uid: Yort.Zip.InStore.ZipClient
     name: ZipClient
+  - uid: Yort.Zip.InStore.ZipClientConfiguration
+    name: ZipClientConfiguration
   - uid: Yort.Zip.InStore.ZipEnvironment
     name: ZipEnvironment
   - uid: Yort.Zip.InStore.ZipEnvironment.NewZealand

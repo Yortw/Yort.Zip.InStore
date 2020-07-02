@@ -103,6 +103,12 @@
                           <li class="">
                             <a href="Yort.Zip.InStore.CreateOrderResponse.html" title="CreateOrderResponse" class="">CreateOrderResponse</a>
                           </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.EnrolRequest.html" title="EnrolRequest" class="">EnrolRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.EnrolResponse.html" title="EnrolResponse" class="">EnrolResponse</a>
+                          </li>
                           <li class="active">
                             <a href="Yort.Zip.InStore.IZipClient.html" title="IZipClient" class="active">IZipClient</a>
                           </li>
@@ -123,6 +129,9 @@
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipClient.html" title="ZipClient" class="">ZipClient</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Zip.InStore.ZipClientConfiguration.html" title="ZipClientConfiguration" class="">ZipClientConfiguration</a>
                           </li>
                           <li class="">
                             <a href="Yort.Zip.InStore.ZipEnvironment.html" title="ZipEnvironment" class="">ZipEnvironment</a>
@@ -340,6 +349,56 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
         <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/new/master/apiSpec/new?filename=Yort_Zip_InStore_IZipClient_EnrolAsync_Yort_Zip_InStore_EnrolRequest_.md&amp;value=---%0Auid%3A%20Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/IZipClient.cs/#L65">View Source</a>
+  </span>
+  <a id="Yort_Zip_InStore_IZipClient_EnrolAsync_" data-uid="Yort.Zip.InStore.IZipClient.EnrolAsync*"></a>
+  <h4 id="Yort_Zip_InStore_IZipClient_EnrolAsync_Yort_Zip_InStore_EnrolRequest_" data-uid="Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)">EnrolAsync(EnrolRequest)</h4>
+  <div class="markdown level1 summary"><p>Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;EnrolResponse&gt; EnrolAsync(EnrolRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Zip.InStore.EnrolRequest.html">EnrolRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.EnrolRequest.html">EnrolRequest</a> instance providing details of the device to enrol.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Zip.InStore.EnrolResponse.html">EnrolResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Zip.InStore.EnrolResponse.html">EnrolResponse</a> instance containing details of the token returned.</p>
 </td>
       </tr>
     </tbody>

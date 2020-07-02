@@ -5,12 +5,14 @@ items:
   id: ZipClient
   parent: Yort.Zip.InStore
   children:
-  - Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)
+  - Yort.Zip.InStore.ZipClient.#ctor(System.Net.Http.HttpClient,Yort.Zip.InStore.ZipClientConfiguration)
+  - Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipClientConfiguration)
   - Yort.Zip.InStore.ZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
   - Yort.Zip.InStore.ZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
   - Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)
   - Yort.Zip.InStore.ZipClient.Dispose
   - Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
+  - Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
   - Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
   - Yort.Zip.InStore.ZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
   - Yort.Zip.InStore.ZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
@@ -61,16 +63,16 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)
-  commentId: M:Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)
-  id: '#ctor(Yort.Zip.InStore.ZipEnvironment)'
+- uid: Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipClientConfiguration)
+  commentId: M:Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipClientConfiguration)
+  id: '#ctor(Yort.Zip.InStore.ZipClientConfiguration)'
   parent: Yort.Zip.InStore.ZipClient
   langs:
   - csharp
   - vb
-  name: ZipClient(ZipEnvironment)
-  nameWithType: ZipClient.ZipClient(ZipEnvironment)
-  fullName: Yort.Zip.InStore.ZipClient.ZipClient(Yort.Zip.InStore.ZipEnvironment)
+  name: ZipClient(ZipClientConfiguration)
+  nameWithType: ZipClient.ZipClient(ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.ZipClient.ZipClient(Yort.Zip.InStore.ZipClientConfiguration)
   type: Constructor
   source:
     remote:
@@ -79,19 +81,58 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: .ctor
     path: ZipClient.cs
-    startLine: 34
+    startLine: 36
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nPartial constructor.\n"
+  example: []
+  syntax:
+    content: public ZipClient(ZipClientConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: Yort.Zip.InStore.ZipClientConfiguration
+      description: A <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref> instance providing client credentials, the API environment to access and other required details.
+    content.vb: Public Sub New(configuration As ZipClientConfiguration)
+  overload: Yort.Zip.InStore.ZipClient.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Zip.InStore.ZipClient.#ctor(System.Net.Http.HttpClient,Yort.Zip.InStore.ZipClientConfiguration)
+  commentId: M:Yort.Zip.InStore.ZipClient.#ctor(System.Net.Http.HttpClient,Yort.Zip.InStore.ZipClientConfiguration)
+  id: '#ctor(System.Net.Http.HttpClient,Yort.Zip.InStore.ZipClientConfiguration)'
+  parent: Yort.Zip.InStore.ZipClient
+  langs:
+  - csharp
+  - vb
+  name: ZipClient(HttpClient, ZipClientConfiguration)
+  nameWithType: ZipClient.ZipClient(HttpClient, ZipClientConfiguration)
+  fullName: Yort.Zip.InStore.ZipClient.ZipClient(System.Net.Http.HttpClient, Yort.Zip.InStore.ZipClientConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: src/ZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: .ctor
+    path: ZipClient.cs
+    startLine: 45
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nFull constructor.\n"
   example: []
   syntax:
-    content: public ZipClient(ZipEnvironment environment)
+    content: public ZipClient(HttpClient httpClient, ZipClientConfiguration configuration)
     parameters:
-    - id: environment
-      type: Yort.Zip.InStore.ZipEnvironment
-      description: The <xref href="Yort.Zip.InStore.ZipEnvironment" data-throw-if-not-resolved="false"></xref> for the API to call.
-    content.vb: Public Sub New(environment As ZipEnvironment)
+    - id: httpClient
+      type: System.Net.Http.HttpClient
+      description: An <xref href="System.Net.Http.HttpClient" data-throw-if-not-resolved="false"></xref> instance to use to access the Zip API, or null to have the ZipClient create it&apos;s own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.
+    - id: configuration
+      type: Yort.Zip.InStore.ZipClientConfiguration
+      description: A <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref> instance providing client credentials, the API environment to access and other required details.
+    content.vb: Public Sub New(httpClient As HttpClient, configuration As ZipClientConfiguration)
   overload: Yort.Zip.InStore.ZipClient.#ctor*
   modifiers.csharp:
   - public
@@ -115,7 +156,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CreateOrderAsync
     path: ZipClient.cs
-    startLine: 49
+    startLine: 58
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -160,7 +201,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CancelOrderAsync
     path: ZipClient.cs
-    startLine: 66
+    startLine: 75
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -201,7 +242,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: GetOrderStatusAsync
     path: ZipClient.cs
-    startLine: 84
+    startLine: 93
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -249,7 +290,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Dispose
     path: ZipClient.cs
-    startLine: 100
+    startLine: 109
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -286,7 +327,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RefundOrderAsync
     path: ZipClient.cs
-    startLine: 119
+    startLine: 128
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -327,7 +368,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CommitOrderAsync
     path: ZipClient.cs
-    startLine: 143
+    startLine: 152
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -368,7 +409,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RollbackOrderAsync
     path: ZipClient.cs
-    startLine: 160
+    startLine: 169
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -391,6 +432,47 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  commentId: M:Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  id: EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  parent: Yort.Zip.InStore.ZipClient
+  langs:
+  - csharp
+  - vb
+  name: EnrolAsync(EnrolRequest)
+  nameWithType: ZipClient.EnrolAsync(EnrolRequest)
+  fullName: Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  type: Method
+  source:
+    remote:
+      path: src/ZipClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: EnrolAsync
+    path: ZipClient.cs
+    startLine: 186
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nAllows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.\n"
+  example: []
+  syntax:
+    content: public Task<EnrolResponse> EnrolAsync(EnrolRequest request)
+    parameters:
+    - id: request
+      type: Yort.Zip.InStore.EnrolRequest
+      description: A <xref href="Yort.Zip.InStore.EnrolRequest" data-throw-if-not-resolved="false"></xref> instance providing details of the device to enrol.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Zip.InStore.EnrolResponse}
+      description: A <xref href="Yort.Zip.InStore.EnrolResponse" data-throw-if-not-resolved="false"></xref> instance containing details of the token returned.
+    content.vb: Public Function EnrolAsync(request As EnrolRequest) As Task(Of EnrolResponse)
+  overload: Yort.Zip.InStore.ZipClient.EnrolAsync*
+  implements:
+  - Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
   commentId: M:Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)
   id: Dispose(System.Boolean)
@@ -409,7 +491,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Dispose
     path: ZipClient.cs
-    startLine: 177
+    startLine: 202
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -743,17 +825,30 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Yort.Zip.InStore.ZipEnvironment
-  commentId: T:Yort.Zip.InStore.ZipEnvironment
+- uid: Yort.Zip.InStore.ZipClientConfiguration
+  commentId: T:Yort.Zip.InStore.ZipClientConfiguration
   parent: Yort.Zip.InStore
-  name: ZipEnvironment
-  nameWithType: ZipEnvironment
-  fullName: Yort.Zip.InStore.ZipEnvironment
+  name: ZipClientConfiguration
+  nameWithType: ZipClientConfiguration
+  fullName: Yort.Zip.InStore.ZipClientConfiguration
 - uid: Yort.Zip.InStore.ZipClient.#ctor*
   commentId: Overload:Yort.Zip.InStore.ZipClient.#ctor
   name: ZipClient
   nameWithType: ZipClient.ZipClient
   fullName: Yort.Zip.InStore.ZipClient.ZipClient
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+  parent: System.Net.Http
+  isExternal: true
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: System.Net.Http.HttpClient
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
 - uid: System.ArgumentNullException
   commentId: T:System.ArgumentNullException
   isExternal: true
@@ -1322,6 +1417,100 @@ references:
     name: RollbackOrderRequest
     nameWithType: RollbackOrderRequest
     fullName: Yort.Zip.InStore.RollbackOrderRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Zip.InStore.EnrolRequest
+  commentId: T:Yort.Zip.InStore.EnrolRequest
+  parent: Yort.Zip.InStore
+  name: EnrolRequest
+  nameWithType: EnrolRequest
+  fullName: Yort.Zip.InStore.EnrolRequest
+- uid: Yort.Zip.InStore.EnrolResponse
+  commentId: T:Yort.Zip.InStore.EnrolResponse
+  name: EnrolResponse
+  nameWithType: EnrolResponse
+  fullName: Yort.Zip.InStore.EnrolResponse
+- uid: Yort.Zip.InStore.ZipClient.EnrolAsync*
+  commentId: Overload:Yort.Zip.InStore.ZipClient.EnrolAsync
+  name: EnrolAsync
+  nameWithType: ZipClient.EnrolAsync
+  fullName: Yort.Zip.InStore.ZipClient.EnrolAsync
+- uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  commentId: M:Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  parent: Yort.Zip.InStore.IZipClient
+  name: EnrolAsync(EnrolRequest)
+  nameWithType: IZipClient.EnrolAsync(EnrolRequest)
+  fullName: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+  spec.csharp:
+  - uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+    name: EnrolAsync
+    nameWithType: IZipClient.EnrolAsync
+    fullName: Yort.Zip.InStore.IZipClient.EnrolAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.EnrolRequest
+    name: EnrolRequest
+    nameWithType: EnrolRequest
+    fullName: Yort.Zip.InStore.EnrolRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
+    name: EnrolAsync
+    nameWithType: IZipClient.EnrolAsync
+    fullName: Yort.Zip.InStore.IZipClient.EnrolAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Zip.InStore.EnrolRequest
+    name: EnrolRequest
+    nameWithType: EnrolRequest
+    fullName: Yort.Zip.InStore.EnrolRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{Yort.Zip.InStore.EnrolResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Zip.InStore.EnrolResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<EnrolResponse>
+  nameWithType: Task<EnrolResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Zip.InStore.EnrolResponse>
+  nameWithType.vb: Task(Of EnrolResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Zip.InStore.EnrolResponse)
+  name.vb: Task(Of EnrolResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Zip.InStore.EnrolResponse
+    name: EnrolResponse
+    nameWithType: EnrolResponse
+    fullName: Yort.Zip.InStore.EnrolResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Zip.InStore.EnrolResponse
+    name: EnrolResponse
+    nameWithType: EnrolResponse
+    fullName: Yort.Zip.InStore.EnrolResponse
   - name: )
     nameWithType: )
     fullName: )

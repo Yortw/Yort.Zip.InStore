@@ -119,6 +119,48 @@
             Gets or sets the expiry time of the order as returned by the Zip API.
             </summary>
         </member>
+        <member name="T:Yort.Zip.InStore.EnrolRequest">
+            <summary>
+            Represents a request to allow a device to request the client id and secret required to request authorisation tokens.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.EnrolRequest.ActivationCode">
+            <summary>
+            The activation code generated in the Zip merchant portal. Required.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.EnrolRequest.Secret">
+            <summary>
+            The secret used when generating the activation code in the Zip merchant portal. Required.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.EnrolRequest.Terminal">
+            <summary>
+            The name of the terminal being enroled. Required.
+            </summary>
+        </member>
+        <member name="M:Yort.Zip.InStore.EnrolRequest.Validate">
+            <summary>
+            Validates this request as much as possible prior to sending it to the Zip API.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if any required properties are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if any of request properties are invalid.</exception>
+        </member>
+        <member name="T:Yort.Zip.InStore.EnrolResponse">
+            <summary>
+            Contains the result of a successful <see cref="T:Yort.Zip.InStore.EnrolRequest"/>.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.EnrolResponse.ClientId">
+            <summary>
+            The client id to be used when requesting new authentication tokens from Zip.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.EnrolResponse.ClientSecret">
+            <summary>
+            The client secret to be used when requesting new authentication tokens from Zip.
+            </summary>
+        </member>
         <member name="T:Yort.Zip.InStore.ErrorMessage">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -188,6 +230,13 @@
             </summary>
             <param name="request">A <see cref="T:Yort.Zip.InStore.RollbackOrderRequest"/> containing details of the order to rollback.</param>
             <returns>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <see cref="M:Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)"/> to confirm.</returns>
+        </member>
+        <member name="M:Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)">
+            <summary>
+            Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.
+            </summary>
+            <param name="request">A <see cref="T:Yort.Zip.InStore.EnrolRequest"/> instance providing details of the device to enrol.</param>
+            <returns>A <see cref="T:Yort.Zip.InStore.EnrolResponse"/> instance containing details of the token returned.</returns>
         </member>
         <member name="T:Yort.Zip.InStore.OrderStatusRequest">
             <summary>
@@ -317,11 +366,18 @@
             </summary>
             <seealso cref="T:Yort.Zip.InStore.IZipClient"/>
         </member>
-        <member name="M:Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipEnvironment)">
+        <member name="M:Yort.Zip.InStore.ZipClient.#ctor(Yort.Zip.InStore.ZipClientConfiguration)">
+            <summary>
+            Partial constructor.
+            </summary>
+            <param name="configuration">A <see cref="T:Yort.Zip.InStore.ZipClientConfiguration"/> instance providing client credentials, the API environment to access and other required details.</param>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipClient.#ctor(System.Net.Http.HttpClient,Yort.Zip.InStore.ZipClientConfiguration)">
             <summary>
             Full constructor.
             </summary>
-            <param name="environment">The <see cref="T:Yort.Zip.InStore.ZipEnvironment"/> for the API to call.</param>
+            <param name="httpClient">An <see cref="T:System.Net.Http.HttpClient"/> instance to use to access the Zip API, or null to have the ZipClient create it's own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.</param>
+            <param name="configuration">A <see cref="T:Yort.Zip.InStore.ZipClientConfiguration"/> instance providing client credentials, the API environment to access and other required details.</param>
         </member>
         <member name="M:Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)">
             <summary>
@@ -374,12 +430,47 @@
             <param name="request">A <see cref="T:Yort.Zip.InStore.RollbackOrderRequest"/> containing details of the order to rollback.</param>
             <returns>A task that can be awaited to know when the operation has completed. If the task does not return an exception, the auth rolled back succesfully. Use the <see cref="M:Yort.Zip.InStore.ZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)"/> to confirm.</returns>
         </member>
+        <member name="M:Yort.Zip.InStore.ZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)">
+            <summary>
+            Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.
+            </summary>
+            <param name="request">A <see cref="T:Yort.Zip.InStore.EnrolRequest"/> instance providing details of the device to enrol.</param>
+            <returns>A <see cref="T:Yort.Zip.InStore.EnrolResponse"/> instance containing details of the token returned.</returns>
+        </member>
         <member name="M:Yort.Zip.InStore.ZipClient.Dispose(System.Boolean)">
             <summary>
             Disposes resources used by this instance.
             </summary>
             <param name="disposing">True if dispose is being called explicitly by client code, or false if it is being called from a finalizer (indicating only unmanaged resources should be cleaned up).</param>
             <seealso cref="M:Yort.Zip.InStore.ZipClient.Dispose"/>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipClientConfiguration">
+            <summary>
+            Provides details to a <see cref="T:Yort.Zip.InStore.ZipClient"/> instance about how to access the Zip API.
+            </summary>
+        </member>
+        <member name="M:Yort.Zip.InStore.ZipClientConfiguration.#ctor(System.String,System.String,Yort.Zip.InStore.ZipEnvironment)">
+            <summary>
+            Full constructor.
+            </summary>
+            <param name="clientId">The client id used to request new authentication tokens. Can be null if you plan to retrieve it using the <see cref="M:Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)"/> mechanism.</param>
+            <param name="clientSecret">The client secret used to request new authentication tokens. Can be null if you plan to retrieve it using the <see cref="M:Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)"/> mechanism.</param>
+            <param name="environment">The environment indicating the API instance to access. Required.</param>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipClientConfiguration.ClientId">
+            <summary>
+            Returns the client id value provided via the constructor.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipClientConfiguration.ClientSecret">
+            <summary>
+            Returns the client secret value provided via the constructor.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipClientConfiguration.Environment">
+            <summary>
+            Returns the <see cref="T:Yort.Zip.InStore.ZipEnvironment"/> value provided via the constructor.
+            </summary>
         </member>
         <member name="T:Yort.Zip.InStore.ZipEnvironment">
             <summary>

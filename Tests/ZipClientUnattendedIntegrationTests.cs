@@ -13,7 +13,7 @@ namespace Tests
 		[TestMethod]
 		public async Task ZipClient_CanCreateOrder()
 		{
-			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+			var client = CreateTestClient();
 
 			var request = new CreateOrderRequest()
 			{
@@ -37,7 +37,7 @@ namespace Tests
 		[TestMethod]
 		public async Task ZipClient_CanGetOrderStatus()
 		{
-			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+			var client = CreateTestClient();
 
 			#region Create an order to get the status of
 
@@ -77,7 +77,7 @@ namespace Tests
 		[TestMethod]
 		public async Task ZipClient_CanCancelOrder()
 		{
-			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+			var client = CreateTestClient();
 
 			#region Create an order to cancel
 			var request = new CreateOrderRequest()
@@ -105,11 +105,10 @@ namespace Tests
 			Assert.AreEqual(createOrderResult.OrderId, cancelResponse.OrderId);
 		}
 
-
 		[TestMethod]
 		public async Task ZipClient_CanRefundOrder()
 		{
-			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+			var client = CreateTestClient();
 
 			#region Create an order to refund 
 			var createOrderRequest = new CreateOrderRequest()
@@ -145,8 +144,6 @@ namespace Tests
 
 			#endregion
 
-			client = new ZipClient(ZipEnvironment.NewZealand.Test);
-
 			var createRefundRequest = new RefundOrderRequest() { MerchantRefundReference = System.Guid.NewGuid().ToString(), OrderId = createOrderResult.OrderId, Amount = createOrderRequest.Order.Amount, Operator = "Test", TerminalId = "2531" /*, StoreId = "Albany Westfield" */ };
 			var refundResponse = await client.RefundOrderAsync(createRefundRequest);
 			Assert.IsNotNull(refundResponse);
@@ -158,7 +155,7 @@ namespace Tests
 		[TestMethod]
 		public async Task ZipClient_CanCommitAuthedOrder()
 		{
-			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+			var client = CreateTestClient();
 
 			#region Create Authed Order
 
@@ -192,7 +189,7 @@ namespace Tests
 		[TestMethod]
 		public async Task ZipClient_CanRollbackAuthedOrder()
 		{
-			var client = new ZipClient(ZipEnvironment.NewZealand.Test);
+			var client = CreateTestClient();
 
 			#region Create Authed Order
 
@@ -222,5 +219,36 @@ namespace Tests
 			Assert.IsNotNull(statusResponse);
 			Assert.AreEqual(ZipOrderStatus.Cancelled, statusResponse.Status);
 		}
+
+		[TestMethod]
+		public async Task ZipClient_EnrolTest()
+		{
+			var client = CreateTestClient();
+
+			var enrolRequest = new EnrolRequest()
+			{
+				ActivationCode = "ABC",
+				Secret = "123",
+				Terminal = "2531"				
+			};
+
+			var enrolResponse = await client.EnrolAsync(enrolRequest);
+
+			Assert.IsNotNull(enrolResponse);
+		}
+
+		private IZipClient CreateTestClient()
+		{
+			return new ZipClient
+			(
+				new ZipClientConfiguration
+				(
+					Environment.GetEnvironmentVariable("ZipPayments_ClientId"),
+					Environment.GetEnvironmentVariable("ZipPayments_ClientSecret"),
+					ZipEnvironment.NewZealand.Test
+				)
+			);
+		}
+
 	}
 }
