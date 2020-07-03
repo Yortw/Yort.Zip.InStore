@@ -13,6 +13,9 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// The client id to be used when requesting new authentication tokens from Zip.
 		/// </summary>
+		/// <remarks>
+		/// <para>NOTE: The 'enrollment system' is untested as the test account provided to the library authors did not support generating activation codes. This should work, but if it doesn't, please log an issue.</para>
+		/// </remarks>
 		[JsonPropertyName("client_id")]
 		public string ClientId { get; set; } = null!;
 		/// <summary>

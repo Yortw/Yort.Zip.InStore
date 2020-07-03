@@ -43,6 +43,46 @@ namespace Tests
 			var result = await client.CreateOrderAsync(request);
 			Assert.IsNotNull(result);
 			Assert.IsFalse(String.IsNullOrWhiteSpace(result.OrderId));
+			Assert.IsNotNull(result.OrderExpiry);
+		}
+
+		[TestMethod]
+		public async Task ZipClient_CanCreateOrder_WithExplicitStore()
+		{
+			//Note: This test requires your test Zip account to support the correct style of auth
+			//and have a branch with the correct id.
+
+			var client = CreateTestClient();
+
+			var request = new CreateOrderRequest()
+			{
+				StoreId = Environment.GetEnvironmentVariable("ZipPayments_TestStoreId"),
+				TerminalId = "2531",
+				Order = new ZipOrder()
+				{
+					Amount = 10.5M,
+					CustomerApprovalCode = "AA05",
+					MerchantReference = System.Guid.NewGuid().ToString(),
+					Operator = "Test",
+					PaymentFlow = ZipPaymentFlow.Payment,
+					Items = new System.Collections.Generic.List<ZipOrderItem>()
+					{
+						new ZipOrderItem()
+						{
+							Name = "Test Item",
+							Description = "0110A Blue 12",
+							Price = "10.50",
+							Quantity = 1,
+							Sku = "123"
+						}
+					}
+				}
+			};
+
+			var result = await client.CreateOrderAsync(request);
+			Assert.IsNotNull(result);
+			Assert.IsFalse(String.IsNullOrWhiteSpace(result.OrderId));
+			Assert.IsNotNull(result.OrderExpiry);
 		}
 
 		[TestMethod]
@@ -116,6 +156,7 @@ namespace Tests
 			Assert.AreEqual(createOrderResult.OrderId, cancelResponse.OrderId);
 		}
 
+		[Ignore("So according to Zip you can't refund an order using a pre-canned approval code. You must manually login to the test consumer, generate a pre-approval code, and then apply that here for the refund to succeed :(")]
 		[TestMethod]
 		public async Task ZipClient_CanRefundOrder()
 		{
@@ -141,15 +182,6 @@ namespace Tests
 			Assert.IsFalse(String.IsNullOrWhiteSpace(createOrderResult.OrderId));
 
 			var statusResponse = await client.GetOrderStatusAsync(new OrderStatusRequest() { OrderId = createOrderResult.OrderId });
-			Assert.IsNotNull(statusResponse);
-
-			while (!ZipOrderStatus.IsTerminalStatus(statusResponse.Status))
-			{
-				System.Diagnostics.Trace.WriteLine($"Order {statusResponse.OrderNumber} status is {statusResponse.Status}");
-				await Task.Delay(1000);
-				statusResponse = await client.GetOrderStatusAsync(new OrderStatusRequest() { OrderId = createOrderResult.OrderId });
-			}
-
 			Assert.IsNotNull(statusResponse);
 			Assert.AreEqual(ZipOrderStatus.Complete, statusResponse.Status);
 
@@ -439,7 +471,6 @@ namespace Tests
 				async () => { await client.CreateOrderAsync(request); }
 			);
 		}
-
 
 		private IZipClient CreateTestClient()
 		{

@@ -50,7 +50,7 @@ namespace Yort.Zip.InStore
 
 		private static readonly ZipEnvironment s_NewZealandProduction = new ZipEnvironment
 		(
-			"auth.partpay.co.nz",
+			"https://auth.partpay.co.nz",
 			new Uri("https://merchant-auth-nz.zip.co/oauth/token"),
 			new Uri("https://zip.co/nz/api/")
 		);
@@ -59,7 +59,7 @@ namespace Yort.Zip.InStore
 		(
 			"https://auth-dev.partpay.co.nz",
 			new Uri("https://partpay-dev.au.auth0.com/oauth/token"),
-			new Uri("https://api-ci.partpay.co.nz")
+			new Uri("https://api-ci.partpay.co.nz/")
 		);
 
 		/// <summary>

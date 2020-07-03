@@ -64,11 +64,12 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ClientId
     path: EnrolResponse.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nThe client id to be used when requesting new authentication tokens from Zip.\n"
+  remarks: "\n<p>NOTE: The &apos;enrollment system&apos; is untested as the test account provided to the library authors did not support generating activation codes. This should work, but if it doesn&apos;t, please log an issue.</p>\n"
   example: []
   syntax:
     content: >-
@@ -113,7 +114,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ClientSecret
     path: EnrolResponse.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore

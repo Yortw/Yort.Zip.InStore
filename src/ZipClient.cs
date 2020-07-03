@@ -350,12 +350,7 @@ namespace Yort.Zip.InStore
 			//If we fail to parse the error body that's unfortunate, but don't hide the original error.
 			//TODO: should perhaps log or otherwise expose the deserialisation failure without hiding the 
 			//original exception. For now, just do our best to report the exception that really matters (original).
-			string? content = null;
-			try
-			{
-				content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-			}
-			catch { }
+			string? content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
 			if (String.IsNullOrEmpty(content))
 			{
@@ -389,7 +384,13 @@ namespace Yort.Zip.InStore
 				}
 			}
 			else
-				errors = System.Text.Json.JsonSerializer.Deserialize<ZipError>(content, _SerializerOptions);
+			{
+				try
+				{
+					errors = System.Text.Json.JsonSerializer.Deserialize<ZipError>(content, _SerializerOptions);
+				}
+				catch { }
+			}
 
 			errors.ResponseCode = Convert.ToInt32(response.StatusCode, System.Globalization.CultureInfo.InvariantCulture);
 
@@ -408,7 +409,7 @@ namespace Yort.Zip.InStore
 			}
 			catch
 			{
-				handler.Dispose();
+				handler?.Dispose();
 				throw;
 			}
 		}

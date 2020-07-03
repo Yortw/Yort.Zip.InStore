@@ -355,11 +355,12 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: EnrolAsync
     path: IZipClient.cs
-    startLine: 89
+    startLine: 92
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nAllows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.\n"
+  remarks: "\n<p>NOTE: The &apos;enrollment system&apos; is untested as the test account provided to the library authors did not support generating activation codes. This should work, but if it doesn&apos;t, please log an issue.</p>\n"
   example: []
   syntax:
     content: Task<EnrolResponse> EnrolAsync(EnrolRequest request)

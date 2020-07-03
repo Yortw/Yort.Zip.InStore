@@ -82,6 +82,9 @@ namespace Yort.Zip.InStore
 		/// Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.
 		/// </summary>
 		/// <param name="request">A <see cref="EnrolRequest"/> instance providing details of the device to enrol.</param>
+		/// <remarks>
+		/// <para>NOTE: The 'enrollment system' is untested as the test account provided to the library authors did not support generating activation codes. This should work, but if it doesn't, please log an issue.</para>
+		/// </remarks>
 		/// <returns>A <see cref="EnrolResponse"/> instance containing details of the token returned.</returns>
 		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
