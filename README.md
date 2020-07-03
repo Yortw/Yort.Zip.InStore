@@ -3,7 +3,7 @@
 # WORK IN PROGRESS
 
 # Status
-![Yort.Zip.InStore.Build](https://github.com/Yortw/Yort.Zip.InStore/workflows/Yort.Zip.InStore.Build/badge.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Coverage Status](https://coveralls.io/repos/github/Yortw/Yort.Zip.InStore/badge.svg?branch=master)](https://coveralls.io/github/Yortw/Yort.Zip.InStore?branch=master)
+![Yort.Zip.InStore.Build](https://github.com/Yortw/Yort.Zip.InStore/workflows/Yort.Zip.InStore.Build/badge.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  [![Coverage Status](https://coveralls.io/repos/github/Yortw/Yort.Zip.InStore/badge.svg?branch=master)](https://coveralls.io/github/Yortw/Yort.Zip.InStore?branch=master)
 
 # Supported Platforms
 
