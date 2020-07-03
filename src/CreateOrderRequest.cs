@@ -67,6 +67,9 @@ namespace Yort.Zip.InStore
 			if (!String.IsNullOrEmpty(this.StoreId))
 				retVal.Add("store-id", this.StoreId);
 
+			if (EnableUniqueMerchantReferenceCheck)
+				retVal.Add("merchant-reference-unique-check", "true");
+
 			return retVal;
 		}
 

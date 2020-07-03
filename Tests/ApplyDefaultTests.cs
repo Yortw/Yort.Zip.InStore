@@ -12,6 +12,13 @@ namespace Yort.Zip.InStore.Tests
 		#region Create Order Request Defaults
 
 		[TestMethod]
+		public void CreateOrderRequest_IgnoresNullZipConfig()
+		{
+			var request = new CreateOrderRequest() { Order = new ZipOrder() };
+			request.ApplyDefaults(null);
+		}
+
+		[TestMethod]
 		public void CreateOrderRequest_AppliesStoreIdDefault()
 		{
 			var config = CreateZipConfig();
@@ -60,6 +67,13 @@ namespace Yort.Zip.InStore.Tests
 		#region Refund Order Request Defaults
 
 		[TestMethod]
+		public void RefundOrderRequest_IgnoresNullZipConfig()
+		{
+			var request = new RefundOrderRequest();
+			request.ApplyDefaults(null);
+		}
+
+		[TestMethod]
 		public void RefundOrderRequest_AppliesStoreIdDefault()
 		{
 			var config = CreateZipConfig();
@@ -95,6 +109,13 @@ namespace Yort.Zip.InStore.Tests
 		#endregion
 
 		#region Enrol Refund Request Defaults
+
+		[TestMethod]
+		public void EnrolRequest_IgnoresNullZipConfig()
+		{
+			var request = new EnrolRequest();
+			request.ApplyDefaults(null);
+		}
 
 		[TestMethod]
 		public void EnrolRequest_AppliesTerminalIdDefault()

@@ -299,12 +299,7 @@ namespace Yort.Zip.InStore
 
 					ApplyCustomHttpHeadersForRequest(request, requestMessage);
 
-					var retVal = await _HttpClient.SendAsync(requestMessage).ConfigureAwait(false);
-
-					if (Convert.ToInt32(retVal.StatusCode, System.Globalization.CultureInfo.InvariantCulture) >= 400)
-						throw await ZipApiExceptionFromResponseAsync(retVal).ConfigureAwait(false);
-
-					return retVal;
+					return await _HttpClient.SendAsync(requestMessage).ConfigureAwait(false);
 				}
 			}
 		}

@@ -12,7 +12,7 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// Default constructor. Not recommended for use.
 		/// </summary>
-		public ZipApiException() { }
+		public ZipApiException() : this(ErrorMessage.UnknownApiError) { }
 		/// <summary>
 		///Partial constructor. Not recommended for use.
 		/// </summary>
@@ -65,10 +65,10 @@ namespace Yort.Zip.InStore
 
 		private static string ErrorMessageFromZipErrors(ZipErrorResponse error)
 		{
-			return error?.Message 
-				?? error?.ValidationErrors?.FirstOrDefault().ErrorMessages?.FirstOrDefault() 
-				?? error?.ErrorCode 
-				?? error?.Title 
+			return error?.Message
+				?? error?.ValidationErrors?.FirstOrDefault().ErrorMessages?.FirstOrDefault()
+				?? error?.ErrorCode
+				?? error?.Title
 				?? ErrorMessage.UnknownApiError;
 		}
 	}

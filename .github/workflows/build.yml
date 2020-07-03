@@ -16,6 +16,7 @@ jobs:
       ZipPayments_ClientId: ${{ secrets.ZIPPAYMENTS_CLIENTID }}
       ZipPayments_ClientSecret: ${{ secrets.ZIPPAYMENTS_CLIENTSECRET }}
       ZipPayments_TestStoreId: ${{ secrets.ZipPayments_TestStoreId }}
+      ZipPayments_TestOrderIdForRefunds: ${{ secrets.ZipPayments_TestOrderIdForRefunds }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core

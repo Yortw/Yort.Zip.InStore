@@ -123,7 +123,7 @@ csharp_preserve_single_line_blocks = true
 dotnet_analyzer_diagnostic.category-Design.severity = none
 
 # IDE0063: Use simple 'using' statement
-csharp_prefer_simple_using_statement = true:none
+csharp_prefer_simple_using_statement = true:silent
 
 # CA1812: ZipClient.ClientCredentialsResponse is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static members, make it static (Shared in Visual Basic).
 dotnet_diagnostic.CA1812.severity = suggestion
