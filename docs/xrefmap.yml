@@ -752,18 +752,18 @@ references:
   commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(System.String,System.Exception)
   fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(System.String, System.Exception)
   nameWithType: ZipApiException.ZipApiException(String, Exception)
-- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)
-  name: ZipApiException(ZipError)
-  href: api/Yort.Zip.InStore.ZipApiException.html#Yort_Zip_InStore_ZipApiException__ctor_Yort_Zip_InStore_ZipError_
-  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)
-  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipError)
-  nameWithType: ZipApiException.ZipApiException(ZipError)
-- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)
-  name: ZipApiException(ZipError, Exception)
-  href: api/Yort.Zip.InStore.ZipApiException.html#Yort_Zip_InStore_ZipApiException__ctor_Yort_Zip_InStore_ZipError_System_Exception_
-  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)
-  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipError, System.Exception)
-  nameWithType: ZipApiException.ZipApiException(ZipError, Exception)
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse)
+  name: ZipApiException(ZipErrorResponse)
+  href: api/Yort.Zip.InStore.ZipApiException.html#Yort_Zip_InStore_ZipApiException__ctor_Yort_Zip_InStore_ZipErrorResponse_
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipErrorResponse)
+  nameWithType: ZipApiException.ZipApiException(ZipErrorResponse)
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse,System.Exception)
+  name: ZipApiException(ZipErrorResponse, Exception)
+  href: api/Yort.Zip.InStore.ZipApiException.html#Yort_Zip_InStore_ZipApiException__ctor_Yort_Zip_InStore_ZipErrorResponse_System_Exception_
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse,System.Exception)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipErrorResponse, System.Exception)
+  nameWithType: ZipApiException.ZipApiException(ZipErrorResponse, Exception)
 - uid: Yort.Zip.InStore.ZipApiException.#ctor*
   name: ZipApiException
   href: api/Yort.Zip.InStore.ZipApiException.html#Yort_Zip_InStore_ZipApiException__ctor_
@@ -1106,129 +1106,129 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.ZipEnvironment.TokenEndpoint
   nameWithType: ZipEnvironment.TokenEndpoint
-- uid: Yort.Zip.InStore.ZipError
-  name: ZipError
-  href: api/Yort.Zip.InStore.ZipError.html
-  commentId: T:Yort.Zip.InStore.ZipError
-  fullName: Yort.Zip.InStore.ZipError
-  nameWithType: ZipError
-- uid: Yort.Zip.InStore.ZipError.#ctor
-  name: ZipError()
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError__ctor
-  commentId: M:Yort.Zip.InStore.ZipError.#ctor
-  fullName: Yort.Zip.InStore.ZipError.ZipError()
-  nameWithType: ZipError.ZipError()
-- uid: Yort.Zip.InStore.ZipError.#ctor*
-  name: ZipError
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError__ctor_
-  commentId: Overload:Yort.Zip.InStore.ZipError.#ctor
+- uid: Yort.Zip.InStore.ZipErrorResponse
+  name: ZipErrorResponse
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html
+  commentId: T:Yort.Zip.InStore.ZipErrorResponse
+  fullName: Yort.Zip.InStore.ZipErrorResponse
+  nameWithType: ZipErrorResponse
+- uid: Yort.Zip.InStore.ZipErrorResponse.#ctor
+  name: ZipErrorResponse()
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse__ctor
+  commentId: M:Yort.Zip.InStore.ZipErrorResponse.#ctor
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ZipErrorResponse()
+  nameWithType: ZipErrorResponse.ZipErrorResponse()
+- uid: Yort.Zip.InStore.ZipErrorResponse.#ctor*
+  name: ZipErrorResponse
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse__ctor_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.#ctor
   isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.ZipError
-  nameWithType: ZipError.ZipError
-- uid: Yort.Zip.InStore.ZipError.ErrorCode
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ZipErrorResponse
+  nameWithType: ZipErrorResponse.ZipErrorResponse
+- uid: Yort.Zip.InStore.ZipErrorResponse.ErrorCode
   name: ErrorCode
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_ErrorCode
-  commentId: P:Yort.Zip.InStore.ZipError.ErrorCode
-  fullName: Yort.Zip.InStore.ZipError.ErrorCode
-  nameWithType: ZipError.ErrorCode
-- uid: Yort.Zip.InStore.ZipError.ErrorCode*
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_ErrorCode
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.ErrorCode
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ErrorCode
+  nameWithType: ZipErrorResponse.ErrorCode
+- uid: Yort.Zip.InStore.ZipErrorResponse.ErrorCode*
   name: ErrorCode
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_ErrorCode_
-  commentId: Overload:Yort.Zip.InStore.ZipError.ErrorCode
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_ErrorCode_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.ErrorCode
   isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.ErrorCode
-  nameWithType: ZipError.ErrorCode
-- uid: Yort.Zip.InStore.ZipError.Errors
-  name: Errors
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_Errors
-  commentId: P:Yort.Zip.InStore.ZipError.Errors
-  fullName: Yort.Zip.InStore.ZipError.Errors
-  nameWithType: ZipError.Errors
-- uid: Yort.Zip.InStore.ZipError.Errors*
-  name: Errors
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_Errors_
-  commentId: Overload:Yort.Zip.InStore.ZipError.Errors
-  isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.Errors
-  nameWithType: ZipError.Errors
-- uid: Yort.Zip.InStore.ZipError.IsValid
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ErrorCode
+  nameWithType: ZipErrorResponse.ErrorCode
+- uid: Yort.Zip.InStore.ZipErrorResponse.IsValid
   name: IsValid
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_IsValid
-  commentId: P:Yort.Zip.InStore.ZipError.IsValid
-  fullName: Yort.Zip.InStore.ZipError.IsValid
-  nameWithType: ZipError.IsValid
-- uid: Yort.Zip.InStore.ZipError.IsValid*
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_IsValid
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.IsValid
+  fullName: Yort.Zip.InStore.ZipErrorResponse.IsValid
+  nameWithType: ZipErrorResponse.IsValid
+- uid: Yort.Zip.InStore.ZipErrorResponse.IsValid*
   name: IsValid
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_IsValid_
-  commentId: Overload:Yort.Zip.InStore.ZipError.IsValid
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_IsValid_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.IsValid
   isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.IsValid
-  nameWithType: ZipError.IsValid
-- uid: Yort.Zip.InStore.ZipError.Message
+  fullName: Yort.Zip.InStore.ZipErrorResponse.IsValid
+  nameWithType: ZipErrorResponse.IsValid
+- uid: Yort.Zip.InStore.ZipErrorResponse.Message
   name: Message
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_Message
-  commentId: P:Yort.Zip.InStore.ZipError.Message
-  fullName: Yort.Zip.InStore.ZipError.Message
-  nameWithType: ZipError.Message
-- uid: Yort.Zip.InStore.ZipError.Message*
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_Message
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Message
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Message
+  nameWithType: ZipErrorResponse.Message
+- uid: Yort.Zip.InStore.ZipErrorResponse.Message*
   name: Message
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_Message_
-  commentId: Overload:Yort.Zip.InStore.ZipError.Message
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_Message_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.Message
   isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.Message
-  nameWithType: ZipError.Message
-- uid: Yort.Zip.InStore.ZipError.ResponseCode
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Message
+  nameWithType: ZipErrorResponse.Message
+- uid: Yort.Zip.InStore.ZipErrorResponse.ResponseCode
   name: ResponseCode
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_ResponseCode
-  commentId: P:Yort.Zip.InStore.ZipError.ResponseCode
-  fullName: Yort.Zip.InStore.ZipError.ResponseCode
-  nameWithType: ZipError.ResponseCode
-- uid: Yort.Zip.InStore.ZipError.ResponseCode*
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_ResponseCode
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.ResponseCode
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ResponseCode
+  nameWithType: ZipErrorResponse.ResponseCode
+- uid: Yort.Zip.InStore.ZipErrorResponse.ResponseCode*
   name: ResponseCode
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_ResponseCode_
-  commentId: Overload:Yort.Zip.InStore.ZipError.ResponseCode
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_ResponseCode_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.ResponseCode
   isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.ResponseCode
-  nameWithType: ZipError.ResponseCode
-- uid: Yort.Zip.InStore.ZipError.Title
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ResponseCode
+  nameWithType: ZipErrorResponse.ResponseCode
+- uid: Yort.Zip.InStore.ZipErrorResponse.Title
   name: Title
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_Title
-  commentId: P:Yort.Zip.InStore.ZipError.Title
-  fullName: Yort.Zip.InStore.ZipError.Title
-  nameWithType: ZipError.Title
-- uid: Yort.Zip.InStore.ZipError.Title*
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_Title
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Title
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Title
+  nameWithType: ZipErrorResponse.Title
+- uid: Yort.Zip.InStore.ZipErrorResponse.Title*
   name: Title
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_Title_
-  commentId: Overload:Yort.Zip.InStore.ZipError.Title
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_Title_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.Title
   isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.Title
-  nameWithType: ZipError.Title
-- uid: Yort.Zip.InStore.ZipError.TraceId
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Title
+  nameWithType: ZipErrorResponse.Title
+- uid: Yort.Zip.InStore.ZipErrorResponse.TraceId
   name: TraceId
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_TraceId
-  commentId: P:Yort.Zip.InStore.ZipError.TraceId
-  fullName: Yort.Zip.InStore.ZipError.TraceId
-  nameWithType: ZipError.TraceId
-- uid: Yort.Zip.InStore.ZipError.TraceId*
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_TraceId
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.TraceId
+  fullName: Yort.Zip.InStore.ZipErrorResponse.TraceId
+  nameWithType: ZipErrorResponse.TraceId
+- uid: Yort.Zip.InStore.ZipErrorResponse.TraceId*
   name: TraceId
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_TraceId_
-  commentId: Overload:Yort.Zip.InStore.ZipError.TraceId
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_TraceId_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.TraceId
   isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.TraceId
-  nameWithType: ZipError.TraceId
-- uid: Yort.Zip.InStore.ZipError.Type
+  fullName: Yort.Zip.InStore.ZipErrorResponse.TraceId
+  nameWithType: ZipErrorResponse.TraceId
+- uid: Yort.Zip.InStore.ZipErrorResponse.Type
   name: Type
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_Type
-  commentId: P:Yort.Zip.InStore.ZipError.Type
-  fullName: Yort.Zip.InStore.ZipError.Type
-  nameWithType: ZipError.Type
-- uid: Yort.Zip.InStore.ZipError.Type*
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_Type
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Type
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Type
+  nameWithType: ZipErrorResponse.Type
+- uid: Yort.Zip.InStore.ZipErrorResponse.Type*
   name: Type
-  href: api/Yort.Zip.InStore.ZipError.html#Yort_Zip_InStore_ZipError_Type_
-  commentId: Overload:Yort.Zip.InStore.ZipError.Type
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_Type_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.Type
   isSpec: "True"
-  fullName: Yort.Zip.InStore.ZipError.Type
-  nameWithType: ZipError.Type
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Type
+  nameWithType: ZipErrorResponse.Type
+- uid: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+  name: ValidationErrors
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_ValidationErrors
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+  nameWithType: ZipErrorResponse.ValidationErrors
+- uid: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors*
+  name: ValidationErrors
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_ValidationErrors_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+  nameWithType: ZipErrorResponse.ValidationErrors
 - uid: Yort.Zip.InStore.ZipOrder
   name: ZipOrder
   href: api/Yort.Zip.InStore.ZipOrder.html
@@ -1502,3 +1502,35 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.ZipRequestOptionsBase.Validate
   nameWithType: ZipRequestOptionsBase.Validate
+- uid: Yort.Zip.InStore.ZipValidationError
+  name: ZipValidationError
+  href: api/Yort.Zip.InStore.ZipValidationError.html
+  commentId: T:Yort.Zip.InStore.ZipValidationError
+  fullName: Yort.Zip.InStore.ZipValidationError
+  nameWithType: ZipValidationError
+- uid: Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  name: ErrorMessages
+  href: api/Yort.Zip.InStore.ZipValidationError.html#Yort_Zip_InStore_ZipValidationError_ErrorMessages
+  commentId: P:Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  fullName: Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  nameWithType: ZipValidationError.ErrorMessages
+- uid: Yort.Zip.InStore.ZipValidationError.ErrorMessages*
+  name: ErrorMessages
+  href: api/Yort.Zip.InStore.ZipValidationError.html#Yort_Zip_InStore_ZipValidationError_ErrorMessages_
+  commentId: Overload:Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  nameWithType: ZipValidationError.ErrorMessages
+- uid: Yort.Zip.InStore.ZipValidationError.PropertyName
+  name: PropertyName
+  href: api/Yort.Zip.InStore.ZipValidationError.html#Yort_Zip_InStore_ZipValidationError_PropertyName
+  commentId: P:Yort.Zip.InStore.ZipValidationError.PropertyName
+  fullName: Yort.Zip.InStore.ZipValidationError.PropertyName
+  nameWithType: ZipValidationError.PropertyName
+- uid: Yort.Zip.InStore.ZipValidationError.PropertyName*
+  name: PropertyName
+  href: api/Yort.Zip.InStore.ZipValidationError.html#Yort_Zip_InStore_ZipValidationError_PropertyName_
+  commentId: Overload:Yort.Zip.InStore.ZipValidationError.PropertyName
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipValidationError.PropertyName
+  nameWithType: ZipValidationError.PropertyName

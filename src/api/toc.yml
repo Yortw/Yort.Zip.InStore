@@ -38,8 +38,8 @@
     name: ZipEnvironment
   - uid: Yort.Zip.InStore.ZipEnvironment.NewZealand
     name: ZipEnvironment.NewZealand
-  - uid: Yort.Zip.InStore.ZipError
-    name: ZipError
+  - uid: Yort.Zip.InStore.ZipErrorResponse
+    name: ZipErrorResponse
   - uid: Yort.Zip.InStore.ZipOrder
     name: ZipOrder
   - uid: Yort.Zip.InStore.ZipOrderItem
@@ -50,3 +50,5 @@
     name: ZipPaymentFlow
   - uid: Yort.Zip.InStore.ZipRequestOptionsBase
     name: ZipRequestOptionsBase
+  - uid: Yort.Zip.InStore.ZipValidationError
+    name: ZipValidationError

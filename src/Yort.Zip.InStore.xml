@@ -467,22 +467,22 @@
             <param name="message">The error message for this exception.</param>
             <param name="inner">Another exception being wrapped by this one.</param>
         </member>
-        <member name="M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)">
+        <member name="M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse)">
             <summary>
             Partial constructor, recommended.
             </summary>
-            <param name="error">A <see cref="T:Yort.Zip.InStore.ZipError"/> containing full errors received from the Zip API.</param>
+            <param name="error">A <see cref="T:Yort.Zip.InStore.ZipErrorResponse"/> containing full errors received from the Zip API.</param>
         </member>
-        <member name="M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)">
+        <member name="M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse,System.Exception)">
             <summary>
             Full constructor, recommended.
             </summary>
-            <param name="error">A <see cref="T:Yort.Zip.InStore.ZipError"/> containing full errors received from the Zip API.</param>
+            <param name="error">A <see cref="T:Yort.Zip.InStore.ZipErrorResponse"/> containing full errors received from the Zip API.</param>
             <param name="inner">Another exception being wrapped by this one.</param>
         </member>
         <member name="P:Yort.Zip.InStore.ZipApiException.Errors">
             <summary>
-            Returns a <see cref="T:Yort.Zip.InStore.ZipError"/> instance containing details of the full set of errors, or null if no response content was provided by the Zip API.
+            Returns a <see cref="T:Yort.Zip.InStore.ZipErrorResponse"/> instance containing details of the full set of errors, or null if no response content was provided by the Zip API.
             </summary>
         </member>
         <member name="M:Yort.Zip.InStore.ZipApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
@@ -699,54 +699,69 @@
             Provides a pre-configured <see cref="T:Yort.Zip.InStore.ZipEnvironment"/> instance with correct values for the production environment for NZ merchants.
             </summary>
         </member>
-        <member name="T:Yort.Zip.InStore.ZipError">
+        <member name="T:Yort.Zip.InStore.ZipErrorResponse">
             <summary>
             Used to hold error messages and validation errors returned by the Zip API.
             </summary>
         </member>
-        <member name="M:Yort.Zip.InStore.ZipError.#ctor">
+        <member name="M:Yort.Zip.InStore.ZipErrorResponse.#ctor">
             <summary>
             Default constructor.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ZipError.ResponseCode">
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.ResponseCode">
             <summary>
             The HTTP status code returned with the response that contained these errors.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ZipError.Message">
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.Message">
             <summary>
             Sets or returns the top level error message associated with the response.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ZipError.Title">
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.Title">
             <summary>
             Sets or returns a generic description of the error message.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ZipError.TraceId">
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.TraceId">
             <summary>
             Sets or returns a unique value that can be reported to Zip to assist with locating log entries relating to this request.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ZipError.ErrorCode">
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.ErrorCode">
             <summary>
             Sets or returns a string containing an 'error code' that can be used to programmatically take action on a specific error.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ZipError.Errors">
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.ValidationErrors">
             <summary>
             An array of errors, keyed by the name of the property that as an error and with the value being an array of related error messages.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ZipError.IsValid">
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.IsValid">
             <summary>
             Returns a boolean indicatin whether or not the request was valid.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ZipError.Type">
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.Type">
             <summary>
             A string containing a uri that defines the specific type of error that occurred.
+            </summary>
+        </member>
+        <member name="T:Yort.Zip.InStore.ZipValidationError">
+            <summary>
+            Represents a set of errors that relate to a specific request property.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipValidationError.PropertyName">
+            <summary>
+            The name of the property these errors relate to.
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ZipValidationError.ErrorMessages">
+            <summary>
+            A set of error messages stating problems with the property specified.
             </summary>
         </member>
         <member name="T:Yort.Zip.InStore.ZipOrder">

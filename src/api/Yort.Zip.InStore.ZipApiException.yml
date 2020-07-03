@@ -9,8 +9,8 @@ items:
   - Yort.Zip.InStore.ZipApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
   - Yort.Zip.InStore.ZipApiException.#ctor(System.String)
   - Yort.Zip.InStore.ZipApiException.#ctor(System.String,System.Exception)
-  - Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)
-  - Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)
+  - Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse)
+  - Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse,System.Exception)
   - Yort.Zip.InStore.ZipApiException.Errors
   langs:
   - csharp
@@ -184,16 +184,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)
-  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError)
-  id: '#ctor(Yort.Zip.InStore.ZipError)'
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse)
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse)
+  id: '#ctor(Yort.Zip.InStore.ZipErrorResponse)'
   parent: Yort.Zip.InStore.ZipApiException
   langs:
   - csharp
   - vb
-  name: ZipApiException(ZipError)
-  nameWithType: ZipApiException.ZipApiException(ZipError)
-  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipError)
+  name: ZipApiException(ZipErrorResponse)
+  nameWithType: ZipApiException.ZipApiException(ZipErrorResponse)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipErrorResponse)
   type: Constructor
   source:
     remote:
@@ -209,27 +209,27 @@ items:
   summary: "\nPartial constructor, recommended.\n"
   example: []
   syntax:
-    content: public ZipApiException(ZipError error)
+    content: public ZipApiException(ZipErrorResponse error)
     parameters:
     - id: error
-      type: Yort.Zip.InStore.ZipError
-      description: A <xref href="Yort.Zip.InStore.ZipError" data-throw-if-not-resolved="false"></xref> containing full errors received from the Zip API.
-    content.vb: Public Sub New(error As ZipError)
+      type: Yort.Zip.InStore.ZipErrorResponse
+      description: A <xref href="Yort.Zip.InStore.ZipErrorResponse" data-throw-if-not-resolved="false"></xref> containing full errors received from the Zip API.
+    content.vb: Public Sub New(error As ZipErrorResponse)
   overload: Yort.Zip.InStore.ZipApiException.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)
-  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipError,System.Exception)
-  id: '#ctor(Yort.Zip.InStore.ZipError,System.Exception)'
+- uid: Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse,System.Exception)
+  commentId: M:Yort.Zip.InStore.ZipApiException.#ctor(Yort.Zip.InStore.ZipErrorResponse,System.Exception)
+  id: '#ctor(Yort.Zip.InStore.ZipErrorResponse,System.Exception)'
   parent: Yort.Zip.InStore.ZipApiException
   langs:
   - csharp
   - vb
-  name: ZipApiException(ZipError, Exception)
-  nameWithType: ZipApiException.ZipApiException(ZipError, Exception)
-  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipError, System.Exception)
+  name: ZipApiException(ZipErrorResponse, Exception)
+  nameWithType: ZipApiException.ZipApiException(ZipErrorResponse, Exception)
+  fullName: Yort.Zip.InStore.ZipApiException.ZipApiException(Yort.Zip.InStore.ZipErrorResponse, System.Exception)
   type: Constructor
   source:
     remote:
@@ -245,15 +245,15 @@ items:
   summary: "\nFull constructor, recommended.\n"
   example: []
   syntax:
-    content: public ZipApiException(ZipError error, Exception inner)
+    content: public ZipApiException(ZipErrorResponse error, Exception inner)
     parameters:
     - id: error
-      type: Yort.Zip.InStore.ZipError
-      description: A <xref href="Yort.Zip.InStore.ZipError" data-throw-if-not-resolved="false"></xref> containing full errors received from the Zip API.
+      type: Yort.Zip.InStore.ZipErrorResponse
+      description: A <xref href="Yort.Zip.InStore.ZipErrorResponse" data-throw-if-not-resolved="false"></xref> containing full errors received from the Zip API.
     - id: inner
       type: System.Exception
       description: Another exception being wrapped by this one.
-    content.vb: Public Sub New(error As ZipError, inner As Exception)
+    content.vb: Public Sub New(error As ZipErrorResponse, inner As Exception)
   overload: Yort.Zip.InStore.ZipApiException.#ctor*
   modifiers.csharp:
   - public
@@ -281,14 +281,14 @@ items:
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nReturns a <xref href=\"Yort.Zip.InStore.ZipError\" data-throw-if-not-resolved=\"false\"></xref> instance containing details of the full set of errors, or null if no response content was provided by the Zip API.\n"
+  summary: "\nReturns a <xref href=\"Yort.Zip.InStore.ZipErrorResponse\" data-throw-if-not-resolved=\"false\"></xref> instance containing details of the full set of errors, or null if no response content was provided by the Zip API.\n"
   example: []
   syntax:
-    content: public ZipError Errors { get; }
+    content: public ZipErrorResponse Errors { get; }
     parameters: []
     return:
-      type: Yort.Zip.InStore.ZipError
-    content.vb: Public ReadOnly Property Errors As ZipError
+      type: Yort.Zip.InStore.ZipErrorResponse
+    content.vb: Public ReadOnly Property Errors As ZipErrorResponse
   overload: Yort.Zip.InStore.ZipApiException.Errors*
   modifiers.csharp:
   - public
@@ -821,12 +821,12 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Yort.Zip.InStore.ZipError
-  commentId: T:Yort.Zip.InStore.ZipError
+- uid: Yort.Zip.InStore.ZipErrorResponse
+  commentId: T:Yort.Zip.InStore.ZipErrorResponse
   parent: Yort.Zip.InStore
-  name: ZipError
-  nameWithType: ZipError
-  fullName: Yort.Zip.InStore.ZipError
+  name: ZipErrorResponse
+  nameWithType: ZipErrorResponse
+  fullName: Yort.Zip.InStore.ZipErrorResponse
 - uid: Yort.Zip.InStore.ZipApiException.Errors*
   commentId: Overload:Yort.Zip.InStore.ZipApiException.Errors
   name: Errors

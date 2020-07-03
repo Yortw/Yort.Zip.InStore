@@ -22,12 +22,13 @@ items:
   - Yort.Zip.InStore.ZipClientConfiguration
   - Yort.Zip.InStore.ZipEnvironment
   - Yort.Zip.InStore.ZipEnvironment.NewZealand
-  - Yort.Zip.InStore.ZipError
+  - Yort.Zip.InStore.ZipErrorResponse
   - Yort.Zip.InStore.ZipOrder
   - Yort.Zip.InStore.ZipOrderItem
   - Yort.Zip.InStore.ZipOrderStatus
   - Yort.Zip.InStore.ZipPaymentFlow
   - Yort.Zip.InStore.ZipRequestOptionsBase
+  - Yort.Zip.InStore.ZipValidationError
   langs:
   - csharp
   - vb
@@ -138,12 +139,17 @@ references:
   name: ZipEnvironment.NewZealand
   nameWithType: ZipEnvironment.NewZealand
   fullName: Yort.Zip.InStore.ZipEnvironment.NewZealand
-- uid: Yort.Zip.InStore.ZipError
-  commentId: T:Yort.Zip.InStore.ZipError
+- uid: Yort.Zip.InStore.ZipErrorResponse
+  commentId: T:Yort.Zip.InStore.ZipErrorResponse
   parent: Yort.Zip.InStore
-  name: ZipError
-  nameWithType: ZipError
-  fullName: Yort.Zip.InStore.ZipError
+  name: ZipErrorResponse
+  nameWithType: ZipErrorResponse
+  fullName: Yort.Zip.InStore.ZipErrorResponse
+- uid: Yort.Zip.InStore.ZipValidationError
+  commentId: T:Yort.Zip.InStore.ZipValidationError
+  name: ZipValidationError
+  nameWithType: ZipValidationError
+  fullName: Yort.Zip.InStore.ZipValidationError
 - uid: Yort.Zip.InStore.ZipOrder
   commentId: T:Yort.Zip.InStore.ZipOrder
   parent: Yort.Zip.InStore

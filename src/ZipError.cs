@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Yort.Zip.InStore
 {
@@ -8,12 +9,12 @@ namespace Yort.Zip.InStore
 	/// Used to hold error messages and validation errors returned by the Zip API.
 	/// </summary>
 	[Serializable]
-	public class ZipError 
+	public class ZipErrorResponse 
 	{
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public ZipError() { }
+		public ZipErrorResponse() { }
 		/// <summary>
 		/// The HTTP status code returned with the response that contained these errors.
 		/// </summary>
@@ -41,7 +42,8 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// An array of errors, keyed by the name of the property that as an error and with the value being an array of related error messages.
 		/// </summary>
-		public IEnumerable<KeyValuePair<string, string[]>>? Errors { get; set; }
+		[JsonPropertyName("errors")]
+		public IEnumerable<ZipValidationError>? ValidationErrors { get; set; }
 
 		/// <summary>
 		/// Returns a boolean indicatin whether or not the request was valid.
@@ -53,5 +55,21 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		public string? Type { get; set; }
 
+	}
+
+	/// <summary>
+	/// Represents a set of errors that relate to a specific request property.
+	/// </summary>
+	[Serializable]
+	public class ZipValidationError
+	{
+		/// <summary>
+		/// The name of the property these errors relate to.
+		/// </summary>
+		public string? PropertyName { get; set; }
+		/// <summary>
+		/// A set of error messages stating problems with the property specified.
+		/// </summary>
+		public IEnumerable<string>? ErrorMessages { get; set; }
 	}
 }

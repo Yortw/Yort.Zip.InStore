@@ -30,6 +30,6 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// The price the item was purchased at.
 		/// </summary>
-		public string Price { get; set; } = null!;
+		public decimal Price { get; set; }
 	}
 }

@@ -27,30 +27,30 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// Partial constructor, recommended.
 		/// </summary>
-		/// <param name="error">A <see cref="ZipError"/> containing full errors received from the Zip API.</param>
-		public ZipApiException(ZipError error) : base(ErrorMessageFromZipErrors(error)) { Errors = error; }
+		/// <param name="error">A <see cref="ZipErrorResponse"/> containing full errors received from the Zip API.</param>
+		public ZipApiException(ZipErrorResponse error) : base(ErrorMessageFromZipErrors(error)) { Errors = error; }
 		/// <summary>
 		/// Full constructor, recommended.
 		/// </summary>
-		/// <param name="error">A <see cref="ZipError"/> containing full errors received from the Zip API.</param>
+		/// <param name="error">A <see cref="ZipErrorResponse"/> containing full errors received from the Zip API.</param>
 		/// <param name="inner">Another exception being wrapped by this one.</param>
-		public ZipApiException(ZipError error, Exception inner) : base(ErrorMessageFromZipErrors(error), inner) { Errors = error; }
+		public ZipApiException(ZipErrorResponse error, Exception inner) : base(ErrorMessageFromZipErrors(error), inner) { Errors = error; }
 
 		/// <summary>
-		/// Returns a <see cref="ZipError"/> instance containing details of the full set of errors, or null if no response content was provided by the Zip API.
+		/// Returns a <see cref="ZipErrorResponse"/> instance containing details of the full set of errors, or null if no response content was provided by the Zip API.
 		/// </summary>
-		public ZipError? Errors
+		public ZipErrorResponse? Errors
 		{
 			get
 			{
 				if (this.Data.Contains("ZipErrors"))
-					return this.Data["ZipErrors"] as ZipError;
+					return this.Data["ZipErrors"] as ZipErrorResponse;
 
 				return null;
 			}
 			private set
 			{
-				this.Data["Errors"] = value;
+				this.Data["ZipErrors"] = value;
 			}
 		}
 
@@ -63,9 +63,13 @@ namespace Yort.Zip.InStore
 		System.Runtime.Serialization.SerializationInfo info,
 		System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
 
-		private static string ErrorMessageFromZipErrors(ZipError error)
+		private static string ErrorMessageFromZipErrors(ZipErrorResponse error)
 		{
-			return error?.Message ?? error?.Errors?.FirstOrDefault().Value?.FirstOrDefault() ?? error?.ErrorCode ?? error?.Title ?? ErrorMessage.UnknownApiError;
+			return error?.Message 
+				?? error?.ValidationErrors?.FirstOrDefault().ErrorMessages?.FirstOrDefault() 
+				?? error?.ErrorCode 
+				?? error?.Title 
+				?? ErrorMessage.UnknownApiError;
 		}
 	}
 }

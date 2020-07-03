@@ -1,34 +1,34 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Yort.Zip.InStore.ZipError
-  commentId: T:Yort.Zip.InStore.ZipError
-  id: ZipError
+- uid: Yort.Zip.InStore.ZipErrorResponse
+  commentId: T:Yort.Zip.InStore.ZipErrorResponse
+  id: ZipErrorResponse
   parent: Yort.Zip.InStore
   children:
-  - Yort.Zip.InStore.ZipError.#ctor
-  - Yort.Zip.InStore.ZipError.ErrorCode
-  - Yort.Zip.InStore.ZipError.Errors
-  - Yort.Zip.InStore.ZipError.IsValid
-  - Yort.Zip.InStore.ZipError.Message
-  - Yort.Zip.InStore.ZipError.ResponseCode
-  - Yort.Zip.InStore.ZipError.Title
-  - Yort.Zip.InStore.ZipError.TraceId
-  - Yort.Zip.InStore.ZipError.Type
+  - Yort.Zip.InStore.ZipErrorResponse.#ctor
+  - Yort.Zip.InStore.ZipErrorResponse.ErrorCode
+  - Yort.Zip.InStore.ZipErrorResponse.IsValid
+  - Yort.Zip.InStore.ZipErrorResponse.Message
+  - Yort.Zip.InStore.ZipErrorResponse.ResponseCode
+  - Yort.Zip.InStore.ZipErrorResponse.Title
+  - Yort.Zip.InStore.ZipErrorResponse.TraceId
+  - Yort.Zip.InStore.ZipErrorResponse.Type
+  - Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
   langs:
   - csharp
   - vb
-  name: ZipError
-  nameWithType: ZipError
-  fullName: Yort.Zip.InStore.ZipError
+  name: ZipErrorResponse
+  nameWithType: ZipErrorResponse
+  fullName: Yort.Zip.InStore.ZipErrorResponse
   type: Class
   source:
     remote:
       path: src/ZipError.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: ZipError
+    id: ZipErrorResponse
     path: ZipError.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -38,11 +38,11 @@ items:
     content: >-
       [Serializable]
 
-      public class ZipError
+      public class ZipErrorResponse
     content.vb: >-
       <Serializable>
 
-      Public Class ZipError
+      Public Class ZipErrorResponse
   inheritance:
   - System.Object
   inheritedMembers:
@@ -63,16 +63,16 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Yort.Zip.InStore.ZipError.#ctor
-  commentId: M:Yort.Zip.InStore.ZipError.#ctor
+- uid: Yort.Zip.InStore.ZipErrorResponse.#ctor
+  commentId: M:Yort.Zip.InStore.ZipErrorResponse.#ctor
   id: '#ctor'
-  parent: Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
-  name: ZipError()
-  nameWithType: ZipError.ZipError()
-  fullName: Yort.Zip.InStore.ZipError.ZipError()
+  name: ZipErrorResponse()
+  nameWithType: ZipErrorResponse.ZipErrorResponse()
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ZipErrorResponse()
   type: Constructor
   source:
     remote:
@@ -81,30 +81,30 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: .ctor
     path: ZipError.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nDefault constructor.\n"
   example: []
   syntax:
-    content: public ZipError()
+    content: public ZipErrorResponse()
     content.vb: Public Sub New
-  overload: Yort.Zip.InStore.ZipError.#ctor*
+  overload: Yort.Zip.InStore.ZipErrorResponse.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipError.ResponseCode
-  commentId: P:Yort.Zip.InStore.ZipError.ResponseCode
+- uid: Yort.Zip.InStore.ZipErrorResponse.ResponseCode
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.ResponseCode
   id: ResponseCode
-  parent: Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
   name: ResponseCode
-  nameWithType: ZipError.ResponseCode
-  fullName: Yort.Zip.InStore.ZipError.ResponseCode
+  nameWithType: ZipErrorResponse.ResponseCode
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ResponseCode
   type: Property
   source:
     remote:
@@ -113,7 +113,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ResponseCode
     path: ZipError.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -125,23 +125,23 @@ items:
     return:
       type: System.Int32
     content.vb: Public ReadOnly Property ResponseCode As Integer
-  overload: Yort.Zip.InStore.ZipError.ResponseCode*
+  overload: Yort.Zip.InStore.ZipErrorResponse.ResponseCode*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: Yort.Zip.InStore.ZipError.Message
-  commentId: P:Yort.Zip.InStore.ZipError.Message
+- uid: Yort.Zip.InStore.ZipErrorResponse.Message
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Message
   id: Message
-  parent: Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
   name: Message
-  nameWithType: ZipError.Message
-  fullName: Yort.Zip.InStore.ZipError.Message
+  nameWithType: ZipErrorResponse.Message
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Message
   type: Property
   source:
     remote:
@@ -150,7 +150,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Message
     path: ZipError.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -162,23 +162,23 @@ items:
     return:
       type: System.String
     content.vb: Public Property Message As String
-  overload: Yort.Zip.InStore.ZipError.Message*
+  overload: Yort.Zip.InStore.ZipErrorResponse.Message*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipError.Title
-  commentId: P:Yort.Zip.InStore.ZipError.Title
+- uid: Yort.Zip.InStore.ZipErrorResponse.Title
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Title
   id: Title
-  parent: Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
   name: Title
-  nameWithType: ZipError.Title
-  fullName: Yort.Zip.InStore.ZipError.Title
+  nameWithType: ZipErrorResponse.Title
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Title
   type: Property
   source:
     remote:
@@ -187,7 +187,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Title
     path: ZipError.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -199,23 +199,23 @@ items:
     return:
       type: System.String
     content.vb: Public Property Title As String
-  overload: Yort.Zip.InStore.ZipError.Title*
+  overload: Yort.Zip.InStore.ZipErrorResponse.Title*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipError.TraceId
-  commentId: P:Yort.Zip.InStore.ZipError.TraceId
+- uid: Yort.Zip.InStore.ZipErrorResponse.TraceId
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.TraceId
   id: TraceId
-  parent: Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
   name: TraceId
-  nameWithType: ZipError.TraceId
-  fullName: Yort.Zip.InStore.ZipError.TraceId
+  nameWithType: ZipErrorResponse.TraceId
+  fullName: Yort.Zip.InStore.ZipErrorResponse.TraceId
   type: Property
   source:
     remote:
@@ -224,7 +224,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: TraceId
     path: ZipError.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -236,23 +236,23 @@ items:
     return:
       type: System.String
     content.vb: Public Property TraceId As String
-  overload: Yort.Zip.InStore.ZipError.TraceId*
+  overload: Yort.Zip.InStore.ZipErrorResponse.TraceId*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipError.ErrorCode
-  commentId: P:Yort.Zip.InStore.ZipError.ErrorCode
+- uid: Yort.Zip.InStore.ZipErrorResponse.ErrorCode
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.ErrorCode
   id: ErrorCode
-  parent: Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
   name: ErrorCode
-  nameWithType: ZipError.ErrorCode
-  fullName: Yort.Zip.InStore.ZipError.ErrorCode
+  nameWithType: ZipErrorResponse.ErrorCode
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ErrorCode
   type: Property
   source:
     remote:
@@ -261,7 +261,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ErrorCode
     path: ZipError.cs
-    startLine: 38
+    startLine: 39
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -273,60 +273,72 @@ items:
     return:
       type: System.String
     content.vb: Public Property ErrorCode As String
-  overload: Yort.Zip.InStore.ZipError.ErrorCode*
+  overload: Yort.Zip.InStore.ZipErrorResponse.ErrorCode*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipError.Errors
-  commentId: P:Yort.Zip.InStore.ZipError.Errors
-  id: Errors
-  parent: Yort.Zip.InStore.ZipError
+- uid: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+  id: ValidationErrors
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
-  name: Errors
-  nameWithType: ZipError.Errors
-  fullName: Yort.Zip.InStore.ZipError.Errors
+  name: ValidationErrors
+  nameWithType: ZipErrorResponse.ValidationErrors
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
   type: Property
   source:
     remote:
       path: src/ZipError.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Errors
+    id: ValidationErrors
     path: ZipError.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nAn array of errors, keyed by the name of the property that as an error and with the value being an array of related error messages.\n"
   example: []
   syntax:
-    content: public IEnumerable<KeyValuePair<string, string[]>> Errors { get; set; }
+    content: >-
+      [JsonPropertyName("errors")]
+
+      public IEnumerable<ZipValidationError> ValidationErrors { get; set; }
     parameters: []
     return:
-      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String[]}}
-    content.vb: Public Property Errors As IEnumerable(Of KeyValuePair(Of String, String()))
-  overload: Yort.Zip.InStore.ZipError.Errors*
+      type: System.Collections.Generic.IEnumerable{Yort.Zip.InStore.ZipValidationError}
+    content.vb: >-
+      <JsonPropertyName("errors")>
+
+      Public Property ValidationErrors As IEnumerable(Of ZipValidationError)
+  overload: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: errors
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipError.IsValid
-  commentId: P:Yort.Zip.InStore.ZipError.IsValid
+- uid: Yort.Zip.InStore.ZipErrorResponse.IsValid
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.IsValid
   id: IsValid
-  parent: Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
   name: IsValid
-  nameWithType: ZipError.IsValid
-  fullName: Yort.Zip.InStore.ZipError.IsValid
+  nameWithType: ZipErrorResponse.IsValid
+  fullName: Yort.Zip.InStore.ZipErrorResponse.IsValid
   type: Property
   source:
     remote:
@@ -335,7 +347,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: IsValid
     path: ZipError.cs
-    startLine: 48
+    startLine: 50
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -347,23 +359,23 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Property IsValid As Boolean
-  overload: Yort.Zip.InStore.ZipError.IsValid*
+  overload: Yort.Zip.InStore.ZipErrorResponse.IsValid*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipError.Type
-  commentId: P:Yort.Zip.InStore.ZipError.Type
+- uid: Yort.Zip.InStore.ZipErrorResponse.Type
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Type
   id: Type
-  parent: Yort.Zip.InStore.ZipError
+  parent: Yort.Zip.InStore.ZipErrorResponse
   langs:
   - csharp
   - vb
   name: Type
-  nameWithType: ZipError.Type
-  fullName: Yort.Zip.InStore.ZipError.Type
+  nameWithType: ZipErrorResponse.Type
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Type
   type: Property
   source:
     remote:
@@ -372,7 +384,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Type
     path: ZipError.cs
-    startLine: 53
+    startLine: 55
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -384,7 +396,7 @@ items:
     return:
       type: System.String
     content.vb: Public Property Type As String
-  overload: Yort.Zip.InStore.ZipError.Type*
+  overload: Yort.Zip.InStore.ZipErrorResponse.Type*
   modifiers.csharp:
   - public
   - get
@@ -689,16 +701,16 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Yort.Zip.InStore.ZipError.#ctor*
-  commentId: Overload:Yort.Zip.InStore.ZipError.#ctor
-  name: ZipError
-  nameWithType: ZipError.ZipError
-  fullName: Yort.Zip.InStore.ZipError.ZipError
-- uid: Yort.Zip.InStore.ZipError.ResponseCode*
-  commentId: Overload:Yort.Zip.InStore.ZipError.ResponseCode
+- uid: Yort.Zip.InStore.ZipErrorResponse.#ctor*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.#ctor
+  name: ZipErrorResponse
+  nameWithType: ZipErrorResponse.ZipErrorResponse
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ZipErrorResponse
+- uid: Yort.Zip.InStore.ZipErrorResponse.ResponseCode*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.ResponseCode
   name: ResponseCode
-  nameWithType: ZipError.ResponseCode
-  fullName: Yort.Zip.InStore.ZipError.ResponseCode
+  nameWithType: ZipErrorResponse.ResponseCode
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ResponseCode
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -706,11 +718,11 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Yort.Zip.InStore.ZipError.Message*
-  commentId: Overload:Yort.Zip.InStore.ZipError.Message
+- uid: Yort.Zip.InStore.ZipErrorResponse.Message*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.Message
   name: Message
-  nameWithType: ZipError.Message
-  fullName: Yort.Zip.InStore.ZipError.Message
+  nameWithType: ZipErrorResponse.Message
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Message
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -718,36 +730,36 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Yort.Zip.InStore.ZipError.Title*
-  commentId: Overload:Yort.Zip.InStore.ZipError.Title
+- uid: Yort.Zip.InStore.ZipErrorResponse.Title*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.Title
   name: Title
-  nameWithType: ZipError.Title
-  fullName: Yort.Zip.InStore.ZipError.Title
-- uid: Yort.Zip.InStore.ZipError.TraceId*
-  commentId: Overload:Yort.Zip.InStore.ZipError.TraceId
+  nameWithType: ZipErrorResponse.Title
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Title
+- uid: Yort.Zip.InStore.ZipErrorResponse.TraceId*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.TraceId
   name: TraceId
-  nameWithType: ZipError.TraceId
-  fullName: Yort.Zip.InStore.ZipError.TraceId
-- uid: Yort.Zip.InStore.ZipError.ErrorCode*
-  commentId: Overload:Yort.Zip.InStore.ZipError.ErrorCode
+  nameWithType: ZipErrorResponse.TraceId
+  fullName: Yort.Zip.InStore.ZipErrorResponse.TraceId
+- uid: Yort.Zip.InStore.ZipErrorResponse.ErrorCode*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.ErrorCode
   name: ErrorCode
-  nameWithType: ZipError.ErrorCode
-  fullName: Yort.Zip.InStore.ZipError.ErrorCode
-- uid: Yort.Zip.InStore.ZipError.Errors*
-  commentId: Overload:Yort.Zip.InStore.ZipError.Errors
-  name: Errors
-  nameWithType: ZipError.Errors
-  fullName: Yort.Zip.InStore.ZipError.Errors
-- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String[]}}
-  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String[]}}
+  nameWithType: ZipErrorResponse.ErrorCode
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ErrorCode
+- uid: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+  name: ValidationErrors
+  nameWithType: ZipErrorResponse.ValidationErrors
+  fullName: Yort.Zip.InStore.ZipErrorResponse.ValidationErrors
+- uid: System.Collections.Generic.IEnumerable{Yort.Zip.InStore.ZipValidationError}
+  commentId: T:System.Collections.Generic.IEnumerable{Yort.Zip.InStore.ZipValidationError}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<KeyValuePair<String, String[]>>
-  nameWithType: IEnumerable<KeyValuePair<String, String[]>>
-  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.String[]>>
-  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, String()))
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String()))
-  name.vb: IEnumerable(Of KeyValuePair(Of String, String()))
+  name: IEnumerable<ZipValidationError>
+  nameWithType: IEnumerable<ZipValidationError>
+  fullName: System.Collections.Generic.IEnumerable<Yort.Zip.InStore.ZipValidationError>
+  nameWithType.vb: IEnumerable(Of ZipValidationError)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Yort.Zip.InStore.ZipValidationError)
+  name.vb: IEnumerable(Of ZipValidationError)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -757,33 +769,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Collections.Generic.KeyValuePair`2
-    name: KeyValuePair
-    nameWithType: KeyValuePair
-    fullName: System.Collections.Generic.KeyValuePair
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
+  - uid: Yort.Zip.InStore.ZipValidationError
+    name: ZipValidationError
+    nameWithType: ZipValidationError
+    fullName: Yort.Zip.InStore.ZipValidationError
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -796,33 +785,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Collections.Generic.KeyValuePair`2
-    name: KeyValuePair
-    nameWithType: KeyValuePair
-    fullName: System.Collections.Generic.KeyValuePair
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-  - name: )
-    nameWithType: )
-    fullName: )
+  - uid: Yort.Zip.InStore.ZipValidationError
+    name: ZipValidationError
+    nameWithType: ZipValidationError
+    fullName: Yort.Zip.InStore.ZipValidationError
   - name: )
     nameWithType: )
     fullName: )
@@ -871,11 +837,11 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
-- uid: Yort.Zip.InStore.ZipError.IsValid*
-  commentId: Overload:Yort.Zip.InStore.ZipError.IsValid
+- uid: Yort.Zip.InStore.ZipErrorResponse.IsValid*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.IsValid
   name: IsValid
-  nameWithType: ZipError.IsValid
-  fullName: Yort.Zip.InStore.ZipError.IsValid
+  nameWithType: ZipErrorResponse.IsValid
+  fullName: Yort.Zip.InStore.ZipErrorResponse.IsValid
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -883,8 +849,8 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: Yort.Zip.InStore.ZipError.Type*
-  commentId: Overload:Yort.Zip.InStore.ZipError.Type
+- uid: Yort.Zip.InStore.ZipErrorResponse.Type*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.Type
   name: Type
-  nameWithType: ZipError.Type
-  fullName: Yort.Zip.InStore.ZipError.Type
+  nameWithType: ZipErrorResponse.Type
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Type

@@ -17,7 +17,6 @@ namespace Tests
 
 			var request = new CreateOrderRequest()
 			{
-				//StoreId = "Albany Westfield",
 				TerminalId = "2531",
 				Order = new ZipOrder()
 				{
@@ -32,7 +31,7 @@ namespace Tests
 						{
 							Name = "Test Item",
 							Description = "0110A Blue 12",
-							Price = "10.50",
+							Price = 10.50M,
 							Quantity = 1,
 							Sku = "123"
 						}
@@ -71,7 +70,7 @@ namespace Tests
 						{
 							Name = "Test Item",
 							Description = "0110A Blue 12",
-							Price = "10.50",
+							Price = 10.50M,
 							Quantity = 1,
 							Sku = "123"
 						}
@@ -137,7 +136,6 @@ namespace Tests
 				#region Create an order to cancel
 				var request = new CreateOrderRequest()
 				{
-					//StoreId = "Albany Westfield",
 					TerminalId = "2531",
 					Order = new ZipOrder()
 					{
@@ -171,7 +169,6 @@ namespace Tests
 				#region Create an order to refund 
 				var createOrderRequest = new CreateOrderRequest()
 				{
-					//StoreId = "Albany Westfield",
 					TerminalId = "2531",
 					Order = new ZipOrder()
 					{
@@ -212,7 +209,6 @@ namespace Tests
 
 				var createOrderRequest = new CreateOrderRequest()
 				{
-					//StoreId = "Albany Westfield",
 					TerminalId = "2531",
 					Order = new ZipOrder()
 					{
@@ -248,7 +244,6 @@ namespace Tests
 
 				var createOrderRequest = new CreateOrderRequest()
 				{
-					//StoreId = "Albany Westfield",
 					TerminalId = "2531",
 					Order = new ZipOrder()
 					{
@@ -310,7 +305,6 @@ namespace Tests
 
 				var request = new CreateOrderRequest()
 				{
-					//StoreId = "Albany Westfield",
 					TerminalId = "2531",
 					Order = new ZipOrder()
 					{
@@ -344,7 +338,6 @@ namespace Tests
 			{
 				var request = new CreateOrderRequest()
 				{
-					//StoreId = "Albany Westfield",
 					TerminalId = "2531",
 					Order = new ZipOrder()
 					{
@@ -370,7 +363,6 @@ namespace Tests
 			{
 				var request = new CreateOrderRequest()
 				{
-					//StoreId = "Albany Westfield",
 					TerminalId = "2531",
 					Order = new ZipOrder()
 					{
@@ -396,7 +388,6 @@ namespace Tests
 			{
 				var request = new CreateOrderRequest()
 				{
-					//StoreId = "Albany Westfield",
 					TerminalId = "2531",
 					Order = new ZipOrder()
 					{
@@ -412,6 +403,36 @@ namespace Tests
 				(
 					async () => { await client.CreateOrderAsync(request); }
 				);
+			}
+		}
+
+		[TestMethod]
+		public async Task ZipClient_IncludesHttpStatusCode_ForZipApiException()
+		{
+			using (var client = CreateTestClient())
+			{
+				var request = new CreateOrderRequest()
+				{
+					TerminalId = "2531",
+					Order = new ZipOrder()
+					{
+						Amount = 10.5M,
+						CustomerApprovalCode = "Z001",
+						MerchantReference = System.Guid.NewGuid().ToString(),
+						Operator = "Test",
+						PaymentFlow = ZipPaymentFlow.Payment
+					}
+				};
+
+				try
+				{
+					await client.CreateOrderAsync(request);
+					throw new InvalidOperationException("Expected ZipApiException was not thrown.");
+				}
+				catch(ZipApiException ex)
+				{
+					Assert.IsTrue(ex.Errors.ResponseCode == 404);
+				}
 			}
 		}
 
@@ -434,7 +455,7 @@ namespace Tests
 						{
 							Name = "Test Item",
 							Description = "0110A Blue 12",
-							Price = "10.50",
+							Price = 10.50M,
 							Quantity = 1,
 							Sku = "123"
 						}
@@ -476,7 +497,7 @@ namespace Tests
 						{
 							Name = "Test Item",
 							Description = "0110A Blue 12",
-							Price = "10.50",
+							Price = 10.50M,
 							Quantity = 1,
 							Sku = "123"
 						}

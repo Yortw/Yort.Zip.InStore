@@ -1,38 +1,41 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Yort.Zip.InStore.ZipOrderItem
-  commentId: T:Yort.Zip.InStore.ZipOrderItem
-  id: ZipOrderItem
+- uid: Yort.Zip.InStore.ZipValidationError
+  commentId: T:Yort.Zip.InStore.ZipValidationError
+  id: ZipValidationError
   parent: Yort.Zip.InStore
   children:
-  - Yort.Zip.InStore.ZipOrderItem.Description
-  - Yort.Zip.InStore.ZipOrderItem.Name
-  - Yort.Zip.InStore.ZipOrderItem.Price
-  - Yort.Zip.InStore.ZipOrderItem.Quantity
-  - Yort.Zip.InStore.ZipOrderItem.Sku
+  - Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  - Yort.Zip.InStore.ZipValidationError.PropertyName
   langs:
   - csharp
   - vb
-  name: ZipOrderItem
-  nameWithType: ZipOrderItem
-  fullName: Yort.Zip.InStore.ZipOrderItem
+  name: ZipValidationError
+  nameWithType: ZipValidationError
+  fullName: Yort.Zip.InStore.ZipValidationError
   type: Class
   source:
     remote:
-      path: src/ZipOrderItem.cs
+      path: src/ZipError.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: ZipOrderItem
-    path: ZipOrderItem.cs
-    startLine: 10
+    id: ZipValidationError
+    path: ZipError.cs
+    startLine: 62
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nRepresents information about an item purchased on a Zip order, used to show the end-consumer details of their purchase in the Zip consumer portal.\n"
+  summary: "\nRepresents a set of errors that relate to a specific request property.\n"
   example: []
   syntax:
-    content: public class ZipOrderItem
-    content.vb: Public Class ZipOrderItem
+    content: >-
+      [Serializable]
+
+      public class ZipValidationError
+    content.vb: >-
+      <Serializable>
+
+      Public Class ZipValidationError
   inheritance:
   - System.Object
   inheritedMembers:
@@ -43,191 +46,84 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
-- uid: Yort.Zip.InStore.ZipOrderItem.Description
-  commentId: P:Yort.Zip.InStore.ZipOrderItem.Description
-  id: Description
-  parent: Yort.Zip.InStore.ZipOrderItem
+- uid: Yort.Zip.InStore.ZipValidationError.PropertyName
+  commentId: P:Yort.Zip.InStore.ZipValidationError.PropertyName
+  id: PropertyName
+  parent: Yort.Zip.InStore.ZipValidationError
   langs:
   - csharp
   - vb
-  name: Description
-  nameWithType: ZipOrderItem.Description
-  fullName: Yort.Zip.InStore.ZipOrderItem.Description
+  name: PropertyName
+  nameWithType: ZipValidationError.PropertyName
+  fullName: Yort.Zip.InStore.ZipValidationError.PropertyName
   type: Property
   source:
     remote:
-      path: src/ZipOrderItem.cs
+      path: src/ZipError.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Description
-    path: ZipOrderItem.cs
-    startLine: 15
+    id: PropertyName
+    path: ZipError.cs
+    startLine: 68
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nA description of the item.\n"
+  summary: "\nThe name of the property these errors relate to.\n"
   example: []
   syntax:
-    content: public string Description { get; set; }
+    content: public string PropertyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Description As String
-  overload: Yort.Zip.InStore.ZipOrderItem.Description*
+    content.vb: Public Property PropertyName As String
+  overload: Yort.Zip.InStore.ZipValidationError.PropertyName*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: Yort.Zip.InStore.ZipOrderItem.Name
-  commentId: P:Yort.Zip.InStore.ZipOrderItem.Name
-  id: Name
-  parent: Yort.Zip.InStore.ZipOrderItem
+- uid: Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  commentId: P:Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  id: ErrorMessages
+  parent: Yort.Zip.InStore.ZipValidationError
   langs:
   - csharp
   - vb
-  name: Name
-  nameWithType: ZipOrderItem.Name
-  fullName: Yort.Zip.InStore.ZipOrderItem.Name
+  name: ErrorMessages
+  nameWithType: ZipValidationError.ErrorMessages
+  fullName: Yort.Zip.InStore.ZipValidationError.ErrorMessages
   type: Property
   source:
     remote:
-      path: src/ZipOrderItem.cs
+      path: src/ZipError.cs
       branch: master
       repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Name
-    path: ZipOrderItem.cs
-    startLine: 20
+    id: ErrorMessages
+    path: ZipError.cs
+    startLine: 72
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
-  summary: "\nA short name of the item.\n"
+  summary: "\nA set of error messages stating problems with the property specified.\n"
   example: []
   syntax:
-    content: public string Name { get; set; }
+    content: public IEnumerable<string> ErrorMessages { get; set; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public Property Name As String
-  overload: Yort.Zip.InStore.ZipOrderItem.Name*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: Yort.Zip.InStore.ZipOrderItem.Sku
-  commentId: P:Yort.Zip.InStore.ZipOrderItem.Sku
-  id: Sku
-  parent: Yort.Zip.InStore.ZipOrderItem
-  langs:
-  - csharp
-  - vb
-  name: Sku
-  nameWithType: ZipOrderItem.Sku
-  fullName: Yort.Zip.InStore.ZipOrderItem.Sku
-  type: Property
-  source:
-    remote:
-      path: src/ZipOrderItem.cs
-      branch: master
-      repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Sku
-    path: ZipOrderItem.cs
-    startLine: 24
-  assemblies:
-  - Yort.Zip.InStore
-  namespace: Yort.Zip.InStore
-  summary: "\nThe unique sku code of the item.\n"
-  example: []
-  syntax:
-    content: public string Sku { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property Sku As String
-  overload: Yort.Zip.InStore.ZipOrderItem.Sku*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: Yort.Zip.InStore.ZipOrderItem.Quantity
-  commentId: P:Yort.Zip.InStore.ZipOrderItem.Quantity
-  id: Quantity
-  parent: Yort.Zip.InStore.ZipOrderItem
-  langs:
-  - csharp
-  - vb
-  name: Quantity
-  nameWithType: ZipOrderItem.Quantity
-  fullName: Yort.Zip.InStore.ZipOrderItem.Quantity
-  type: Property
-  source:
-    remote:
-      path: src/ZipOrderItem.cs
-      branch: master
-      repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Quantity
-    path: ZipOrderItem.cs
-    startLine: 28
-  assemblies:
-  - Yort.Zip.InStore
-  namespace: Yort.Zip.InStore
-  summary: "\nThe quantity of this item purchased.\n"
-  example: []
-  syntax:
-    content: public int Quantity { get; set; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property Quantity As Integer
-  overload: Yort.Zip.InStore.ZipOrderItem.Quantity*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: Yort.Zip.InStore.ZipOrderItem.Price
-  commentId: P:Yort.Zip.InStore.ZipOrderItem.Price
-  id: Price
-  parent: Yort.Zip.InStore.ZipOrderItem
-  langs:
-  - csharp
-  - vb
-  name: Price
-  nameWithType: ZipOrderItem.Price
-  fullName: Yort.Zip.InStore.ZipOrderItem.Price
-  type: Property
-  source:
-    remote:
-      path: src/ZipOrderItem.cs
-      branch: master
-      repo: https://github.com/Yortw/Yort.Zip.InStore
-    id: Price
-    path: ZipOrderItem.cs
-    startLine: 32
-  assemblies:
-  - Yort.Zip.InStore
-  namespace: Yort.Zip.InStore
-  summary: "\nThe price the item was purchased at.\n"
-  example: []
-  syntax:
-    content: public decimal Price { get; set; }
-    parameters: []
-    return:
-      type: System.Decimal
-    content.vb: Public Property Price As Decimal
-  overload: Yort.Zip.InStore.ZipOrderItem.Price*
+      type: System.Collections.Generic.IEnumerable{System.String}
+    content.vb: Public Property ErrorMessages As IEnumerable(Of String)
+  overload: Yort.Zip.InStore.ZipValidationError.ErrorMessages*
   modifiers.csharp:
   - public
   - get
@@ -532,11 +428,11 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Yort.Zip.InStore.ZipOrderItem.Description*
-  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Description
-  name: Description
-  nameWithType: ZipOrderItem.Description
-  fullName: Yort.Zip.InStore.ZipOrderItem.Description
+- uid: Yort.Zip.InStore.ZipValidationError.PropertyName*
+  commentId: Overload:Yort.Zip.InStore.ZipValidationError.PropertyName
+  name: PropertyName
+  nameWithType: ZipValidationError.PropertyName
+  fullName: Yort.Zip.InStore.ZipValidationError.PropertyName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -544,37 +440,97 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Yort.Zip.InStore.ZipOrderItem.Name*
-  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Name
-  name: Name
-  nameWithType: ZipOrderItem.Name
-  fullName: Yort.Zip.InStore.ZipOrderItem.Name
-- uid: Yort.Zip.InStore.ZipOrderItem.Sku*
-  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Sku
-  name: Sku
-  nameWithType: ZipOrderItem.Sku
-  fullName: Yort.Zip.InStore.ZipOrderItem.Sku
-- uid: Yort.Zip.InStore.ZipOrderItem.Quantity*
-  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Quantity
-  name: Quantity
-  nameWithType: ZipOrderItem.Quantity
-  fullName: Yort.Zip.InStore.ZipOrderItem.Quantity
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
+- uid: Yort.Zip.InStore.ZipValidationError.ErrorMessages*
+  commentId: Overload:Yort.Zip.InStore.ZipValidationError.ErrorMessages
+  name: ErrorMessages
+  nameWithType: ZipValidationError.ErrorMessages
+  fullName: Yort.Zip.InStore.ZipValidationError.ErrorMessages
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: System.Collections.Generic.IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
-- uid: Yort.Zip.InStore.ZipOrderItem.Price*
-  commentId: Overload:Yort.Zip.InStore.ZipOrderItem.Price
-  name: Price
-  nameWithType: ZipOrderItem.Price
-  fullName: Yort.Zip.InStore.ZipOrderItem.Price
-- uid: System.Decimal
-  commentId: T:System.Decimal
-  parent: System
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
   isExternal: true
-  name: Decimal
-  nameWithType: Decimal
-  fullName: System.Decimal
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

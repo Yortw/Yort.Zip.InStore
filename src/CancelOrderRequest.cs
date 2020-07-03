@@ -31,6 +31,7 @@ namespace Yort.Zip.InStore
 		{
 			TerminalId.GuardNullOrWhiteSpace(nameof(this.TerminalId));
 			OrderId.GuardNullOrWhiteSpace(nameof(this.OrderId));
+			Operator.GuardNullOrWhiteSpace(nameof(this.Operator));
 		}
 	}
 }

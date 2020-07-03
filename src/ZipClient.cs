@@ -248,7 +248,7 @@ namespace Yort.Zip.InStore
 			if (String.IsNullOrEmpty(_Configuration.ClientId) || String.IsNullOrEmpty(_Configuration.ClientSecret))
 				throw new UnauthorizedAccessException(ErrorMessage.ClientAuthDetailsRequired);
 
-			using (var client = new HttpClient())
+			using (var client = CreateNewHttpClient())
 			{
 				var request = new AuthTokenRequest()
 				{
@@ -346,7 +346,7 @@ namespace Yort.Zip.InStore
 
 		private async Task<Exception> ZipApiExceptionFromResponseAsync(HttpResponseMessage response)
 		{
-			ZipError errors = null!;
+			ZipErrorResponse errors = null!;
 			//If we fail to parse the error body that's unfortunate, but don't hide the original error.
 			//TODO: should perhaps log or otherwise expose the deserialisation failure without hiding the 
 			//original exception. For now, just do our best to report the exception that really matters (original).
@@ -356,28 +356,28 @@ namespace Yort.Zip.InStore
 			{
 				if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
 				{
-					errors = new ZipError()
+					errors = new ZipErrorResponse()
 					{
 						Message = ErrorMessage.NotFound
 					};
 				}
 				else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
 				{
-					errors = new ZipError()
+					errors = new ZipErrorResponse()
 					{
 						Message = ErrorMessage.Unauthorised
 					};
 				}
 				else if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
 				{
-					errors = new ZipError()
+					errors = new ZipErrorResponse()
 					{
 						Message = ErrorMessage.Forbidden
 					};
 				}
 				else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
 				{
-					errors = new ZipError()
+					errors = new ZipErrorResponse()
 					{
 						Message = ErrorMessage.BadRequest
 					};
@@ -387,7 +387,7 @@ namespace Yort.Zip.InStore
 			{
 				try
 				{
-					errors = System.Text.Json.JsonSerializer.Deserialize<ZipError>(content, _SerializerOptions);
+					errors = System.Text.Json.JsonSerializer.Deserialize<ZipErrorResponse>(content, _SerializerOptions);
 				}
 				catch { }
 			}
@@ -397,7 +397,7 @@ namespace Yort.Zip.InStore
 			throw new ZipApiException(errors);
 		}
 
-		private HttpClient CreateNewHttpClient()
+		private static HttpClient CreateNewHttpClient()
 		{
 			var handler = new HttpClientHandler();
 			try
