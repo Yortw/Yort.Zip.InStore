@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Production Implementation Requirements | Yort.Zip.InStore </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Production Implementation Requirements | Yort.Zip.InStore ">
+    <meta name="generator" content="docfx 2.48.1.0">
+    
+    <link rel="shortcut icon" href="../images/projecticon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/projecticon.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="intro.html" title="Introduction" class="">Introduction</a>
+                    </li>
+                    <li class="">
+                      <a href="quickstart.html" title="Quick Start" class="">Quick Start</a>
+                    </li>
+                    <li class="active">
+                      <a href="productionrequirements.html" title="Production Implementation Requirements" class="active">Production Implementation Requirements</a>
+                    </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="production-implementation-requirements">Production Implementation Requirements</h1>
+
+<p>In order to provide a production quality integration with Zip the application developer must undertake a number of steps.</p>
+<h2 id="power-failurecrash-recovery">Power Failure/Crash Recovery</h2>
+<p>A reliable integration must handle situation where the POS process dies while a Zip order (or refund) is pending, due to a power/hardware failure, OS restart, bug etc. In this case the usual pattern is:
+* On start-up, or another suitable event, check a persistent store for a list of outstanding requests. For each pending request, recover at least the <em>MerchantReference</em>, and preferably the order id (if it was received and persisted from the initial CreateOrder request).
+* If you are only able to retrieve the merchant reference, retry the order create request ensuring 'duplicate checking' is enabled. This will allow you to retrieve the Zip
+order id required in the following steps without risk of double charging the customer.
+* If a pending order is found, begin polling for the status of that order. If the order is still pending after the first check either continue polling or cancel immediately. When a final state is reached the POS should relate this answer back to the pending POS transaction, provide some way for the user to apply it to a new transaction or perform an automatic refund depending on how the POS is designed.
+* If a pending refund is found, retry the refund request using the same merchant reference if you want to ensure the refund occurred. Zip refunds requests are idempotent, and sending the same request again will only result in at most one refund being applied.
+* Before sending a CreateOrderRequest or RefundOrderRequest, generate a unique MerchantReference to be used on that request and save it to persistent storage so it can be used for crash recovery (see above). For a CreateOrderRequest also store the order id returned as soon as possible if the call is successful.
+* When a POS transaction is completed (or next persisted to permanent storage) with an order or refund that has reached a final status, remove that requests reference from the persistent store of pending requests so it will no longer be rechecked on a restart (see previous steps).</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>All methods in the ZipClient class might throw exceptions. Some exceptions such as System.ArgumentException and System.ArgumentNullException occur before the request is sent, if the request data doesn't meet the minimum known requirements for Zip. These should be handled probably presented to the user to tell them what is missing.</p>
+<p>In addition, any error normally thrown by the .Net HttpClient class including System.TaskCanceledException and HttpRequestException could be re-thrown from these methods. TaskCanceled and timeout exceptions may require special handling. For example if these exceptions are thrown during a CreateOrderRequest call and the POS is not going to try again then another call should be made to CancelOrder to ensure the order is not subsequently accepted by the user.</p>
+<p>HttpResponseExceptions may indicate a transient error, such as the network being briefly down, or a service unavailable/too many requests response from the server. In this case the POS should wait a short period and then retry the operation.</p>
+<p>Any error returned by the Zip API (indicating the HTTP call was received by the server but resulted in an error) is converted to a ZipApiException, with an Errors property that contains details of the error response.</p>
+<h2 id="polling-timeout">Polling Timeout</h2>
+<p>It's possible that due to a long network outage or similar problem that a create order request may never reach an approved or declined state and cannot be immediately cancelled. In this case the POS should have a timeout where it gives up polling. This timeout should not be too short, or should prompt the operator to ask if it should give up, as new customers can sometimes take several minutes to complete the sign up process. It is up to the POS to decide how to behave, but the usual logic is:</p>
+<ul>
+<li>Treat the request as declined</li>
+<li>Store the request somewhere to be rechecked at a later time when the network is available again.</li>
+<li>If the customer still wants to make payment they will have to choose another payment method (since the network is not available and Zip cannot be used)</li>
+<li>On recheck (once the network is available again):
+<ul>
+<li>If the payment is pending, cancel it.</li>
+<li>If the payment is approved, refund it.</li>
+<li>If the payment is cancelled or declined, there is nothing to do except remove it from the list of rechecks</li>
+</ul>
+</li>
+</ul>
+<h2 id="manual-cancellation">Manual Cancellation</h2>
+<p>It is possible the POS operator may need to cancel an in-progress payment, if the end consumer is unable to do so for some reason. It's also possible the customer's device may run out of battery, have no network connection to receive the payment request, or get dropped and damaged etc. In any of these cases where the payment cannot be processed for a known reason the POS user should have the option to manually cancel the request without waiting for a long timeout.  This needs to use the CancelOrder method of the ZipClient object to notify Zip of the cancellation, and only treat the payment as cancelled if the cancellation request is successful.</p>
+<h2 id="cancelling-orders">Cancelling Orders</h2>
+<p>When making a CancelOrder request an exception might be thrown, and this could be caused by the order having been approved or declined between when you last performed a status check and when the cancellation request was received. If an ZipApiException is thrown as the result of a cancellation request your code should re-check the current status of the order and take action depending on the latest status.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/articles/productionrequirements.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright (c) 2020 Troy Willmot
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

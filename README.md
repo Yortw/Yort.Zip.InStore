@@ -15,7 +15,7 @@
 Make sure to read and understand the official [Zip API documentation](https://docs-nz.zip.co/instore-api/api-reference) as this library is a wrapper around that, and reading that 
 will give you a good idea of the process flows, how the API works and what is possible. Also see the errata section at the end of this readme.
 
-For getting started, samples and API reference specifically about this library [see the docs](https://yortw.github.io/Yort.Zip.InStore/docs/index.html)
+For getting started, samples and API reference specifically about this library [see the docs](https://yortw.github.io/Yort.Zip.InStore/docs/api/index.html)
 
 ## Sample code so you know what you're getting into
 
@@ -30,7 +30,7 @@ There's really only three steps:
 ```c#
     // In production you'd probably inject a ZipClient instance or use a pre-configured, shared instance, 
     // depending on your use case and architecture. For the sake of a sample, here's what creating one looks like.
-    var client = new ZipClient
+    IZipClient client = new ZipClient
     (
         new ZipClientConfiguration
         (

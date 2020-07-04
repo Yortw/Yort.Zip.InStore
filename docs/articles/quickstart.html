@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Yort.Zip.InStore Quick Start | Yort.Zip.InStore </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Yort.Zip.InStore Quick Start | Yort.Zip.InStore ">
+    <meta name="generator" content="docfx 2.48.1.0">
+    
+    <link rel="shortcut icon" href="../images/projecticon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/projecticon.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="intro.html" title="Introduction" class="">Introduction</a>
+                    </li>
+                    <li class="active">
+                      <a href="quickstart.html" title="Quick Start" class="active">Quick Start</a>
+                    </li>
+                    <li class="">
+                      <a href="productionrequirements.html" title="Production Implementation Requirements" class="">Production Implementation Requirements</a>
+                    </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="yortzipinstore-quick-start">Yort.Zip.InStore Quick Start</h1>
+
+<h2 id="creating-an-order-taking-payment">Creating an Order (Taking Payment)</h2>
+<h3 id="basic-process">Basic Process</h3>
+<ol>
+<li>Create an instance of <a href="Yort.Zip.InStore.ZipClient.html">ZipClient</a></li>
+<li>Call <a href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_">ZipClient.CreateOrderAsync</a></li>
+<li>If the response from of step 2 has a success status, use <a href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_GetStatus_Yort_Zip_InStore_OrderStatusRequest_">ZipClient.GetStatus</a> to poll at one second (or longer) intervals until an accepted, declined or cancelled status is reached. Prior to the order being accepted, declined or cancelled Zip will return a status with a result of <em>Error</em> and a message of <em>Order not found</em>. Handle any transient errors thrown from the polling request.</li>
+<li>If you decide to timeout/give up polling, call <a href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_Cancel_Yort_Zip_InStore_CancelOrderRequest_">ZipClient.Cancel</a>.</li>
+<li>Once a final status is reached, you can determine whether payment was approved or not by checking the outcome. You need to record the <em>OrderId</em> of the result somewhere if you want to be able to process refunds in the future.</li>
+</ol>
+<p><strong>NB This is only a simple/demo implementation. A production quality implementation needs much more robust logic to handle power failure/crash/network outages and other problems.</strong></p>
+<h3 id="add-the-nuget-package">Add the Nuget package</h3>
+<p>Install the Nuget package;</p>
+<pre><code class="lang-powershell">    PM&gt; Install-Package Yort.Zip.InStore
+</code></pre>
+<p>[<img src="https://buildstats.info/nuget/Yort.Zip.InStore" alt="NuGet Badge">]</p>
+<h3 id="full-code-sample">Full Code Sample</h3>
+<p>A full (demo quality) code sample for creating payment, with minimum comments/noise.
+See the following sections for a breakdown of what's going on and why.</p>
+<pre><code class="lang-c#">    IZipClient client = new ZipClient
+    (
+        new ZipClientConfiguration(&quot;YourClientId&quot;, &quot;YourClientSecret&quot;, ZipEnvironment.NewZealand.Test)
+    );    
+
+    var request = new CreateOrderRequest()
+    {
+        TerminalId = &quot;2531&quot;,
+        Order = new ZipOrder()
+        {
+            Amount = 10.5M,
+            CustomerApprovalCode = &quot;AA05&quot;, 
+            MerchantReference = Guid.NewGuid().ToString(), 
+            Operator = &quot;Kermit The Frog&quot;,
+            PaymentFlow = ZipPaymentFlow.Payment,
+        }
+    };    
+
+    CreateOrderResponse result = await client.CreateOrderAsync(request);
+
+    var statusRequest = new OrderStatusRequest() { OrderId = result.OrderId };
+
+    var done = false;
+    while (!done)
+    {
+        await Task.Delay(1000);
+        status = await client.GetOrderStatusAsync(statusRequest);
+        if (status.Result == ZipOrderStatus.Cancelled) throw new OperationCanceledException();
+        done = ZipOrderStatus.IsTerminalStatus(statusResponse.Status);
+    }
+
+    if (statusResponse.Status != ZipOrderStatus.Complete) 
+        throw new InvalidOperationException(&quot;Payment failed: &quot; + statusResponse.Status);
+
+    return status.OrderId;
+</code></pre>
+<h3 id="configure-and-create-a-zipclient-instance">Configure and Create A ZipClient Instance</h3>
+<p>The ZipClient is the main class in this library to use for accessing the Zip API functionality. To create an instance first you must create a <a href="Yort.Zip.InStore.ZipClientConfiguration.html">ZipClientConfiguration</a> object that tells the client how to behave. This sample configures a client for accessing the sandbox/text version of the API.</p>
+<p>You'll need a client id and secret issued by Zip for the sandbox environment for this to work.</p>
+<p>Normally you would create the Zip instance on start-up or first use, and then re-use it across requests instead of creating a new one each time. This allows HTTP connection pooling and improves performance. The ZipClient instance is thread-safe in so much as you can run multiple requests through the same instance for different payments from different threads.</p>
+<pre><code class="lang-c#">    //Zip will issue a client id and secret for each environment,
+    //you need to contact Zip to get these.
+    var config = new ZipClientConfiguration
+    (
+        &quot;YourClientId&quot;, 
+        &quot;YourClientSecret&quot;, 
+        ZipEnvironment.NewZealand.Test
+    );
+
+    //We use IZipClient as the type for the variable holding 
+    //the ZipClient instance here as it makes it easier if we 
+    //want a test implementation later.
+    IZipClient client = new ZipClient(config);    
+</code></pre>
+<h3 id="call-create-order">Call Create Order</h3>
+<p>Now we can create an order. Create a CreateOrderRequest with details of the payment to take, and pass it to the <a href="Yort.Zip.InStore.ZipClient.html#Yort_Zip_InStore_ZipClient_CreateOrderAsync_Yort_Zip_InStore_CreateOrderRequest_">ZipClient.CreateOrderAsync</a> method.</p>
+<pre><code class="lang-c#">    //We'll set the minimum required properties for this example
+    var request = new CreateOrderRequest()
+    {
+        TerminalId = &quot;2531&quot;,
+        Order = new ZipOrder()
+        {
+            Amount = 10.5M,
+            CustomerApprovalCode = &quot;AA05&quot;, 
+            MerchantReference = Guid.NewGuid().ToString(), 
+            Operator = &quot;Kermit The Frog&quot;,
+            PaymentFlow = ZipPaymentFlow.Payment,
+        }
+    }; 
+
+    //Note, this method could throw exceptions. Production quality code
+    //would handle them appropriately. 
+    CreateOrderResponse result = await client.CreateOrderAsync(request);
+</code></pre>
+<h3 id="poll-for-status">Poll for Status</h3>
+<p>Now we need to wait for the customer to approve or decline the payment request via the Zip app or website. If they approve the payment then it will be sent by Zip to the payment processor, and if the payment processor accepts then we'll get a completed status. If either the customer or the payment processor declines the response we'll get a cancel/declined or error response.</p>
+<pre><code class="lang-c#">    var done = false;
+    // Create a status request. You can create a new one on each loop or 
+    // reuse the same one, which is more efficient so that's what we do here.
+    // Unfortunately the Zip status endpoint doesn't use the merchant reference, but 
+    // instead the order id returned by the initial create request. If that initial 
+    // request is interrupted by a crash, power failure, timeout/network error etc. 
+    // you must retry it with duplicate checking enabled until such time as you 
+    // receive an order id you can status check against.
+    var statusRequest = new OrderStatusRequest() { OrderId = result.OrderId };
+
+    OrderStatusResponse status = null;
+
+    //Production quality code would also have a timeout, in case the user
+    //is unable to approve or cancel the order in a timely fashion at 
+    //the till. There should also be an option for the operator to manually 
+    //cancel, in the case where the payment amount has been incorrectly entered 
+    //or the consumer is unable to cancel themselves.
+    var done = false;
+    while (!done)
+    {
+        await Task.Delay(1000); // Wait one second between poll requests
+        //Request the current status
+        status = await client.GetOrderStatusAsync(statusRequest);
+        //Detect if we got a final status
+        if (status.Result == ZipOrderStatus.Cancelled) throw new OperationCanceledException();
+        done = ZipOrderStatus.IsTerminalStatus(statusResponse.Status);
+    }
+
+    //If the payment reached a final status other than complete, throw an exception to notify the caller. 
+    if (statusResponse.Status != ZipOrderStatus.Complete) 
+        throw new InvalidOperationException(&quot;Payment failed: &quot; + statusResponse.Status);
+
+    // At this point if the customer approved the payment then status.Result 
+    // should be &quot;Completed&quot; and the payment plan should be in place. 
+    // You need to keep the Zip order id for future use
+    // with refunds.
+    return status.OrderId;  
+</code></pre>
+<h2 id="cancelling-an-order">Cancelling an Order</h2>
+<p>To cancel a Zip order that is still pending approval (not accepted, declined or cancelled) you will need the <em>OrderId</em> returned in the <a href="Yort.Zip.InStore.CreateOrderResponse.html">CreateOrderResponse</a>. Cancellation is successful if the CancelOrderAsync method does not throw an exception. The CancelOrderRequest instance returned will contain the order id of the cancelled order as confirmation.</p>
+<pre><code class="lang-c#">    try
+    {
+        var cancelRequest = new CancelOrderRequest() { OrderId = createOrderResult.OrderId, Operator = &quot;Test&quot;, TerminalId = &quot;2531&quot; };
+	    var cancelResponse = await client.CancelOrderAsync(cancelRequest);
+        //Cancellation succeeded
+    }
+    catch (Exception) // Production code should catch specific exception types
+    {
+        //Cancellation failed
+    }
+</code></pre>
+<h2 id="refunding-an-order">Refunding an Order</h2>
+<p>Once an order has been approved you can make one or more refunds against it, up to the total value of the original order. For each refund create a RefundOrderRequest, specify the order id that was returned when the order was created, the refund amount and a unique reference for the refund request. If you get interrupted (power failure, crash, network outage) or suffer a transient error sending a refund, resend the same request again until you get a valid response. Using the same refund details on the retry requests should ensure idempotency and prevent multiple refunds being created if the earlier attempts did actually succeed.</p>
+<pre><code class="lang-c#">    var createRefundRequest = new RefundOrderRequest() 
+    {
+        MerchantRefundReference = System.Guid.NewGuid().ToString(), 
+        OrderId = createOrderResult.OrderId,
+        Amount = 1, 
+        Operator = &quot;Test&quot;, 
+        TerminalId = &quot;2531&quot; 
+    };
+
+    try
+    {
+        var refundResponse = await client.RefundOrderAsync(refundRequest);
+        //Refund succeeded, refundResponse.Id will contain the id of the new refund.
+    }
+    catch (Exception) // Production code should catch specific exception types
+    {
+        //Refund failed
+    }
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Yortw/Yort.Zip.InStore/blob/master/src/articles/quickstart.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright (c) 2020 Troy Willmot
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
