@@ -11,7 +11,7 @@ namespace Yort.Zip.InStore
 		public string? scope { get; set; }
 		public string? token_type { get; set; }
 
-		public DateTimeOffset CreatedAt { get; private set; } = DateTimeOffset.Now;
+		public DateTimeOffset CreatedAt { get; } = DateTimeOffset.Now;
 
 		public bool IsExpired()
 		{

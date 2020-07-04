@@ -5,11 +5,45 @@ using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Yort.Zip.InStore;
 
-namespace Tests
+namespace Yort.Zip.InStore.Tests
 {
 	[TestClass]
 	public class ZipClientUnattendedIntegrationTests
 	{
+
+		[TestMethod]
+		public async Task ZipClient_ThrowsWhenUnauthorised()
+		{
+			using (var client = new ZipClient
+			(
+				new ZipClientConfiguration
+				(
+					"InvalidId",
+					"InvalidSecret",
+					ZipEnvironment.NewZealand.Test
+				)
+			))
+			{
+				var request = new CreateOrderRequest()
+				{
+					TerminalId = "2531",
+					Order = new ZipOrder()
+					{
+						Amount = 10.5M,
+						CustomerApprovalCode = "AA05",
+						MerchantReference = System.Guid.NewGuid().ToString(),
+						Operator = "Test",
+						PaymentFlow = ZipPaymentFlow.Payment,
+					}
+				};
+
+				await Assert.ThrowsExceptionAsync<UnauthorizedAccessException>
+				(
+					async () => { var result = await client.CreateOrderAsync(request); }
+				);
+			}
+		}
+
 		[TestMethod]
 		public async Task ZipClient_CreateOrder_ThrowsWhenClientDisposed()
 		{
@@ -354,7 +388,16 @@ namespace Tests
 
 			using (var client = CreateTestClient())
 			{
-				var createRefundRequest = new RefundOrderRequest() { MerchantRefundReference = System.Guid.NewGuid().ToString(), OrderId = Environment.GetEnvironmentVariable("ZipPayments_TestOrderIdForRefunds"), Amount = 1, Operator = "Test", TerminalId = "2531" };
+				var createRefundRequest = new RefundOrderRequest()
+				{
+					MerchantRefundReference = System.Guid.NewGuid().ToString(),
+					StoreId = Environment.GetEnvironmentVariable("ZipPayments_TestStoreId"),
+					OrderId = Environment.GetEnvironmentVariable("ZipPayments_TestOrderIdForRefunds"),
+					Amount = 1,
+					Operator = "Test",
+					TerminalId = "2531"
+				};
+
 				var refundResponse = await client.RefundOrderAsync(createRefundRequest);
 				Assert.IsNotNull(refundResponse);
 				Assert.IsFalse(String.IsNullOrEmpty(refundResponse.Id));
@@ -371,10 +414,10 @@ namespace Tests
 			{
 				await Assert.ThrowsExceptionAsync<ZipApiException>
 				(
-					async () => 
+					async () =>
 					{
 						var request = new RefundOrderRequest() { MerchantRefundReference = System.Guid.NewGuid().ToString(), OrderId = System.Guid.NewGuid().ToString(), Amount = 1, Operator = "Test", TerminalId = "2531" };
-						var refundResponse = await client.RefundOrderAsync(request); 
+						var refundResponse = await client.RefundOrderAsync(request);
 					}
 				);
 			}
@@ -654,7 +697,7 @@ namespace Tests
 					await client.CreateOrderAsync(request);
 					throw new InvalidOperationException("Expected ZipApiException was not thrown.");
 				}
-				catch(ZipApiException ex)
+				catch (ZipApiException ex)
 				{
 					Assert.IsTrue(ex.Errors.ResponseCode == 404);
 				}

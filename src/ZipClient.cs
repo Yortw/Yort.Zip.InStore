@@ -349,34 +349,11 @@ namespace Yort.Zip.InStore
 
 			if (String.IsNullOrEmpty(content))
 			{
-				if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+				errors = new ZipErrorResponse()
 				{
-					errors = new ZipErrorResponse()
-					{
-						Message = ErrorMessage.NotFound
-					};
-				}
-				else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-				{
-					errors = new ZipErrorResponse()
-					{
-						Message = ErrorMessage.Unauthorised
-					};
-				}
-				else if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
-				{
-					errors = new ZipErrorResponse()
-					{
-						Message = ErrorMessage.Forbidden
-					};
-				}
-				else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-				{
-					errors = new ZipErrorResponse()
-					{
-						Message = ErrorMessage.BadRequest
-					};
-				}
+					Message = response.ReasonPhrase,
+					ResponseCode = Convert.ToInt32(response.StatusCode, System.Globalization.CultureInfo.InvariantCulture)
+				};
 			}
 			else
 			{

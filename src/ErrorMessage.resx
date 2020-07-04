@@ -117,23 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BadRequest" xml:space="preserve">
-    <value>Bad request</value>
-  </data>
   <data name="ClientAuthDetailsRequired" xml:space="preserve">
     <value>The client id, secret or both are not set. Ensure these are configured or use the erol request to obtain them.</value>
   </data>
-  <data name="Forbidden" xml:space="preserve">
-    <value>Forbidden</value>
-  </data>
-  <data name="NotFound" xml:space="preserve">
-    <value>Not found</value>
-  </data>
   <data name="UnableToRetrieveAuthToken" xml:space="preserve">
     <value>Unable to retrieve an authentication token from Zip.</value>
-  </data>
-  <data name="Unauthorised" xml:space="preserve">
-    <value>The request was unauthorised. Ensure the correct client id, secret and environment are provided.</value>
   </data>
   <data name="UnknownApiError" xml:space="preserve">
     <value>The API returned an error response but did not specify an error message.</value>

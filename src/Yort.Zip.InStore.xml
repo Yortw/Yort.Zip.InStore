@@ -192,34 +192,14 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ErrorMessage.BadRequest">
-            <summary>
-              Looks up a localized string similar to Bad request.
-            </summary>
-        </member>
         <member name="P:Yort.Zip.InStore.ErrorMessage.ClientAuthDetailsRequired">
             <summary>
               Looks up a localized string similar to The client id, secret or both are not set. Ensure these are configured or use the erol request to obtain them..
             </summary>
         </member>
-        <member name="P:Yort.Zip.InStore.ErrorMessage.Forbidden">
-            <summary>
-              Looks up a localized string similar to Forbidden.
-            </summary>
-        </member>
-        <member name="P:Yort.Zip.InStore.ErrorMessage.NotFound">
-            <summary>
-              Looks up a localized string similar to Not found.
-            </summary>
-        </member>
         <member name="P:Yort.Zip.InStore.ErrorMessage.UnableToRetrieveAuthToken">
             <summary>
               Looks up a localized string similar to Unable to retrieve an authentication token from Zip..
-            </summary>
-        </member>
-        <member name="P:Yort.Zip.InStore.ErrorMessage.Unauthorised">
-            <summary>
-              Looks up a localized string similar to The request was unauthorised. Ensure the correct client id, secret and environment are provided..
             </summary>
         </member>
         <member name="P:Yort.Zip.InStore.ErrorMessage.UnknownApiError">
