@@ -21,6 +21,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request);
 
 		/// <summary>
@@ -32,6 +34,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		Task<OrderStatusResponse> GetOrderStatusAsync(OrderStatusRequest request);
 
 		/// <summary>
@@ -43,6 +47,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		Task<CancelOrderResponse> CancelOrderAsync(CancelOrderRequest request);
 
 		/// <summary>
@@ -54,6 +60,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		Task<RefundOrderResponse> RefundOrderAsync(RefundOrderRequest request);
 
 		/// <summary>
@@ -65,6 +73,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		Task CommitOrderAsync(CommitOrderRequest request);
 
 		/// <summary>
@@ -76,6 +86,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		Task RollbackOrderAsync(RollbackOrderRequest request);
 
 		/// <summary>
@@ -90,6 +102,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		Task<EnrolResponse> EnrolAsync(EnrolRequest request);
 	}
 }

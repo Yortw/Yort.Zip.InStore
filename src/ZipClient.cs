@@ -66,6 +66,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		public async Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request)
 		{	
 			using (var response = await PostJsonAsync("pos/order", request, request.Order).ConfigureAwait(false))
@@ -87,6 +89,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		public async Task<CancelOrderResponse> CancelOrderAsync(CancelOrderRequest request)
 		{
 			using (var response = await PostJsonAsync("pos/order/cancel", request, new { cancelOrderId = request.OrderId, @operator = request.Operator }).ConfigureAwait(false))
@@ -107,6 +111,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		public async Task<OrderStatusResponse> GetOrderStatusAsync(OrderStatusRequest request)
 		{
 			using (var response = await GetJsonAsync($"v2.0/pos/order/{request.OrderId}/status", request).ConfigureAwait(false))
@@ -127,6 +133,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		public async Task<RefundOrderResponse> RefundOrderAsync(RefundOrderRequest request)
 		{
 			var requestBodyEntity = new
@@ -154,6 +162,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		public async Task CommitOrderAsync(CommitOrderRequest request)
 		{
 			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/commit", request, (object)null!).ConfigureAwait(false))
@@ -175,6 +185,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		public async Task RollbackOrderAsync(RollbackOrderRequest request)
 		{
 			using (var response = await PostJsonAsync($"pos/order/{request.OrderId}/rollback", request, (object)null!).ConfigureAwait(false))
@@ -196,6 +208,8 @@ namespace Yort.Zip.InStore
 		/// <exception cref="System.ArgumentException">Thrown if any sub-property of <paramref name="request"/> is determined to be invalid.</exception>
 		/// <exception cref="ZipApiException">Thrown if the Zip API returns an error response.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <see cref="ZipClientConfiguration"/>.</exception>
+		/// <exception cref="System.Net.Http.HttpRequestException">Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.</exception>
+		/// <exception cref="OperationCanceledException">Thrown if a timeout occurs calling the Zip API.</exception>
 		public async Task<EnrolResponse> EnrolAsync(EnrolRequest request)
 		{
 			using (var response = await PostJsonAsync("pos/terminal/enrol", request, request).ConfigureAwait(false))

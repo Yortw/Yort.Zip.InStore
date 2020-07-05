@@ -67,7 +67,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CreateOrderAsync
     path: IZipClient.cs
-    startLine: 23
+    startLine: 25
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -97,6 +97,12 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.
+  - type: System.OperationCanceledException
+    commentId: T:System.OperationCanceledException
+    description: Thrown if a timeout occurs calling the Zip API.
 - uid: Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
   commentId: M:Yort.Zip.InStore.IZipClient.GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
   id: GetOrderStatusAsync(Yort.Zip.InStore.OrderStatusRequest)
@@ -115,7 +121,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: GetOrderStatusAsync
     path: IZipClient.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -145,6 +151,12 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.
+  - type: System.OperationCanceledException
+    commentId: T:System.OperationCanceledException
+    description: Thrown if a timeout occurs calling the Zip API.
 - uid: Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
   commentId: M:Yort.Zip.InStore.IZipClient.CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
   id: CancelOrderAsync(Yort.Zip.InStore.CancelOrderRequest)
@@ -163,7 +175,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CancelOrderAsync
     path: IZipClient.cs
-    startLine: 45
+    startLine: 51
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -193,6 +205,12 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.
+  - type: System.OperationCanceledException
+    commentId: T:System.OperationCanceledException
+    description: Thrown if a timeout occurs calling the Zip API.
 - uid: Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
   commentId: M:Yort.Zip.InStore.IZipClient.RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
   id: RefundOrderAsync(Yort.Zip.InStore.RefundOrderRequest)
@@ -211,7 +229,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RefundOrderAsync
     path: IZipClient.cs
-    startLine: 56
+    startLine: 64
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -241,6 +259,12 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.
+  - type: System.OperationCanceledException
+    commentId: T:System.OperationCanceledException
+    description: Thrown if a timeout occurs calling the Zip API.
 - uid: Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
   commentId: M:Yort.Zip.InStore.IZipClient.CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
   id: CommitOrderAsync(Yort.Zip.InStore.CommitOrderRequest)
@@ -259,7 +283,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CommitOrderAsync
     path: IZipClient.cs
-    startLine: 67
+    startLine: 77
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -289,6 +313,12 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.
+  - type: System.OperationCanceledException
+    commentId: T:System.OperationCanceledException
+    description: Thrown if a timeout occurs calling the Zip API.
 - uid: Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
   commentId: M:Yort.Zip.InStore.IZipClient.RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
   id: RollbackOrderAsync(Yort.Zip.InStore.RollbackOrderRequest)
@@ -307,7 +337,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RollbackOrderAsync
     path: IZipClient.cs
-    startLine: 78
+    startLine: 90
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -337,6 +367,12 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.
+  - type: System.OperationCanceledException
+    commentId: T:System.OperationCanceledException
+    description: Thrown if a timeout occurs calling the Zip API.
 - uid: Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
   commentId: M:Yort.Zip.InStore.IZipClient.EnrolAsync(Yort.Zip.InStore.EnrolRequest)
   id: EnrolAsync(Yort.Zip.InStore.EnrolRequest)
@@ -355,7 +391,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: EnrolAsync
     path: IZipClient.cs
-    startLine: 92
+    startLine: 106
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -386,6 +422,12 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: Thrown if the request to Zip is unauthorised, or if insufficient/incorrect client authentication details have been provided via the <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref>.
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown for some types of network and HTTP failures, usually where the request has not made it to the server for processing.
+  - type: System.OperationCanceledException
+    commentId: T:System.OperationCanceledException
+    description: Thrown if a timeout occurs calling the Zip API.
 references:
 - uid: Yort.Zip.InStore.ZipClient
   commentId: T:Yort.Zip.InStore.ZipClient
@@ -460,6 +502,12 @@ references:
   fullName: Yort.Zip.InStore.ZipApiException
 - uid: System.UnauthorizedAccessException
   commentId: T:System.UnauthorizedAccessException
+  isExternal: true
+- uid: System.Net.Http.HttpRequestException
+  commentId: T:System.Net.Http.HttpRequestException
+  isExternal: true
+- uid: System.OperationCanceledException
+  commentId: T:System.OperationCanceledException
   isExternal: true
 - uid: Yort.Zip.InStore.IZipClient.CreateOrderAsync*
   commentId: Overload:Yort.Zip.InStore.IZipClient.CreateOrderAsync
