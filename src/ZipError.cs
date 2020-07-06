@@ -30,6 +30,11 @@ namespace Yort.Zip.InStore
 		public string? Title { get; set; }
 
 		/// <summary>
+		/// Sets or returns an error message specific to this instance of the error (as opposed to <see cref="Title"/>).
+		/// </summary>
+		public string? Detail { get; set; }
+
+		/// <summary>
 		/// Sets or returns a unique value that can be reported to Zip to assist with locating log entries relating to this request.
 		/// </summary>
 		public string? TraceId { get; set; }

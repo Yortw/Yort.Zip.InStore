@@ -1125,6 +1125,19 @@ references:
   isSpec: "True"
   fullName: Yort.Zip.InStore.ZipErrorResponse.ZipErrorResponse
   nameWithType: ZipErrorResponse.ZipErrorResponse
+- uid: Yort.Zip.InStore.ZipErrorResponse.Detail
+  name: Detail
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_Detail
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Detail
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Detail
+  nameWithType: ZipErrorResponse.Detail
+- uid: Yort.Zip.InStore.ZipErrorResponse.Detail*
+  name: Detail
+  href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_Detail_
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.Detail
+  isSpec: "True"
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Detail
+  nameWithType: ZipErrorResponse.Detail
 - uid: Yort.Zip.InStore.ZipErrorResponse.ErrorCode
   name: ErrorCode
   href: api/Yort.Zip.InStore.ZipErrorResponse.html#Yort_Zip_InStore_ZipErrorResponse_ErrorCode

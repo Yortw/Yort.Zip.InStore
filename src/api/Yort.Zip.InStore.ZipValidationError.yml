@@ -21,7 +21,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ZipValidationError
     path: ZipError.cs
-    startLine: 62
+    startLine: 67
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -74,7 +74,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: PropertyName
     path: ZipError.cs
-    startLine: 68
+    startLine: 73
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -111,7 +111,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ErrorMessages
     path: ZipError.cs
-    startLine: 72
+    startLine: 77
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore

@@ -6,6 +6,7 @@ items:
   parent: Yort.Zip.InStore
   children:
   - Yort.Zip.InStore.ZipErrorResponse.#ctor
+  - Yort.Zip.InStore.ZipErrorResponse.Detail
   - Yort.Zip.InStore.ZipErrorResponse.ErrorCode
   - Yort.Zip.InStore.ZipErrorResponse.IsValid
   - Yort.Zip.InStore.ZipErrorResponse.Message
@@ -206,6 +207,43 @@ items:
   - set
   modifiers.vb:
   - Public
+- uid: Yort.Zip.InStore.ZipErrorResponse.Detail
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Detail
+  id: Detail
+  parent: Yort.Zip.InStore.ZipErrorResponse
+  langs:
+  - csharp
+  - vb
+  name: Detail
+  nameWithType: ZipErrorResponse.Detail
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Detail
+  type: Property
+  source:
+    remote:
+      path: src/ZipError.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.Zip.InStore
+    id: Detail
+    path: ZipError.cs
+    startLine: 34
+  assemblies:
+  - Yort.Zip.InStore
+  namespace: Yort.Zip.InStore
+  summary: "\nSets or returns an error message specific to this instance of the error (as opposed to <xref href=\"Yort.Zip.InStore.ZipErrorResponse.Title\" data-throw-if-not-resolved=\"false\"></xref>).\n"
+  example: []
+  syntax:
+    content: public string Detail { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Detail As String
+  overload: Yort.Zip.InStore.ZipErrorResponse.Detail*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 - uid: Yort.Zip.InStore.ZipErrorResponse.TraceId
   commentId: P:Yort.Zip.InStore.ZipErrorResponse.TraceId
   id: TraceId
@@ -224,7 +262,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: TraceId
     path: ZipError.cs
-    startLine: 34
+    startLine: 39
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -261,7 +299,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ErrorCode
     path: ZipError.cs
-    startLine: 39
+    startLine: 44
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -298,7 +336,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: ValidationErrors
     path: ZipError.cs
-    startLine: 44
+    startLine: 49
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -347,7 +385,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: IsValid
     path: ZipError.cs
-    startLine: 50
+    startLine: 55
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -384,7 +422,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Type
     path: ZipError.cs
-    startLine: 55
+    startLine: 60
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -735,6 +773,14 @@ references:
   name: Title
   nameWithType: ZipErrorResponse.Title
   fullName: Yort.Zip.InStore.ZipErrorResponse.Title
+- uid: Yort.Zip.InStore.ZipErrorResponse.Title
+  commentId: P:Yort.Zip.InStore.ZipErrorResponse.Title
+  isExternal: true
+- uid: Yort.Zip.InStore.ZipErrorResponse.Detail*
+  commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.Detail
+  name: Detail
+  nameWithType: ZipErrorResponse.Detail
+  fullName: Yort.Zip.InStore.ZipErrorResponse.Detail
 - uid: Yort.Zip.InStore.ZipErrorResponse.TraceId*
   commentId: Overload:Yort.Zip.InStore.ZipErrorResponse.TraceId
   name: TraceId

@@ -143,6 +143,19 @@ namespace Yort.Zip.InStore.Tests
 			errorMessages = validationErrors[3].ErrorMessages.ToArray();
 			Assert.AreEqual(1, errorMessages.Count());
 			Assert.AreEqual("'Customer Approval Code' must not be empty.", errorMessages[0]);
+
+
+			//Another style of error response Zip sends, includes 'detail'
+			json = @"{ ""type"": ""https://partpay.net/errors/invalid-refund-merchant-reference"", ""title"": ""Invalid Merchant Reference"", ""detail"": ""Refund reference '195e0a1e-ddfe-4466-ba04-216ecd1ab907' has already been applied to this order for amount 50.00."" }";
+
+			error = System.Text.Json.JsonSerializer.Deserialize<ZipErrorResponse>(json, new System.Text.Json.JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+			Assert.IsNotNull(error);
+			var ex = new ZipApiException(error);
+			
+			Assert.AreEqual("Refund reference '195e0a1e-ddfe-4466-ba04-216ecd1ab907' has already been applied to this order for amount 50.00.", ex.Message);
+			Assert.AreEqual("Invalid Merchant Reference", ex.Errors.Title);
+			Assert.AreEqual(false, ex.Errors.IsValid);
+			Assert.AreEqual("https://partpay.net/errors/invalid-refund-merchant-reference", ex.Errors.Type);
 		}
 
 		[TestMethod]

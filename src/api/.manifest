@@ -100,6 +100,7 @@
   "Yort.Zip.InStore.ZipEnvironment.TokenEndpoint": "Yort.Zip.InStore.ZipEnvironment.yml",
   "Yort.Zip.InStore.ZipErrorResponse": "Yort.Zip.InStore.ZipErrorResponse.yml",
   "Yort.Zip.InStore.ZipErrorResponse.#ctor": "Yort.Zip.InStore.ZipErrorResponse.yml",
+  "Yort.Zip.InStore.ZipErrorResponse.Detail": "Yort.Zip.InStore.ZipErrorResponse.yml",
   "Yort.Zip.InStore.ZipErrorResponse.ErrorCode": "Yort.Zip.InStore.ZipErrorResponse.yml",
   "Yort.Zip.InStore.ZipErrorResponse.IsValid": "Yort.Zip.InStore.ZipErrorResponse.yml",
   "Yort.Zip.InStore.ZipErrorResponse.Message": "Yort.Zip.InStore.ZipErrorResponse.yml",

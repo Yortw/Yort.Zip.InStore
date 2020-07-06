@@ -66,6 +66,7 @@ namespace Yort.Zip.InStore
 		private static string ErrorMessageFromZipErrors(ZipErrorResponse error)
 		{
 			return error?.Message
+				?? error?.Detail 
 				?? error?.ValidationErrors?.FirstOrDefault().ErrorMessages?.FirstOrDefault()
 				?? error?.ErrorCode
 				?? error?.Title

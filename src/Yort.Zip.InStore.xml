@@ -752,6 +752,11 @@
             Sets or returns a generic description of the error message.
             </summary>
         </member>
+        <member name="P:Yort.Zip.InStore.ZipErrorResponse.Detail">
+            <summary>
+            Sets or returns an error message specific to this instance of the error (as opposed to <see cref="P:Yort.Zip.InStore.ZipErrorResponse.Title"/>).
+            </summary>
+        </member>
         <member name="P:Yort.Zip.InStore.ZipErrorResponse.TraceId">
             <summary>
             Sets or returns a unique value that can be reported to Zip to assist with locating log entries relating to this request.
