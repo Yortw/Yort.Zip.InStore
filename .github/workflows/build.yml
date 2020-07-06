@@ -73,4 +73,4 @@ jobs:
         name: artifacts
         path: ./artifacts
     - name: Publish packages
-      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org 
+      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key $Env:NUGET_AUTH_TOKEN
