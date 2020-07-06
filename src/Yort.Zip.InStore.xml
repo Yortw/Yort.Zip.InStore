@@ -308,6 +308,9 @@
             </summary>
             <param name="request">A <see cref="T:Yort.Zip.InStore.EnrolRequest"/> instance providing details of the device to enrol.</param>
             <remarks>
+            <para>On a successful response, not only does the <see cref="T:Yort.Zip.InStore.EnrolResponse"/> returned contain the client id and secret so the caller can persist them 
+            for future sessions, but the client id and secret returned will be automatically applied to the configuration for this <see cref="T:Yort.Zip.InStore.ZipClient"/> instance.
+            </para>
             <para>NOTE: The 'enrollment system' is untested as the test account provided to the library authors did not support generating activation codes. This should work, but if it doesn't, please log an issue.</para>
             </remarks>
             <returns>A <see cref="T:Yort.Zip.InStore.EnrolResponse"/> instance containing details of the token returned.</returns>
@@ -605,6 +608,11 @@
             <summary>
             Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.
             </summary>
+            <remarks>
+            <para>On a successful response, not only does the <see cref="T:Yort.Zip.InStore.EnrolResponse"/> returned contain the client id and secret so the caller can persist them 
+            for future sessions, but the client id and secret returned will be automatically applied to the configuration for this <see cref="T:Yort.Zip.InStore.ZipClient"/> instance.
+            </para>
+            </remarks>
             <param name="request">A <see cref="T:Yort.Zip.InStore.EnrolRequest"/> instance providing details of the device to enrol.</param>
             <returns>A <see cref="T:Yort.Zip.InStore.EnrolResponse"/> instance containing details of the token returned.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>

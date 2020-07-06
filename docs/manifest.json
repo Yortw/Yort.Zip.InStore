@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.IZipClient.html",
-          "hash": "P0i9Y5gfaV00M5v5LzA8Rg=="
+          "hash": "yMatf2ZbOPMh3zg1W2WlpA=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipClient.html",
-          "hash": "BXuezR5OYaZmGVOJ91aqew=="
+          "hash": "HFnEEnl1U5QqiT4i/6LkwA=="
         }
       },
       "is_incremental": false,
@@ -402,6 +402,13 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -413,20 +420,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 26,
-          "skipped_file_count": 26
+          "skipped_file_count": 24
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 4,
           "skipped_file_count": 4
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
         }
       }
     },

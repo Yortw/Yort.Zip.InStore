@@ -241,6 +241,11 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// Allows retrieval of the client id and secret used to request new auth tokens using the Zip device enrolment system.
 		/// </summary>
+		/// <remarks>
+		/// <para>On a successful response, not only does the <see cref="EnrolResponse"/> returned contain the client id and secret so the caller can persist them 
+		/// for future sessions, but the client id and secret returned will be automatically applied to the configuration for this <see cref="ZipClient"/> instance.
+		/// </para>
+		/// </remarks>
 		/// <param name="request">A <see cref="EnrolRequest"/> instance providing details of the device to enrol.</param>
 		/// <returns>A <see cref="EnrolResponse"/> instance containing details of the token returned.</returns>
 		/// <exception cref="System.ArgumentNullException">Thrown if <paramref name="request"/> or any required sub-property is null.</exception>
@@ -254,7 +259,14 @@ namespace Yort.Zip.InStore
 			using (var response = await PostJsonAsync("pos/terminal/enrol", request, request).ConfigureAwait(false))
 			{
 				if (response.StatusCode == System.Net.HttpStatusCode.OK)
-					return await JsonResponseToEntityAsync<EnrolResponse>(response).ConfigureAwait(false);
+				{
+					var retVal = await JsonResponseToEntityAsync<EnrolResponse>(response).ConfigureAwait(false);
+
+					_Configuration.ClientId = retVal.ClientId;
+					_Configuration.ClientSecret = retVal.ClientSecret;
+
+					return retVal;
+				}
 
 				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
 			}

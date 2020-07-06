@@ -95,6 +95,9 @@ namespace Yort.Zip.InStore
 		/// </summary>
 		/// <param name="request">A <see cref="EnrolRequest"/> instance providing details of the device to enrol.</param>
 		/// <remarks>
+		/// <para>On a successful response, not only does the <see cref="EnrolResponse"/> returned contain the client id and secret so the caller can persist them 
+		/// for future sessions, but the client id and secret returned will be automatically applied to the configuration for this <see cref="ZipClient"/> instance.
+		/// </para>
 		/// <para>NOTE: The 'enrollment system' is untested as the test account provided to the library authors did not support generating activation codes. This should work, but if it doesn't, please log an issue.</para>
 		/// </remarks>
 		/// <returns>A <see cref="EnrolResponse"/> instance containing details of the token returned.</returns>

@@ -10,8 +10,8 @@ namespace Yort.Zip.InStore
 	/// </summary>
 	public class ZipClientConfiguration
 	{
-		private readonly string? _ClientId;
-		private readonly string? _ClientSecret;
+		private string? _ClientId;
+		private string? _ClientSecret;
 		private readonly ZipEnvironment _Environment;
 
 		/// <summary>
@@ -30,12 +30,12 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// Returns the client id value provided via the constructor.
 		/// </summary>
-		public string? ClientId => _ClientId;
+		public string? ClientId { get { return _ClientId; } internal set { _ClientId = value; } }
 
 		/// <summary>
 		/// Returns the client secret value provided via the constructor.
 		/// </summary>
-		public string? ClientSecret => _ClientSecret;
+		public string? ClientSecret { get { return _ClientSecret; } internal set { _ClientSecret = value; } }
 
 		/// <summary>
 		/// Returns the <see cref="ZipEnvironment"/> value provided via the constructor.
