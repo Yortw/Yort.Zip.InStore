@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/Yortw/Yort.Zip.InStore</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://yortw.github.io/Yort.Zip.InStore/</PackageProjectUrl>
-    <Version>0.0.4-alpha</Version>
+    <Version>0.0.5-alpha</Version>
     <Company />
     <PackageTags>zip partpay payments instore pos nz netstandard20 net472</PackageTags>
     <Description>An unofficial, light weight, wrapper around the Zip payments API for use in stores/point-of-sale systems.</Description>
