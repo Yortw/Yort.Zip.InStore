@@ -124,6 +124,9 @@
             <summary>
             Gets or sets the expiry time of the order as returned by the Zip API.
             </summary>
+            <remarks>
+            <para>Note this property can be null, and will be in the event of a 'duplicate check' occuring where the response only returns the order id.</para>
+            </remarks>
         </member>
         <member name="T:Yort.Zip.InStore.EnrolRequest">
             <summary>
@@ -200,6 +203,11 @@
         <member name="P:Yort.Zip.InStore.ErrorMessage.UnableToRetrieveAuthToken">
             <summary>
               Looks up a localized string similar to Unable to retrieve an authentication token from Zip..
+            </summary>
+        </member>
+        <member name="P:Yort.Zip.InStore.ErrorMessage.UnexpectedCreateOrderRedirectResponse">
+            <summary>
+              Looks up a localized string similar to Redirect response received with no body and unable to parse location header, no order id could be determined..
             </summary>
         </member>
         <member name="P:Yort.Zip.InStore.ErrorMessage.UnknownApiError">
@@ -502,7 +510,11 @@
             <summary>
             Full constructor.
             </summary>
-            <param name="httpClient">An <see cref="T:System.Net.Http.HttpClient"/> instance to use to access the Zip API, or null to have the ZipClient create it's own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.</param>
+            <remarks>
+            <para>If you are injecting an instance of <see cref="T:System.Net.Http.HttpClient"/> via the <paramref name="httpClient"/> make sure the 'AllowAutoRedirect' property on the inner most handler (and any intermediate ones) 
+            is set to false. The Zip API returns redirect responses in some situations that must be handled manually by the <see cref="T:Yort.Zip.InStore.ZipClient"/> instance for correct behaviour to be applied.</para>
+            </remarks>
+            <param name="httpClient">See the method remarks for important information. An <see cref="T:System.Net.Http.HttpClient"/> instance to use to access the Zip API, or null to have the ZipClient create it's own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.</param>
             <param name="configuration">A <see cref="T:Yort.Zip.InStore.ZipClientConfiguration"/> instance providing client credentials, the API environment to access and other required details.</param>
         </member>
         <member name="M:Yort.Zip.InStore.ZipClient.CreateOrderAsync(Yort.Zip.InStore.CreateOrderRequest)">

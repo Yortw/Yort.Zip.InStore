@@ -79,6 +79,15 @@ namespace Yort.Zip.InStore {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Redirect response received with no body and unable to parse location header, no order id could be determined..
+        /// </summary>
+        internal static string UnexpectedCreateOrderRedirectResponse {
+            get {
+                return ResourceManager.GetString("UnexpectedCreateOrderRedirectResponse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The API returned an error response but did not specify an error message..
         /// </summary>
         internal static string UnknownApiError {

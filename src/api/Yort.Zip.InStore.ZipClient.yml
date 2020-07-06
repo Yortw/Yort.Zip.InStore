@@ -117,18 +117,19 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: .ctor
     path: ZipClient.cs
-    startLine: 46
+    startLine: 50
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nFull constructor.\n"
+  remarks: "\n<p>If you are injecting an instance of <xref href=\"System.Net.Http.HttpClient\" data-throw-if-not-resolved=\"false\"></xref> via the <code data-dev-comment-type=\"paramref\" class=\"paramref\">httpClient</code> make sure the &apos;AllowAutoRedirect&apos; property on the inner most handler (and any intermediate ones) \nis set to false. The Zip API returns redirect responses in some situations that must be handled manually by the <xref href=\"Yort.Zip.InStore.ZipClient\" data-throw-if-not-resolved=\"false\"></xref> instance for correct behaviour to be applied.</p>\n"
   example: []
   syntax:
     content: public ZipClient(HttpClient httpClient, ZipClientConfiguration configuration)
     parameters:
     - id: httpClient
       type: System.Net.Http.HttpClient
-      description: An <xref href="System.Net.Http.HttpClient" data-throw-if-not-resolved="false"></xref> instance to use to access the Zip API, or null to have the ZipClient create it&apos;s own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.
+      description: See the method remarks for important information. An <xref href="System.Net.Http.HttpClient" data-throw-if-not-resolved="false"></xref> instance to use to access the Zip API, or null to have the ZipClient create it&apos;s own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.
     - id: configuration
       type: Yort.Zip.InStore.ZipClientConfiguration
       description: A <xref href="Yort.Zip.InStore.ZipClientConfiguration" data-throw-if-not-resolved="false"></xref> instance providing client credentials, the API environment to access and other required details.
@@ -156,7 +157,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CreateOrderAsync
     path: ZipClient.cs
-    startLine: 70
+    startLine: 74
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -217,7 +218,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CancelOrderAsync
     path: ZipClient.cs
-    startLine: 93
+    startLine: 132
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -277,7 +278,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: GetOrderStatusAsync
     path: ZipClient.cs
-    startLine: 115
+    startLine: 154
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -337,7 +338,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RefundOrderAsync
     path: ZipClient.cs
-    startLine: 137
+    startLine: 176
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -397,7 +398,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: CommitOrderAsync
     path: ZipClient.cs
-    startLine: 166
+    startLine: 205
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -457,7 +458,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: RollbackOrderAsync
     path: ZipClient.cs
-    startLine: 189
+    startLine: 228
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -517,7 +518,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: EnrolAsync
     path: ZipClient.cs
-    startLine: 212
+    startLine: 251
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -577,7 +578,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Dispose
     path: ZipClient.cs
-    startLine: 227
+    startLine: 266
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -614,7 +615,7 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: Dispose
     path: ZipClient.cs
-    startLine: 246
+    startLine: 285
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
@@ -966,6 +967,11 @@ references:
   name: HttpClient
   nameWithType: HttpClient
   fullName: System.Net.Http.HttpClient
+- uid: Yort.Zip.InStore.ZipClient
+  commentId: T:Yort.Zip.InStore.ZipClient
+  name: ZipClient
+  nameWithType: ZipClient
+  fullName: Yort.Zip.InStore.ZipClient
 - uid: System.Net.Http
   commentId: N:System.Net.Http
   isExternal: true

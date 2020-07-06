@@ -30,6 +30,9 @@ There's really only three steps:
 ```c#
     // In production you'd probably inject a ZipClient instance or use a pre-configured, shared instance, 
     // depending on your use case and architecture. For the sake of a sample, here's what creating one looks like.
+
+    // WARNING: If you are injecting an instance of *HttpClient* via the *httpClient* constructor argument, make sure the 'AllowAutoRedirect' property on the inner most handler (and any intermediate ones) 
+	// is set to false. The Zip API returns redirect responses in some situations that must be handled manually by the ZipClient instance for correct behaviour to be applied.
     IZipClient client = new ZipClient
     (
         new ZipClientConfiguration

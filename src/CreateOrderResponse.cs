@@ -19,6 +19,9 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// Gets or sets the expiry time of the order as returned by the Zip API.
 		/// </summary>
+		/// <remarks>
+		/// <para>Note this property can be null, and will be in the event of a 'duplicate check' occuring where the response only returns the order id.</para>
+		/// </remarks>
 		public DateTimeOffset? OrderExpiry { get; set; } = null;
 	}
 }

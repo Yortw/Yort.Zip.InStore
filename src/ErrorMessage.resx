@@ -123,6 +123,9 @@
   <data name="UnableToRetrieveAuthToken" xml:space="preserve">
     <value>Unable to retrieve an authentication token from Zip.</value>
   </data>
+  <data name="UnexpectedCreateOrderRedirectResponse" xml:space="preserve">
+    <value>Redirect response received with no body and unable to parse location header, no order id could be determined.</value>
+  </data>
   <data name="UnknownApiError" xml:space="preserve">
     <value>The API returned an error response but did not specify an error message.</value>
   </data>

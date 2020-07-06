@@ -106,11 +106,12 @@ items:
       repo: https://github.com/Yortw/Yort.Zip.InStore
     id: OrderExpiry
     path: CreateOrderResponse.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - Yort.Zip.InStore
   namespace: Yort.Zip.InStore
   summary: "\nGets or sets the expiry time of the order as returned by the Zip API.\n"
+  remarks: "\n<p>Note this property can be null, and will be in the event of a &apos;duplicate check&apos; occuring where the response only returns the order id.</p>\n"
   example: []
   syntax:
     content: public DateTimeOffset? OrderExpiry { get; set; }

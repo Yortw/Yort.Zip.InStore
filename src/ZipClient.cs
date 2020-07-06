@@ -42,7 +42,11 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// Full constructor.
 		/// </summary>
-		/// <param name="httpClient">An <see cref="HttpClient"/> instance to use to access the Zip API, or null to have the ZipClient create it's own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.</param>
+		/// <remarks>
+		/// <para>If you are injecting an instance of <see cref="HttpClient"/> via the <paramref name="httpClient"/> make sure the 'AllowAutoRedirect' property on the inner most handler (and any intermediate ones) 
+		/// is set to false. The Zip API returns redirect responses in some situations that must be handled manually by the <see cref="ZipClient"/> instance for correct behaviour to be applied.</para>
+		/// </remarks>
+		/// <param name="httpClient">See the method remarks for important information. An <see cref="HttpClient"/> instance to use to access the Zip API, or null to have the ZipClient create it's own internally. Supply your own if you wish to apply handlers for logging, retry logic etc.</param>
 		/// <param name="configuration">A <see cref="ZipClientConfiguration"/> instance providing client credentials, the API environment to access and other required details.</param>
 		public ZipClient(HttpClient? httpClient, ZipClientConfiguration configuration)
 		{
@@ -73,11 +77,46 @@ namespace Yort.Zip.InStore
 			using (var response = await PostJsonAsync("pos/order", request, request.Order).ConfigureAwait(false))
 			{
 				//Zip API docs says 'Created' in the text description for this response, but API actually returns 'Accepted'... we'll support both just in case (both are technically 'success responses').
-				if (response.StatusCode == System.Net.HttpStatusCode.Accepted || response.StatusCode == System.Net.HttpStatusCode.Created || response.StatusCode == System.Net.HttpStatusCode.Found)
+				if (response.StatusCode == System.Net.HttpStatusCode.Accepted || response.StatusCode == System.Net.HttpStatusCode.Created)
 					return await JsonResponseToEntityAsync<CreateOrderResponse>(response).ConfigureAwait(false);
+				else if (response.StatusCode == System.Net.HttpStatusCode.Found)
+				{
+					//The API is documented as returning a response body for this status the same as for the accepted/created statuses, 
+					//but it doesn't actually seem to. We have to be able to get the order id in order to be able to perform refunds
+					//in the future, so just following the redirect to the status endpoint which doesn't give us the order id isn't useful.
+					//After discussing with Zip it's been decided (for now) to retrieve the order id from the location url (ugh).
+					//At that point, for the context of this library, we should just pretend like we got that normally and let the client 
+					//deal with only one behaviour from this method instead of following the redirect.
+					if (response.Content == null || response.Content.Headers.ContentLength == 0)
+					{
+						var retVal = CreateOrderResponseFromUrl(response.Headers.Location);
+						if (retVal != null) return retVal;
+
+						throw new ZipApiException(ErrorMessage.UnexpectedCreateOrderRedirectResponse);
+					}
+					else
+						return await JsonResponseToEntityAsync<CreateOrderResponse>(response).ConfigureAwait(false);
+				}
 
 				throw await ZipApiExceptionFromResponseAsync(response).ConfigureAwait(false);
 			}
+		}
+
+		private CreateOrderResponse? CreateOrderResponseFromUrl(Uri location)
+		{
+			//Sample url format
+			//https://api-ci.partpay.co.nz/v2.0/pos/order/1b5bca35-9fb5-461a-aa92-0854a7265890/status
+
+			if (location == null) return null;
+			var urlStr = location.ToString();
+			if (!urlStr.EndsWith("/status", StringComparison.OrdinalIgnoreCase)) return null;
+
+			var separatorIndex = urlStr.LastIndexOf("/", urlStr.Length - 8, StringComparison.Ordinal);
+
+			return new CreateOrderResponse()
+			{
+				OrderId = urlStr.Substring(separatorIndex + 1, urlStr.Length - (8 + separatorIndex))
+			};
 		}
 
 		/// <summary>
@@ -312,7 +351,7 @@ namespace Yort.Zip.InStore
 					requestMessage.Headers.Authorization = _HttpClient.DefaultRequestHeaders.Authorization;
 
 					ApplyCustomHttpHeadersForRequest(request, requestMessage);
-
+					
 					return await _HttpClient.SendAsync(requestMessage).ConfigureAwait(false);
 				}
 			}
@@ -391,6 +430,9 @@ namespace Yort.Zip.InStore
 				if (handler.SupportsAutomaticDecompression)
 					handler.AutomaticDecompression = System.Net.DecompressionMethods.GZip | System.Net.DecompressionMethods.Deflate;
 
+				if (handler.SupportsRedirectConfiguration)
+					handler.AllowAutoRedirect = false;
+				
 				return new HttpClient(handler);
 			}
 			catch

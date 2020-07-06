@@ -68,6 +68,9 @@ You'll need a client id and secret issued by Zip for the sandbox environment for
 
 Normally you would create the Zip instance on start-up or first use, and then re-use it across requests instead of creating a new one each time. This allows HTTP connection pooling and improves performance. The ZipClient instance is thread-safe in so much as you can run multiple requests through the same instance for different payments from different threads.
 
+**WARNING:** If you are injecting an instance of *HttpClient* via the *httpClient* constructor argument, make sure the 'AllowAutoRedirect' property on the inner most handler (and any intermediate ones) 
+is set to false. The Zip API returns redirect responses in some situations that must be handled manually by the ZipClient instance for correct behaviour to be applied.
+
 ```c#
     //Zip will issue a client id and secret for each environment,
     //you need to contact Zip to get these.

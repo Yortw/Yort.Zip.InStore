@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.CreateOrderResponse.html",
-          "hash": "cHFph/o3D/7DnNtRT7AUTQ=="
+          "hash": "kU11miEoEnyEmTjt93EnGw=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Zip.InStore.ZipClient.html",
-          "hash": "cO/7wQdmFl52CWgS5LZhQw=="
+          "hash": "BXuezR5OYaZmGVOJ91aqew=="
         }
       },
       "is_incremental": false,
@@ -375,7 +375,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/quickstart.html",
-          "hash": "gjPl+5bNXCo3HC6fPNO8vw=="
+          "hash": "+lbS3opT8cowSJA0m/TdRA=="
         }
       },
       "is_incremental": false,
@@ -402,13 +402,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -420,13 +413,20 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 26,
-          "skipped_file_count": 24
+          "skipped_file_count": 26
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 4,
           "skipped_file_count": 4
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },

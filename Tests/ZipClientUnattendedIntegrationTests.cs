@@ -192,7 +192,7 @@ namespace Yort.Zip.InStore.Tests
 			}
 		}
 
-		[Ignore("Not working, waiting on assistance from Zip.")]
+		[Ignore("Requires a pre-approval code generated manually via the sandbox customer portal")]
 		[TestMethod]
 		public async Task ZipClient_CreateOrder_AppliesDuplicateCheckWhenRequested()
 		{
@@ -204,8 +204,8 @@ namespace Yort.Zip.InStore.Tests
 					EnableUniqueMerchantReferenceCheck = true,
 					Order = new ZipOrder()
 					{
-						Amount = 10.5M,
-						CustomerApprovalCode = "AA05",
+						Amount = 50M,
+						CustomerApprovalCode = "206931",
 						MerchantReference = System.Guid.NewGuid().ToString(),
 						Operator = "Test",
 						PaymentFlow = ZipPaymentFlow.Payment,
@@ -215,7 +215,7 @@ namespace Yort.Zip.InStore.Tests
 						{
 							Name = "Test Item",
 							Description = "0110A Blue 12",
-							Price = 10.50M,
+							Price = 50M,
 							Quantity = 1,
 							Sku = "123"
 						}
@@ -231,7 +231,6 @@ namespace Yort.Zip.InStore.Tests
 				var result2 = await client.CreateOrderAsync(request);
 				Assert.IsNotNull(result2);
 				Assert.IsFalse(String.IsNullOrWhiteSpace(result2.OrderId));
-				Assert.IsNotNull(result2.OrderExpiry);
 
 				Assert.AreEqual(result1.OrderId, result2.OrderId);
 			}
