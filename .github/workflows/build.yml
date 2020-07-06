@@ -5,6 +5,9 @@ on:
     branches: master
     tags: '**'
   pull_request:
+  release:
+    types: 
+      - published
 
 jobs:
   build:
@@ -17,7 +20,8 @@ jobs:
       ZipPayments_ClientSecret: ${{ secrets.ZIPPAYMENTS_CLIENTSECRET }}
       ZipPayments_TestStoreId: ${{ secrets.ZipPayments_TestStoreId }}
       ZipPayments_TestOrderIdForRefunds: ${{ secrets.ZipPayments_TestOrderIdForRefunds }}
-      Nuget_UploadKey: ${{ secrets.NUGET_TOKEN }}
+      NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
+
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -69,4 +73,4 @@ jobs:
         name: artifacts
         path: ./artifacts
     - name: Publish packages
-      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key $Env:Nuget_UploadKey
+      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org 

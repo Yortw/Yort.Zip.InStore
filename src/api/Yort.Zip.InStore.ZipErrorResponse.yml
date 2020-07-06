@@ -121,18 +121,18 @@ items:
   summary: "\nThe HTTP status code returned with the response that contained these errors.\n"
   example: []
   syntax:
-    content: public int ResponseCode { get; }
+    content: public int ResponseCode { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public ReadOnly Property ResponseCode As Integer
+    content.vb: Public Property ResponseCode As Integer
   overload: Yort.Zip.InStore.ZipErrorResponse.ResponseCode*
   modifiers.csharp:
   - public
   - get
+  - set
   modifiers.vb:
   - Public
-  - ReadOnly
 - uid: Yort.Zip.InStore.ZipErrorResponse.Message
   commentId: P:Yort.Zip.InStore.ZipErrorResponse.Message
   id: Message

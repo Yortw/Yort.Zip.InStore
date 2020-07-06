@@ -97,6 +97,25 @@ namespace Yort.Zip.InStore.Tests
 			Assert.AreEqual(inner, ex.InnerException);
 		}
 
+
+		[TestMethod]
+		public void ZipApiException_WithErrorResponse_ProvidesErrorCodeWithMessageFor400Response()
+		{
+			var inner = new InvalidOperationException("Test error");
+			var errorResponse = new ZipErrorResponse()
+			{
+				ErrorCode = "AboveMaximumPreApprovalAmount",
+				IsValid = false,
+				Message = "The request is invalid",
+				Type = "https://partpay.net/errors/property-validation",
+				ResponseCode = 400
+			};
+
+			var ex = new ZipApiException(errorResponse, inner);
+			Assert.IsNotNull(ex.Errors);
+			Assert.AreEqual("(AboveMaximumPreApprovalAmount) The request is invalid", ex.Message);
+		}
+
 		[TestMethod]
 		public void ZipError_CanDeserialiseFromJsonResponse()
 		{

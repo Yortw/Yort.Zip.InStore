@@ -18,7 +18,7 @@ namespace Yort.Zip.InStore
 		/// <summary>
 		/// The HTTP status code returned with the response that contained these errors.
 		/// </summary>
-		public int ResponseCode { get; internal set; }
+		public int ResponseCode { get; set; }
 		/// <summary>
 		/// Sets or returns the top level error message associated with the response.
 		/// </summary>

@@ -65,6 +65,11 @@ namespace Yort.Zip.InStore
 
 		private static string ErrorMessageFromZipErrors(ZipErrorResponse error)
 		{
+			//Often (not always) a '400' response has a pretty generic 'error.Message' value which isn't helpful (i.e 'The request is invalid'),
+			//in this case include the 'error.ErrorCode' value which often provides a better hint about what is wrong ('AboveMaximumPreApprovalAmount').
+			if (error.ResponseCode == 400 && !String.IsNullOrEmpty(error.ErrorCode) && !String.IsNullOrEmpty(error.Message))
+				return $"({error.ErrorCode}) {error.Message}";
+
 			return error?.Message
 				?? error?.Detail 
 				?? error?.ValidationErrors?.FirstOrDefault().ErrorMessages?.FirstOrDefault()
