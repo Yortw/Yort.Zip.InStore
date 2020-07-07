@@ -13,14 +13,12 @@ jobs:
   build:
 
     runs-on: windows-latest
-    env:
-      TestSecret: ${{ secrets.TestSecret }}    
+    env:   
       Coveralls_Token: ${{ secrets.Coveralls_Token }}   
       ZipPayments_ClientId: ${{ secrets.ZIPPAYMENTS_CLIENTID }}
       ZipPayments_ClientSecret: ${{ secrets.ZIPPAYMENTS_CLIENTSECRET }}
       ZipPayments_TestStoreId: ${{ secrets.ZipPayments_TestStoreId }}
       ZipPayments_TestOrderIdForRefunds: ${{ secrets.ZipPayments_TestOrderIdForRefunds }}
-      NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
     steps:
     - uses: actions/checkout@v2
@@ -73,4 +71,4 @@ jobs:
         name: artifacts
         path: ./artifacts
     - name: Publish packages
-      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key $Env:NUGET_AUTH_TOKEN
+      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key ${{ secrets.NUGET_TOKEN }} --skip-duplicate 
