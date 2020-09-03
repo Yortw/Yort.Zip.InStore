@@ -106,6 +106,6 @@ At the time this library was initially developed the official [Zip API documenta
 
 * The Zip API returns some error response bodies in different json formats than others. This library does it's best to support the superset of data returned from all formats seen during development, and attempts to pick the best error message/detail to place in any thrown exception. If you see this code and wonder why it's messy... the multiple formats with no hint of which to expect (content type is always just 'application/json') this is why.
 
-* The Zip AP documentation states:
+* The Zip API documentation states:
 *Refunds are idempotent, and a merchant refund reference can only be used once. Attempting to use the same reference will result in an error.*
 However only the first part of this statement appears to be true - the endpoint does behave in an idempotent fashion, and does *not* send an error back if you repeat a refund request. Instead, sending another request with the same merchant reference will return a copy of the original response. This is actually preferable to returning an error in most cases and actually idempotent (an error response wouldn't be, really), but is a deviation from what the documentation states.
