@@ -40,8 +40,8 @@ jobs:
       run: reportgenerator "-reports:Tests\TestResults\**\coverage.cobertura.xml" "-targetdir:Tests\TestResults\Reports" --reporttypes:"Cobertura;Xml;Html" 
     - name: Install Coveralls Upload
       run: dotnet tool install -g coveralls.net --version 1.0.0
-    - name: Upload coverage to Coveralls.IO
-      run: csmacnz.Coveralls --reportgenerator -i "Tests\TestResults\Reports" --repoTokenVariable Coveralls_Token --commitId $Env:GITHUB_SHA --commitBranch $Env:GITHUB_REF --commitAuthor $Env:GITHUB_ACTOR --jobId $Env:GITHUB_RUN_ID
+#    - name: Upload coverage to Coveralls.IO
+#      run: csmacnz.Coveralls --reportgenerator -i "Tests\TestResults\Reports" --repoTokenVariable Coveralls_Token --commitId $Env:GITHUB_SHA --commitBranch $Env:GITHUB_REF --commitAuthor $Env:GITHUB_ACTOR --jobId $Env:GITHUB_RUN_ID
       
   pack:
     runs-on: windows-latest
