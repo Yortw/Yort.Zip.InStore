@@ -22,10 +22,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
+    - name: Setup .NET Core 2.1.3 for Coverage Tool
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.101
+        dotnet-version: 2.1.3
+    - name: Setup .NET Core 3.1 for Build
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
     - name: Build with dotnet (src\Yort.Zip.InStore.sln)
       run: dotnet build src\Yort.Zip.InStore.sln --configuration Release --nologo
     - name: Run Tests
@@ -36,8 +40,8 @@ jobs:
       run: reportgenerator "-reports:Tests\TestResults\**\coverage.cobertura.xml" "-targetdir:Tests\TestResults\Reports" --reporttypes:"Cobertura;Xml;Html" 
     - name: Install Coveralls Upload
       run: dotnet tool install -g coveralls.net --version 1.0.0
-    - name: Upload coverage to Coveralls.IO
-      run: csmacnz.Coveralls --reportgenerator -i "Tests\TestResults\Reports" --repoTokenVariable Coveralls_Token --commitId $Env:GITHUB_SHA --commitBranch $Env:GITHUB_REF --commitAuthor $Env:GITHUB_ACTOR --jobId $Env:GITHUB_RUN_ID
+#    - name: Upload coverage to Coveralls.IO
+#      run: csmacnz.Coveralls --reportgenerator -i "Tests\TestResults\Reports" --repoTokenVariable Coveralls_Token --commitId $Env:GITHUB_SHA --commitBranch $Env:GITHUB_REF --commitAuthor $Env:GITHUB_ACTOR --jobId $Env:GITHUB_RUN_ID
       
   pack:
     runs-on: windows-latest
