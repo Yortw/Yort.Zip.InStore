@@ -61,7 +61,7 @@ namespace Yort.Zip.InStore {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The client id, secret or both are not set. Ensure these are configured or use the erol request to obtain them..
+        ///   Looks up a localized string similar to The client id, secret or both are not set. Ensure these are configured or use the enrol request to obtain them..
         /// </summary>
         internal static string ClientAuthDetailsRequired {
             get {

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ClientAuthDetailsRequired" xml:space="preserve">
-    <value>The client id, secret or both are not set. Ensure these are configured or use the erol request to obtain them.</value>
+    <value>The client id, secret or both are not set. Ensure these are configured or use the enrol request to obtain them.</value>
   </data>
   <data name="UnableToRetrieveAuthToken" xml:space="preserve">
     <value>Unable to retrieve an authentication token from Zip.</value>
