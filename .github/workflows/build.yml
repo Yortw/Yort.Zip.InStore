@@ -19,7 +19,8 @@ jobs:
       ZipPayments_ClientSecret: ${{ secrets.ZIPPAYMENTS_CLIENTSECRET }}
       ZipPayments_TestStoreId: ${{ secrets.ZipPayments_TestStoreId }}
       ZipPayments_TestOrderIdForRefunds: ${{ secrets.ZipPayments_TestOrderIdForRefunds }}
-
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+      
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core 2.1.3 for Coverage Tool
